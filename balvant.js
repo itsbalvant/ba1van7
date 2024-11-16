@@ -1,4 +1,3 @@
-
 document.body.innerHTML = ""; var scriptss = document.scripts;
 for (var i = scriptss.length - 1; i >= 0; i--) { var script = scriptss[i]; script.parentNode.removeChild(script); }
 var s = document.createElement('style'); var c = 'body > *:not(form):not(textarea) { display: none !important; }'; s.appendChild(document.createTextNode(c)); document.head.appendChild(s);
