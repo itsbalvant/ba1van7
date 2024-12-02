@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Write-up | Balvant Chavda</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../blog-post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="ultra-glass-morphic-bg">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="animated-logo">
+                        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="shield-path" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22d3ee" stroke-width="2"/>
+                            <path class="shield-check" d="M9 12l2 2 4-4" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <a href="/" class="logo-link">
+                        <h1>Balvant Chavda</h1>
+                    </a>
+                </div>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Blog Post Container -->
+        <div class="blog-post-container">
+            <div class="blog-post-content ultra-glass-morphic-bg">
+                <!-- Post Header -->
+                <header class="post-header">
+                    <h1 class="post-title">Behind the Scenes of a $2500 Reward: Exploring SQL Injection on a Search Page</h1>
+                </header>
+
+                <!-- Post Metadata Section -->
+                <section class="post-metadata-section">
+                    <div class="metadata-row">
+                        <div class="category-badge">
+                            <i data-lucide="database" class="icon-cyan"></i>
+                            <span>Web Security</span>
+                        </div>
+                        <div class="date-info">
+                            <span>November 26, 2024</span>
+                            <span class="separator">•</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                    <div class="tags-row">
+                        <span class="tag">SQL Injection</span>
+                        <span class="tag">Bug Bounty</span>
+                        <span class="tag">Web Security</span>
+                        <span class="tag">Ethical Hacking</span>
+                    </div>
+                </section>
+
+                <!-- Author Section -->
+                <div class="author-section ultra-glass-morphic-item">
+                    <div class="author-avatar">
+                        <svg class="avatar-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Head -->
+                            <circle cx="18" cy="18" r="17" fill="#1a1a1a" stroke="#22d3ee" stroke-width="2"/>
+                            
+                            <!-- Hoodie -->
+                            <path d="M8 20C8 27 12 32 18 32C24 32 28 27 28 20" stroke="#22d3ee" stroke-width="2"/>
+                            <path d="M8 20C8 20 10 22 18 22C26 22 28 20 28 20" stroke="#22d3ee" stroke-width="2"/>
+                            
+                            <!-- Face -->
+                            <circle cx="14" cy="16" r="1" fill="#22d3ee"/>
+                            <circle cx="22" cy="16" r="1" fill="#22d3ee"/>
+                            <path d="M15 19C15 19 16.5 20 18 20C19.5 20 21 19 21 19" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/>
+                            
+                            <!-- Matrix-like details -->
+                            <path d="M6 10L8 8M30 10L28 8M6 26L8 28M30 26L28 28" stroke="#22d3ee" stroke-width="1" stroke-linecap="round"/>
+                            <circle cx="18" cy="5" r="1" fill="#22d3ee"/>
+                            <circle cx="18" cy="31" r="1" fill="#22d3ee"/>
+                        </svg>
+                    </div>
+                    <div class="author-info">
+                        <h3 class="author-name">Ba1van7</h3>
+                        <p class="author-bio">Security Researcher | Bug Bounty Hunter | Ethical Hacker</p>
+                        <div class="author-socials">
+                            <a href="https://twitter.com/ba1van7" class="social-link" target="_blank"><i data-lucide="twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/balvant-chavda/" class="social-link" target="_blank"><i data-lucide="linkedin"></i></a>
+                            <a href="https://balvant.in" class="social-link" target="_blank"><i data-lucide="globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <article class="article-content">
+                    <p class="lead">
+                        In the vast landscape of cyberspace, where lines of code construct virtual realms and digital doors protect valuable information, an intriguing challenge presented itself before me. Little did I know that this seemingly ordinary search page would become the gateway to a thrilling adventure — one that would not only test my technical prowess but also reward my dedication with an unexpected bounty of $2500.
+                    </p>
+
+                    <p class="lead">
+                        Just like a detective drawn to a puzzling case, I embarked on a journey that led me to uncover the hidden threat of SQL injection. In this blog post, I invite you to join me in reliving the moments of my discovery, a tale that showcases the power of curiosity, ethical hacking, and the profound impact it can have on the digital world. As the story unfolds, you’ll witness how a few lines of malicious code turned into a triumph of cybersecurity, underlining the importance of vigilance in an age where information is both our asset and our vulnerability.
+                                    </p>
+
+                    <h2>The Journey of Discovery: Unraveling SQL Injection</h2>
+                    <p class="lead">
+                        In the vast expanse of the digital landscape, where websites serve as gateways to boundless information, lies a hidden realm of vulnerabilities — a realm I stumbled upon during a seemingly ordinary web exploration. Little did I know that this journey would lead me to unveil a hidden threat known as SQL injection, a discovery that would later earn me a reward of $2500.
+                    </p>
+<p class="lead">My journey began when I encountered a specific search query parameter, <b>“search=,”</b> on a website. With a spark of curiosity, I realized that this parameter could potentially be a gateway to something more intriguing — something that lay beneath the surface. Eager to explore, I started with the basics, attempting common SQL injection payloads, but to no avail.
+                    </p>
+
+                    <h3>Initial Testing Phase</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>MySQL Blind (Time Based) SQL Injection Payload</span>
+                            <button class="copy-btn" data-code="code-1">
+                                <i data-lucide="copy"></i>
+                            </button>
+                        </div>
+                        <pre><code class="language-sql" id="code-1">
+                            0'XOR(if(now()=sysdate(),sleep(5),0))XOR'Z
+                            0'XOR(if(now()=sysdate(),sleep(5*1),0))XOR'Z
+                            if(now()=sysdate(),sleep(5),0)
+                            'XOR(if(now()=sysdate(),sleep(5),0))XOR'
+                            'XOR(if(now()=sysdate(),sleep(5*1),0))OR'
+                            0'|(IF((now())LIKE(sysdate()),SLEEP(1),0))|'Z
+                            0'or(now()=sysdate()&&SLEEP(1))or'Z
+                            if(now()=sysdate(),sleep(5),0)/"XOR(if(now()=sysdate(),sleep(5),0))OR"/
+                            if(now()=sysdate(),sleep(5),0)/*'XOR(if(now()=sysdate(),sleep(5),0))OR'"XOR(if(now()=sysdate(),sleep(5),0))OR"*/
+                            if(now()=sysdate(),sleep(5),0)/'XOR(if(now()=sysdate(),sleep(5),0))OR'"XOR(if(now()=sysdate(),sleep(5),0) and 5=5)"/
+                            if(1=1,sleep(5),0)/*'XOR(if(1=1,sleep(5),0))OR'"XOR(if(1=1,sleep(5),0))OR"*/
+                            if(1337=1337,exp(~(1)),0)/*'XOR(if(1337=1337,exp(~(1)),0))OR'"XOR(if(1337=1337,sleep(5),0))OR"*/
+                            SLEEP(5)/*' or SLEEP(5) or '" or SLEEP(5) or "*/
+                            %2c(select%5*%5from%5(select(sleep(5)))a)
+                            (select(0)from(select(sleep(5)))v)
+                            (SELECT SLEEP(5))
+                            '%2b(select*from(select(sleep(5)))a)%2b'
+                            (select*from(select(sleep(5)))a)
+                            1'%2b(select*from(select(sleep(5)))a)%2b'
+                            ,(select * from (select(sleep(5)))a)
+                            desc%2c(select*from(select(sleep(5)))a)
+                            -1+or+1%3d((SELECT+1+FROM+(SELECT+SLEEP(5))A))
+                            -1+or+1=((SELECT+1+FROM+(SELECT+SLEEP(5))A))
+                            (SELECT * FROM (SELECT(SLEEP(5)))YYYY)
+                            (SELECT * FROM (SELECT(SLEEP(5)))YYYY)#
+                            (SELECT * FROM (SELECT(SLEEP(5)))YYYY)--
+                            '+(select*from(select(sleep(5)))a)+'
+                            (select(0)from(select(sleep(5)))v)%2f'+(select(0)from(select(sleep(5)))v)+'"
+                            (select(0)from(select(sleep(5)))v)%2f*'+(select(0)from(select(sleep(5)))v)+'"+(select(0)from(select(sleep(5)))v)+"*%2f
+                            (select(0)from(select(sleep(5)))v)/*'+(select(0)from(select(sleep(5)))v)+'"+(select(0)from(select(sleep(5)))v)+"*/
+                            ',''),/*test*/%26%26%09sLeEp(5)%09--+</code></pre>
+                    </div>
+
+                    <p class="lead">
+                        As I encountered roadblocks, my determination only grew stronger. I recalled tales of “blind” SQL injection — a more elusive technique that required patience and precision. Armed with this knowledge, I delved deeper into the art of crafting payloads that could reveal the database’s inner workings. Hours turned into days as I experimented, each attempt guiding me closer to understanding the system’s vulnerabilities.
+</p>
+    <p class="lead">                    Then, it happened — an ingenious payload, like a key turning in a lock, granted me access to the system. The thrill of discovery surged through me as I realized I had successfully confirmed the presence of a SQL injection vulnerability. To document this pivotal moment, I captured snapshots of the request and response times, creating a digital record of my triumph.                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Successful Payload</span>
+                            <button class="copy-btn" data-code="code-2">
+                                <i data-lucide="copy"></i>
+                            </button>
+                        </div>
+                        <pre><code class="language-sql" id="code-2">'and(select*from(select+sleep(10))a/**/union/**/select+1)='</code></pre>
+                    </div>
+
+                    <h2>Exploitation and Discovery</h2>
+                    <p class="lead">
+                        Wanting to delve even deeper, I sought tools that could aid in exploiting this newfound vulnerability. Initially, I turned to the well-regarded SQL injection testing tool, SQLMap. Armed with the captured request, I set SQLMap on its course. However, for reasons unknown, SQLMap encountered hurdles and was unable to fully exploit the vulnerability.
+
+                       </p><p class="lead"> Determined not to be deterred, I explored alternative avenues. Enter “ghauri,” a tool designed to wield the power of SQL injection for ethical hackers. Armed with the captured request file, I crafted a command: “ghauri -r request.txt — dbs.” With a sense of anticipation, I executed the command, and lo and behold, the names of the databases residing within the system unveiled themselves.
+                        
+                    </p><p class="lead"> Like a modern-day explorer, I embarked on a journey through the databases, navigating uncharted territories within the digital landscape. I methodically enumerated tables and columns, revealing the intricate architecture that held valuable data.                    </p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Ghauri Command</span>
+                            <button class="copy-btn" data-code="code-3">
+                                <i data-lucide="copy"></i>
+                            </button>
+                        </div>
+                        <pre><code class="language-bash" id="code-3">ghauri -r request.txt --dbs</code></pre>
+                    </div>
+
+                    <!-- SQL Injection Visualization -->
+                    <div class="blog-image-container">
+                        <img 
+                            src="https://miro.medium.com/v2/resize:fit:750/format:webp/0*9wS71DA7rs39znAt.png" 
+                            alt="SQL Injection Attack Visualization" 
+                            class="blog-image"
+                        >
+                        <p class="image-caption">Visual representation of SQL Injection attack flow</p>
+                    </div>
+                    <p class="lead">As my understanding deepened, I recognized the gravity of the impact a successful SQL injection attack could have had — sensitive data exposed, user trust eroded. The importance of responsible disclosure weighed heavily on me.
+
+                        Guided by ethics, I compiled my findings and prepared to share them with the organization responsible for the vulnerable website. It was a pivotal moment — an opportunity to both protect user data and contribute to a safer online ecosystem.
+                        
+                        The organization’s response was not only appreciative but also generous. They recognized the significance of my discovery and rewarded my efforts with a $2500 bounty — a gesture that affirmed the value of ethical hacking and the impact it can have.
+                        
+                        Through this journey, I learned that in the interconnected world of technology, curiosity and persistence can lead to profound discoveries. My experience underscores the vital role ethical hackers play in safeguarding the digital realm, one vulnerability at a time. Armed with knowledge, tools, and a sense of responsibility, we can collectively fortify our online environments and ensure a safer digital future.</p>
+
+                    <h2>Steps to Reproduce</h2>
+                    <ol class="steps-list">
+                        <li>
+                            <h3>Capturing the Target</h3>
+                           <p class="lead"> The journey began with a search query — a seemingly innocuous parameter, “search=,” on the target website. With the understanding that this parameter could potentially harbor vulnerabilities, I embarked on the first step: capturing the HTTP request.
+                        </p><p class="lead">
+                            By intercepting the request using tools like Burp Suite or browser developer tools, I secured a snapshot of the communication between my browser and the website’s server. This snapshot was the key that unlocked the door to potential vulnerabilities.</p></li>
+                        </p><p class="lead"><li>
+                            <h3>Crafting the Payload</h3>
+                            <p class="lead">With the request in hand, I ventured into the world of payloads. Blind SQL injection demands precision — each payload meticulously designed to provoke discernible responses from the server.
+
+                                </p><p class="lead">Based on my knowledge and experience, I crafted a blind SQL injection payload — a string of characters that, when injected into the parameter, would prompt the server to reveal subtle cues in its responses.
+                            </p> </li>
+                        <li>
+                            <h3>Confirming the Vulnerability</h3>
+                            <p class="lead">The heart of the process lay in the responses — the way the server reacted to my payloads. As I injected different variations of the payload, I watched for changes in the site’s behavior. These changes were the breadcrumbs guiding me toward confirmation.</p>
+                                <p class="lead">Acknowledgment of the payload’s impact signaled the presence of a vulnerability. In this case, a successful payload would indicate that the server was processing the SQL injection, setting the stage for deeper exploration.</p>
+                            </li>
+                        <li>
+                            <h3>Documenting the Triumph</h3>
+                            <p class="lead">With vulnerability confirmed, I documented the journey. I saved the request, complete with the successful payload, into a file. This record would serve as a reference point — a tangible piece of evidence that encapsulated the moment of discovery.</p>
+                        </li>
+                        <li>
+                            <h3>Leveraging Ghauri</h3>
+                            <p class="lead">But the journey didn’t stop at vulnerability confirmation; it evolved into exploitation. While tried-and-true tools like SQLMap faltered in this case, the innovative spirit of ethical hacking led me to Ghauri — a tool that promised a fresh approach.
+
+                            </p><p class="lead">With the captured request file in hand, I invoked Ghauri’s power through a command: “ghauri -r request.txt — dbs.” The command, like a key turning in a lock, opened the doors to the database realm.</p></li>
+                    
+                        </li>
+                        <li>
+                            <h3>Unveiling the Databases</h3>
+                            <p class="lead">The databases unfurled before me, each with its own secrets and stories. This moment was akin to lifting the veil on a trove of information — names that hinted at the breadth of data residing within.
+
+                            </p><p class="lead">As I navigated the databases, I recognized that this was only the beginning — an entry point to a labyrinth of data, tables, and columns that held the potential to transform understanding into insight.</p></li>
+                    
+                        </li>
+                        <li>
+                            <h3>Reporting and Recognition</h3>
+                            <p class="lead">In this journey, discovery wasn’t the final destination; responsibility followed closely. Armed with knowledge, I compiled my findings into a comprehensive report. I reached out to the organization behind the website, prepared to share both the vulnerability and the steps to remedy it.
+
+                            </p><p class="lead">Their response was not only appreciative but also rewarding. A bounty of $2500 served as recognition for my commitment to ethical hacking, the responsible disclosure of vulnerabilities, and the potential impact of my actions.</p></li>
+                    
+                        </li>
+                                          
+                    
+                    
+                    </ol>
+
+                    <h2>Conclusion</h2>
+                    <p class="lead">
+                        As ethical hackers, we’re the guardians of the digital realm, charting a path of vigilance and knowledge. From crafting payloads to leveraging tools, our actions shape the online landscape, fortifying it against threats.
+</p><p class="lead">
+                        Let this journey remind us that with each discovery, we contribute to a safer digital future — one vulnerability at a time. Together, we ensure that technology remains a force for progress, innovation, and trust.
+                    </p><p class="lead">   
+                        As the digital horizon expands, let our commitment to ethical hacking remain unwavering. For in our pursuit lies the promise of a more secure, resilient, and interconnected world.
+                    </p><p class="lead">  
+                        Step forward, for the journey continues — where lines of code become opportunities, vulnerabilities become lessons, and the path to a safer digital world is illuminated by our collective dedication.                    </p>
+
+                    <div class="connect-section">
+                        <h3>Connect With Me</h3>
+                        <div class="social-links">
+                            <a href="https://balvant.in" class="social-link-card" target="_blank">
+                                <i data-lucide="globe" class="icon-cyan"></i>
+                                <span>balvant.in</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/balvant-chavda/" class="social-link-card" target="_blank">
+                                <i data-lucide="linkedin" class="icon-cyan"></i>
+                                <span>balvant-chavda</span>
+                            </a>
+                            <a href="https://twitter.com/ba1van7" class="social-link-card" target="_blank">
+                                <i data-lucide="twitter" class="icon-cyan"></i>
+                                <span>@ba1van7</span>
+                            </a>
+                        </div>
+                     </div>
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section ultra-glass-morphic-bg">
+                    <h3>Share This Insight</h3>
+                    <div class="share-buttons">
+                        <button class="share-btn" onclick="shareOnTwitter()">
+                            <i data-lucide="twitter"></i>
+                        </button>
+                        <button class="share-btn" onclick="shareOnLinkedIn()">
+                            <i data-lucide="linkedin"></i>
+                        </button>
+                        <button class="share-btn" onclick="copyShareLink()">
+                            <i data-lucide="share-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="ultra-glass-morphic-bg">
+            <p class="lead">© 2024 Balvant Chavda. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-sql.min.js"></script>
+    <script src="../blog-post.js"></script>
+</body>
+</html> 
