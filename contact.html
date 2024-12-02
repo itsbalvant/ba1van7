@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Balvant Chavda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            color: #e5e7eb;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #22d3ee, #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(25, 25, 25, 0.3);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            color: #22d3ee;
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            color: #e5e7eb;
+            text-decoration: none;
+            display: block;
+            margin-top: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #22d3ee;
+        }
+
+        .contact-description {
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="ultra-glass-morphic-bg">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="animated-logo">
+                        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="shield-path" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22d3ee" stroke-width="2"/>
+                            <path class="shield-check" d="M9 12l2 2 4-4" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <a href="/" class="logo-link">
+                        <h1>Balvant Chavda</h1>
+                    </a>
+                </div>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/#blog">Blog</a>
+                    <a href="/about.html">About</a>
+                    <a href="/contact.html" class="active">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="contact-container ultra-glass-morphic-bg">
+            <div class="contact-header">
+                <h1 class="contact-title">Get in Touch</h1>
+                <p class="contact-description">
+                    Feel free to reach out through any of these platforms
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i data-lucide="twitter" class="contact-icon"></i>
+                    <h3>Twitter</h3>
+                    <p class="contact-description">Follow me for security updates and insights</p>
+                    <a href="https://twitter.com/ba1van7" class="contact-link" target="_blank">@ba1van7</a>
+                </div>
+
+                <div class="contact-card">
+                    <i data-lucide="linkedin" class="contact-icon"></i>
+                    <h3>LinkedIn</h3>
+                    <p class="contact-description">Connect with me professionally</p>
+                    <a href="https://www.linkedin.com/in/balvant-chavda/" class="contact-link" target="_blank">balvant-chavda</a>
+                </div>
+
+                <div class="contact-card">
+                    <i data-lucide="globe" class="contact-icon"></i>
+                    <h3>Website</h3>
+                    <p class="contact-description">Visit my personal website</p>
+                    <a href="https://balvant.in" class="contact-link" target="_blank">balvant.in</a>
+                </div>
+
+                <div class="contact-card">
+                    <i data-lucide="mail" class="contact-icon"></i>
+                    <h3>Email</h3>
+                    <p class="contact-description">Send me an email directly</p>
+                    <a href="mailto:me@balvant.in" class="contact-link">contact@balvant.in</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="ultra-glass-morphic-bg">
+            <p>© 2024 Balvant Chavda. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

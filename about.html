@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Balvant Chavda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            color: #e5e7eb;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #22d3ee, #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-content {
+            line-height: 1.8;
+            color: #9ca3af;
+        }
+
+        .skills-section {
+            margin-top: 3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(25, 25, 25, 0.3);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .skill-icon {
+            color: #22d3ee;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievements-section {
+            margin-top: 3rem;
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(25, 25, 25, 0.3);
+            border-radius: 0.75rem;
+        }
+
+        .achievement-icon {
+            color: #22d3ee;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="ultra-glass-morphic-bg">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="animated-logo">
+                        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="shield-path" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22d3ee" stroke-width="2"/>
+                            <path class="shield-check" d="M9 12l2 2 4-4" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <a href="/" class="logo-link">
+                        <h1>Balvant Chavda</h1>
+                    </a>
+                </div>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/#blog">Blog</a>
+                    <a href="/about.html" class="active">About</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="about-container ultra-glass-morphic-bg">
+            <div class="about-header">
+                <h1 class="about-title">About Me</h1>
+                <p class="about-content">
+                    I'm a passionate Security Researcher and Bug Bounty Hunter dedicated to making the digital world safer. 
+                    With years of experience in identifying and responsibly disclosing vulnerabilities across various platforms, 
+                    I help organizations strengthen their security posture and protect user data.
+                </p>
+            </div>
+
+            <div class="skills-section">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i data-lucide="shield" class="skill-icon"></i>
+                        <h3>Web Security</h3>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="smartphone" class="skill-icon"></i>
+                        <h3>Mobile Security</h3>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="bug" class="skill-icon"></i>
+                        <h3>Bug Bounty</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h2>Achievements</h2>
+                <ul class="achievement-list">
+                    <li class="achievement-item">
+                        <i data-lucide="trophy" class="achievement-icon"></i>
+                        <span>Multiple Hall of Fame recognitions from major tech companies</span>
+                    </li>
+                    <li class="achievement-item">
+                        <i data-lucide="award" class="achievement-icon"></i>
+                        <span>Discovered critical vulnerabilities in enterprise applications</span>
+                    </li>
+                    <li class="achievement-item">
+                        <i data-lucide="target" class="achievement-icon"></i>
+                        <span>Contributed to securing millions of users' data</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="ultra-glass-morphic-bg">
+            <p>© 2024 Balvant Chavda. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html> 
