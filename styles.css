@@ -839,4 +839,152 @@ footer p {
 .hero-tag:hover::before {
     width: 300px;
     height: 300px;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 768px) {
+    /* General padding adjustment */
+    body {
+        padding: 0.75rem;
+    }
+
+    /* Header adjustments */
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.25rem;
+    }
+
+    /* Hero section adjustments */
+    .hero-title {
+        font-size: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-quote {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    /* Terminal effect adjustments */
+    .terminal-effect {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        padding: 0 0.5rem;
+    }
+
+    /* Tags adjustments */
+    .hero-tags {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .hero-tag {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+        white-space: nowrap;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    /* Companies section adjustments */
+    .company-card {
+        width: 140px;
+        padding: 1rem;
+    }
+
+    .company-logo {
+        width: 120px;
+        height: 50px;
+        padding: 0.75rem;
+    }
+
+    /* Blog grid adjustments */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .blog-post {
+        max-width: 100%;
+    }
+
+    .post-image {
+        height: 180px;
+    }
+
+    /* Category filter adjustments */
+    .category-filter {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .category-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        flex: 1 1 auto;
+        min-width: calc(50% - 1rem);
+        text-align: center;
+    }
+
+    /* Floating icons adjustments */
+    .floating-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Binary rain adjustments */
+    .binary-rain {
+        font-size: 12px;
+    }
+
+    /* Matrix background adjustments */
+    .matrix-bg {
+        opacity: 0.05;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .company-card {
+        width: 130px;
+    }
+    
+    .company-logo {
+        width: 110px;
+        height: 45px;
+    }
+    
+    .category-btn {
+        min-width: 100%;
+    }
 } 
