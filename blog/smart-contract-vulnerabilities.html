@@ -1,0 +1,321 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Vulnerabilities in Smart Contracts - Cybersecurity Researcher</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap">
+    <style>
+        /* Blog post specific styles */
+        .post-header {
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(16, 16, 16, 0.95), rgba(16, 16, 16, 0.8)), url('../images/blog-header.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 2rem;
+        }
+        
+        .post-meta {
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .post-category {
+            display: inline-block;
+            margin-right: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .post-date {
+            display: inline-block;
+        }
+        
+        .post-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 4rem;
+        }
+
+        .post-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .post-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .post-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .post-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            color: var(--secondary-color);
+        }
+        
+        .post-content ul, .post-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .post-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .post-content ul li::before {
+            content: "▹";
+            position: absolute;
+            left: -1.3em;
+            color: var(--secondary-color);
+            font-size: 1.2em;
+        }
+        
+        .post-content code {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            color: var(--accent-color);
+        }
+        
+        .code-block {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .post-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        
+        .back-to-blog:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+        }
+        
+        .back-to-blog i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Balvant.eth</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../contact.html" class="contact-btn">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <section class="post-content">
+        <div class="container">
+            <h1>Common Vulnerabilities in Smart Contracts</h1>
+            <div class="post-meta">
+                <span class="post-category">Web3 Security</span>
+                <span class="post-date">Published on March 15, 2023</span>
+            </div>
+            
+            <p>Smart contracts are self-executing programs that run on blockchain networks, automating agreements between parties without the need for intermediaries. While they offer numerous advantages in terms of transparency, reliability, and reduced transaction costs, they also introduce unique security challenges. Due to the immutable nature of blockchain, vulnerabilities in smart contracts can lead to irreversible financial losses.</p>
+            
+            <p>In this article, we'll explore the most common vulnerabilities found in smart contracts and discuss effective mitigation strategies to help developers build more secure decentralized applications.</p>
+            
+            <h2>1. Reentrancy Attacks</h2>
+            
+            <p>Reentrancy vulnerabilities occur when external contract calls are allowed to make new calls to the calling contract before the first execution is complete. This can lead to unexpected behavior and potentially drain funds.</p>
+            
+            <h3>Example Vulnerable Code:</h3>
+            
+            <div class="code-block">
+                <pre>
+// VULNERABLE: Reentrancy example
+function withdraw(uint _amount) public {
+    require(balances[msg.sender] >= _amount);
+    
+    // This external call can be hijacked
+    (bool success, ) = msg.sender.call{value: _amount}("");
+    require(success);
+    
+    // State update occurs after external call
+    balances[msg.sender] -= _amount;
+}</pre>
+            </div>
+            
+            <h3>Mitigation Strategies:</h3>
+            
+            <ul>
+                <li>Follow the Checks-Effects-Interactions pattern: complete all internal work (state changes) before making external calls</li>
+                <li>Use reentrancy guards to prevent nested calls</li>
+                <li>Implement mutex locks for functions that should not be called recursively</li>
+            </ul>
+            
+            <h3>Secure Implementation:</h3>
+            
+            <div class="code-block">
+                <pre>
+// SECURE: Reentrancy-resistant code
+function withdraw(uint _amount) public {
+    require(balances[msg.sender] >= _amount);
+    
+    // State update occurs before external call
+    balances[msg.sender] -= _amount;
+    
+    // External call happens after state changes
+    (bool success, ) = msg.sender.call{value: _amount}("");
+    require(success);
+}</pre>
+            </div>
+            
+            <h2>2. Integer Overflow and Underflow</h2>
+            
+            <p>In many programming languages, integers have minimum and maximum values. When a calculation exceeds these limits, it "wraps around," leading to unexpected values. This is particularly dangerous in financial applications where precision is crucial.</p>
+            
+            <h3>Example Vulnerable Code:</h3>
+            
+            <div class="code-block">
+                <pre>
+// VULNERABLE: Integer overflow example
+function transfer(address _to, uint256 _value) public returns (bool success) {
+    require(balances[msg.sender] >= _value);
+    
+    balances[msg.sender] -= _value;  // No underflow protection
+    balances[_to] += _value;         // No overflow protection
+    
+    return true;
+}</pre>
+            </div>
+            
+            <h3>Mitigation Strategies:</h3>
+            
+            <ul>
+                <li>Use SafeMath libraries for arithmetic operations</li>
+                <li>In Solidity 0.8.0 and above, overflow/underflow checks are built-in</li>
+                <li>Implement range checks for critical inputs</li>
+            </ul>
+            
+            <h2>3. Access Control Vulnerabilities</h2>
+            
+            <p>Improper access control can allow unauthorized users to execute sensitive functions or modify critical data. These vulnerabilities often result from missing or incorrectly implemented authentication checks.</p>
+            
+            <h3>Common Issues:</h3>
+            
+            <ul>
+                <li>Missing function visibility modifiers</li>
+                <li>Weak access control checks</li>
+                <li>Improper validation of caller permissions</li>
+            </ul>
+            
+            <h3>Mitigation Strategies:</h3>
+            
+            <ul>
+                <li>Implement proper function visibility (public, private, external, internal)</li>
+                <li>Use multi-signature requirements for critical operations</li>
+                <li>Implement role-based access control systems</li>
+                <li>Always validate the caller's permissions before executing sensitive operations</li>
+            </ul>
+            
+            <h2>4. Oracle Manipulation</h2>
+            
+            <p>Smart contracts often rely on oracles to obtain external data. If these oracles can be manipulated or if a contract relies on a single centralized data source, it can lead to contract exploitation.</p>
+            
+            <h3>Mitigation Strategies:</h3>
+            
+            <ul>
+                <li>Use decentralized oracle networks instead of single oracles</li>
+                <li>Implement time-weighted average prices rather than spot prices</li>
+                <li>Add circuit breakers for extreme price movements</li>
+                <li>Consider using trusted execution environments for sensitive oracle operations</li>
+            </ul>
+            
+            <h2>5. Denial of Service (DoS)</h2>
+            
+            <p>Smart contracts can be vulnerable to DoS attacks that prevent legitimate users from using the contract. Common patterns include gas limit manipulation, unexpected reverts, and unbounded operations.</p>
+            
+            <h3>Mitigation Strategies:</h3>
+            
+            <ul>
+                <li>Avoid loops with unbounded iterations</li>
+                <li>Use pull payment patterns instead of push payments</li>
+                <li>Set proper gas limits for external calls</li>
+                <li>Implement circuit breakers for emergency situations</li>
+            </ul>
+            
+            <h2>Conclusion</h2>
+            
+            <p>Security in smart contracts requires a proactive approach and a deep understanding of blockchain-specific vulnerabilities. By following secure coding practices, implementing proper testing procedures, and conducting thorough audits, developers can significantly reduce the risk of vulnerabilities in their smart contracts.</p>
+            
+            <p>As the Web3 ecosystem continues to evolve, staying updated on the latest security practices and emerging threats is essential for building robust and secure decentralized applications.</p>
+            
+            <div class="post-nav">
+                <a href="../index.html#blog" class="back-to-blog"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Balvant Chavda. All rights reserved.</p>
+            <p></p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
+--> 
