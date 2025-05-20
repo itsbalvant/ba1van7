@@ -1,25 +1,139 @@
-// Mobile Menu Toggle
+// Mobile Menu Toggle and Smooth Scrolling
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle with enhanced functionality
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('nav ul');
+    const body = document.body;
     
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+    // Initialize menu state
+    let isMenuOpen = false;
+    
+    // Toggle menu function
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+            // Open menu
+            nav.style.display = 'flex';
+            body.classList.add('menu-open');
+            
+            // Force reflow to enable transition
+            void nav.offsetHeight;
+            
+            nav.classList.add('active');
+            menuToggle.classList.add('active');
+            
+            // Prevent body scroll when menu is open
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Close menu
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            body.classList.remove('menu-open');
+            
+            // Re-enable body scroll when menu is closed
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            
+            // Reset menu state after transition
+            setTimeout(() => {
+                if (!menuToggle.classList.contains('active')) {
+                    nav.style.display = 'none';
+                }
+            }, 300);
+        }
+    }
+    
+    // Initialize menu
+    function initMenu() {
+        if (menuToggle && nav) {
+            // Set initial state
+            nav.style.display = 'none';
+            
+            // Toggle menu on button click
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
+            
+            // Close menu when clicking on nav links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+            });
+            
+            // Handle window resize
+            function handleResize() {
+                if (window.innerWidth > 768) {
+                    // Reset mobile menu on desktop
+                    nav.style.display = '';
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = '';
+                    isMenuOpen = false;
+                } else if (!isMenuOpen) {
+                    // Ensure menu is hidden on mobile if not open
+                    nav.style.display = 'none';
+                }
+            }
+            
+            window.addEventListener('resize', handleResize);
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !nav.contains(e.target) && e.target !== menuToggle) {
+                    toggleMenu();
+                }
+            });
+            
+            // Initialize
+            handleResize();
+        }
+    }
+    
+    // Initialize smooth scrolling
+    function initSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (isMenuOpen) {
+                        toggleMenu();
+                    }
+                    
+                    // Calculate the target position with header offset
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     }
     
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-            }
-        });
-    });
+    // Initialize all functions
+    initMenu();
+    initSmoothScrolling();
+    
+    // Add loading class to body for initial page load animation
+    document.body.classList.add('page-loaded');
     
     // Hero section animations
     
@@ -671,4 +785,64 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     initHeroAnimations();
+    
+    // Blog category filtering
+    function initBlogFiltering() {
+        // Get all filter links
+        const filterLinks = document.querySelectorAll('.filter-link');
+        
+        // Add click event listeners to filter links
+        filterLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the filter value from data-filter attribute
+                const filterValue = this.getAttribute('data-filter');
+                
+                // If already on blog page, filter the posts
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                    // Get all blog cards
+                    const blogCards = document.querySelectorAll('.blog-card');
+                    
+                    // Show/hide cards based on filter
+                    blogCards.forEach(card => {
+                        const categories = card.getAttribute('data-category') || '';
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update active filter button
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to blog section
+                    const blogSection = document.getElementById('blog');
+                    if (blogSection) {
+                        blogSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    // If not on home page, redirect to home page with filter parameter
+                    window.location.href = `index.html?filter=${filterValue}#blog`;
+                }
+            });
+        });
+        
+        // Check for filter in URL on page load
+        const urlParams = new URLSearchParams(window.location.search);
+        const filterParam = urlParams.get('filter');
+        if (filterParam) {
+            const filterLink = document.querySelector(`.filter-link[data-filter="${filterParam}"]`);
+            if (filterLink) {
+                filterLink.click();
+            }
+        }
+    }
+    
+    // Initialize blog filtering
+    initBlogFiltering();
 }); 

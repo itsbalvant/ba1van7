@@ -98,28 +98,28 @@
 </head>
 <body>
     <div class="min-h-screen">
-        <!-- Header -->
-        <header class="ultra-glass-morphic-bg">
-            <div class="header-content">
-                <div class="logo-container">
-                    <div class="animated-logo">
-                        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="shield-path" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22d3ee" stroke-width="2"/>
-                            <path class="shield-check" d="M9 12l2 2 4-4" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <a href="/" class="logo-link">
-                        <h1>Balvant Chavda</h1>
-                    </a>
-                </div>
+        <!-- Header with Avatar -->
+        <header>
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Balvant<span class="domain">.IN</span></span>
+                </a>
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/#blog">Blog</a>
-                    <a href="/about.html">About</a>
-                    <a href="/contact.html">Contact</a>
+                    <ul>
+                        <li><a href="index.html#blog"><span><i class="fas fa-blog"></i> Blog</span></a></li>
+                        <li><a href="index.html#hall-of-fame"><span><i class="fas fa-trophy"></i> Hall of Fame</span></a></li>
+                        <li><a href="projects.html"><span><i class="fas fa-code-branch"></i> Projects</span></a></li>
+                        <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane"></i> Contact Me</span></a></li>
+                    </ul>
                 </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </header>
+        
+        <!-- Add space for fixed header -->
+        <div style="height: 80px;" class="header-spacer"></div>
 
         <div class="resume-container ultra-glass-morphic-bg">
             <h1 class="resume-title">Resume</h1>
@@ -211,10 +211,12 @@
 
         <!-- Footer -->
         <footer class="ultra-glass-morphic-bg">
-            <p>© 2024 Balvant Chavda. All Rights Reserved.</p>
+            <p> 2024 Balvant Chavda. All Rights Reserved.</p>
         </footer>
     </div>
 
+    <!-- Add your scripts here -->
+    <script src="js/load-header.js"></script>
     <script>
         lucide.createIcons();
     </script>
