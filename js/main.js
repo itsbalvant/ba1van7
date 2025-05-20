@@ -7,9 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
     let isMenuOpen = false;
     
-    // Create and insert menu overlay
+    // Create menu overlay
     const menuOverlay = document.createElement('div');
     menuOverlay.className = 'menu-overlay';
+    // Force hidden state on page load
+    menuOverlay.classList.remove('active');
+    menuOverlay.style.display = 'none';
+    menuOverlay.style.opacity = '0';
+    menuOverlay.style.visibility = 'hidden';
     document.body.insertBefore(menuOverlay, document.body.firstChild);
     
     // Set initial ARIA attributes
@@ -22,59 +27,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle menu function
     function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        
-        // Update ARIA attributes
-        menuToggle.setAttribute('aria-expanded', isMenuOpen ? 'true' : 'false');
-        nav.setAttribute('aria-hidden', isMenuOpen ? 'false' : 'true');
-        
         if (isMenuOpen) {
-            // Show elements first
-            nav.style.display = 'block';
-            menuOverlay.style.display = 'block';
-            
-            // Force reflow
-            void nav.offsetHeight;
-            
-            // Add active classes with requestAnimationFrame for smoother transitions
-            requestAnimationFrame(() => {
-                menuOverlay.classList.add('active');
-                nav.classList.add('active');
-                navList.classList.add('active');
-                menuToggle.classList.add('active');
-                body.classList.add('menu-open');
-                
-                // Lock scroll
-                document.documentElement.style.overflow = 'hidden';
-                document.body.style.overflow = 'hidden';
-                
-                // Focus management
-                const firstNavItem = nav.querySelector('a');
-                if (firstNavItem) firstNavItem.focus();
-            });
-        } else {
-            // Remove active classes
-            navList.classList.remove('active');
+            // Closing menu
             nav.classList.remove('active');
-            menuToggle.classList.remove('active');
             menuOverlay.classList.remove('active');
             body.classList.remove('menu-open');
-            
-            // Re-enable scroll
-            document.documentElement.style.overflow = '';
-            document.body.style.overflow = '';
-            
-            // Hide elements after transition
-            setTimeout(() => {
-                if (!isMenuOpen) {
-                    menuOverlay.style.display = 'none';
-                    nav.style.display = 'none';
-                }
-            }, 300); // Match transition duration in CSS
-            
-            // Return focus to menu toggle
-            menuToggle.focus();
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            nav.querySelector('ul').classList.remove('active');
+        } else {
+            // Opening menu
+            // Force reflow
+            void nav.offsetHeight;
+            nav.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.classList.add('menu-open');
+            menuToggle.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            // Show menu items immediately
+            requestAnimationFrame(() => {
+                nav.querySelector('ul').classList.add('active');
+            });
         }
+        isMenuOpen = !isMenuOpen;
     }
 
     // Initialize menu
@@ -102,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // Initialize immediately
+        setInitialState();
+        
         // Toggle menu on button click with debounce
         let isTransitioning = false;
         menuToggle.addEventListener('click', function(e) {
@@ -117,27 +95,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu when clicking on nav links
-        document.querySelectorAll('nav a').forEach(link => {
+        // Close menu immediately when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768 && !isTransitioning) {
-                    e.preventDefault();
-                    const target = this.getAttribute('href');
-                    isTransitioning = true;
-                    toggleMenu();
+                if (isMenuOpen) {
+                    // Close menu immediately
+                    nav.querySelector('ul').classList.remove('active');
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                    body.classList.remove('menu-open');
                     
-                    // Small delay before navigation to allow menu to close
-                    setTimeout(() => {
-                        if (target.startsWith('#')) {
-                            const targetElement = document.querySelector(target);
-                            if (targetElement) {
-                                targetElement.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        } else {
-                            window.location.href = target;
-                        }
-                        isTransitioning = false;
-                    }, 300);
+                    // Re-enable scroll
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = '';
+                    
+                    // Hide elements
+                    menuOverlay.style.display = 'none';
+                    nav.style.display = 'none';
+                    
+                    // Update state
+                    isMenuOpen = false;
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    nav.setAttribute('aria-hidden', 'true');
+                    
+                    // Return focus to menu toggle
+                    menuToggle.focus();
                 }
             });
         });
@@ -207,9 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        
-        // Initialize
-        setInitialState();
         
         // Add event listeners
         window.addEventListener('resize', handleResize);
