@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Books – Balvant Chavda</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Page wrapper */
+        .books-page { padding: 120px 0 80px; min-height: 100vh; background: var(--bg-color); }
+        .books-header { text-align: center; margin-bottom: 2rem; }
+        .books-header h1 { font-size: 2.4rem; margin-bottom: 0.8rem; background: linear-gradient(90deg, #fff, #b8f8e6, #00ffa3); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .books-subtitle { color: var(--text-color); max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+        /* Compact list */
+        .books-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        .book-item { background: var(--glass-surface); border: 1px solid var(--glass-border); border-radius: 12px; overflow: hidden; backdrop-filter: blur(var(--glass-blur)) saturate(160%); -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%); box-shadow: 0 10px 30px var(--glass-shadow); position: relative; }
+        .book-preview { display: flex; gap: 1rem; padding: 1rem; align-items: flex-start; cursor: pointer; transition: background 0.2s ease; }
+        .book-preview:hover { background: rgba(0, 255, 163, 0.04); }
+        .book-cover-small img { width: 80px; height: 120px; object-fit: cover; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .book-info { flex: 1; min-width: 0; }
+        .book-info h3 { font-size: 1.2rem; margin: 0 0 0.25rem; color: var(--light-text); }
+        .book-info h4 { font-size: 0.95rem; margin: 0 0 0.6rem; color: var(--secondary-color); font-style: italic; font-weight: 500; }
+        .book-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .book-category { background: rgba(0, 255, 163, 0.1); color: var(--secondary-color); padding: 0.2rem 0.6rem; border-radius: 14px; font-size: 0.75rem; font-weight: 600; }
+        .book-year { color: var(--text-color); font-size: 0.85rem; font-weight: 500; }
+        .book-summary-preview { color: var(--text-color); line-height: 1.5; opacity: 0.95; }
+        .expand-btn { background: transparent; border: 2px solid var(--secondary-color); color: var(--secondary-color); padding: 0.45rem 0.9rem; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 0.8rem; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); z-index: 1000; justify-content: center; align-items: center; padding: 1rem; }
+        .modal-content { background: var(--glass-surface); border: 1px solid var(--glass-border); border-radius: 14px; max-width: 820px; width: 100%; max-height: 90vh; overflow: auto; animation: fadeIn 0.2s ease; backdrop-filter: blur(var(--glass-blur-strong)) saturate(160%); -webkit-backdrop-filter: blur(var(--glass-blur-strong)) saturate(160%); box-shadow: 0 20px 60px var(--glass-shadow); }
+        .sheen { position:absolute; inset:0; border-radius: inherit; pointer-events:none; opacity:0; transition: opacity 0.2s ease; background: radial-gradient(600px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.25), transparent 60%); }
+        .book-item:hover .sheen { opacity: .35; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .modal-header h2 { margin: 0; font-size: 1.4rem; color: var(--light-text); }
+        .close-btn { background: transparent; border: none; color: var(--text-color); font-size: 1.25rem; cursor: pointer; padding: 0.4rem; border-radius: 50%; }
+        .close-btn:hover { background: rgba(255,255,255,0.08); color: var(--secondary-color); }
+        .modal-body { padding: 1.25rem; }
+        .modal-book-meta { display: flex; gap: 0.6rem; margin-bottom: 0.3rem; flex-wrap: wrap; }
+        .modal-category { background: var(--secondary-color); color: #000; padding: 0.2rem 0.6rem; border-radius: 14px; font-size: 0.75rem; font-weight: 700; }
+        .modal-year { color: var(--text-color); font-size: 0.9rem; font-weight: 600; }
+        .modal-author { color: var(--secondary-color); margin: 0.5rem 0 0.8rem; font-style: italic; }
+        .modal-summary, .modal-recommendation p { color: var(--text-color); line-height: 1.7; }
+        .modal-insights h4, .modal-recommendation h4 { color: var(--light-text); margin: 1rem 0 0.6rem; }
+        .modal-insights ul { margin: 0; padding-left: 1.1rem; }
+        .modal-insights li { margin: 0.4rem 0; }
+        .modal-quote { margin-top: 1.2rem; padding: 1rem; background: rgba(0,255,163,0.06); border-left: 3px solid var(--secondary-color); border-radius: 8px; }
+        .modal-longreview { margin-top: 1.2rem; }
+        .modal-longreview h4 { color: var(--light-text); margin: 0 0 0.6rem; }
+        .modal-longreview p { color: var(--text-color); line-height: 1.75; }
+
+        /* Generated fallback cover */
+        .cover-fallback { width: 80px; height: 120px; border-radius: 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); background:
+            radial-gradient(circle at 20% 20%, rgba(0,255,163,0.25), transparent 55%),
+            radial-gradient(circle at 80% 80%, rgba(255,0,228,0.2), transparent 55%),
+            linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.15));
+            border: 1px solid var(--glass-border);
+        }
+        .cover-fallback .cf-title { font-size: 0.62rem; color: #fff; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+        .cover-fallback .cf-author { font-size: 0.58rem; color: #b8f8e6; opacity: 0.9; }
+
+        @media (max-width: 576px) {
+            .book-preview { flex-direction: column; text-align: center; }
+            .book-cover-small img { width: 90px; height: 135px; margin: 0 auto; }
+        }
+
+        /* Filters */
+        .books-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1.2rem; }
+        .books-filter-btn { background: transparent; color: var(--text-color); border: 1px solid var(--glass-border); padding: 0.45rem 0.9rem; border-radius: 999px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+        .books-filter-btn:hover { background: rgba(0,255,163,0.08); border-color: var(--secondary-color); color: #fff; }
+        .books-filter-btn.active { background: var(--secondary-color); color: #000; border-color: var(--secondary-color); }
+    </style>
+</head>
+<body>
+    <div class="liquid-bg" aria-hidden="true">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="glow-overlay" aria-hidden="true"></div>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Balvant<span class="domain">.IN</span></span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html#blog"><span><i class="fas fa-blog" aria-hidden="true"></i> Blog</span></a></li>
+                    <li><a href="books.html"><span><i class="fas fa-book" aria-hidden="true"></i> Books</span></a></li>
+                    <li><a href="index.html#hall-of-fame"><span><i class="fas fa-trophy" aria-hidden="true"></i> Hall of Fame</span></a></li>
+                    <!-- <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li> -->
+                    <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Me</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-spacer"></div>
+
+    <section class="books-page">
+        <div class="container">
+            <div class="books-header">
+                <h1>Books That Shaped My Thinking</h1>
+                <p class="books-subtitle">A compact list. Click “Read Review” to open my notes, takeaways, and why you should read it.</p>
+                <div class="books-filters" id="booksFilters">
+                    <button class="books-filter-btn active" data-filter="all">All</button>
+                    <button class="books-filter-btn" data-filter="philosophy">Philosophy</button>
+                    <button class="books-filter-btn" data-filter="finance">Finance</button>
+                    <button class="books-filter-btn" data-filter="literature">Literature</button>
+                    <button class="books-filter-btn" data-filter="science">Science</button>
+                    <button class="books-filter-btn" data-filter="investing">Investing</button>
+                </div>
+            </div>
+
+            <div class="books-list" id="booksList">
+                <!-- Psychology of Money -->
+                <div class="book-item" data-book="psychology-money" data-category="finance investing">
+                    <div class="book-preview" onclick="showReview('psychology-money')">
+                        <div class="book-cover-small">
+                            <img src="images/psychology-of-money.jpg" alt="The Psychology of Money book cover" loading="lazy">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Psychology & Finance</span>
+                                <span class="book-year">2020</span>
+                            </div>
+                            <h3>The Psychology of Money</h3>
+                            <h4>by Morgan Housel</h4>
+                            <p class="book-summary-preview">Timeless lessons on wealth, greed, and happiness—and why behavior beats IQ in money.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('psychology-money'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kafka on the Shore -->
+                <div class="book-item" data-book="kafka-shore" data-category="literature philosophy">
+                    <div class="book-preview" onclick="showReview('kafka-shore')">
+                        <div class="book-cover-small">
+                            <img src="images/kafka-on-the-shore.jpg" alt="Kafka on the Shore book cover" loading="lazy">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Literature & Philosophy</span>
+                                <span class="book-year">2002</span>
+                            </div>
+                            <h3>Kafka on the Shore</h3>
+                            <h4>by Haruki Murakami</h4>
+                            <p class="book-summary-preview">Surreal, dreamlike, and profound—on identity, fate, and choosing to walk through the storm.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('kafka-shore'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Brothers Karamazov -->
+                <div class="book-item" data-book="brothers-karamazov" data-category="literature philosophy">
+                    <div class="book-preview" onclick="showReview('brothers-karamazov')">
+                        <div class="book-cover-small">
+                            <img src="images/brothers-karamazov.jpg" alt="The Brothers Karamazov book cover" loading="lazy">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Classic Literature</span>
+                                <span class="book-year">1880</span>
+                            </div>
+                            <h3>The Brothers Karamazov</h3>
+                            <h4>by Fyodor Dostoevsky</h4>
+                            <p class="book-summary-preview">A deep dive into morality, faith, guilt, and responsibility—still relevant and challenging.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('brothers-karamazov'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principles -->
+                <div class="book-item" data-book="principles" data-category="finance investing">
+                    <div class="book-preview" onclick="showReview('principles')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781501124020-M.jpg?default=false" alt="Principles book cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Finance & Decision Making</span>
+                                <span class="book-year">2017</span>
+                            </div>
+                            <h3>Principles</h3>
+                            <h4>by Ray Dalio</h4>
+                            <p class="book-summary-preview">Operating principles for life and work—clear thinking, radical honesty, and systems.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('principles'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gunahon Ka Devta -->
+                <div class="book-item" data-book="gunahon-ka-devta" data-category="literature">
+                    <div class="book-preview" onclick="showReview('gunahon-ka-devta')">
+                        <div class="book-cover-small">
+                            <img src="https://rekhtabooks.com/cdn/shop/products/1UqJ91wZaMD8IgvfMPu_ZjpKEHGxpGGSe_36185a22-6091-49de-9bdb-f7e0388de821.jpg?v=1680017846" alt="Gunahon Ka Devta cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Hindi Literature</span>
+                                <span class="book-year">1949</span>
+                            </div>
+                            <h3>Gunahon Ka Devta</h3>
+                            <h4>by Dharamvir Bharati</h4>
+                            <p class="book-summary-preview">A tender portrayal of love, restraint, and social norms—timeless and moving.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('gunahon-ka-devta'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Master and Margarita -->
+                <div class="book-item" data-book="master-margarita" data-category="literature">
+                    <div class="book-preview" onclick="showReview('master-margarita')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780141180144-M.jpg?default=false" alt="The Master and Margarita cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Literature</span>
+                                <span class="book-year">1967</span>
+                            </div>
+                            <h3>The Master and Margarita</h3>
+                            <h4>by Mikhail Bulgakov</h4>
+                            <p class="book-summary-preview">Satire, magic, and morality collide—wild, inventive, unforgettable.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('master-margarita'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Book of Life -->
+                <div class="book-item" data-book="book-of-life" data-category="philosophy">
+                    <div class="book-preview" onclick="showReview('book-of-life')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780141004969-M.jpg?default=false" alt="The Book of Life cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Philosophy</span>
+                                <span class="book-year">1995</span>
+                            </div>
+                            <h3>The Book of Life</h3>
+                            <h4>by J. Krishnamurti</h4>
+                            <p class="book-summary-preview">Daily meditations on attention, freedom, and ending conflict within.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('book-of-life'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Beginning of Infinity -->
+                <div class="book-item" data-book="beginning-of-infinity" data-category="science philosophy">
+                    <div class="book-preview" onclick="showReview('beginning-of-infinity')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780143121350-M.jpg?default=false" alt="The Beginning of Infinity cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Science & Philosophy</span>
+                                <span class="book-year">2011</span>
+                            </div>
+                            <h3>The Beginning of Infinity</h3>
+                            <h4>by David Deutsch</h4>
+                            <p class="book-summary-preview">Optimistic epistemology: problems are solvable with better explanations.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('beginning-of-infinity'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Way of the White Clouds -->
+                <div class="book-item" data-book="white-clouds" data-category="philosophy">
+                    <div class="book-preview" onclick="showReview('white-clouds')">
+                        <div class="book-cover-small">
+                            <img src="https://archive.org/services/img/TheWayOfTheWhiteCloudsLamaAnagarikaGovinda/full/pct:200/0/default.jpg" alt="The Way of the White Clouds cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Spiritual Travel</span>
+                                <span class="book-year">1966</span>
+                            </div>
+                            <h3>The Way of the White Clouds</h3>
+                            <h4>by Anagarika Govinda</h4>
+                            <p class="book-summary-preview">A pilgrimage into Tibetan Buddhism—gentle, mystical, grounded.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('white-clouds'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Old Path White Clouds -->
+                <div class="book-item" data-book="old-path-white-clouds" data-category="philosophy">
+                    <div class="book-preview" onclick="showReview('old-path-white-clouds')">
+                        <div class="book-cover-small">
+                            <img src="https://m.media-amazon.com/images/I/71UDr0lcIQL.jpg" alt="Old Path White Clouds cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Buddhist Biography</span>
+                                <span class="book-year">1987</span>
+                            </div>
+                            <h3>Old Path White Clouds</h3>
+                            <h4>by Thich Nhat Hanh</h4>
+                            <p class="book-summary-preview">Life of the Buddha told with simplicity and compassion.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('old-path-white-clouds'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Factfulness -->
+                <div class="book-item" data-book="factfulness" data-category="science">
+                    <div class="book-preview" onclick="showReview('factfulness')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781250107817-M.jpg?default=false" alt="Factfulness cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Data & Worldview</span>
+                                <span class="book-year">2018</span>
+                            </div>
+                            <h3>Factfulness</h3>
+                            <h4>by Hans Rosling</h4>
+                            <p class="book-summary-preview">The world is getting better—if you look at the numbers right.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('factfulness'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- One Up On Wall Street -->
+                <div class="book-item" data-book="one-up-on-wall-street" data-category="investing finance">
+                    <div class="book-preview" onclick="showReview('one-up-on-wall-street')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780743200400-M.jpg?default=false" alt="One Up On Wall Street cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Investing</span>
+                                <span class="book-year">1989</span>
+                            </div>
+                            <h3>One Up On Wall Street</h3>
+                            <h4>by Peter Lynch</h4>
+                            <p class="book-summary-preview">Invest where you have an edge. Simple ideas, big outcomes.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('one-up-on-wall-street'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parallel Worlds -->
+                <div class="book-item" data-book="parallel-worlds" data-category="science">
+                    <div class="book-preview" onclick="showReview('parallel-worlds')">
+                        <div class="book-cover-small">
+                            <img src="https://m.media-amazon.com/images/I/71cNrvjN0mL._UF1000,1000_QL80_.jpg" alt="Parallel Worlds cover" loading="lazy" data-title="Parallel Worlds" data-author="Michio Kaku" onerror="fallbackCover(this)">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Physics & Cosmology</span>
+                                <span class="book-year">2004</span>
+                            </div>
+                            <h3>Parallel Worlds</h3>
+                            <h4>by Michio Kaku</h4>
+                            <p class="book-summary-preview">Multiverse ideas explained with clarity and imagination.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('parallel-worlds'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meditations -->
+                <div class="book-item" data-book="meditations" data-category="philosophy">
+                    <div class="book-preview" onclick="showReview('meditations')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780140449334-M.jpg?default=false" alt="Meditations cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Stoic Philosophy</span>
+                                <span class="book-year">180</span>
+                            </div>
+                            <h3>Meditations</h3>
+                            <h4>by Marcus Aurelius</h4>
+                            <p class="book-summary-preview">Field-notes for living well under pressure and uncertainty.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('meditations'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Almanack of Naval Ravikant -->
+                <div class="book-item" data-book="naval-almanack" data-category="investing philosophy">
+                    <div class="book-preview" onclick="showReview('naval-almanack')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781544514215-M.jpg?default=false" alt="The Almanack of Naval Ravikant cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Wealth & Happiness</span>
+                                <span class="book-year">2020</span>
+                            </div>
+                            <h3>The Almanack of Naval Ravikant</h3>
+                            <h4>by Eric Jorgenson</h4>
+                            <p class="book-summary-preview">Leverage, specific knowledge, compounding relationships—modern playbook.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('naval-almanack'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metamorphosis -->
+                <div class="book-item" data-book="metamorphosis" data-category="literature">
+                    <div class="book-preview" onclick="showReview('metamorphosis')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780553213690-M.jpg?default=false" alt="Metamorphosis cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Literature</span>
+                                <span class="book-year">1915</span>
+                            </div>
+                            <h3>Metamorphosis</h3>
+                            <h4>by Franz Kafka</h4>
+                            <p class="book-summary-preview">Absurdity and alienation—as relevant as ever to modern life.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('metamorphosis'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee Can Investing -->
+                <div class="book-item" data-book="coffee-can-investing" data-category="investing finance">
+                    <div class="book-preview" onclick="showReview('coffee-can-investing')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780670090457-M.jpg?default=false" alt="Coffee Can Investing cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Investing</span>
+                                <span class="book-year">2018</span>
+                            </div>
+                            <h3>Coffee Can Investing</h3>
+                            <h4>by Saurabh Mukherjea</h4>
+                            <p class="book-summary-preview">Buy quality, hold long, ignore noise—simple, disciplined framework.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('coffee-can-investing'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Subtle Art of Not Giving a F*ck -->
+                <div class="book-item" data-book="subtle-art" data-category="philosophy">
+                    <div class="book-preview" onclick="showReview('subtle-art')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780062457714-M.jpg?default=false" alt="The Subtle Art of Not Giving a F*ck cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Self-Improvement</span>
+                                <span class="book-year">2016</span>
+                            </div>
+                            <h3>The Subtle Art of Not Giving a F*ck</h3>
+                            <h4>by Mark Manson</h4>
+                            <p class="book-summary-preview">Focus on what matters; accept constraints; act with clarity.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('subtle-art'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yuval Noah Harari - Sapiens -->
+                <div class="book-item" data-book="sapiens" data-category="science philosophy">
+                    <div class="book-preview" onclick="showReview('sapiens')">
+                        <div class="book-cover-small">
+                            <img src="https://m.media-amazon.com/images/I/713jIoMO3UL.jpg" alt="Sapiens cover" loading="lazy" data-title="Sapiens" data-author="Yuval Noah Harari" onerror="fallbackCover(this)">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">History & Science</span>
+                                <span class="book-year">2011</span>
+                            </div>
+                            <h3>Sapiens</h3>
+                            <h4>by Yuval Noah Harari</h4>
+                            <p class="book-summary-preview">A sweeping story of humans—myths, cooperation, and consequences.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('sapiens'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yuval Noah Harari - Homo Deus -->
+                <div class="book-item" data-book="homo-deus" data-category="science philosophy">
+                    <div class="book-preview" onclick="showReview('homo-deus')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781784703936-M.jpg?default=false" alt="Homo Deus cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Futures & Tech</span>
+                                <span class="book-year">2015</span>
+                            </div>
+                            <h3>Homo Deus</h3>
+                            <h4>by Yuval Noah Harari</h4>
+                            <p class="book-summary-preview">Where we might be headed—dataism, bioengineering, new religions.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('homo-deus'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yuval Noah Harari - 21 Lessons -->
+                <div class="book-item" data-book="21-lessons" data-category="philosophy science">
+                    <div class="book-preview" onclick="showReview('21-lessons')">
+                        <div class="book-cover-small">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781787330672-M.jpg?default=false" alt="21 Lessons for the 21st Century cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                        </div>
+                        <div class="book-info">
+                            <div class="book-meta">
+                                <span class="book-category">Present & Policy</span>
+                                <span class="book-year">2018</span>
+                            </div>
+                            <h3>21 Lessons for the 21st Century</h3>
+                            <h4>by Yuval Noah Harari</h4>
+                            <p class="book-summary-preview">Clarity on jobs, truth, freedom in a noisy, accelerating world.</p>
+                            <button class="expand-btn" type="button" onclick="showReview('21-lessons'); event.stopPropagation();">Read Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Book Review</h2>
+                <button class="close-btn" type="button" aria-label="Close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script>
+        const bookReviews = {
+            'psychology-money': {
+                title: 'The Psychology of Money',
+                author: 'Morgan Housel',
+                year: '2020',
+                category: 'Psychology & Finance',
+                summary: 'This book completely shifted how I think about money, success, and risk. Financial outcomes are often about behavior, not spreadsheets.',
+                insights: [
+                    '<strong>Risk vs. Luck:</strong> You can do everything right and still get a bad result—and vice versa. Respect randomness.',
+                    '<strong>Tail events drive outcomes:</strong> A few big wins or mistakes shape most trajectories. Protect downside, stay in the game.',
+                    '<strong>Money is personal:</strong> Goals should match your values, not Twitter’s flex culture.'
+                ],
+                recommendation: 'If you work in tech/security and earn decently but want sanity around money, read this. No hype—just clear thinking about behavior and compounding.',
+                quote: '“The highest form of wealth is the ability to wake up every morning and say, I can do whatever I want today.”',
+                longReview: 'I didn’t expect this book to change how I make day‑to‑day choices, but it did. The biggest shift was realizing how “enough” is a moving target unless you pin it down. I stopped obsessing about optimizing every rupee and started optimizing for stress—less of it. Housel’s stories read like conversations with an older cousin who’s seen both bull runs and layoffs. After this, my default is: leave room for luck, build buffers, and don’t copy someone else’s playbook if you don’t share their goals or sleep cycle. Practical takeaway: automate boring good behavior and let compounding carry the drama.'
+            },
+            'kafka-shore': {
+                title: 'Kafka on the Shore',
+                author: 'Haruki Murakami',
+                year: '2002',
+                category: 'Literature & Philosophy',
+                summary: 'A hypnotic story where logic bends. It made me comfortable exploring problems that don’t have clean explanations—exactly like weird bugs.',
+                insights: [
+                    '<strong>Embrace the unknown:</strong> Not everything must be “explained” to be useful. Work with the evidence you have.',
+                    '<strong>Parallel realities:</strong> Systems expose different faces under different inputs. Don’t assume one “true” view.',
+                    '<strong>Adversity grows you:</strong> Comfort never made me a better researcher; tough problems did.'
+                ],
+                recommendation: 'Read this when you’re stuck in purely technical thinking. It reopens creativity and pattern recognition from a different angle.',
+                quote: '“Sometimes fate is like a small sandstorm that keeps changing directions.”',
+                longReview: 'Reading this felt like walking in a city at 3 AM—quiet, surreal, a little dangerous. I stopped trying to decode everything and just let the book happen to me. That surrender was the lesson. In security work, you often face logs and behaviors that don’t fit a neat model; you sit with them until the pattern emerges. Murakami trains that muscle. If you’ve been stuck in purely rational problem‑solving for months, this book rinses the mind. I finished it feeling more curious and slightly haunted—in the best way.'
+            },
+            'brothers-karamazov': {
+                title: 'The Brothers Karamazov',
+                author: 'Fyodor Dostoevsky',
+                year: '1880',
+                category: 'Classic Literature',
+                summary: 'Heavy but rewarding. It reframed how I think about responsibility, guilt, and intent—core to ethical disclosure and security work.',
+                insights: [
+                    '<strong>Moral ambiguity:</strong> Right/wrong often depends on intent and context. Be careful with judgment.',
+                    '<strong>Responsibility:</strong> If you can impact systems, you inherit duties—especially around disclosure.',
+                    '<strong>Human nature:</strong> Most “security issues” are human systems issues. Design for people.'
+                ],
+                recommendation: 'If you want a deeper mental model for ethics and trust in security, this book pays dividends.',
+                quote: '“The mystery of human existence lies not in just staying alive, but in finding something to live for.”',
+                longReview: 'Took me weeks. Worth it. It’s not “hard”; it’s heavy. What stayed with me wasn’t the plot—it was the feeling of standing at a moral crossroads with no signboards. As a researcher, intent matters: why report, when to hold back, how to communicate harm without panic. Dostoevsky doesn’t hand you answers; he forces you to sit with responsibility. I underlined The Grand Inquisitor like a checklist. If you read one “classic” to deepen your ethics, make it this. Pace yourself; let it work on you.'
+            }
+            ,
+            'principles': {
+                title: 'Principles',
+                author: 'Ray Dalio',
+                year: '2017',
+                category: 'Finance & Decision Making',
+                summary: 'Clear, testable principles to reduce bias and improve decision quality across life and work.',
+                insights: [
+                    '<strong>Radical honesty:</strong> Truth > ego. Feedback loops are a superpower.',
+                    '<strong>Believability weighting:</strong> Weigh opinions by track record, not volume.',
+                    '<strong>Systemize:</strong> Turn repeat decisions into algorithms you can refine.'
+                ],
+                recommendation: 'Great if you want to make fewer dumb decisions and align teams around explicit rules.',
+                quote: '“Pain + Reflection = Progress.”',
+                longReview: 'This book helped me stop treating decisions like lottery tickets. Writing down my own principles (even rough ones) let me catch myself repeating mistakes—especially when tired. The “believability” idea changed meetings: I now listen hardest to people who’ve shipped in the relevant domain, not the loudest voice. It’s not a “hype” book; it’s a manual. You’ll adopt 10% of it and still get 80% of the benefit.'
+            },
+            'gunahon-ka-devta': {
+                title: 'Gunahon Ka Devta',
+                author: 'Dharamvir Bharati',
+                year: '1949',
+                category: 'Hindi Literature',
+                summary: 'A quiet, aching story of love and restraint within social rules.',
+                insights: [
+                    'Love shaped by duty is still love—and often deeper.',
+                    'Silence communicates more than speeches when stakes are high.'
+                ],
+                recommendation: 'Read for tenderness, subtlety, and cultural texture.',
+                quote: 'A love that refuses spectacle still transforms lives.',
+                longReview: 'It reads like overhearing two people who never confess out loud, but everything leaks through their choices. In a world that rewards spectacle, this book reminds you that patience is a decision. I slowed down while reading it—and that pace lingered after I closed it. Not “plotty,” but it lives in you.'
+            },
+            'master-margarita': {
+                title: 'The Master and Margarita',
+                author: 'Mikhail Bulgakov',
+                year: '1967',
+                category: 'Literature',
+                summary: 'Surreal satire that exposes power, faith, and art with humor and magic.',
+                insights: [
+                    'Absurdity can reveal truths censorship cannot.',
+                    'Love and art outlast regimes.'
+                ],
+                recommendation: 'If you liked Kafka/Murakami, this is a wild essential.',
+                quote: '“Manuscripts don’t burn.”',
+                longReview: 'I laughed, then felt guilty for laughing, then laughed again. The book makes you complicit—and that’s the point. It’s rare to find something this playful that also stares at power so directly. If life feels too literal, this opens a trapdoor.'
+            },
+            'book-of-life': {
+                title: 'The Book of Life',
+                author: 'J. Krishnamurti',
+                year: '1995',
+                category: 'Philosophy',
+                summary: 'Short daily meditations to observe thought, fear, and conditioning directly.',
+                insights: [
+                    'Attention without choice changes the mind.',
+                    'Freedom begins when naming ends.'
+                ],
+                recommendation: 'Read one page a day; let it decondition you gently.',
+                quote: '“It is no measure of health to be well adjusted to a profoundly sick society.”',
+                longReview: 'I read this like a calendar: one passage per day. I noticed how often I “knew” something before actually looking. After a week, my mind felt quieter—not empty, just less reactive. It’s not a self‑help pep talk; it’s a mirror you can’t argue with.'
+            },
+            'beginning-of-infinity': {
+                title: 'The Beginning of Infinity',
+                author: 'David Deutsch',
+                year: '2011',
+                category: 'Science & Philosophy',
+                summary: 'Problems are inevitable, but solvable; progress is open-ended with better explanations.',
+                insights: [
+                    'Explanations, not predictions, drive real progress.',
+                    'Optimism is a moral choice anchored in fallibilism.'
+                ],
+                recommendation: 'If you build things, this will upgrade your epistemology.',
+                quote: '“All evils are caused by insufficient knowledge.”',
+                longReview: 'I kept pausing to scribble. Deutsch makes optimism feel responsible, not naive. After this, I started asking, “What’s the explanation here?” in meetings. It catches cargo‑cult decisions quickly. Dense in places, but the payoff is big.'
+            },
+            'white-clouds': {
+                title: 'The Way of the White Clouds',
+                author: 'Anagarika Govinda',
+                year: '1966',
+                category: 'Spiritual Travel',
+                summary: 'A luminous travelogue through Tibetan Buddhism and practice.',
+                insights: [
+                    'Practice makes landscapes sacred.',
+                    'Real learning requires humility in strange places.'
+                ],
+                recommendation: 'A gentle antidote to noisy modernity.',
+                quote: 'Clouds move; so can the mind.',
+                longReview: 'If you’ve only read productivity books, this is a palate cleanser. The pace is unhurried; the effect is deep. I finished with the odd urge to speak softer to people—and to myself.'
+            },
+            'old-path-white-clouds': {
+                title: 'Old Path White Clouds',
+                author: 'Thich Nhat Hanh',
+                year: '1987',
+                category: 'Buddhist Biography',
+                summary: 'The Buddha’s life retold with simplicity and compassion for everyday practice.',
+                insights: [
+                    'Walk slowly; arrive where you are.',
+                    'Compassion is precise, not vague.'
+                ],
+                recommendation: 'Read to make mindfulness ordinary and kind.',
+                quote: '“Peace is every step.”',
+                longReview: 'I expected hagiography; I got practicality. The scenes are humble—walking, sharing food, teaching—and somehow that’s what makes it powerful. It made “mindfulness” feel like something you do while washing a cup, not just during a 10‑minute session.'
+            },
+            'factfulness': {
+                title: 'Factfulness',
+                author: 'Hans Rosling',
+                year: '2018',
+                category: 'Data & Worldview',
+                summary: 'Ten instincts that warp our perception—and how to think with numbers.',
+                insights: [
+                    'Most trends improve; fear sells exceptions.',
+                    'Chunk the world by income, not geography.'
+                ],
+                recommendation: 'Great for calibrating your priors about “how bad things are.”',
+                quote: '“The world can be both bad and better.”',
+                longReview: 'I stopped saying “everything’s getting worse” after this. Charts don’t care about moods, and that’s refreshing. It didn’t turn me into a blind optimist; it made me specific. Now when someone claims catastrophe, I ask, “Show me the baseline.”'
+            },
+            'one-up-on-wall-street': {
+                title: 'One Up On Wall Street',
+                author: 'Peter Lynch',
+                year: '1989',
+                category: 'Investing',
+                summary: 'Use everyday observations to find great businesses early.',
+                insights: [
+                    'Circle of competence beats hot tips.',
+                    'Boring companies can be brilliant.'
+                ],
+                recommendation: 'Pair with Coffee Can; build patience muscles.',
+                quote: '“Know what you own, and know why you own it.”',
+                longReview: 'I started paying attention at supermarkets and bus stops. Sounds silly, works shockingly well. The book nudged me toward patience—buy better, check less, let time work. Combine with Coffee Can and you’ll sleep better as an investor.'
+            },
+            'parallel-worlds': {
+                title: 'Parallel Worlds',
+                author: 'Michio Kaku',
+                year: '2004',
+                category: 'Physics & Cosmology',
+                summary: 'From big bang to multiverse—cosmic ideas made graspable.',
+                insights: [
+                    'Cosmology blends math and imagination.',
+                    'Humility in face of scale is rational.'
+                ],
+                recommendation: 'A joyful tour if space blows your mind.',
+                quote: 'We are a way for the cosmos to know itself—then hedge that with data.',
+                longReview: 'This book re‑ignites the childlike “how does it all work?” question. I liked how Kaku balances awe with skepticism. It made me kinder to my own ignorance—space is big, and that’s okay. Perfect weekend read with a long walk after.'
+            },
+            'meditations': {
+                title: 'Meditations',
+                author: 'Marcus Aurelius',
+                year: '180',
+                category: 'Stoic Philosophy',
+                summary: 'Notes to self on virtue, perception, and duty.',
+                insights: [
+                    'Control attention; character follows.',
+                    'Memento mori clarifies priorities.'
+                ],
+                recommendation: 'Read a paragraph a day; live it for a week.',
+                quote: '“You have power over your mind—not outside events.”',
+                longReview: 'Every re‑read hits differently. Lately, the “view from above” exercise cooled down a few small crises. If your timeline feels loud, this book teaches volume control for the soul. Keep a pencil handy.'
+            },
+            'naval-almanack': {
+                title: 'The Almanack of Naval Ravikant',
+                author: 'Eric Jorgenson',
+                year: '2020',
+                category: 'Wealth & Happiness',
+                summary: 'Modern leverage, specific knowledge, and compounding goodwill.',
+                insights: [
+                    'Productize yourself.',
+                    'Choose games with positive-sum outcomes.'
+                ],
+                recommendation: 'A practical mindset upgrade for builders.',
+                quote: '“Play long-term games with long-term people.”',
+                longReview: 'It’s the kind of book that makes you text a friend a page at midnight. I stopped chasing “opportunities” that didn’t match my talent stack. Also started saying no more. Short, quotable, surprisingly grounding.'
+            },
+            'metamorphosis': {
+                title: 'Metamorphosis',
+                author: 'Franz Kafka',
+                year: '1915',
+                category: 'Literature',
+                summary: 'A nightmare that reveals family, identity, and alienation.',
+                insights: [
+                    'Roles we play can deform who we are.',
+                    'Compassion is often conditional—notice that.'
+                ],
+                recommendation: 'Short, strange, sticky—great re-read.',
+                quote: '“I am a bug; also, I am me.”',
+                longReview: 'I read it again after years and got a different book. This time I noticed the family more than Gregor. That says something. It’s short, yes, but it expands in your head—the mark of a classic.'
+            },
+            'coffee-can-investing': {
+                title: 'Coffee Can Investing',
+                author: 'Saurabh Mukherjea',
+                year: '2018',
+                category: 'Investing',
+                summary: 'Pick quality businesses, forget them, let time compound.',
+                insights: [
+                    'Turnover is a tax on returns.',
+                    'Quality and patience beat cleverness.'
+                ],
+                recommendation: 'Great for India-focused investors.',
+                quote: 'Let compounding do the heavy lifting.',
+                longReview: 'The biggest win was emotional: it gave me permission to ignore noise. I set up a tiny “coffee can” in my portfolio and stopped fiddling. Six months later, I noticed I was sleeping better about money. That’s a result.'
+            },
+            'subtle-art': {
+                title: 'The Subtle Art of Not Giving a F*ck',
+                author: 'Mark Manson',
+                year: '2016',
+                category: 'Self-Improvement',
+                summary: 'Values are chosen; caring is finite—allocate wisely.',
+                insights: [
+                    'Responsibility beats blame for agency.',
+                    'Saying “no” creates meaning for “yes.”'
+                ],
+                recommendation: 'Cringe title, useful filter for priorities.',
+                quote: '“You are always choosing.”',
+                longReview: 'I rolled my eyes at the title and still ended up underlining. The useful bit is ruthless prioritization. I made a “not caring” list and freed up energy for things and people that actually move my life forward.'
+            },
+            'sapiens': {
+                title: 'Sapiens',
+                author: 'Yuval Noah Harari',
+                year: '2011',
+                category: 'History & Science',
+                summary: 'Human rise through shared myths and scalable cooperation.',
+                insights: [
+                    'Fictions scale societies; handle with care.',
+                    'Agriculture: progress or trap? Depends on metrics.'
+                ],
+                recommendation: 'Start of the Harari trilogy.',
+                quote: '“Culture tends to argue that it forbids only that which is unnatural.”',
+                longReview: 'I love how Harari explains big arcs without losing texture. After Sapiens, news headlines felt smaller, like snapshots from a much longer movie. Great gift for someone curious about “how we got here”—and a great re‑read.'
+            },
+            'homo-deus': {
+                title: 'Homo Deus',
+                author: 'Yuval Noah Harari',
+                year: '2015',
+                category: 'Futures & Tech',
+                summary: 'Where technology and data might take power, work, and meaning.',
+                insights: [
+                    'Dataism reframes ethics and agency.',
+                    'Hedonic algorithms shape behavior.'
+                ],
+                recommendation: 'Pairs with security and AI risk thinking.',
+                quote: '“In a world deluged by irrelevant information, clarity is power.”',
+                longReview: 'Compared to Sapiens, this feels more provocative—and that’s why it’s fun. I didn’t agree with everything, but I left with better questions. You’ll find yourself referencing it in random conversations.'
+            },
+            '21-lessons': {
+                title: '21 Lessons for the 21st Century',
+                author: 'Yuval Noah Harari',
+                year: '2018',
+                category: 'Present & Policy',
+                summary: 'Facing disinformation, jobs, nationalism—calls for resilience and education.',
+                insights: [
+                    'Meditation as a security patch for the mind.',
+                    'Decentralized truth needs decentralized literacy.'
+                ],
+                recommendation: 'Good meta-layer after Sapiens + Homo Deus.',
+                quote: '“Questions you cannot answer are usually far better than answers you cannot question.”',
+                longReview: 'I treated this like a coffee companion—one essay per day. It doesn’t preach, it nudges. I came away wanting to be a better citizen, not just a better consumer of content. That feels like the right direction.'
+            }
+        };
+
+        // Robust cover fallback: try alternate endpoints then local fallback
+        function fallbackCover(imgEl) {
+            const title = imgEl.getAttribute('data-title') || '';
+            const author = imgEl.getAttribute('data-author') || '';
+            const tried = imgEl.getAttribute('data-tried') || '';
+            if (tried !== 'query') {
+                imgEl.setAttribute('data-tried', 'query');
+                const q = encodeURIComponent(`${title} ${author}`.trim());
+                imgEl.src = `https://covers.openlibrary.org/b/olid/${q}-L.jpg?default=false`;
+                return;
+            }
+            // Build an inline fallback cover
+            const wrapper = document.createElement('div');
+            wrapper.className = 'cover-fallback';
+            const t = document.createElement('div'); t.className = 'cf-title'; t.textContent = title || 'Book';
+            const a = document.createElement('div'); a.className = 'cf-author'; a.textContent = author || '';
+            wrapper.appendChild(t); wrapper.appendChild(a);
+            const parent = imgEl.parentNode;
+            parent.replaceChild(wrapper, imgEl);
+        }
+
+        // Filtering
+        (function initBookFilters(){
+            const filters = document.querySelectorAll('.books-filter-btn');
+            const items = document.querySelectorAll('.book-item');
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filters.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+                    items.forEach(it => {
+                        const cats = (it.getAttribute('data-category') || '').split(' ');
+                        if (filter === 'all' || cats.includes(filter)) {
+                            it.style.display = '';
+                            it.style.opacity = '1';
+                        } else {
+                            it.style.opacity = '0';
+                            setTimeout(() => { it.style.display = 'none'; }, 150);
+                        }
+                    });
+                });
+            });
+        })();
+
+        function showReview(id) {
+            const data = bookReviews[id];
+            if (!data) return;
+            const body = document.getElementById('modalBody');
+            document.getElementById('modalTitle').textContent = data.title;
+            body.innerHTML = `
+                <div class="modal-book-meta">
+                    <span class="modal-category">${data.category}</span>
+                    <span class="modal-year">${data.year}</span>
+                </div>
+                <h3 class="modal-author">by ${data.author}</h3>
+                <p class="modal-summary">${data.summary}</p>
+                <div class="modal-insights">
+                    <h4>What I Learned</h4>
+                    <ul>${data.insights.map(i => `<li>${i}</li>`).join('')}</ul>
+                </div>
+                <div class="modal-recommendation">
+                    <h4>Why You Should Read This</h4>
+                    <p>${data.recommendation}</p>
+                </div>
+                ${data.longReview ? `<div class="modal-longreview"><h4>Personal Review</h4><p>${data.longReview}</p></div>` : ''}
+                <div class="modal-quote"><blockquote>${data.quote}</blockquote></div>
+            `;
+            const modal = document.getElementById('bookModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); }, { once: true });
+            document.addEventListener('keydown', escCloseOnce);
+        }
+
+        function escCloseOnce(e) { if (e.key === 'Escape') { closeModal(); document.removeEventListener('keydown', escCloseOnce); } }
+        function closeModal() { document.getElementById('bookModal').style.display = 'none'; document.body.style.overflow = ''; }
+    </script>
+
+    <!-- Google Analytics (same as index) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GG-3GS6VRP5FF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+        gtag('config', 'GG-3GS6VRP5FF', { page_title: 'Books – Balvant Chavda', page_location: window.location.href });
+    </script>
+</body>
+</html>
+
+

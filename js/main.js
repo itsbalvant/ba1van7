@@ -240,6 +240,104 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add loading class to body for initial page load animation
     document.body.classList.add('page-loaded');
+
+    // Liquid glass: tilt + sheen interactions
+    function initTiltSheen() {
+        const tiltSelectors = ['.blog-card', '.contact-link-card', '.hof-card', '.book-item'];
+        const cards = document.querySelectorAll(tiltSelectors.join(','));
+        if (!cards.length) return;
+
+        cards.forEach(card => {
+            // Add sheen layer if missing
+            if (!card.querySelector('.sheen')) {
+                const sheen = document.createElement('div');
+                sheen.className = 'sheen';
+                sheen.style.background = 'radial-gradient(600px 200px at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.25), transparent 60%)';
+                card.style.transformStyle = 'preserve-3d';
+                card.appendChild(sheen);
+            }
+
+            let rafId;
+            const onMove = (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                const tiltX = (0.5 - y) * 12; // rotation X
+                const tiltY = (x - 0.5) * 12; // rotation Y
+                cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(() => {
+                    card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                    card.style.transition = 'transform 60ms linear';
+                    card.style.setProperty('--mx', `${x * 100}%`);
+                    card.style.setProperty('--my', `${y * 100}%`);
+                });
+            };
+
+            const onLeave = () => {
+                cancelAnimationFrame(rafId);
+                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+                card.style.transition = 'transform 180ms ease-out';
+            };
+
+            card.addEventListener('mousemove', onMove);
+            card.addEventListener('mouseleave', onLeave);
+            card.addEventListener('touchmove', (e) => {
+                if (e.touches && e.touches[0]) {
+                    onMove(e.touches[0]);
+                }
+            }, { passive: true });
+            card.addEventListener('touchend', onLeave, { passive: true });
+        });
+    }
+
+    // Parallax for liquid orbs
+    function initParallaxOrbs() {
+        const bg = document.querySelector('.liquid-bg');
+        if (!bg) return;
+        const orbs = bg.querySelectorAll('.orb');
+        window.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2; // -1..1
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            orbs.forEach((orb, i) => {
+                const depth = (i + 1) * 8; // different depths
+                orb.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+            });
+        }, { passive: true });
+    }
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 600px)').matches;
+    if (!prefersReduced && !isMobile) {
+        initTiltSheen();
+        initParallaxOrbs();
+    }
+
+    // Scroll-based bloom intensity and cursor glow tracking
+    (function initBloom() {
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.clientHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight
+        );
+        const updateBloom = () => {
+            const y = window.scrollY || window.pageYOffset;
+            const ratio = Math.min(1, y / (docHeight * 0.6));
+            document.documentElement.style.setProperty('--bloom', (0.05 + ratio * 0.6).toFixed(2));
+        };
+        updateBloom();
+        window.addEventListener('scroll', updateBloom, { passive: true });
+
+        // Cursor glow position
+        const onMove = (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            document.documentElement.style.setProperty('--glow-x', x + '%');
+            document.documentElement.style.setProperty('--glow-y', y + '%');
+        };
+        window.addEventListener('mousemove', onMove, { passive: true });
+    })();
     
     // Hero section animations
     

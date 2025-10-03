@@ -6,25 +6,159 @@
     <meta name="theme-color" content="#0a0a0a">
     <title>Balvant Chavda - Cybersecurity Researcher</title>
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <!-- Critical CSS: load render-blocking to avoid FOUC -->
+    <link rel="stylesheet" href="css/style.css">
     
-    <!-- Preload fonts -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- Non-critical CSS -->
     <link rel="stylesheet" href="css/shield-animation.css" media="print" onload="this.media='all'">
     
+    <!-- Preload critical images -->
+    <link rel="preload" href="images/a2.jpeg" as="image">
+    <link rel="preload" href="images/android-auth.jpeg" as="image">
+    <link rel="preload" href="images/1.jpeg" as="image">
+    
     <!-- SEO and PWA -->
-    <meta name="description" content="Balvant Chavda - Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. View blog posts and achievements.">
+    <meta name="description" content="Balvant Chavda - Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. View blog posts, CVE discoveries, and achievements.">
+    <meta name="keywords" content="Balvant Chavda, cybersecurity researcher, ethical hacker, Android security, iOS security, Web3 security, bug bounty, CVE, vulnerability research, penetration testing, security consultant">
+    <meta name="author" content="Balvant Chavda">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://balvant.in/">
+    <meta property="og:title" content="Balvant Chavda - Cybersecurity Researcher & Ethical Hacker">
+    <meta property="og:description" content="Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. Discover vulnerabilities, write security research, and contribute to the security community.">
+    <meta property="og:image" content="https://balvant.in/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Balvant Chavda">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://balvant.in/">
+    <meta property="twitter:title" content="Balvant Chavda - Cybersecurity Researcher & Ethical Hacker">
+    <meta property="twitter:description" content="Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. Discover vulnerabilities, write security research, and contribute to the security community.">
+    <meta property="twitter:image" content="https://balvant.in/images/og-image.jpg">
+    <meta property="twitter:creator" content="@ba1van7">
+    <meta property="twitter:site" content="@ba1van7">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#00ffa3">
+    <meta name="msapplication-TileColor" content="#00ffa3">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <link rel="canonical" href="https://balvant.in/">
     <meta http-equiv="Cache-Control" content="max-age=86400">
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="images/icon-192.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Balvant Chavda",
+      "alternateName": "0xBalvant",
+      "url": "https://balvant.in",
+      "image": "https://balvant.in/images/balvant-profile.jpg",
+      "description": "Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security",
+      "jobTitle": "Cybersecurity Researcher & Ethical Hacker",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Security Researcher"
+      },
+      "knowsAbout": [
+        "Cybersecurity",
+        "Android Security",
+        "iOS Security", 
+        "Web Security",
+        "Web3 Security",
+        "Blockchain Security",
+        "Penetration Testing",
+        "Vulnerability Research",
+        "Bug Bounty Hunting"
+      ],
+      "sameAs": [
+        "https://twitter.com/ba1van7",
+        "https://linkedin.com/in/balvant-chavda",
+        "https://discord.com/users/ba1van7",
+        "https://app.ens.domains/name/balvant.eth"
+      ],
+      "award": [
+        "Google Security Hall of Fame",
+        "Microsoft Security Hall of Fame", 
+        "Apple Security Hall of Fame",
+        "Meta Security Hall of Fame",
+        "Amazon Security Hall of Fame"
+      ]
+    }
+    </script>
+    
+    <!-- Blog Posts Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Balvant Chavda Security Blog",
+      "description": "Cybersecurity research blog covering Android, iOS, Web, and Web3 security vulnerabilities and discoveries",
+      "url": "https://balvant.in/#blog",
+      "author": {
+        "@type": "Person",
+        "name": "Balvant Chavda",
+        "url": "https://balvant.in"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "When WebView Bites Back: The Bug That Let JavaScript Run Wild",
+          "description": "Discovering how improper WebView implementations in Android applications can lead to arbitrary JavaScript execution and potential security risks.",
+          "url": "https://balvant.in/blog/android-webview-vulnerability.html",
+          "datePublished": "2024-01-15",
+          "author": {
+            "@type": "Person",
+            "name": "Balvant Chavda"
+          },
+          "image": "https://balvant.in/images/a2.jpeg",
+          "keywords": ["Android Security", "WebView", "JavaScript Injection", "Mobile Security"]
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "How a News App Leaked OAuth Codes: A Real-World Interception Story",
+          "description": "Discovering a critical vulnerability in an Android news application that allowed malicious apps to intercept OAuth authorization codes.",
+          "url": "https://balvant.in/blog/android-news-app-vulnerability.html",
+          "datePublished": "2024-01-10",
+          "author": {
+            "@type": "Person",
+            "name": "Balvant Chavda"
+          },
+          "image": "https://balvant.in/images/android-auth.jpeg",
+          "keywords": ["Android Security", "OAuth", "Authorization", "Mobile Security"]
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "I Found SQLi on a Search Page: The Payload, The Proof, The $2500",
+          "description": "A detailed walkthrough of discovering and exploiting a SQL injection vulnerability that led to a significant bug bounty reward.",
+          "url": "https://balvant.in/blog/sql-injection-writeup.html",
+          "datePublished": "2024-01-05",
+          "author": {
+            "@type": "Person",
+            "name": "Balvant Chavda"
+          },
+          "image": "https://balvant.in/images/1.jpeg",
+          "keywords": ["SQL Injection", "Web Security", "Bug Bounty", "Penetration Testing"]
+        }
+      ]
+    }
+    </script>
     
     <!-- Performance optimization -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -94,6 +228,14 @@
     </style>
 </head>
 <body>
+    <!-- Liquid background -->
+    <div class="liquid-bg" aria-hidden="true">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="glow-overlay" aria-hidden="true"></div>
     <!-- Header with Avatar -->
     <header>
         <div class="container">
@@ -106,8 +248,9 @@
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="#blog"><span><i class="fas fa-blog" aria-hidden="true"></i> Blog</span></a></li>
+                    <li><a href="books.html"><span><i class="fas fa-book" aria-hidden="true"></i> Books</span></a></li>
                     <li><a href="#hall-of-fame"><span><i class="fas fa-trophy" aria-hidden="true"></i> Hall of Fame</span></a></li>
-                    <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li>
+                    <!-- <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li> -->
                     <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Me</span></a></li>
                 </ul>
             </nav>
@@ -125,10 +268,16 @@
         <div class="hero-content">
             <div class="hero-text">
                 <div class="badge-container">
-                    <span class="elite-badge"><i class="fas fa-user-secret"></i> Ethical Hacker & Security Researcher</span>
+                    <span class="elite-badge"><i class="fas fa-user-secret"></i> Security Researcher · Ethical Hacker</span>
                 </div>
-                <h1 class="hero-title">Hacking The <span class="accent">Unhackable</span></h1>
-                <p class="hero-subtitle">Turning <span class="accent">vulnerabilities</span> into <span class="accent">strengths</span> across <span class="typing-text"></span></p>
+                <h1 class="hero-title">Break It. <span class="accent">Secure It.</span></h1>
+                <p class="hero-subtitle">Turning real‑world bugs into resilient systems across <span class="typing-text"></span></p>
+                <div class="hero-keywords">
+                    <span class="keyword-tag">Android & iOS Security</span>
+                    <span class="keyword-tag">Web3 Security</span>
+                    <span class="keyword-tag">CVE Research</span>
+                    <span class="keyword-tag">Bug Bounty</span>
+                </div>
                 <div class="tech-tags">
                     <div class="tech-tag">
                         <i class="fab fa-ethereum"></i>
@@ -222,7 +371,7 @@
                     <div class="blog-image" loading="lazy"></div>
                     <div class="blog-content">
                         <span class="blog-category">Android Security</span>
-                        <h3>Exploiting WebView Vulnerabilities in Android News App</h3>
+                        <h3>When WebView Bites Back: The Bug That Let JavaScript Run Wild</h3>
                         <p>Discovering how improper WebView implementations in Android applications can lead to arbitrary JavaScript execution and potential security risks.</p>
                         <a href="blog/android-webview-vulnerability.html" class="read-more">Read More</a>
                     </div>
@@ -232,7 +381,7 @@
                     <div class="blog-image" loading="lazy"></div>
                     <div class="blog-content">
                         <span class="blog-category">Android Security</span>
-                        <h3>Auth code interception Vulnerability in News App</h3>
+                        <h3>How a News App Leaked OAuth Codes: A Real-World Interception Story</h3>
                         <p>Discovering a critical vulnerability in an Android news application that allowed malicious apps to intercept OAuth authorization codes.</p>
                         <a href="blog/android-news-app-vulnerability.html" class="read-more">Read More</a>
                     </div>
@@ -242,7 +391,7 @@
                     <div class="blog-image" style="--card-image: url('images/1.jpeg');" loading="lazy"></div>
                     <div class="blog-content">
                         <span class="blog-category">Web Security</span>
-                        <h3>Behind the Scenes of a $2500 Reward: Exploring SQL Injection</h3>
+                        <h3>I Found SQLi on a Search Page: The Payload, The Proof, The $2500</h3>
                         <p>A detailed walkthrough of discovering and exploiting a SQL injection vulnerability that led to a significant bug bounty reward.</p>
                         <a href="blog/sql-injection-writeup.html" class="read-more">Read More</a>
                     </div>
@@ -252,7 +401,7 @@
                     <div class="blog-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/a-cinematic-shot-of-an-ancient-roman-sol_t3A0SO6aReCvbe86gvJsbQ_v7YBD9yISKaYmsfNGwsoOw.jpeg');" loading="lazy"></div>
                     <div class="blog-content">
                         <span class="blog-category">Web3 Security</span>
-                        <h3>Unrestricted Minting Exploit in DeFi Protocol</h3>
+                        <h3>Unlimited Mint: The Chair Function That Could Break a Stablecoin</h3>
                         <p>Analysis of a critical vulnerability that allowed unlimited token minting in a DeFi protocol, potentially leading to protocol insolvency.</p>
                         <a href="blog/unrestricted-minting-exploit.html" class="read-more">Read More</a>
                     </div>
@@ -262,7 +411,7 @@
                     <div class="blog-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/a-photo-of-an-ancient-philosopher-sittin_KSoCpSEuThSZp1cxTDGZig_QrGpSDY0RFeH_8blpf_vBw.jpeg');" loading="lazy"></div>
                     <div class="blog-content">
                         <span class="blog-category">Philosophy</span>
-                        <h3>Are Good and Bad Real, or Just Personal Biases?</h3>
+                        <h3>Good vs. Bad: Are We Seeing Truth or Just Our Own Biases?</h3>
                         <p>Exploring the timeless philosophical debate on whether morality is objective, subjective, or something in between.</p>
                         <a href="blog/philosophy-good-bad-bias.html" class="read-more">Read More</a>
                     </div>
@@ -431,10 +580,31 @@
                         <h3>Reckitt</h3>
                         <div class="hof-year">2023</div>
                     </div>
+                    <div class="hof-card">
+                        <div class="hof-logo"><i class="fas fa-cloud"></i></div>
+                        <h3>Nextcloud</h3>
+                        <div class="hof-year">2024</div>
+                    </div>
+                    <div class="hof-card">
+                        <div class="hof-logo"><i class="fab fa-adobe"></i></div>
+                        <h3>Adobe</h3>
+                        <div class="hof-year">2024</div>
+                    </div>
+                    <div class="hof-card">
+                        <div class="hof-logo"><i class="fas fa-coins"></i></div>
+                        <h3>Coinbase</h3>
+                        <div class="hof-year">2024</div>
+                    </div>
+                    <div class="hof-card">
+                        <div class="hof-logo"><i class="fas fa-fire"></i></div>
+                        <h3>Fireblocks</h3>
+                        <div class="hof-year">2024</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -442,7 +612,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>0xBalvant</h3>
-                    <p>Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. Building secure systems and sharing knowledge.</p>
+                    <p>Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. CVE discoverer, bug bounty hunter, and security consultant building secure systems and sharing knowledge.</p>
                     <div class="social-links">
                         <a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="https://linkedin.com/in/balvant-chavda" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -457,6 +627,7 @@
                     <ul class="footer-links">
                         <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="books.html"><i class="fas fa-chevron-right"></i> Books</a></li>
                         <li><a href="#hall-of-fame"><i class="fas fa-chevron-right"></i> Hall of Fame</a></li>
                         <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
@@ -488,6 +659,23 @@
     <!-- JavaScript -->
     <script src="js/main.js" defer></script>
     <script src="js/scroll-effects.js" defer></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GG-3GS6VRP5FF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'GG-3GS6VRP5FF', {
+            page_title: 'Balvant Chavda - Cybersecurity Researcher',
+            page_location: window.location.href,
+            custom_map: {
+                'custom_parameter_1': 'security_researcher',
+                'custom_parameter_2': 'cve_discoveries'
+            }
+        });
+    </script>
+    
     <!-- Service worker registration for offline functionality -->
     <script>
         if ('serviceWorker' in navigator) {

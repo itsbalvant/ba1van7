@@ -1,12 +1,15 @@
 {
-  "name": "Balvant Chavda - Cybersecurity Researcher",
+  "name": "Balvant Chavda - Cybersecurity Researcher & Ethical Hacker",
   "short_name": "Balvant.eth",
-  "description": "Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security.",
-  "start_url": "/index.html",
+  "description": "Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. CVE discoveries, bug bounty hunter, and security consultant.",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0f0f",
-  "theme_color": "#101010",
+  "theme_color": "#00ffa3",
   "orientation": "any",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["security", "technology", "education"],
   "icons": [
     {
       "src": "images/icon-192.png",
@@ -19,6 +22,20 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshot-mobile.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 } 

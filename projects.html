@@ -7,8 +7,8 @@
     <!-- Preload critical CSS -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome loaded with defer to not block rendering -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Preconnect to Google Fonts to speed up font loading -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap">
@@ -84,12 +84,13 @@
             <a href="index.html" class="logo">
                 <span class="logo-text">Balvant<span class="domain">.IN</span></span>
             </a>
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html#blog"><span><i class="fas fa-blog"></i> Blog</span></a></li>
-                    <li><a href="index.html#hall-of-fame"><span><i class="fas fa-trophy"></i> Hall of Fame</span></a></li>
-                    <li><a href="projects.html"><span><i class="fas fa-code-branch"></i> Projects</span></a></li>
-                    <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane"></i> Contact Me</span></a></li>
+                    <li><a href="index.html#blog"><span><i class="fas fa-blog" aria-hidden="true"></i> Blog</span></a></li>
+                    <li><a href="books.html"><span><i class="fas fa-book" aria-hidden="true"></i> Books</span></a></li>
+                    <li><a href="index.html#hall-of-fame"><span><i class="fas fa-trophy" aria-hidden="true"></i> Hall of Fame</span></a></li>
+                    <!-- <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li> -->
+                    <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Me</span></a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">

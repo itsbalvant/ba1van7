@@ -157,7 +157,7 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
@@ -1026,7 +1026,7 @@ transform: rotate(360deg);
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 4vw + 1rem, 3.6rem);
     margin: 1.5rem 0;
     line-height: 1.15;
     letter-spacing: -0.5px;
@@ -1283,6 +1283,8 @@ transform: rotate(360deg);
 /* Blog Section */
 .blog-section {
     padding: 80px 0;
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px 800px;
 }
 
 .blog-grid {
@@ -1620,6 +1622,193 @@ footer::before {
 
 .footer-bottom p {
     margin: 0.5rem 0;
+}
+
+/* Liquid Glass OS Theme */
+:root {
+    --glass-surface: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-highlight: rgba(255, 255, 255, 0.35);
+    --glass-shadow: rgba(0, 0, 0, 0.35);
+    --glass-blur: 16px;
+    --glass-blur-strong: 24px;
+    --bloom: 0.0;
+    --noise-opacity: 0.04;
+}
+
+/* Ambient liquid background */
+.liquid-bg {
+    position: fixed;
+    top: -20vh;
+    left: -20vw;
+    width: 140vw;
+    height: 140vh;
+    z-index: -1;
+    filter: blur(60px) saturate(140%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.liquid-bg .orb {
+    position: absolute;
+    width: 45vw;
+    height: 45vw;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+}
+
+.liquid-bg .orb1 {
+    top: 6vh;
+    left: 6vw;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(0, 255, 163, 0.35), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(0, 168, 255, 0.25), transparent 60%);
+}
+
+.liquid-bg .orb2 {
+    right: 10vw;
+    bottom: 10vh;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 0, 228, 0.3), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(0, 255, 163, 0.25), transparent 60%);
+}
+
+.liquid-bg .orb3 {
+    top: 35vh;
+    right: 30vw;
+    background:
+        radial-gradient(circle at 40% 40%, rgba(255, 200, 0, 0.2), transparent 60%),
+        radial-gradient(circle at 60% 60%, rgba(0, 168, 255, 0.2), transparent 60%);
+}
+
+/* Glass surface utilities and applications */
+.glass-surface,
+.blog-card,
+.contact-link-card,
+.hof-card,
+.book-item {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    box-shadow: 0 10px 30px var(--glass-shadow);
+}
+
+header {
+    backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    background: rgba(10, 10, 15, 0.55);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer {
+    backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+}
+
+/* Sheen overlay for interactive cards */
+.sheen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.glass-tilt:hover .sheen,
+.blog-card:hover .sheen,
+.hof-card:hover .sheen,
+.contact-link-card:hover .sheen,
+.book-item:hover .sheen {
+    opacity: 0.35;
+}
+
+/* Glassy modal surface */
+.modal-content {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur-strong)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--glass-blur-strong)) saturate(160%);
+    box-shadow: 0 20px 60px var(--glass-shadow);
+}
+
+/* Global noise and glow overlays */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--noise-opacity);
+    mix-blend-mode: overlay;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 2px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 2px);
+    filter: saturate(120%);
+}
+
+.glow-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(60vw 40vh at var(--glow-x, 50%) var(--glow-y, 35%), rgba(255,255,255, calc(0.06 + var(--bloom) * 0.18)), transparent 60%),
+      radial-gradient(40vw 30vh at 80% 20%, rgba(0, 255, 163, 0.05), transparent 70%),
+      radial-gradient(35vw 25vh at 20% 80%, rgba(255, 0, 228, 0.04), transparent 70%);
+    mix-blend-mode: screen;
+}
+
+/* Glass edge highlights for cards */
+.blog-card,
+.contact-link-card,
+.hof-card,
+.book-item {
+    position: relative;
+}
+
+.blog-card::after,
+.contact-link-card::after,
+.hof-card::after,
+.book-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.blog-card .sheen,
+.contact-link-card .sheen,
+.hof-card .sheen,
+.book-item .sheen {
+    opacity: calc(0.2 + var(--bloom) * 0.3);
+}
+
+/* Stronger glass for mobile nav */
+@media (max-width: 768px) {
+  nav ul {
+    background: var(--glass-surface) !important;
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%) !important;
+    border-left: 1px solid var(--glass-border);
+  }
+}
+
+@media (max-width: 576px) {
+    .liquid-bg {
+        opacity: 0.45;
+        filter: blur(40px) saturate(140%);
+    }
+    .liquid-bg .orb {
+        width: 70vw;
+        height: 70vw;
+    }
 }
 
 /* Scroll to Top Button */
@@ -1973,6 +2162,39 @@ header.scrolled {
     background-color: var(--bg-color);
     position: relative;
     overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px 700px;
+}
+
+/* Glass container for blog posts */
+.post-content .container {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    box-shadow: 0 12px 36px var(--glass-shadow);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 576px) {
+    .post-content .container {
+        padding: 1.2rem;
+    }
+}
+
+/* Match blog section liquid glass look */
+.hall-of-fame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(0, 255, 163, 0.06) 0%, transparent 35%),
+      radial-gradient(circle at 80% 70%, rgba(255, 0, 228, 0.06) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .section-description {
@@ -2025,19 +2247,20 @@ header.scrolled {
 
 .hof-card {
     flex: 0 0 200px;
-    background-color: var(--card-bg);
+    background: var(--glass-surface);
     border-radius: 12px;
     padding: 1.5rem;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 12px 36px var(--glass-shadow);
     transition: var(--transition);
     text-align: center;
+    position: relative;
 }
 
 .hof-card:hover {
     transform: translateY(-10px);
     border-color: var(--secondary-color);
-    box-shadow: 0 10px 30px rgba(0, 255, 163, 0.15);
+    box-shadow: 0 16px 44px rgba(0, 255, 163, 0.18);
 }
 
 .hof-logo {
@@ -2062,7 +2285,39 @@ header.scrolled {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    position: relative;
 }
+
+.hof-card h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.hof-card:hover h3::after { width: 40%; }
+
+/* Accent stripe similar to blog cards */
+.hof-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--secondary-color);
+    transition: height 0.3s ease;
+    z-index: 2;
+    border-top-left-radius: 12px;
+}
+
+.hof-card:hover::before { height: 100%; }
 
 .hof-year {
     display: inline-block;

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Book Covers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .book-cover {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .book-cover img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 20px;
+            float: left;
+        }
+        .book-info {
+            overflow: hidden;
+        }
+        .book-info h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Cover Images Downloader</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Right-click on each book cover image below</li>
+            <li>Select "Save image as..."</li>
+            <li>Save with the exact filename shown</li>
+            <li>Place in your website's <code>/images/</code> directory</li>
+        </ol>
+    </div>
+
+    <div class="book-cover">
+        <img src="https://covers.openlibrary.org/b/isbn/0857197681-L.jpg" alt="The Psychology of Money">
+        <div class="book-info">
+            <h3>The Psychology of Money</h3>
+            <p><strong>Filename:</strong> psychology-of-money.jpg</p>
+            <p><strong>Author:</strong> Morgan Housel</p>
+            <p><strong>ISBN:</strong> 0857197681</p>
+            <a href="https://covers.openlibrary.org/b/isbn/0857197681-L.jpg" class="download-btn" download="psychology-of-money.jpg">Download Image</a>
+        </div>
+    </div>
+
+    <div class="book-cover">
+        <img src="https://covers.openlibrary.org/b/isbn/1400079276-L.jpg" alt="Kafka on the Shore">
+        <div class="book-info">
+            <h3>Kafka on the Shore</h3>
+            <p><strong>Filename:</strong> kafka-on-the-shore.jpg</p>
+            <p><strong>Author:</strong> Haruki Murakami</p>
+            <p><strong>ISBN:</strong> 1400079276</p>
+            <a href="https://covers.openlibrary.org/b/isbn/1400079276-L.jpg" class="download-btn" download="kafka-on-the-shore.jpg">Download Image</a>
+        </div>
+    </div>
+
+    <div class="book-cover">
+        <img src="https://covers.openlibrary.org/b/isbn/0374528373-L.jpg" alt="The Brothers Karamazov">
+        <div class="book-info">
+            <h3>The Brothers Karamazov</h3>
+            <p><strong>Filename:</strong> brothers-karamazov.jpg</p>
+            <p><strong>Author:</strong> Fyodor Dostoevsky</p>
+            <p><strong>ISBN:</strong> 0374528373</p>
+            <a href="https://covers.openlibrary.org/b/isbn/0374528373-L.jpg" class="download-btn" download="brothers-karamazov.jpg">Download Image</a>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>Alternative Method - Direct Links:</h3>
+        <p>If the images above don't load, you can try these direct links:</p>
+        <ul>
+            <li><a href="https://covers.openlibrary.org/b/isbn/0857197681-L.jpg" target="_blank">Psychology of Money Cover</a></li>
+            <li><a href="https://covers.openlibrary.org/b/isbn/1400079276-L.jpg" target="_blank">Kafka on the Shore Cover</a></li>
+            <li><a href="https://covers.openlibrary.org/b/isbn/0374528373-L.jpg" target="_blank">Brothers Karamazov Cover</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Add click handlers for download buttons
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const imgUrl = this.href;
+                const filename = this.getAttribute('download');
+                
+                // Create a temporary link to download the image
+                const link = document.createElement('a');
+                link.href = imgUrl;
+                link.download = filename;
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+    </script>
+</body>
+</html>
+
