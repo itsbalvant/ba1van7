@@ -35,8 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
             nav.querySelector('ul').classList.remove('active');
+            // Hide nav and overlay
+            if (window.innerWidth <= 768) {
+                nav.style.display = 'none';
+                menuOverlay.style.display = 'none';
+            }
         } else {
             // Opening menu
+            // Show nav and overlay first
+            if (window.innerWidth <= 768) {
+                nav.style.display = 'block';
+                menuOverlay.style.display = 'block';
+            }
             // Force reflow
             void nav.offsetHeight;
             nav.classList.add('active');
@@ -44,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.add('menu-open');
             menuToggle.classList.add('active');
             menuToggle.setAttribute('aria-expanded', 'true');
+            nav.setAttribute('aria-hidden', 'false');
             // Show menu items immediately
             requestAnimationFrame(() => {
                 nav.querySelector('ul').classList.add('active');
