@@ -150,6 +150,7 @@ header {
         position: relative !important;
         z-index: 100001 !important;
         color: #fff !important;
+        cursor: pointer !important;
     }
     
     body > header .logo * {
@@ -881,35 +882,49 @@ nav {
         font-size: 1.2rem;
     }
     
-    /* Mobile Navigation - Show toggle button */
+    /* Mobile Navigation - Hide toggle button, use logo instead */
     .menu-toggle {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
-        max-width: 44px !important;
-        background: rgba(0, 255, 163, 0.1) !important;
-        border: 1px solid rgba(0, 255, 163, 0.3) !important;
-        border-radius: 8px !important;
-        color: #00ffa3 !important;
-        font-size: 1.4rem !important;
-        cursor: pointer !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
         padding: 0 !important;
         margin: 0 !important;
-        z-index: 1002 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Make logo clickable and indicate it's a menu toggle on mobile */
+    .logo {
+        cursor: pointer !important;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        will-change: transform, background, border-color !important;
-        visibility: visible !important;
-        opacity: 1 !important;
         position: relative !important;
-        right: 0 !important;
-        top: auto !important;
-        left: auto !important;
-        box-shadow: 0 2px 8px rgba(0, 255, 163, 0.2) !important;
-        box-sizing: border-box !important;
-        overflow: visible !important;
+    }
+    
+    .logo:hover {
+        transform: scale(1.05) !important;
+    }
+    
+    .logo:active {
+        transform: scale(0.95) !important;
+    }
+    
+    /* Add visual indicator that logo is clickable on mobile */
+    .logo::after {
+        content: '☰' !important;
+        position: absolute !important;
+        right: -25px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 1.2rem !important;
+        color: rgba(0, 255, 163, 0.6) !important;
+        opacity: 0.7 !important;
+        transition: opacity 0.3s ease !important;
+    }
+    
+    .logo:hover::after {
+        opacity: 1 !important;
+        color: #00ffa3 !important;
     }
 
     .menu-toggle:hover {
@@ -1143,22 +1158,21 @@ nav {
     header .container .logo {
         flex-shrink: 0 !important;
         margin-right: auto !important;
-        max-width: calc(100% - 60px) !important;
-        overflow: hidden !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        cursor: pointer !important;
+        position: relative !important;
     }
     
     header .container .menu-toggle {
-        flex-shrink: 0 !important;
-        flex-grow: 0 !important;
-        margin-left: auto !important;
-        margin-right: 0 !important;
-        position: relative !important;
-        right: 0 !important;
-        left: auto !important;
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
-        max-width: 44px !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        pointer-events: none !important;
     }
 }
 
@@ -4510,7 +4524,7 @@ main, .post-content {
         transition: opacity 0.35s ease, visibility 0.35s ease;
         z-index: 1000;
         pointer-events: none;
-        display: block !important;
+      display: block !important;
     }
 
     .menu-overlay.active {

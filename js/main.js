@@ -70,6 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Get logo element
+        const logo = document.querySelector('.logo');
+        
         // Set initial state based on screen size
         function setInitialState() {
             if (window.innerWidth > 768) {
@@ -93,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Toggle menu on button click with debounce
         let isTransitioning = false;
-        menuToggle.addEventListener('click', function(e) {
+        const handleToggle = function(e) {
             e.preventDefault();
             e.stopPropagation();
             
@@ -104,7 +107,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     isTransitioning = false;
                 }, 300); // Match transition duration
             }
-        });
+        };
+        
+        // Add click handler to toggle button
+        menuToggle.addEventListener('click', handleToggle);
+        
+        // Add click handler to logo on mobile only
+        if (logo) {
+            logo.addEventListener('click', function(e) {
+                // Only intercept on mobile
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleToggle(e);
+                }
+                // On desktop, let the link work normally
+            });
+        }
         
         // Close menu immediately when clicking a link
         const navLinks = document.querySelectorAll('nav a');
@@ -208,7 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (isMenuOpen && !nav.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+            // Don't close if clicking logo (it toggles the menu)
+            const isLogoClick = logo && (e.target === logo || logo.contains(e.target));
+            const isToggleClick = e.target === menuToggle || menuToggle.contains(e.target);
+            
+            if (isMenuOpen && !nav.contains(e.target) && !isToggleClick && !isLogoClick) {
                 toggleMenu();
             }
         });
