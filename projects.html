@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Projects - Balvant Chavda</title>
     <!-- Preload critical CSS -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Preconnect to Google Fonts to speed up font loading -->
+    <!-- Resource hints for faster loading -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <!-- Preconnect to Google Fonts to speed up font loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap"></noscript>
     <!-- Add meta description for SEO -->
     <meta name="description" content="Cybersecurity research projects by Balvant Chavda - Coming Soon">
     <!-- Cache control headers -->
@@ -82,20 +90,23 @@
     <header>
         <div class="container">
             <a href="index.html" class="logo">
+                <span class="logo-bracket logo-bracket-left" aria-hidden="true">[</span>
                 <span class="logo-text">Balvant<span class="domain">.IN</span></span>
+                <span class="logo-bracket logo-bracket-right" aria-hidden="true">]</span>
             </a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html#blog"><span><i class="fas fa-blog" aria-hidden="true"></i> Blog</span></a></li>
+                    <li><a href="index.html#cves"><span><i class="fas fa-bug" aria-hidden="true"></i> CVEs</span></a></li>
                     <li><a href="books.html"><span><i class="fas fa-book" aria-hidden="true"></i> Books</span></a></li>
                     <li><a href="index.html#hall-of-fame"><span><i class="fas fa-trophy" aria-hidden="true"></i> Hall of Fame</span></a></li>
                     <!-- <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li> -->
                     <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Me</span></a></li>
                 </ul>
             </nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
     
@@ -112,8 +123,46 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>0xBalvant</h3>
+                    <p>Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. CVE discoverer, bug bounty hunter, and security consultant building secure systems and sharing knowledge.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/balvant-chavda" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://balvant.in" target="_blank" rel="noopener noreferrer" title="Website"><i class="fas fa-globe"></i></a>
+                        <a href="mailto:contact@balvant.in" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://discord.com/users/ba1van7" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://app.ens.domains/name/balvant.eth" target="_blank" rel="noopener noreferrer" title="ENS"><i class="fab fa-ethereum"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="index.html#cves"><i class="fas fa-bug"></i> CVEs</a></li>
+                        <li><a href="books.html"><i class="fas fa-chevron-right"></i> Books</a></li>
+                        <li><a href="index.html#hall-of-fame"><i class="fas fa-chevron-right"></i> Hall of Fame</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#blog" class="filter-link" data-filter="android"><i class="fas fa-mobile-alt"></i> Android Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="ios"><i class="fab fa-apple"></i> iOS Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="web"><i class="fas fa-globe"></i> Web Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="web3"><i class="fab fa-ethereum"></i> Web3 Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="philosophy"><i class="fas fa-brain"></i> Philosophy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
             <p>&copy; 2025 Balvant Chavda. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

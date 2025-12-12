@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#0a0a0a">
     <title>Books – Balvant Chavda</title>
+    <!-- Resource hints for faster loading -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Base styles -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
     <style>
         /* Page wrapper */
@@ -91,7 +97,9 @@
     <header>
         <div class="container">
             <a href="index.html" class="logo">
+                <span class="logo-bracket logo-bracket-left" aria-hidden="true">[</span>
                 <span class="logo-text">Balvant<span class="domain">.IN</span></span>
+                <span class="logo-bracket logo-bracket-right" aria-hidden="true">]</span>
             </a>
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <i class="fas fa-bars" aria-hidden="true"></i>
@@ -99,6 +107,7 @@
             <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html#blog"><span><i class="fas fa-blog" aria-hidden="true"></i> Blog</span></a></li>
+                    <li><a href="index.html#cves"><span><i class="fas fa-bug" aria-hidden="true"></i> CVEs</span></a></li>
                     <li><a href="books.html"><span><i class="fas fa-book" aria-hidden="true"></i> Books</span></a></li>
                     <li><a href="index.html#hall-of-fame"><span><i class="fas fa-trophy" aria-hidden="true"></i> Hall of Fame</span></a></li>
                     <!-- <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li> -->
@@ -130,7 +139,7 @@
                 <div class="book-item" data-book="psychology-money" data-category="finance investing">
                     <div class="book-preview" onclick="showReview('psychology-money')">
                         <div class="book-cover-small">
-                            <img src="images/psychology-of-money.jpg" alt="The Psychology of Money book cover" loading="lazy">
+                            <img src="images/psychology-of-money.jpg" alt="The Psychology of Money book cover" loading="lazy" decoding="async" fetchpriority="high">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -149,7 +158,7 @@
                 <div class="book-item" data-book="kafka-shore" data-category="literature philosophy">
                     <div class="book-preview" onclick="showReview('kafka-shore')">
                         <div class="book-cover-small">
-                            <img src="images/kafka-on-the-shore.jpg" alt="Kafka on the Shore book cover" loading="lazy">
+                            <img src="images/kafka-on-the-shore.jpg" alt="Kafka on the Shore book cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -168,7 +177,7 @@
                 <div class="book-item" data-book="brothers-karamazov" data-category="literature philosophy">
                     <div class="book-preview" onclick="showReview('brothers-karamazov')">
                         <div class="book-cover-small">
-                            <img src="images/brothers-karamazov.jpg" alt="The Brothers Karamazov book cover" loading="lazy">
+                            <img src="images/brothers-karamazov.jpg" alt="The Brothers Karamazov book cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -187,7 +196,7 @@
                 <div class="book-item" data-book="principles" data-category="finance investing">
                     <div class="book-preview" onclick="showReview('principles')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9781501124020-M.jpg?default=false" alt="Principles book cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/principles.jpg" alt="Principles book cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -206,7 +215,7 @@
                 <div class="book-item" data-book="gunahon-ka-devta" data-category="literature">
                     <div class="book-preview" onclick="showReview('gunahon-ka-devta')">
                         <div class="book-cover-small">
-                            <img src="https://rekhtabooks.com/cdn/shop/products/1UqJ91wZaMD8IgvfMPu_ZjpKEHGxpGGSe_36185a22-6091-49de-9bdb-f7e0388de821.jpg?v=1680017846" alt="Gunahon Ka Devta cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/gunahon-ka-devta.jpg" alt="Gunahon Ka Devta cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -225,7 +234,7 @@
                 <div class="book-item" data-book="master-margarita" data-category="literature">
                     <div class="book-preview" onclick="showReview('master-margarita')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780141180144-M.jpg?default=false" alt="The Master and Margarita cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/master-and-margarita.jpg" alt="The Master and Margarita cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -244,7 +253,7 @@
                 <div class="book-item" data-book="book-of-life" data-category="philosophy">
                     <div class="book-preview" onclick="showReview('book-of-life')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780141004969-M.jpg?default=false" alt="The Book of Life cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/book-of-life.jpg" alt="The Book of Life cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -263,7 +272,7 @@
                 <div class="book-item" data-book="beginning-of-infinity" data-category="science philosophy">
                     <div class="book-preview" onclick="showReview('beginning-of-infinity')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780143121350-M.jpg?default=false" alt="The Beginning of Infinity cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/beginning-of-infinity.jpg" alt="The Beginning of Infinity cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -282,7 +291,7 @@
                 <div class="book-item" data-book="white-clouds" data-category="philosophy">
                     <div class="book-preview" onclick="showReview('white-clouds')">
                         <div class="book-cover-small">
-                            <img src="https://archive.org/services/img/TheWayOfTheWhiteCloudsLamaAnagarikaGovinda/full/pct:200/0/default.jpg" alt="The Way of the White Clouds cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/way-of-the-white-clouds.jpg" alt="The Way of the White Clouds cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -301,7 +310,7 @@
                 <div class="book-item" data-book="old-path-white-clouds" data-category="philosophy">
                     <div class="book-preview" onclick="showReview('old-path-white-clouds')">
                         <div class="book-cover-small">
-                            <img src="https://m.media-amazon.com/images/I/71UDr0lcIQL.jpg" alt="Old Path White Clouds cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/old-path-white-clouds.jpg" alt="Old Path White Clouds cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -320,7 +329,7 @@
                 <div class="book-item" data-book="factfulness" data-category="science">
                     <div class="book-preview" onclick="showReview('factfulness')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9781250107817-M.jpg?default=false" alt="Factfulness cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/factfulness.jpg" alt="Factfulness cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -339,7 +348,7 @@
                 <div class="book-item" data-book="one-up-on-wall-street" data-category="investing finance">
                     <div class="book-preview" onclick="showReview('one-up-on-wall-street')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780743200400-M.jpg?default=false" alt="One Up On Wall Street cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/one-up-on-wall-street.jpg" alt="One Up On Wall Street cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -358,7 +367,7 @@
                 <div class="book-item" data-book="parallel-worlds" data-category="science">
                     <div class="book-preview" onclick="showReview('parallel-worlds')">
                         <div class="book-cover-small">
-                            <img src="https://m.media-amazon.com/images/I/71cNrvjN0mL._UF1000,1000_QL80_.jpg" alt="Parallel Worlds cover" loading="lazy" data-title="Parallel Worlds" data-author="Michio Kaku" onerror="fallbackCover(this)">
+                            <img src="images/parallel-worlds.jpg" alt="Parallel Worlds cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -377,7 +386,7 @@
                 <div class="book-item" data-book="meditations" data-category="philosophy">
                     <div class="book-preview" onclick="showReview('meditations')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780140449334-M.jpg?default=false" alt="Meditations cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/meditations.jpg" alt="Meditations cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -396,7 +405,7 @@
                 <div class="book-item" data-book="naval-almanack" data-category="investing philosophy">
                     <div class="book-preview" onclick="showReview('naval-almanack')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9781544514215-M.jpg?default=false" alt="The Almanack of Naval Ravikant cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/naval-almanack.jpg" alt="The Almanack of Naval Ravikant cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -415,7 +424,7 @@
                 <div class="book-item" data-book="metamorphosis" data-category="literature">
                     <div class="book-preview" onclick="showReview('metamorphosis')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780553213690-M.jpg?default=false" alt="Metamorphosis cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/metamorphosis.jpg" alt="Metamorphosis cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -434,7 +443,7 @@
                 <div class="book-item" data-book="coffee-can-investing" data-category="investing finance">
                     <div class="book-preview" onclick="showReview('coffee-can-investing')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780670090457-M.jpg?default=false" alt="Coffee Can Investing cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/coffee-can-investing.jpg" alt="Coffee Can Investing cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -453,7 +462,7 @@
                 <div class="book-item" data-book="subtle-art" data-category="philosophy">
                     <div class="book-preview" onclick="showReview('subtle-art')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9780062457714-M.jpg?default=false" alt="The Subtle Art of Not Giving a F*ck cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/subtle-art.jpg" alt="The Subtle Art of Not Giving a F*ck cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -472,7 +481,7 @@
                 <div class="book-item" data-book="sapiens" data-category="science philosophy">
                     <div class="book-preview" onclick="showReview('sapiens')">
                         <div class="book-cover-small">
-                            <img src="https://m.media-amazon.com/images/I/713jIoMO3UL.jpg" alt="Sapiens cover" loading="lazy" data-title="Sapiens" data-author="Yuval Noah Harari" onerror="fallbackCover(this)">
+                            <img src="images/sapiens.jpg" alt="Sapiens cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -491,7 +500,7 @@
                 <div class="book-item" data-book="homo-deus" data-category="science philosophy">
                     <div class="book-preview" onclick="showReview('homo-deus')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9781784703936-M.jpg?default=false" alt="Homo Deus cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/homo-deus.jpg" alt="Homo Deus cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -510,7 +519,7 @@
                 <div class="book-item" data-book="21-lessons" data-category="philosophy science">
                     <div class="book-preview" onclick="showReview('21-lessons')">
                         <div class="book-cover-small">
-                            <img src="https://covers.openlibrary.org/b/isbn/9781787330672-M.jpg?default=false" alt="21 Lessons for the 21st Century cover" loading="lazy" onerror="this.onerror=null;this.src='images/web.jpg';">
+                            <img src="images/21-lessons.jpg" alt="21 Lessons for the 21st Century cover" loading="lazy" decoding="async">
                         </div>
                         <div class="book-info">
                             <div class="book-meta">
@@ -538,6 +547,50 @@
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>0xBalvant</h3>
+                    <p>Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. CVE discoverer, bug bounty hunter, and security consultant building secure systems and sharing knowledge.</p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/balvant-chavda" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://balvant.in" target="_blank" rel="noopener noreferrer" title="Website"><i class="fas fa-globe"></i></a>
+                        <a href="mailto:contact@balvant.in" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://discord.com/users/ba1van7" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://app.ens.domains/name/balvant.eth" target="_blank" rel="noopener noreferrer" title="ENS"><i class="fab fa-ethereum"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="index.html#cves"><i class="fas fa-bug"></i> CVEs</a></li>
+                        <li><a href="books.html"><i class="fas fa-chevron-right"></i> Books</a></li>
+                        <li><a href="index.html#hall-of-fame"><i class="fas fa-chevron-right"></i> Hall of Fame</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#blog" class="filter-link" data-filter="android"><i class="fas fa-mobile-alt"></i> Android Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="ios"><i class="fab fa-apple"></i> iOS Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="web"><i class="fas fa-globe"></i> Web Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="web3"><i class="fab fa-ethereum"></i> Web3 Security</a></li>
+                        <li><a href="index.html#blog" class="filter-link" data-filter="philosophy"><i class="fas fa-brain"></i> Philosophy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Balvant Chavda. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/main.js" defer></script>
@@ -844,27 +897,6 @@
             }
         };
 
-        // Robust cover fallback: try alternate endpoints then local fallback
-        function fallbackCover(imgEl) {
-            const title = imgEl.getAttribute('data-title') || '';
-            const author = imgEl.getAttribute('data-author') || '';
-            const tried = imgEl.getAttribute('data-tried') || '';
-            if (tried !== 'query') {
-                imgEl.setAttribute('data-tried', 'query');
-                const q = encodeURIComponent(`${title} ${author}`.trim());
-                imgEl.src = `https://covers.openlibrary.org/b/olid/${q}-L.jpg?default=false`;
-                return;
-            }
-            // Build an inline fallback cover
-            const wrapper = document.createElement('div');
-            wrapper.className = 'cover-fallback';
-            const t = document.createElement('div'); t.className = 'cf-title'; t.textContent = title || 'Book';
-            const a = document.createElement('div'); a.className = 'cf-author'; a.textContent = author || '';
-            wrapper.appendChild(t); wrapper.appendChild(a);
-            const parent = imgEl.parentNode;
-            parent.replaceChild(wrapper, imgEl);
-        }
-
         // Filtering
         (function initBookFilters(){
             const filters = document.querySelectorAll('.books-filter-btn');
@@ -920,6 +952,18 @@
 
         function escCloseOnce(e) { if (e.key === 'Escape') { closeModal(); document.removeEventListener('keydown', escCloseOnce); } }
         function closeModal() { document.getElementById('bookModal').style.display = 'none'; document.body.style.overflow = ''; }
+
+        // Simple local fallback for broken images only
+        (function ensureBookCovers() {
+            const fallbackSrc = 'images/web.jpg';
+            const imgs = Array.from(document.querySelectorAll('.book-cover-small img'));
+            imgs.forEach((img) => {
+                img.addEventListener('error', function() {
+                    this.onerror = null;
+                    this.src = fallbackSrc;
+                }, { once: true });
+            });
+        })();
     </script>
 
     <!-- Google Analytics (same as index) -->

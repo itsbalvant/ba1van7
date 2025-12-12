@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Liquid glass: tilt + sheen interactions
     function initTiltSheen() {
-        const tiltSelectors = ['.blog-card', '.contact-link-card', '.hof-card', '.book-item'];
+        const tiltSelectors = ['.blog-card', '.contact-link-card', '.hof-card', '.book-item', '.cve-card'];
         const cards = document.querySelectorAll(tiltSelectors.join(','));
         if (!cards.length) return;
 
@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBlogImages();
     
     // Add animation to cards when they come into view
-    const observeElements = document.querySelectorAll('.expertise-card, .blog-card');
+    const observeElements = document.querySelectorAll('.expertise-card, .blog-card, .cve-card');
     
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
