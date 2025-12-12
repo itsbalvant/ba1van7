@@ -77,11 +77,17 @@ header {
     html {
         padding-top: 0 !important;
         margin-top: 0 !important;
+        background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+        background-color: #0b0b12 !important;
+        min-height: 100vh !important;
     }
     
     body {
         padding-top: 0 !important;
         margin-top: 0 !important;
+        background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+        background-color: #0b0b12 !important;
+        min-height: 100vh !important;
     }
     
     body > header {
@@ -328,6 +334,43 @@ header {
     .header-spacer {
         height: 80px !important;
         display: block !important;
+        background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+        background-color: #0b0b12 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 0 !important;
+    }
+    
+    /* Ensure all sections and containers have dark background */
+    body > * {
+        background-color: transparent !important;
+    }
+    
+    section,
+    .post-content,
+    .post-content .container,
+    .hero-section,
+    .books-page,
+    .contact-page,
+    .coming-soon-section,
+    .resume-container {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+    
+    /* Ensure first section starts right after header */
+    body > section:first-of-type,
+    body > .hero-section:first-of-type,
+    body > .books-page:first-of-type,
+    body > .contact-page:first-of-type,
+    body > .coming-soon-section:first-of-type,
+    body > .resume-container:first-of-type,
+    body > .post-content:first-of-type {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        background: transparent !important;
     }
 }
 
@@ -341,6 +384,10 @@ html {
     scroll-padding-top: 80px; /* Space for fixed header */
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+    background-color: #0b0b12 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Page Load Animation */
@@ -351,12 +398,15 @@ html {
 
 body {
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%);
+    background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+    background-color: #0b0b12 !important;
     color: var(--text-color);
     line-height: 1.6;
     opacity: 0;
     animation: fadeIn 0.5s ease-out forwards;
     overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Ensure header is ALWAYS visible, even during body fade-in - CRITICAL */
@@ -579,7 +629,7 @@ header {
     top: 0 !important;
     left: 0 !important;
     z-index: 999999 !important;
-    border-bottom: 1px solid rgba(0, 255, 163, 0.1);
+    border-bottom: 2px solid rgba(0, 255, 163, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     animation: fadeInDown 0.8s ease-out;
@@ -587,6 +637,7 @@ header {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    margin-bottom: 0 !important;
 }
 
 header.scrolled {
@@ -1273,9 +1324,9 @@ nav {
     /* Hide toggle button indicator on desktop */
     header .container::after {
         display: none !important;
-    }
+}
 
-    nav ul {
+nav ul {
         flex-wrap: nowrap !important;
         gap: 0.8rem !important;
         align-items: center !important;
@@ -4010,6 +4061,12 @@ header.scrolled {
 .header-spacer {
     height: 80px; /* Height of your header */
     width: 100%;
+    background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+    background-color: #0b0b12 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    z-index: 0 !important;
 }
 
 /* Ensure consistent header styling */
