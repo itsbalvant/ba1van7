@@ -240,10 +240,26 @@
         
         /* Mobile styles */
         @media (max-width: 768px) {
+            html {
+                background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+            }
+            
             body {
                 padding: 0 !important;
                 margin: 0 !important;
                 overflow-x: hidden !important;
+                background: linear-gradient(135deg, #0b0b12 0%, #0f0f18 50%, #0b0b12 100%) !important;
+                background-attachment: fixed !important;
+            }
+            
+            body * {
+                background-color: transparent !important;
+            }
+            
+            .post-content,
+            .post-content .container,
+            section {
+                background: transparent !important;
             }
             
             .container {
