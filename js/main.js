@@ -112,18 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add click handler to toggle button
         menuToggle.addEventListener('click', handleToggle);
         
-        // Add click handler to logo on mobile only
-        if (logo) {
-            logo.addEventListener('click', function(e) {
-                // Only intercept on mobile
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleToggle(e);
-                }
-                // On desktop, let the link work normally
-            });
-        }
+        // Add click handler to toggle button
+        menuToggle.addEventListener('click', handleToggle);
+        
+        // Keep logo as normal link (don't intercept clicks)
+        // Logo will work normally on both mobile and desktop
         
         // Close menu immediately when clicking a link
         const navLinks = document.querySelectorAll('nav a');
@@ -227,11 +220,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            // Don't close if clicking logo (it toggles the menu)
-            const isLogoClick = logo && (e.target === logo || logo.contains(e.target));
             const isToggleClick = e.target === menuToggle || menuToggle.contains(e.target);
             
-            if (isMenuOpen && !nav.contains(e.target) && !isToggleClick && !isLogoClick) {
+            if (isMenuOpen && !nav.contains(e.target) && !isToggleClick) {
                 toggleMenu();
             }
         });
