@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>I Found SQLi on a Search Page: The Payload, The Proof, The $2500 — Balvant Chavda</title>
+    <title>SQLi Finding and Exploitation — Balvant Chavda</title>
     <!-- Preload critical CSS -->
     <link rel="preload" href="../css/style.css" as="style">
     <link rel="stylesheet" href="../css/style.css">
@@ -413,10 +413,21 @@
             .severity-tag,
             .reward-tag {
                 font-size: 0.7rem !important;
-                padding: 0.3rem 0.6rem !important;
+                padding: 0.4rem 0.8rem !important;
                 margin-right: 0.5rem !important;
                 margin-bottom: 0.5rem !important;
                 display: inline-block !important;
+                border-radius: 6px !important;
+                border: 1px solid !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+            }
+            
+            .severity-tag {
+                border-color: rgba(244, 67, 54, 0.4) !important;
+            }
+            
+            .reward-tag {
+                border-color: rgba(0, 255, 163, 0.4) !important;
             }
             
             .cvss-score {
@@ -565,7 +576,7 @@
     <!-- Post Content -->
     <section class="post-content">
         <div class="container">
-            <h1>I Found SQLi on a Search Page: The Payload, The Proof, The $2500</h1>
+            <h1>SQLi Finding and Exploitation</h1>
             <div class="post-meta">
                 <span class="post-category">Web Security</span>
                 <span class="post-date">Published on November 26, 2023</span>
