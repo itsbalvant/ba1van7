@@ -1,6 +1,5 @@
 // Header scroll effect
 const header = document.querySelector('header');
-const headerSpacer = document.querySelector('.header-spacer');
 const scrollTopBtn = document.getElementById('scrollTopBtn');
 
 // Update header on scroll
