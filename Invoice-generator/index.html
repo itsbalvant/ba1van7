@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Bounty Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐛 Bug Bounty Invoice Generator</h1>
+            <p>Generate professional invoices for your bug bounty payments</p>
+        </header>
+
+        <form id="invoiceForm">
+            <div class="form-section">
+                <h2>Invoice Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="invoiceNumber">Invoice Number</label>
+                        <input type="text" id="invoiceNumber" placeholder="INV-2025-007" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoiceDate">Invoice Date</label>
+                        <input type="date" id="invoiceDate" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>From (Bug Bounty Platform)</h2>
+                <div class="form-group">
+                    <label for="fromName">Platform Name</label>
+                    <input type="text" id="fromName" value="HackerOne Inc." required>
+                </div>
+                <div class="form-group">
+                    <label for="fromAddress">Address</label>
+                    <textarea id="fromAddress" rows="4" required>548 Market Street, PMB 24734
+San Francisco, CA 94104
+USA</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="fromWebsite">Website / Support URL</label>
+                    <input type="url" id="fromWebsite" value="https://support.hackerone.com">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>To (Your Information)</h2>
+                <div class="form-group">
+                    <label for="toName">Your Name</label>
+                    <input type="text" id="toName" placeholder="Balvant Chavda" required>
+                </div>
+                <div class="form-group">
+                    <label for="toAddress">Country / Address</label>
+                    <textarea id="toAddress" rows="2" placeholder="India" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="toEmail">Your Email</label>
+                    <input type="email" id="toEmail" placeholder="itsbalvant@gmail.com" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Bounty Details</h2>
+                <div class="form-group">
+                    <label for="description">Description of Services</label>
+                    <textarea id="description" rows="3" placeholder="Bounty payments for reporting security vulnerabilities on the HackerOne platform." required>Bounty payments for reporting security vulnerabilities.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reportIds">Report IDs</label>
+                    <input type="text" id="reportIds" placeholder="3293439 (Nextcloud)" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" min="0" step="0.01" placeholder="750.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <select id="currency" required>
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
+                            <option value="INR">INR (₹)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Payment Information</h2>
+                <div class="form-group">
+                    <label for="paymentDate">Payment Scheduled Date</label>
+                    <input type="date" id="paymentDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method (Optional)</label>
+                    <input type="text" id="paymentMethod" placeholder="Currencycloud">
+                </div>
+                <div class="form-group">
+                    <label for="thankYouMessage">Thank You Message (Optional)</label>
+                    <textarea id="thankYouMessage" rows="2" placeholder="Thank you for the opportunity to contribute to your platform"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section summary-section">
+                <h2>Summary</h2>
+                <div class="summary-row total">
+                    <span>Total Amount:</span>
+                    <span id="totalAmount">$0.00 USD</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-generate">Generate PDF Invoice</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
