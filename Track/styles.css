@@ -296,11 +296,68 @@ body {
     letter-spacing: -0.02em;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    margin: 0;
 }
 
-.logo-icon {
-    font-size: 32px;
+.logo-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-avatar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.logo-avatar i {
+    font-size: 24px;
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.logo-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.logo-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .logo-avatar {
+    background: linear-gradient(135deg, #0071E3 0%, #5AC8FA 100%);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
 }
 
 .stats {
@@ -1087,6 +1144,27 @@ body {
     margin-bottom: 20px;
 }
 
+/* Mobile: Stack input above button */
+@media (max-width: 768px) {
+    .bounty-add-section {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .bounty-input-group {
+        width: 100%;
+        flex: none;
+    }
+    
+    .bounty-add-section .btn-small {
+        width: 100%;
+        padding: 18px 24px;
+        font-size: 17px;
+        min-height: 56px;
+    }
+}
+
 .bounty-input-group {
     position: relative;
     flex: 1;
@@ -1096,8 +1174,8 @@ body {
 
 .currency-symbol {
     position: absolute;
-    left: 16px;
-    font-size: 17px;
+    left: 18px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: -0.022em;
     color: var(--text-secondary);
@@ -1107,17 +1185,18 @@ body {
 
 .bounty-input {
     width: 100%;
-    padding: 14px 18px 14px 40px;
+    padding: 18px 20px 18px 44px;
     border: 0.5px solid var(--border-color);
     border-radius: var(--radius-md);
-    font-size: 17px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     letter-spacing: -0.022em;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-family: inherit;
     background: var(--bg-secondary);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
+    min-height: 56px;
 }
 
 [data-theme="dark"] .bounty-input {
@@ -1791,6 +1870,23 @@ form {
     .logo {
         font-size: 24px;
     }
+    
+    .logo-avatar {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .logo-avatar i {
+        font-size: 20px;
+    }
+    
+    .logo-title {
+        font-size: 22px;
+    }
+    
+    .logo-subtitle {
+        font-size: 11px;
+    }
 
     .controls-section {
         flex-direction: column;
@@ -2128,15 +2224,26 @@ form {
 
     .bounty-add-section {
         flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
     }
 
     .bounty-input-group {
         width: 100%;
+        flex: none;
+    }
+    
+    .bounty-input {
+        width: 100%;
+        font-size: 18px;
     }
 
-    .btn-small {
+    .bounty-add-section .btn-small {
         width: 100%;
         justify-content: center;
+        padding: 18px 24px;
+        font-size: 17px;
+        min-height: 56px;
     }
 
     .header-right {
@@ -2540,10 +2647,10 @@ form {
 
 .input-icon {
     position: absolute;
-    left: 16px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--text-secondary);
     pointer-events: none;
@@ -2551,7 +2658,21 @@ form {
 }
 
 .input-with-icon input {
-    padding-left: 40px;
+    padding-left: 44px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 20px;
+    font-weight: 500;
+    min-height: 56px;
+}
+
+/* Specifically for amount inputs */
+#expenseAmount,
+#lendAmount {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 18px 20px 18px 44px;
+    min-height: 56px;
 }
 
 /* Scrollbar Styling */

@@ -950,7 +950,7 @@ class GoalTracker {
         if (!hasBountyGoal) {
             const bountyGoal = {
                 id: 'bounty-goal-100k',
-                title: 'BugBOunty 100k $ Goal',
+                title: 'Bug Bounty 100k $ Goal',
                 description: 'Track your bug bounty earnings and reach $100,000!',
                 category: 'career',
                 priority: 'high',
