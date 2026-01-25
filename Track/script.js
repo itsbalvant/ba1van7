@@ -45,6 +45,10 @@ class AuthManager {
     }
 
     login(username, password) {
+        if (!username || username.trim() === '') {
+            return { success: false, message: 'Username is required!' };
+        }
+
         const users = this.getUsers();
         const user = users[username];
 
@@ -52,12 +56,14 @@ class AuthManager {
             return { success: false, message: 'Username not found!' };
         }
 
-        // Accept any password - check if provided password matches stored hash
-        // If user registered with empty password, passwordHash will be hash of empty string
-        // So we need to check if the provided password (or empty) matches
-        const providedPasswordHash = this.hashPassword(password || '');
+        // Check if password matches
+        // Normalize password (handle empty string)
+        const normalizedPassword = password || '';
+        const providedPasswordHash = this.hashPassword(normalizedPassword);
+        const storedPasswordHash = user.passwordHash || this.hashPassword('');
         
-        if (user.passwordHash && user.passwordHash !== providedPasswordHash) {
+        // Compare password hashes
+        if (providedPasswordHash !== storedPasswordHash) {
             return { success: false, message: 'Incorrect password!' };
         }
 
@@ -65,7 +71,7 @@ class AuthManager {
         const session = {
             username: user.username,
             email: user.email || '',
-            name: user.name,
+            name: user.name || user.username,
             loginTime: new Date().toISOString()
         };
         localStorage.setItem('currentUser', JSON.stringify(session));
@@ -2096,8 +2102,45 @@ function initializeApp() {
 }
 
 function showAuthModal() {
-    document.getElementById('authModal').classList.add('active');
+    const authModal = document.getElementById('authModal');
+    const authForm = document.getElementById('authForm');
+    
+    // Reset form
+    if (authForm) {
+        authForm.reset();
+    }
+    
+    // Reset to login tab
+    const authTabs = document.querySelectorAll('.auth-tab');
+    authTabs.forEach(t => t.classList.remove('active'));
+    const loginTab = document.querySelector('.auth-tab[data-tab="login"]');
+    if (loginTab) {
+        loginTab.classList.add('active');
+    }
+    
+    // Reset form fields visibility
+    document.getElementById('registerFields').style.display = 'none';
+    document.getElementById('emailFieldLogin').style.display = 'block';
+    document.getElementById('confirmPasswordGroup').style.display = 'none';
+    document.getElementById('authModalTitle').textContent = 'Welcome';
+    document.getElementById('authSubmitBtn').textContent = 'Sign In';
+    
+    // Clear error/success messages
+    const errorDiv = document.getElementById('authError');
+    const successDiv = document.getElementById('authSuccess');
+    if (errorDiv) {
+        errorDiv.textContent = '';
+        errorDiv.style.display = 'none';
+    }
+    if (successDiv) {
+        successDiv.textContent = '';
+        successDiv.style.display = 'none';
+    }
+    
+    // Show modal and focus
+    authModal.classList.add('active');
     document.getElementById('authUsername').focus();
+    
     // Hide main content until logged in
     document.querySelector('.main-content').style.display = 'none';
 }
@@ -2196,18 +2239,26 @@ function setupAuthListeners() {
                 errorDiv.style.display = 'block';
             }
         } else {
+            // Login attempt
             const email = document.getElementById('authEmailLogin').value.trim();
             const result = authManager.login(username, password);
+            
             if (result.success) {
                 successDiv.textContent = 'Login successful! Redirecting...';
                 successDiv.style.display = 'block';
+                errorDiv.style.display = 'none';
+                
                 // Close modal and redirect immediately
-                document.getElementById('authModal').classList.remove('active');
-                document.querySelector('.main-content').style.display = 'block';
-                initializeApp();
+                setTimeout(() => {
+                    document.getElementById('authModal').classList.remove('active');
+                    document.querySelector('.main-content').style.display = 'block';
+                    initializeApp();
+                }, 300);
             } else {
                 errorDiv.textContent = result.message;
                 errorDiv.style.display = 'block';
+                successDiv.style.display = 'none';
+                console.error('Login failed:', result.message);
             }
         }
     });
@@ -2217,11 +2268,51 @@ function setupAuthListeners() {
         logoutBtn.addEventListener('click', () => {
             if (confirm('Are you sure you want to logout?')) {
                 authManager.logout();
+                
+                // Clear all trackers
+                tracker = null;
+                expenseTracker = null;
+                lendTracker = null;
+                
+                // Hide user info and main content
                 document.getElementById('userInfo').style.display = 'none';
                 document.querySelector('.main-content').style.display = 'none';
+                
+                // Reset auth form and show login tab
+                const authForm = document.getElementById('authForm');
+                if (authForm) {
+                    authForm.reset();
+                }
+                
+                // Reset to login tab
+                const authTabs = document.querySelectorAll('.auth-tab');
+                authTabs.forEach(t => t.classList.remove('active'));
+                const loginTab = document.querySelector('.auth-tab[data-tab="login"]');
+                if (loginTab) {
+                    loginTab.classList.add('active');
+                }
+                
+                // Reset form fields visibility
+                document.getElementById('registerFields').style.display = 'none';
+                document.getElementById('emailFieldLogin').style.display = 'block';
+                document.getElementById('confirmPasswordGroup').style.display = 'none';
+                document.getElementById('authModalTitle').textContent = 'Welcome';
+                document.getElementById('authSubmitBtn').textContent = 'Sign In';
+                
+                // Clear error/success messages
+                const errorDiv = document.getElementById('authError');
+                const successDiv = document.getElementById('authSuccess');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+                if (successDiv) {
+                    successDiv.textContent = '';
+                    successDiv.style.display = 'none';
+                }
+                
+                // Show auth modal
                 showAuthModal();
-                // Clear tracker
-                tracker = null;
             }
         });
     }
