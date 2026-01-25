@@ -1,0 +1,22 @@
+{
+  "server": {
+    "port": 8000,
+    "host": "0.0.0.0"
+  },
+  "security": {
+    "auth": {
+      "username": "admin",
+      "password": "secure123"
+    },
+    "ip_whitelist": [],
+    "rate_limit": {
+      "requests_per_minute": 100,
+      "enabled": true
+    }
+  },
+  "notes": {
+    "auth": "Change the username and password in server.py or config.json",
+    "ip_whitelist": "Leave empty array [] to allow all IPs, or add specific IPs like ['127.0.0.1', '192.168.1.100']",
+    "rate_limit": "Set requests_per_minute to 0 to disable rate limiting"
+  }
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Tracker - Personal Goals Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <h1 class="logo">
+                    <span class="logo-icon">🎯</span>
+                    Goal Tracker
+                </h1>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <button class="icon-btn" id="downloadDataBtn" title="Download All Data">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="icon-btn" id="uploadDataBtn" title="Upload Data">
+                        <i class="fas fa-upload"></i>
+                    </button>
+                    <input type="file" id="dataFileInput" accept=".json" style="display: none;">
+                    <button class="icon-btn" id="themeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    <span class="user-name" id="userName"></span>
+                    <button class="btn btn-secondary btn-small" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+            <!-- Main Navigation Tabs -->
+            <div class="main-nav-tabs">
+                <button class="main-nav-tab active" data-section="goals">
+                    <i class="fas fa-bullseye"></i>
+                    Goals
+                </button>
+                <button class="main-nav-tab" data-section="expenses">
+                    <i class="fas fa-wallet"></i>
+                    Expenses
+                </button>
+                <button class="main-nav-tab" data-section="lend">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    Lend
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="controls-section">
+                <button class="btn btn-primary" id="addGoalBtn">
+                    <i class="fas fa-plus"></i>
+                    Add New Goal
+                </button>
+            </div>
+
+            <!-- Goals Section -->
+            <div class="content-section active" id="goalsSection">
+                <div class="goals-container" id="goalsContainer">
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-icon">📝</div>
+                        <h2>No goals yet</h2>
+                        <p>Start tracking your progress by adding your first goal!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expenses Section -->
+            <div class="content-section" id="expensesSection">
+                <div class="expenses-header">
+                    <div class="expenses-stats">
+                        <div class="expense-stat-card">
+                            <div class="expense-stat-icon today"><i class="fas fa-calendar-day"></i></div>
+                            <div class="expense-stat-info">
+                                <h3 id="todayTotal">₹0</h3>
+                                <p>Today</p>
+                            </div>
+                        </div>
+                        <div class="expense-stat-card">
+                            <div class="expense-stat-icon month"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="expense-stat-info">
+                                <h3 id="monthTotal">₹0</h3>
+                                <p>This Month</p>
+                            </div>
+                        </div>
+                        <div class="expense-stat-card">
+                            <div class="expense-stat-icon average"><i class="fas fa-chart-line"></i></div>
+                            <div class="expense-stat-info">
+                                <h3 id="dailyAverage">₹0</h3>
+                                <p>Daily Average</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expenses-controls">
+                    <button class="btn btn-primary" id="addExpenseBtn">
+                        <i class="fas fa-plus"></i>
+                        Add Expense
+                    </button>
+                    <div class="expenses-filters">
+                        <input type="date" id="expenseDateFilter" class="date-filter">
+                        <select id="expenseCategoryFilter" class="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="food">Food & Dining</option>
+                            <option value="transport">Transport</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="bills">Bills & Utilities</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="health">Health & Fitness</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="expenses-list" id="expensesList">
+                    <div class="empty-state" id="expensesEmptyState">
+                        <div class="empty-icon">💰</div>
+                        <h2>No expenses yet</h2>
+                        <p>Start tracking your expenses by adding your first expense!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lend Section -->
+            <div class="content-section" id="lendSection">
+                <div class="lend-header">
+                    <div class="lend-stats">
+                        <div class="lend-stat-card">
+                            <div class="lend-stat-icon total"><i class="fas fa-money-bill-wave"></i></div>
+                            <div class="lend-stat-info">
+                                <h3 id="totalLent">₹0</h3>
+                                <p>Total Lent</p>
+                            </div>
+                        </div>
+                        <div class="lend-stat-card">
+                            <div class="lend-stat-icon pending"><i class="fas fa-clock"></i></div>
+                            <div class="lend-stat-info">
+                                <h3 id="pendingAmount">₹0</h3>
+                                <p>Pending</p>
+                            </div>
+                        </div>
+                        <div class="lend-stat-card">
+                            <div class="lend-stat-icon returned"><i class="fas fa-check-circle"></i></div>
+                            <div class="lend-stat-info">
+                                <h3 id="returnedAmount">₹0</h3>
+                                <p>Returned</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lend-controls">
+                    <button class="btn btn-primary" id="addLendBtn">
+                        <i class="fas fa-plus"></i>
+                        Add Lend
+                    </button>
+                    <div class="lend-filters">
+                        <select id="lendStatusFilter" class="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="returned">Returned</option>
+                            <option value="overdue">Overdue</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="lend-list" id="lendList">
+                    <div class="empty-state" id="lendEmptyState">
+                        <div class="empty-icon">💸</div>
+                        <h2>No loans yet</h2>
+                        <p>Start tracking money you've lent by adding your first loan!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Login/Register -->
+    <div class="modal" id="authModal">
+        <div class="modal-content modal-auth">
+            <div class="modal-header">
+                <h2 id="authModalTitle">Welcome</h2>
+                <button class="modal-close" id="closeAuthModal">&times;</button>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Sign In</button>
+                <button class="auth-tab" data-tab="register">Create Account</button>
+            </div>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="authUsername">Username *</label>
+                    <input type="text" id="authUsername" placeholder="Enter your username" required autocomplete="username">
+                </div>
+                <div id="registerFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" placeholder="Enter your name" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="authEmail">Email (Optional)</label>
+                        <input type="email" id="authEmail" placeholder="name@example.com" autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-group" id="emailFieldLogin">
+                    <label for="authEmailLogin">Email (Optional)</label>
+                    <input type="email" id="authEmailLogin" placeholder="name@example.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="authPassword">Password</label>
+                    <input type="password" id="authPassword" placeholder="Enter your password" autocomplete="current-password">
+                </div>
+                <div class="form-group" id="confirmPasswordGroup" style="display: none;">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password">
+                </div>
+                <div class="auth-error" id="authError"></div>
+                <div class="auth-success" id="authSuccess"></div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary" id="authSubmitBtn">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Statistics Modal -->
+    <div class="modal" id="statsModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
+                <button class="modal-close" id="closeStatsModal">&times;</button>
+            </div>
+            <div class="stats-dashboard">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="stat-info">
+                        <h3 id="statTotalGoals">0</h3>
+                        <p>Total Goals</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon success"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-info">
+                        <h3 id="statCompleted">0</h3>
+                        <p>Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon warning"><i class="fas fa-clock"></i></div>
+                    <div class="stat-info">
+                        <h3 id="statActive">0</h3>
+                        <p>Active</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon primary"><i class="fas fa-percentage"></i></div>
+                    <div class="stat-info">
+                        <h3 id="statProgress">0%</h3>
+                        <p>Overall Progress</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>Goals by Category</h3>
+                    <div class="category-chart" id="categoryChart"></div>
+                </div>
+                <div class="chart-container">
+                    <h3>Goals by Priority</h3>
+                    <div class="priority-chart" id="priorityChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates Modal -->
+    <div class="modal" id="templateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-layer-group"></i> Goal Templates</h2>
+                <button class="modal-close" id="closeTemplateModal">&times;</button>
+            </div>
+            <div class="templates-grid" id="templatesGrid"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit Expense -->
+    <div class="modal" id="expenseModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="expenseModalTitle">Add Expense</h2>
+                <button class="modal-close" id="closeExpenseModal">&times;</button>
+            </div>
+            <form id="expenseForm">
+                <div class="form-group">
+                    <label for="expenseAmount">Amount *</label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">₹</span>
+                        <input type="number" id="expenseAmount" placeholder="0" step="1" min="0" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expenseCategory">Category *</label>
+                        <select id="expenseCategory" required>
+                            <option value="food">Food & Dining</option>
+                            <option value="transport">Transport</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="bills">Bills & Utilities</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="health">Health & Fitness</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseDate">Date *</label>
+                        <input type="date" id="expenseDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="expenseNotes">Notes</label>
+                    <textarea id="expenseNotes" rows="3" placeholder="Add notes about this expense..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelExpenseBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit Goal -->
+    <div class="modal" id="goalModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Goal</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form id="goalForm">
+                <div class="form-group">
+                    <label for="goalTitle">Goal Title *</label>
+                    <input type="text" id="goalTitle" placeholder="e.g., Learn JavaScript" required>
+                </div>
+                <div class="form-group">
+                    <label for="goalDescription">Description</label>
+                    <textarea id="goalDescription" rows="3" placeholder="Add more details about your goal..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="goalTags">Tags (comma separated)</label>
+                    <input type="text" id="goalTags" placeholder="e.g., urgent, important, project">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="goalCategory">Category</label>
+                        <select id="goalCategory">
+                            <option value="personal">Personal</option>
+                            <option value="career">Career</option>
+                            <option value="health">Health</option>
+                            <option value="education">Education</option>
+                            <option value="finance">Finance</option>
+                            <option value="hobby">Hobby</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goalPriority">Priority</label>
+                        <select id="goalPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="goalDueDate">Due Date</label>
+                        <input type="date" id="goalDueDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="goalProgress">Progress (%)</label>
+                        <input type="number" id="goalProgress" min="0" max="100" value="0">
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Goal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <input type="file" id="importFile" accept=".json" style="display: none;">
+
+    <!-- Modal for Add/Edit Lend -->
+    <div class="modal" id="lendModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="lendModalTitle">Add Lend</h2>
+                <button class="modal-close" id="closeLendModal">&times;</button>
+            </div>
+            <form id="lendForm">
+                <div class="form-group">
+                    <label for="lendPersonName">Person Name *</label>
+                    <input type="text" id="lendPersonName" placeholder="Enter person's name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lendAmount">Amount *</label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">₹</span>
+                        <input type="number" id="lendAmount" placeholder="0" step="1" min="0" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lendDate">Lend Date *</label>
+                        <input type="date" id="lendDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lendDueDate">Due Date *</label>
+                        <input type="date" id="lendDueDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lendNotes">Notes</label>
+                    <textarea id="lendNotes" rows="3" placeholder="Additional notes about this loan..."></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="lendReturned">
+                        <label for="lendReturned">Mark as returned</label>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelLendBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
