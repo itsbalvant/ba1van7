@@ -1128,8 +1128,10 @@ class ExpenseTracker {
         if (modal) {
             modal.classList.remove('active');
         }
+        // Always clear editing state and saving flag
         this.editingExpenseId = null;
-        this.isSaving = false; // Reset saving state
+        this.isSaving = false;
+        
         const form = document.getElementById('expenseForm');
         if (form) {
             form.reset();
@@ -1143,10 +1145,19 @@ class ExpenseTracker {
 
     saveExpense() {
         // Prevent multiple submissions
-        if (this.isSaving) return;
+        if (this.isSaving) {
+            console.log('Already saving expense, ignoring duplicate submission');
+            return;
+        }
         this.isSaving = true;
 
         try {
+            // Ensure expenses array exists
+            if (!Array.isArray(this.expenses)) {
+                console.warn('Expenses array is invalid, resetting');
+                this.expenses = [];
+            }
+
             const amountInput = document.getElementById('expenseAmount');
             if (!amountInput) {
                 console.error('Expense amount input not found');
@@ -1179,13 +1190,21 @@ class ExpenseTracker {
                     console.error('Expense not found for editing:', this.editingExpenseId);
                 }
             } else {
-                // Add new expense
-                expenseData.id = Date.now().toString();
+                // Add new expense - use timestamp + random to prevent ID collisions
+                expenseData.id = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
                 this.expenses.push(expenseData);
             }
 
-            // Save first
-            this.saveExpenses();
+            // Save first - wrap in try-catch to handle localStorage errors gracefully
+            try {
+                this.saveExpenses();
+            } catch (saveError) {
+                console.error('Error saving to localStorage:', saveError);
+                // Continue anyway to update UI
+            }
+            
+            // Clear editing state before closing modal
+            this.editingExpenseId = null;
             
             // Then update UI immediately
             this.renderExpenses();
@@ -1405,10 +1424,20 @@ class ExpenseTracker {
         }
         try {
             const key = `expenses_${this.currentUser.username}`;
+            // Ensure expenses is an array
+            if (!Array.isArray(this.expenses)) {
+                console.warn('Expenses is not an array, resetting to empty array');
+                this.expenses = [];
+            }
             localStorage.setItem(key, JSON.stringify(this.expenses));
         } catch (error) {
             console.error('Error saving expenses to localStorage:', error);
-            alert('Failed to save expenses. Please check your browser storage settings.');
+            // Check if it's a quota exceeded error
+            if (error.name === 'QuotaExceededError') {
+                alert('Storage quota exceeded! Please clear some data or use a different browser.');
+            } else {
+                alert('Failed to save expenses. Please check your browser storage settings.');
+            }
             throw error;
         }
     }
@@ -1416,8 +1445,20 @@ class ExpenseTracker {
     loadExpenses() {
         if (!this.currentUser) return [];
         const key = `expenses_${this.currentUser.username}`;
-        const stored = localStorage.getItem(key);
-        return stored ? JSON.parse(stored) : [];
+        try {
+            const stored = localStorage.getItem(key);
+            if (!stored) return [];
+            const parsed = JSON.parse(stored);
+            // Ensure it's an array
+            if (!Array.isArray(parsed)) {
+                console.warn('Expenses data is not an array, resetting');
+                return [];
+            }
+            return parsed;
+        } catch (error) {
+            console.error('Error loading expenses:', error);
+            return [];
+        }
     }
 }
 
