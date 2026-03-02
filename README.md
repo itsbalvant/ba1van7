@@ -6,19 +6,9 @@ Personal portfolio showcasing security research, CVEs, bug bounty writeups, and 
 
 ## What's Inside
 
-- **Blog** — Security findings and technical writeups (Android, Web, Web3)
-- **Hall of Fame** — Recognized by Google, Microsoft, Apple, Meta, and others
-- **Books** — Curated reading list with notes and takeaways
-- **Contact** — Connect via Twitter, LinkedIn, or email
-
-## Run Locally
-
-Open `index.html` in a browser, or serve the folder:
-
-```bash
-npx serve .
-```
-
----
+- **Blog** : Security findings and technical writeups (Android, Web, Web3)
+- **Hall of Fame** : Recognized by Google, Microsoft, Apple, Meta, and others
+- **Books** : Curated reading list with notes and takeaways
+- **Contact** : Connect via Twitter, LinkedIn, or email
 
 [balvant.in](https://balvant.in) · [@ba1van7](https://twitter.com/ba1van7)
