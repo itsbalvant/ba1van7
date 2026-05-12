@@ -79,6 +79,21 @@
             overflow: hidden;
             border-radius: 4px;
             box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            background: #0d0d0f;
+        }
+        .book-cover-container img,
+        #modal-book-cover {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        /* Landscape / promo art: show full image centered inside the 2:3 frame */
+        .book-cover-container--fit-contain img,
+        #modal-book-cover.book-cover-fit-contain {
+            object-fit: contain;
+            object-position: center center;
         }
         .editorial-modal {
             background: #0a0a0a;
@@ -175,7 +190,7 @@
                     <i data-lucide="rss" class="w-4 h-4 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all relative z-10"></i>
                     <span class="text-[10px] font-mono font-bold tracking-[0.15em] text-white/90 group-hover:text-primary transition-colors uppercase relative z-10">BLOG</span>
                 </a>
-                <a href="index.html#blog" class="nav-btn group relative px-5 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-300 rounded-lg">
+                <a href="index.html#cves" class="nav-btn group relative px-5 py-2.5 flex items-center gap-3 overflow-hidden transition-all duration-300 rounded-lg">
                     <div class="absolute inset-0 border border-white/10 bg-white/5 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-5px_rgba(0,255,194,0.3)] transition-all rounded-lg"></div>
                     <div class="absolute top-0 left-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-top-left rounded-full"></div>
                     <div class="absolute bottom-0 right-0 w-1 h-1 bg-primary scale-0 group-hover:scale-100 transition-transform origin-bottom-right rounded-full"></div>
@@ -230,7 +245,7 @@
                     <i data-lucide="rss" class="w-6 h-6 text-primary"></i>
                     <span class="text-sm font-mono font-bold tracking-widest text-white uppercase">BLOG</span>
                 </a>
-                <a href="index.html#blog" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300">
+                <a href="index.html#cves" class="mobile-nav-link group relative flex items-center gap-4 px-6 py-5 overflow-hidden transition-all duration-300">
                     <div class="absolute inset-0 border border-white/5 bg-white/[0.02]"></div>
                     <div class="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <i data-lucide="bug" class="w-6 h-6 text-primary"></i>
@@ -293,7 +308,7 @@
             <!-- Modal Sidebar (Book Info) -->
             <div class="w-full md:w-80 modal-sidebar p-6 sm:p-8 flex flex-col items-center text-center space-y-6 sm:space-y-8 relative z-10 shrink-0">
                 <div class="book-cover-container w-28 sm:w-44 shadow-2xl group shrink-0">
-                    <img id="modal-book-cover" src="" alt="Book Cover" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img id="modal-book-cover" src="" alt="Book Cover" class="w-full h-full transition-transform duration-500 group-hover:scale-105">
                 </div>
 
                 <div class="space-y-2 sm:space-y-3 w-full">
@@ -700,7 +715,7 @@
                 subCategory: 'Futures & Tech',
                 year: '2015',
                 description: 'Where we might be headed—dataism, bioengineering, new religions.',
-                cover: 'https://covers.openlibrary.org/b/id/15174691-L.jpg',
+                cover: 'images/homo-deus.jpg',
                 notes: "A look at the future of humanity. Harari explores how technology might transform us into something beyond human, and the ethical challenges that come with it.",
                 takeaways: [
                     "Dataism might become the new religion.",
@@ -726,6 +741,127 @@
                 ],
                 whyRead: "To gain a clearer understanding of the complex forces shaping our present and future."
             }
+            ,
+            {
+                id: 'obstacles-is-the-way',
+                title: 'The Obstacle Is the Way',
+                author: 'Ryan Holiday',
+                category: 'Philosophy',
+                subCategory: 'Stoic Mindset',
+                year: '2014',
+                description: 'A practical Stoic guide to turning trials into triumph through perception, action, and will.',
+                cover: 'images/obstacles-is-the-way.jpg',
+                notes: "The book makes Stoicism feel usable: when something goes wrong, you don’t just endure it—you convert it. The real lesson for me is that the outcome often depends less on the event and more on the way you interpret it and the discipline you apply right after.",
+                takeaways: [
+                    "Perception is your first lever: reframe the obstacle so it loses power over you.",
+                    "Action is the cure: keep moving with purpose even while things are still hard.",
+                    "Will is the finish line: your consistency under pressure becomes the transformation."
+                ],
+                whyRead: "If you want a simple mental model for staying effective during setbacks—not someday, but right now."
+            },
+            {
+                id: 'art-of-spending-money',
+                title: 'The Art of Spending Money',
+                author: 'Morgan Housel',
+                category: 'Finance',
+                subCategory: 'Spending Psychology',
+                year: '2025',
+                description: 'How your relationship with money shapes your spending—and how to spend for a richer life.',
+                cover: 'images/art-of-spending-money.jpg',
+                notes: "This one shifted my focus from “saving more” to “spending with intention.” Housel’s point isn’t to restrict you—it’s to help you notice the trade-offs behind every purchase, and spend in a way that reduces regret while improving long-term happiness.",
+                takeaways: [
+                    "Spending is a decision about the kind of life you want, not just a budget line.",
+                    "Avoid copying others: the same money action can mean very different things for different people.",
+                    "Keep your spending aligned with your values, because that’s what future-you will remember."
+                ],
+                whyRead: "If you want to build a calmer, wiser money life by understanding what actually drives your choices."
+            },
+            {
+                id: 'daily-stoic',
+                title: 'The Daily Stoic',
+                author: 'Ryan Holiday & Stephen Hanselman',
+                category: 'Philosophy',
+                subCategory: 'Stoic Practice',
+                year: '2016',
+                description: '366 meditations on wisdom, perseverance, and the art of living—built for daily repetition.',
+                cover: 'images/daily-stoic.jpg',
+                notes: "I like this as a daily reset. It’s not about reading once and feeling inspired; it’s about training your attention every day—what’s in my control, what isn’t, and what the next right action is.",
+                takeaways: [
+                    "Most stress comes from trying to control outcomes instead of controlling effort and response.",
+                    "Build emotional distance: see the event clearly before reacting to it.",
+                    "Consistency beats intensity—small daily practice creates real character change."
+                ],
+                whyRead: "If you want Stoicism as a habit (not just a philosophy you quote)."
+            },
+            {
+                id: 'godan',
+                title: 'Godan',
+                author: 'Munshi Premchand',
+                category: 'Literature',
+                subCategory: 'Hindi Classic',
+                year: '1936',
+                description: 'A powerful portrait of rural India—dignity, debt, caste, and the quiet brutality of poverty.',
+                cover: 'images/godan.jpg',
+                notes: "This book doesn’t lecture— it shows. It makes you feel how social pressure, scarcity, and status can shape people’s choices. It also reminded me that the most important struggles are often invisible from the outside.",
+                takeaways: [
+                    "Poverty is not just lack of money; it’s lack of options.",
+                    "Social status can become a cage people maintain even at huge personal cost.",
+                    "Compassion grows when you stop judging decisions made under desperation."
+                ],
+                whyRead: "If you want a classic that still explains society better than most modern commentary."
+            },
+            {
+                id: 'white-nights',
+                title: 'White Nights',
+                author: 'Fyodor Dostoevsky',
+                category: 'Literature',
+                subCategory: 'Classic Novella',
+                year: '1848',
+                description: 'A brief, tender story about loneliness, hope, and the intensity of a few nights.',
+                cover: 'images/white-nights.jpg',
+                notes: "It’s short but emotionally dense. The narrator’s loneliness feels modern, and the story captures how we can build entire worlds out of imagination—and then suffer when reality doesn’t match.",
+                takeaways: [
+                    "Loneliness can make small kindness feel like destiny.",
+                    "Fantasy is comforting, but it becomes painful when it replaces real life.",
+                    "A few moments can change you—even if nothing “happens” on paper."
+                ],
+                whyRead: "If you want Dostoevsky’s emotional insight in a fast, beautiful read."
+            },
+            {
+                id: 'shayad-jaun-elia',
+                title: 'Jaun Elia: Ek Ajab Ghazab Shayar',
+                author: 'Jaun Elia (Hind Yugm)',
+                category: 'Literature',
+                subCategory: 'Shayari Collection',
+                year: '2019',
+                description: 'A Hindi/Urdu shayari collection—intense, sharp, and emotionally honest.',
+                cover: 'images/jaun-elia-ek-ajab-ghazab-shayar.jpg',
+                notes: "Jaun Elia’s writing hits because it refuses to pretend. The poems don’t try to make pain “pretty”—they name it clearly. It’s the kind of shayari that makes you sit still for a minute after reading.",
+                takeaways: [
+                    "Clarity is not always comforting—but it is freeing.",
+                    "Love and ego often mix; poetry exposes the parts we hide from ourselves.",
+                    "Sometimes the most human thing is to admit you don’t have answers."
+                ],
+                whyRead: "If you want poetry that feels like truth—unfiltered and sharp."
+            },
+            {
+                id: 'manto-chughtai-essential-stories',
+                title: 'Manto and Chughtai: The Essential Stories',
+                author: 'Saadat Hasan Manto & Ismat Chughtai',
+                category: 'Literature',
+                subCategory: 'Short Stories',
+                year: '2019',
+                description: 'Essential Urdu short stories—sharp, fearless writing on society, desire, and power.',
+                cover: 'images/manto-and-chughtai-essential-stories.webp',
+                coverFit: 'contain',
+                notes: "Manto and Chughtai don’t moralize—they expose. The stories feel like mirrors held up to hypocrisy, especially around class, gender, and the violence of “respectability.”",
+                takeaways: [
+                    "Good writing doesn’t comfort you; it makes you see clearly.",
+                    "Respectability can be a polite name for cruelty and control.",
+                    "When society silences desire, it often creates bigger ugliness elsewhere."
+                ],
+                whyRead: "If you want world-class short fiction that’s brave, direct, and still relevant."
+            }
         ];
 
         const booksGrid = document.getElementById('books-grid');
@@ -741,10 +877,11 @@
                 const card = document.createElement('div');
                 card.className = 'book-card p-6 flex flex-col gap-6 rounded-sm opacity-0 translate-y-4';
                 card.style.animation = `fadeIn 0.5s ease-out forwards ${index * 0.1}s`;
+                const coverFitClass = book.coverFit === 'contain' ? ' book-cover-container--fit-contain' : '';
                 card.innerHTML = `
                     <div class="flex gap-6">
-                        <div class="book-cover-container w-24 shrink-0">
-                            <img src="${book.cover}" alt="${book.title}" class="w-full h-full object-cover">
+                        <div class="book-cover-container w-24 shrink-0${coverFitClass}">
+                            <img src="${book.cover}" alt="${book.title}" class="w-full h-full">
                         </div>
                         <div class="flex flex-col justify-between py-1">
                             <div class="space-y-1">
@@ -772,7 +909,9 @@
             const book = books.find(b => b.id === bookId);
             if (!book) return;
 
-            document.getElementById('modal-book-cover').src = book.cover;
+            const modalCover = document.getElementById('modal-book-cover');
+            modalCover.src = book.cover;
+            modalCover.classList.toggle('book-cover-fit-contain', book.coverFit === 'contain');
             document.getElementById('modal-book-title').innerText = book.title;
             document.getElementById('modal-book-author').innerText = `by ${book.author}`;
             document.getElementById('modal-book-category').innerText = book.subCategory;
