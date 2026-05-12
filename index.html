@@ -616,41 +616,107 @@
             </div>
 
             <!-- CVE Assignments -->
-            <div id="cves" class="flex flex-wrap justify-center gap-4 scroll-mt-24">
-                <div class="relative group cursor-default">
-                    <div class="absolute -inset-0.5 bg-primary/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <span class="relative font-display text-xs font-black text-primary tracking-[0.2em] px-6 py-2 border border-primary/30 bg-primary/5 backdrop-blur-sm rounded-full flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                        CVE-2025-66513 <span class="text-[8px] opacity-50">ASSIGNED</span>
-                    </span>
-                </div>
-                <div class="relative group cursor-default">
-                    <div class="absolute -inset-0.5 bg-accent/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <span class="relative font-display text-xs font-black text-accent tracking-[0.2em] px-6 py-2 border border-accent/30 bg-accent/5 backdrop-blur-sm rounded-full flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                        CVE-2025-66515 <span class="text-[8px] opacity-50">ASSIGNED</span>
-                    </span>
-                </div>
-                <div class="relative group cursor-default">
-                    <div class="absolute -inset-0.5 bg-emerald/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <span class="relative font-display text-xs font-black text-emerald tracking-[0.2em] px-6 py-2 border border-emerald/30 bg-emerald/5 backdrop-blur-sm rounded-full flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse"></span>
-                        CVE-2026-21309 <span class="text-[8px] opacity-50">ASSIGNED</span>
-                    </span>
-                </div>
-                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-5jxq-c48f-g8x6#advisory-comment-205705" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer">
-                    <div class="absolute -inset-0.5 bg-primary/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <span class="relative font-display text-xs font-black text-primary tracking-[0.2em] px-6 py-2 border border-primary/30 bg-primary/5 backdrop-blur-sm rounded-full flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                        CVE-2026-45280 <span class="text-[8px] opacity-50">ASSIGNED</span>
-                    </span>
+            <div id="cves" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl mx-auto scroll-mt-24">
+                <!-- CVE 1 -->
+                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-2cwj-qp49-4xfw" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,255,194,0.15)]">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-transparent opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-primary uppercase">NEXTCLOUD</span>
+                            <span class="text-[8px] font-mono font-bold px-2 py-0.5 rounded bg-primary/20 text-primary">ASSIGNED</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white group-hover:text-primary transition-colors">CVE-2025-66513</h3>
+                        <p class="text-slate-400 text-xs font-display leading-relaxed line-clamp-2">Security advisory for Nextcloud instance vulnerability.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-primary transition-colors mt-2">
+                            <span>VIEW ADVISORY</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-4chh-6mhf-p4jj#advisory-comment-205708" target="_blank" rel="noopener noreferrer" class="relative group cursor-pointer">
-                    <div class="absolute -inset-0.5 bg-accent/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <span class="relative font-display text-xs font-black text-accent tracking-[0.2em] px-6 py-2 border border-accent/30 bg-accent/5 backdrop-blur-sm rounded-full flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                        CVE-2026-45283 <span class="text-[8px] opacity-50">ASSIGNED</span>
-                    </span>
+
+                <!-- CVE 2 -->
+                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-q26g-fmjq-x5g5" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-accent/40 hover:bg-accent/5 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(255,0,229,0.15)]">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-accent uppercase">NEXTCLOUD</span>
+                            <span class="text-[8px] font-mono font-bold px-2 py-0.5 rounded bg-accent/20 text-accent">ASSIGNED</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white group-hover:text-accent transition-colors">CVE-2025-66515</h3>
+                        <p class="text-slate-400 text-xs font-display leading-relaxed line-clamp-2">Security advisory for Nextcloud instance vulnerability.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-accent transition-colors mt-2">
+                            <span>VIEW ADVISORY</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CVE 3 -->
+                <a href="https://github.com/advisories/GHSA-c9gx-chv2-76wq" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-emerald/40 hover:bg-emerald/5 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(5,150,105,0.15)]">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald to-transparent opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-emerald uppercase">GITHUB</span>
+                            <span class="text-[8px] font-mono font-bold px-2 py-0.5 rounded bg-emerald/20 text-emerald">ASSIGNED</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white group-hover:text-emerald transition-colors">CVE-2026-21309</h3>
+                        <p class="text-slate-400 text-xs font-display leading-relaxed line-clamp-2">Security advisory for GitHub repository vulnerability.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-emerald transition-colors mt-2">
+                            <span>VIEW ADVISORY</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CVE 4 -->
+                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-p3qw-7gwx-wg24" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,255,194,0.15)]">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-transparent opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-primary uppercase">NEXTCLOUD</span>
+                            <span class="text-[8px] font-mono font-bold px-2 py-0.5 rounded bg-primary/20 text-primary">ASSIGNED</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white group-hover:text-primary transition-colors">CVE-2026-45159</h3>
+                        <p class="text-slate-400 text-xs font-display leading-relaxed line-clamp-2">Security advisory for Nextcloud instance vulnerability.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-primary transition-colors mt-2">
+                            <span>VIEW ADVISORY</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CVE 5 -->
+                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-5jxq-c48f-g8x6#advisory-comment-205705" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,255,194,0.15)]">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-transparent opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-primary uppercase">NEXTCLOUD</span>
+                            <span class="text-[8px] font-mono font-bold px-2 py-0.5 rounded bg-primary/20 text-primary">ASSIGNED</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white group-hover:text-primary transition-colors">CVE-2026-45280</h3>
+                        <p class="text-slate-400 text-xs font-display leading-relaxed line-clamp-2">Security advisory for Nextcloud instance vulnerability.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-primary transition-colors mt-2">
+                            <span>VIEW ADVISORY</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CVE 6 -->
+                <a href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-4chh-6mhf-p4jj#advisory-comment-205708" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-accent/40 hover:bg-accent/5 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(255,0,229,0.15)]">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-transparent opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono font-bold tracking-[0.2em] text-accent uppercase">NEXTCLOUD</span>
+                            <span class="text-[8px] font-mono font-bold px-2 py-0.5 rounded bg-accent/20 text-accent">ASSIGNED</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white group-hover:text-accent transition-colors">CVE-2026-45283</h3>
+                        <p class="text-slate-400 text-xs font-display leading-relaxed line-clamp-2">Security advisory for Nextcloud instance vulnerability.</p>
+                        <div class="flex items-center gap-2 text-[10px] font-mono font-bold text-slate-500 group-hover:text-accent transition-colors mt-2">
+                            <span>VIEW ADVISORY</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -673,182 +739,182 @@
                     <!-- First Set -->
                     <div class="flex items-center gap-16 px-8">
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/640px-Google_Favicon_2025.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Google" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/640px-Google_Favicon_2025.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Google" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">GOOGLE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="hof-logo w-8 h-8 object-contain" alt="Microsoft" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="hof-logo w-10 h-10 object-contain" alt="Microsoft" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">MICROSOFT</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="hof-logo w-8 h-8 object-contain invert" alt="Apple" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="hof-logo w-10 h-10 object-contain invert" alt="Apple" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">APPLE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg/640px-Meta_Platforms_Inc._logo_%28cropped%29.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Meta" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg/640px-Meta_Platforms_Inc._logo_%28cropped%29.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Meta" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">META</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/640px-Amazon_2024.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Amazon" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/640px-Amazon_2024.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Amazon" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">AMAZON</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Intel_logo_%281968-2006%29.svg/640px-Intel_logo_%281968-2006%29.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Intel" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Intel_logo_%281968-2006%29.svg/640px-Intel_logo_%281968-2006%29.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Intel" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">INTEL</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=lenskart.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Lenskart" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=lenskart.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Lenskart" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">LENSKART</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_%282013%29.svg/640px-Philips_shield_%282013%29.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Philips" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_%282013%29.svg/640px-Philips_shield_%282013%29.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Philips" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">PHILIPS</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coinbase_Icon.png/640px-Coinbase_Icon.png" class="hof-logo w-10 h-8 object-contain" alt="Coinbase" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coinbase_Icon.png/640px-Coinbase_Icon.png" class="hof-logo w-14 h-10 object-contain" alt="Coinbase" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">COINBASE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="hof-logo w-8 h-8 object-contain invert" alt="GitHub" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="hof-logo w-10 h-10 object-contain invert" alt="GitHub" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">GITHUB</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/640px-PayPal_Logo_Icon_2014.svg.png" class="hof-logo w-10 h-8 object-contain" alt="PayPal" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/640px-PayPal_Logo_Icon_2014.svg.png" class="hof-logo w-14 h-10 object-contain" alt="PayPal" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">PAYPAL</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Adobe_Acrobat_DC_logo_2020.svg/640px-Adobe_Acrobat_DC_logo_2020.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Adobe" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Adobe_Acrobat_DC_logo_2020.svg/640px-Adobe_Acrobat_DC_logo_2020.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Adobe" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">ADOBE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Amazon_Web_Services_2025.svg/640px-Amazon_Web_Services_2025.svg.png" class="hof-logo w-10 h-8 object-contain" alt="AWS" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Amazon_Web_Services_2025.svg/640px-Amazon_Web_Services_2025.svg.png" class="hof-logo w-14 h-10 object-contain" alt="AWS" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">AWS</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Nextcloud-svgrepo-com.svg/640px-Nextcloud-svgrepo-com.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Nextcloud" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Nextcloud-svgrepo-com.svg/640px-Nextcloud-svgrepo-com.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Nextcloud" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">NEXTCLOUD</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Visma_logo.png/640px-Visma_logo.png" class="hof-logo w-10 h-8 object-contain" alt="Visma" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Visma_logo.png/640px-Visma_logo.png" class="hof-logo w-14 h-10 object-contain" alt="Visma" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">VISMA</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/640px-Salesforce.com_logo.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Salesforce" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/640px-Salesforce.com_logo.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Salesforce" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">SALESFORCE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=durex.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Durex" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=durex.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Durex" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">DUREX</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=blick.ch&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Blick.ch" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=blick.ch&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Blick.ch" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">BLICK.CH</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=reckitt.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Reckitt" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=reckitt.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Reckitt" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">RECKITT</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=baloise.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Baloise International" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=baloise.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Baloise International" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">BALOISE INTERNATIONAL</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=bloomandwild.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Bloom and Wild" referrerPolicy="no-referrer">
+                            <img src="https://www.bloomandwild.com/assets/branded-icons/logo.svg" class="hof-logo w-14 h-10 object-contain invert" alt="Bloom and Wild" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">BLOOM &amp; WILD</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=evri.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Evri.com" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=evri.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Evri.com" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">EVRI.COM</span>
                         </div>
                     </div>
                     <!-- Second Set (Duplicate for seamless loop) -->
                     <div class="flex items-center gap-16 px-8">
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/640px-Google_Favicon_2025.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Google" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/640px-Google_Favicon_2025.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Google" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">GOOGLE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="hof-logo w-8 h-8 object-contain" alt="Microsoft" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="hof-logo w-10 h-10 object-contain" alt="Microsoft" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">MICROSOFT</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="hof-logo w-8 h-8 object-contain invert" alt="Apple" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" class="hof-logo w-10 h-10 object-contain invert" alt="Apple" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">APPLE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg/640px-Meta_Platforms_Inc._logo_%28cropped%29.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Meta" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg/640px-Meta_Platforms_Inc._logo_%28cropped%29.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Meta" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">META</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/640px-Amazon_2024.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Amazon" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/640px-Amazon_2024.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Amazon" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">AMAZON</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Intel_logo_%281968-2006%29.svg/640px-Intel_logo_%281968-2006%29.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Intel" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Intel_logo_%281968-2006%29.svg/640px-Intel_logo_%281968-2006%29.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Intel" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">INTEL</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=lenskart.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Lenskart" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=lenskart.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Lenskart" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">LENSKART</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_%282013%29.svg/640px-Philips_shield_%282013%29.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Philips" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_%282013%29.svg/640px-Philips_shield_%282013%29.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Philips" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">PHILIPS</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coinbase_Icon.png/640px-Coinbase_Icon.png" class="hof-logo w-10 h-8 object-contain" alt="Coinbase" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coinbase_Icon.png/640px-Coinbase_Icon.png" class="hof-logo w-14 h-10 object-contain" alt="Coinbase" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">COINBASE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="hof-logo w-8 h-8 object-contain invert" alt="GitHub" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="hof-logo w-10 h-10 object-contain invert" alt="GitHub" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">GITHUB</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/640px-PayPal_Logo_Icon_2014.svg.png" class="hof-logo w-10 h-8 object-contain" alt="PayPal" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/PayPal_Logo_Icon_2014.svg/640px-PayPal_Logo_Icon_2014.svg.png" class="hof-logo w-14 h-10 object-contain" alt="PayPal" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">PAYPAL</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Adobe_Acrobat_DC_logo_2020.svg/640px-Adobe_Acrobat_DC_logo_2020.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Adobe" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Adobe_Acrobat_DC_logo_2020.svg/640px-Adobe_Acrobat_DC_logo_2020.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Adobe" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">ADOBE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Amazon_Web_Services_2025.svg/640px-Amazon_Web_Services_2025.svg.png" class="hof-logo w-10 h-8 object-contain" alt="AWS" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Amazon_Web_Services_2025.svg/640px-Amazon_Web_Services_2025.svg.png" class="hof-logo w-14 h-10 object-contain" alt="AWS" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">AWS</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Nextcloud-svgrepo-com.svg/640px-Nextcloud-svgrepo-com.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Nextcloud" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Nextcloud-svgrepo-com.svg/640px-Nextcloud-svgrepo-com.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Nextcloud" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">NEXTCLOUD</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Visma_logo.png/640px-Visma_logo.png" class="hof-logo w-10 h-8 object-contain" alt="Visma" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Visma_logo.png/640px-Visma_logo.png" class="hof-logo w-14 h-10 object-contain" alt="Visma" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">VISMA</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/640px-Salesforce.com_logo.svg.png" class="hof-logo w-10 h-8 object-contain" alt="Salesforce" referrerPolicy="no-referrer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/640px-Salesforce.com_logo.svg.png" class="hof-logo w-14 h-10 object-contain" alt="Salesforce" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">SALESFORCE</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=durex.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Durex" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=durex.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Durex" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">DUREX</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=blick.ch&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Blick.ch" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=blick.ch&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Blick.ch" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">BLICK.CH</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=reckitt.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Reckitt" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=reckitt.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Reckitt" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">RECKITT</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=baloise.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Baloise International" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=baloise.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Baloise International" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">BALOISE INTERNATIONAL</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=bloomandwild.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Bloom and Wild" referrerPolicy="no-referrer">
+                            <img src="https://www.bloomandwild.com/assets/branded-icons/logo.svg" class="hof-logo w-14 h-10 object-contain invert" alt="Bloom and Wild" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">BLOOM &amp; WILD</span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <img src="https://www.google.com/s2/favicons?domain=evri.com&sz=128" class="hof-logo w-8 h-8 object-contain rounded-sm" alt="Evri.com" referrerPolicy="no-referrer">
+                            <img src="https://www.google.com/s2/favicons?domain=evri.com&sz=128" class="hof-logo w-10 h-10 object-contain rounded-sm" alt="Evri.com" referrerPolicy="no-referrer">
                             <span class="font-display font-black text-2xl text-white tracking-tighter">EVRI.COM</span>
                         </div>
                     </div>
@@ -883,10 +949,7 @@
                     <div class="card-glow"></div>
                     <div class="p-8 space-y-6 relative z-10">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-primary uppercase">DECLASSIFIED</span>
-                            </div>
+                            <div></div>
                             <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">JAN 2025</span>
                         </div>
                         
@@ -914,10 +977,7 @@
                     <div class="card-glow"></div>
                     <div class="p-8 space-y-6 relative z-10">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-primary uppercase">ENCRYPTED</span>
-                            </div>
+                            <div></div>
                             <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">DEC 2024</span>
                         </div>
                         
@@ -945,10 +1005,7 @@
                     <div class="card-glow"></div>
                     <div class="p-8 space-y-6 relative z-10">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></div>
-                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-[#FFB800] uppercase">ARCHIVED</span>
-                            </div>
+                            <div></div>
                             <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">NOV 2023</span>
                         </div>
                         
@@ -976,10 +1033,7 @@
                     <div class="card-glow"></div>
                     <div class="p-8 space-y-6 relative z-10">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[#FF00E5] animate-pulse"></div>
-                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-[#FF00E5] uppercase">HIGH</span>
-                            </div>
+                            <div></div>
                             <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">MAR 2025</span>
                         </div>
                         
@@ -1007,10 +1061,7 @@
                     <div class="card-glow"></div>
                     <div class="p-8 space-y-6 relative z-10">
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[#00A3FF] animate-pulse"></div>
-                                <span class="text-[10px] font-display font-bold tracking-[0.2em] text-[#00A3FF] uppercase">THOUGHT_LOG</span>
-                            </div>
+                            <div></div>
                             <span class="text-[10px] font-display text-slate-500 tracking-widest uppercase">MAR 2025</span>
                         </div>
                         
