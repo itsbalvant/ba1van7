@@ -25,6 +25,24 @@ document.addEventListener('DOMContentLoaded', () => {
     node.textContent = String(new Date().getFullYear());
   });
 
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-recognition-marquee]').forEach((marquee) => {
+      const track = marquee.querySelector('.recognition-marquee-track');
+      const group = marquee.querySelector('.recognition-marquee-group');
+      if (!track || !group || track.children.length > 1) return;
+      const clone = group.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach((image) => image.setAttribute('alt', ''));
+      track.appendChild(clone);
+    });
+  }
+
+  document.querySelectorAll('.recognition-logo img').forEach((image) => {
+    const showFallback = () => image.closest('.recognition-logo')?.classList.add('is-fallback');
+    image.addEventListener('error', showFallback, { once: true });
+    if (image.complete && !image.naturalWidth) showFallback();
+  });
+
   const revealNodes = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries) => {

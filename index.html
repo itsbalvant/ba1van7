@@ -77,7 +77,6 @@
           <p class="kicker">Recent write-ups</p>
           <h2 class="section-title" id="research-title">Bugs I found and how they worked.</h2>
         </div>
-        <p class="section-intro">Technical write-ups covering the vulnerable code, the impact, and how the issue was reported.</p>
       </div>
 
       <div class="research-grid reveal">
@@ -163,19 +162,23 @@
         </div>
 
         <div class="cve-overview reveal">
-          <div class="cve-total">
-            <span>Disclosure count</span>
+          <div class="cve-record-count">
             <strong>11</strong>
-            <small>Assigned CVEs</small>
+            <span>Assigned<br>CVEs</span>
           </div>
           <div class="cve-overview-copy">
             <span class="cve-period">Published / 2025—2026</span>
-            <h3>11 CVEs.</h3>
-            <p>Each row opens the corresponding public advisory.</p>
+            <strong>Nextcloud + Adobe</strong>
+            <p>Click any identifier to open its public advisory.</p>
+          </div>
+          <div class="cve-record-status">
+            <span>Advisory status</span>
+            <strong><i aria-hidden="true"></i>Public</strong>
           </div>
         </div>
 
         <div class="cve-table reveal" role="list" aria-label="Assigned vulnerability identifiers">
+          <div class="cve-table-head" aria-hidden="true"><span>Record / identifier</span><span>Vendor / source</span><span>Status</span><span></span></div>
           <a class="cve-row" role="listitem" href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-2cwj-qp49-4xfw" target="_blank" rel="noopener noreferrer"><span class="cve-no">01</span><div class="cve-identity"><strong class="cve-id">CVE-2025-66513</strong><small>Research record</small></div><span class="cve-vendor"><strong>Nextcloud</strong><small>Security advisory</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
           <a class="cve-row" role="listitem" href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-q26g-fmjq-x5g5" target="_blank" rel="noopener noreferrer"><span class="cve-no">02</span><div class="cve-identity"><strong class="cve-id">CVE-2025-66515</strong><small>Research record</small></div><span class="cve-vendor"><strong>Nextcloud</strong><small>Security advisory</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
           <a class="cve-row" role="listitem" href="https://github.com/advisories/GHSA-c9gx-chv2-76wq" target="_blank" rel="noopener noreferrer"><span class="cve-no">03</span><div class="cve-identity"><strong class="cve-id">CVE-2026-21309</strong><small>Research record</small></div><span class="cve-vendor"><strong>Adobe</strong><small>Public advisory</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
@@ -204,52 +207,46 @@
           </div>
         </div>
 
-        <div class="recognition-featured reveal" aria-label="Featured acknowledgements">
-          <article class="recognition-feature-card">
-            <span class="recognition-number">01</span>
-            <div class="recognition-logo recognition-logo-large"><span>G</span><img src="images/google.svg" alt="" loading="lazy"></div>
-            <div class="recognition-feature-copy"><small>Global technology</small><h3>Google</h3><span class="recognition-state"><i aria-hidden="true"></i>Acknowledged</span></div>
-          </article>
-          <article class="recognition-feature-card">
-            <span class="recognition-number">02</span>
-            <div class="recognition-logo recognition-logo-large"><span>MS</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.microsoft.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div>
-            <div class="recognition-feature-copy"><small>Global technology</small><h3>Microsoft</h3><span class="recognition-state"><i aria-hidden="true"></i>Acknowledged</span></div>
-          </article>
-          <article class="recognition-feature-card">
-            <span class="recognition-number">06</span>
-            <div class="recognition-logo recognition-logo-large recognition-logo-wide"><span>AD</span><img src="images/Adobe_logo_and_wordmark_(2017).svg.png" alt="" loading="lazy"></div>
-            <div class="recognition-feature-copy"><small>Creative technology</small><h3>Adobe</h3><span class="recognition-state"><i aria-hidden="true"></i>Acknowledged</span></div>
-          </article>
-          <article class="recognition-feature-card">
-            <span class="recognition-number">07</span>
-            <div class="recognition-logo recognition-logo-large"><span>NC</span><img src="https://cdn.simpleicons.org/nextcloud/0082C9" alt="" loading="lazy"></div>
-            <div class="recognition-feature-copy"><small>Open-source cloud</small><h3>Nextcloud</h3><span class="recognition-state"><i aria-hidden="true"></i>Acknowledged</span></div>
-          </article>
+      </div>
+
+      <div class="recognition-marquees reveal" aria-label="Organizations that acknowledged my vulnerability reports">
+        <div class="recognition-marquee" data-recognition-marquee>
+          <div class="recognition-marquee-track">
+            <div class="recognition-marquee-group">
+              <article class="recognition-chip"><div class="recognition-logo"><span>G</span><img src="images/google.svg" alt="" loading="lazy"></div><div><strong>Google</strong><small>Technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>MS</span><img src="images/microsoft.svg" alt="" loading="lazy"></div><div><strong>Microsoft</strong><small>Technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo recognition-logo-dark"><span>A</span><img src="images/apple.svg" alt="" loading="lazy"></div><div><strong>Apple</strong><small>Technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>M</span><img src="images/meta.svg" alt="" loading="lazy"></div><div><strong>Meta</strong><small>Technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo recognition-logo-wide"><span>AWS</span><img src="images/Amazon_logo.svg.webp" alt="" loading="lazy"></div><div><strong>Amazon / AWS</strong><small>Cloud</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo recognition-logo-wide"><span>AD</span><img src="images/Adobe_logo_and_wordmark_(2017).svg.png" alt="" loading="lazy"></div><div><strong>Adobe</strong><small>Creative technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>NC</span><img src="https://cdn.simpleicons.org/nextcloud/0082C9" alt="" loading="lazy"></div><div><strong>Nextcloud</strong><small>Open-source cloud</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>I</span><img src="images/intel.svg" alt="" loading="lazy"></div><div><strong>Intel</strong><small>Hardware</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo recognition-logo-dark"><span>GH</span><img src="images/github.svg" alt="" loading="lazy"></div><div><strong>GitHub</strong><small>Developer platform</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>C</span><img src="images/coinbase.svg" alt="" loading="lazy"></div><div><strong>Coinbase</strong><small>Financial technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>P</span><img src="images/paypal.svg" alt="" loading="lazy"></div><div><strong>PayPal</strong><small>Payments</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>SF</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.salesforce.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Salesforce</strong><small>Enterprise cloud</small></div></article>
+            </div>
+          </div>
         </div>
 
-        <div class="recognition-ledger-head reveal"><span>Other acknowledgements</span><span>21 organizations</span></div>
-        <div class="recognition-list reveal">
-          <article class="recognition-item"><div class="recognition-logo recognition-logo-dark"><span>A</span><img src="images/apple.svg" alt="" loading="lazy"></div><div><strong>Apple</strong><small>Technology</small></div><em>03</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>M</span><img src="images/meta.svg" alt="" loading="lazy"></div><div><strong>Meta</strong><small>Technology</small></div><em>04</em></article>
-          <article class="recognition-item"><div class="recognition-logo recognition-logo-wide"><span>AWS</span><img src="images/Amazon_logo.svg.webp" alt="" loading="lazy"></div><div><strong>Amazon / AWS</strong><small>Cloud</small></div><em>05</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>I</span><img src="images/intel.svg" alt="" loading="lazy"></div><div><strong>Intel</strong><small>Hardware</small></div><em>08</em></article>
-          <article class="recognition-item"><div class="recognition-logo recognition-logo-dark"><span>GH</span><img src="images/github.svg" alt="" loading="lazy"></div><div><strong>GitHub</strong><small>Developer platform</small></div><em>09</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>C</span><img src="images/coinbase.svg" alt="" loading="lazy"></div><div><strong>Coinbase</strong><small>Financial technology</small></div><em>10</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>P</span><img src="images/paypal.svg" alt="" loading="lazy"></div><div><strong>PayPal</strong><small>Payments</small></div><em>11</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>SF</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.salesforce.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Salesforce</strong><small>Enterprise cloud</small></div><em>12</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>P</span><img src="images/Philips_shield_(2013).svg.png" alt="" loading="lazy"></div><div><strong>Philips</strong><small>Health technology</small></div><em>13</em></article>
-          <article class="recognition-item"><div class="recognition-logo recognition-logo-monogram"><span>NI</span></div><div><strong>NCIIPC</strong><small>Government</small></div><em>14</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>UK</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.gov.uk&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>UK Government</strong><small>Government</small></div><em>15</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>NL</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.government.nl&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Dutch Government</strong><small>Government</small></div><em>16</em></article>
-          <article class="recognition-item"><div class="recognition-logo recognition-logo-wide recognition-logo-visma"><span>V</span><img src="https://cdn.prod.website-files.com/69787181d8720ea08c1f22d4/69787181d8720ea08c1f2413_4c4692eb5ce941a6ed0e8a9ea8c1dfc3_vismalogo.svg" alt="" loading="lazy"></div><div><strong>Visma</strong><small>Enterprise software</small></div><em>17</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>L</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.lenskart.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Lenskart</strong><small>Retail technology</small></div><em>18</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>R</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.reckitt.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Reckitt</strong><small>Consumer health</small></div><em>19</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>B</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.baloise.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Baloise International</strong><small>Insurance</small></div><em>20</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>R</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.robeco.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Robeco</strong><small>Asset management</small></div><em>21</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>R</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.rechtspraak.nl&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Rechtspraak</strong><small>Judiciary</small></div><em>22</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>RM</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.resmed.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>ResMed</strong><small>Medical technology</small></div><em>23</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>BW</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.bloomandwild.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Bloom &amp; Wild</strong><small>Commerce</small></div><em>24</em></article>
-          <article class="recognition-item"><div class="recognition-logo"><span>E</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.evri.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Evri</strong><small>Logistics</small></div><em>25</em></article>
+        <div class="recognition-marquee recognition-marquee-reverse" data-recognition-marquee>
+          <div class="recognition-marquee-track">
+            <div class="recognition-marquee-group">
+              <article class="recognition-chip"><div class="recognition-logo"><span>P</span><img src="images/Philips_shield_(2013).svg.png" alt="" loading="lazy"></div><div><strong>Philips</strong><small>Health technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo recognition-logo-monogram"><span>NI</span></div><div><strong>NCIIPC</strong><small>Government</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>UK</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.gov.uk&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>UK Government</strong><small>Government</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>NL</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.government.nl&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Dutch Government</strong><small>Government</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo recognition-logo-wide recognition-logo-visma"><span>V</span><img src="https://cdn.prod.website-files.com/69787181d8720ea08c1f22d4/69787181d8720ea08c1f2413_4c4692eb5ce941a6ed0e8a9ea8c1dfc3_vismalogo.svg" alt="" loading="lazy"></div><div><strong>Visma</strong><small>Enterprise software</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>L</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.lenskart.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Lenskart</strong><small>Retail technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>R</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.reckitt.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Reckitt</strong><small>Consumer health</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>B</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.baloise.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Baloise International</strong><small>Insurance</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>R</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.robeco.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Robeco</strong><small>Asset management</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>R</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.rechtspraak.nl&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Rechtspraak</strong><small>Judiciary</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>RM</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.resmed.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>ResMed</strong><small>Medical technology</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>BW</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.bloomandwild.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Bloom &amp; Wild</strong><small>Commerce</small></div></article>
+              <article class="recognition-chip"><div class="recognition-logo"><span>E</span><img src="https://www.google.com/s2/favicons?domain_url=https://www.evri.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"></div><div><strong>Evri</strong><small>Logistics</small></div></article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
