@@ -252,6 +252,28 @@ body.reform {
 .button:hover { transform: translateY(-2px); border-color: var(--accent); background: rgba(185,243,74,.07); }
 .button-dark, .button-red { color: var(--bg) !important; border-color: var(--accent); background: var(--accent); }
 
+.hero-brand-art { min-width: 0; display: grid; place-items: center; }
+.hero-brand-frame {
+  position: relative;
+  width: min(100%, 390px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--text);
+  background: #090b0d;
+  border: 1px solid #454d4f;
+  border-radius: 8px;
+}
+.hero-brand-frame > span { transform: translateX(-5px); font: 800 clamp(170px, 19vw, 250px)/1 var(--display); letter-spacing: -.11em; }
+.hero-brand-frame i { position: absolute; top: 18px; left: 18px; width: 18px; height: 18px; background: var(--accent); animation: hero-brand-locator 5.6s steps(1, end) infinite; }
+@keyframes hero-brand-locator {
+  0%, 20%, 100% { top: 18px; left: 18px; }
+  25%, 45% { top: 18px; left: calc(100% - 36px); }
+  50%, 70% { top: calc(100% - 36px); left: calc(100% - 36px); }
+  75%, 95% { top: calc(100% - 36px); left: 18px; }
+}
+
 .ticker { margin-top: 30px; overflow: hidden; border-block: 1px solid var(--line); }
 .ticker-track { width: max-content; display: flex; animation: ticker 36s linear infinite; }
 .ticker span { padding: 15px 28px; color: var(--muted); font: 500 10px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
@@ -668,8 +690,9 @@ body.reform {
   .menu-open .nav-cta::before { background: #090b0d; box-shadow: none; }
   .menu-button { position: relative; z-index: 1003; display: block; justify-self: end; color: #090b0d; background: var(--accent); border-color: var(--accent); box-shadow: none; }
   .menu-open .site-header { background: #090b0d; }
-  .hero-grid { min-height: 0; grid-template-columns: 1fr; }
+  .hero-grid { min-height: 540px; grid-template-columns: minmax(0, 1.1fr) minmax(270px, .7fr); }
   .hero-copy { max-width: 760px; }
+  .hero-brand-frame { width: min(100%, 320px); }
   .section-head, .page-hero-grid { grid-template-columns: 1fr; gap: 22px; }
   .research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-card-wide { grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr); }
@@ -709,7 +732,18 @@ body.reform {
   .brand-emblem { --mark-travel: 20px; width: 32px; height: 32px; flex-basis: 32px; font-size: 17px; }
   .menu-button { width: 44px; height: 44px; }
   .hero { padding-top: 52px; }
+  .hero-grid { min-height: 0; grid-template-columns: 1fr; }
   .hero-copy { padding-top: 10px; }
+  .hero-brand-art { margin-top: 28px; }
+  .hero-brand-frame { width: min(78vw, 300px); }
+  .hero-brand-frame > span { font-size: clamp(150px, 48vw, 205px); }
+  .hero-brand-frame i { top: 14px; left: 14px; width: 14px; height: 14px; }
+  @keyframes hero-brand-locator {
+    0%, 20%, 100% { top: 14px; left: 14px; }
+    25%, 45% { top: 14px; left: calc(100% - 28px); }
+    50%, 70% { top: calc(100% - 28px); left: calc(100% - 28px); }
+    75%, 95% { top: calc(100% - 28px); left: 14px; }
+  }
   .hero h1 { font-size: clamp(48px, 15vw, 72px); }
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-actions .button { width: 100%; }
