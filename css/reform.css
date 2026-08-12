@@ -252,35 +252,6 @@ body.reform {
 .button:hover { transform: translateY(-2px); border-color: var(--accent); background: rgba(185,243,74,.07); }
 .button-dark, .button-red { color: var(--bg) !important; border-color: var(--accent); background: var(--accent); }
 
-.hero-kinetic { min-width: 0; display: grid; place-items: center; }
-.kinetic-stage {
-  position: relative;
-  width: min(100%, 420px);
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: #090b0d;
-  border: 1px solid #353c3e;
-  border-radius: 50%;
-}
-.kinetic-aperture { position: relative; width: 61%; aspect-ratio: 1; animation: kinetic-turn 8s steps(4, end) infinite; }
-.kinetic-blade { position: absolute; width: 48%; height: 48%; background: var(--text); clip-path: polygon(0 0, 100% 0, 100% 27%, 29% 27%, 29% 100%, 0 100%); }
-.kinetic-blade-a { top: 0; left: 0; }
-.kinetic-blade-b { top: 0; right: 0; transform: rotate(90deg); }
-.kinetic-blade-c { right: 0; bottom: 0; transform: rotate(180deg); }
-.kinetic-blade-d { bottom: 0; left: 0; transform: rotate(270deg); }
-.kinetic-core { position: absolute; inset: 35%; background: var(--accent); animation: kinetic-core 4s steps(2, end) infinite; }
-.kinetic-locator { position: absolute; top: 11%; left: 46%; width: 8%; aspect-ratio: 1; background: var(--accent); animation: kinetic-locator 8s steps(1, end) infinite; }
-@keyframes kinetic-turn { to { transform: rotate(360deg); } }
-@keyframes kinetic-core { 50% { transform: rotate(45deg) scale(.74); } }
-@keyframes kinetic-locator {
-  0%, 20%, 100% { top: 11%; left: 46%; }
-  25%, 45% { top: 46%; left: 81%; }
-  50%, 70% { top: 81%; left: 46%; }
-  75%, 95% { top: 46%; left: 11%; }
-}
-
 .ticker { margin-top: 30px; overflow: hidden; border-block: 1px solid var(--line); }
 .ticker-track { width: max-content; display: flex; animation: ticker 36s linear infinite; }
 .ticker span { padding: 15px 28px; color: var(--muted); font: 500 10px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
@@ -696,7 +667,6 @@ body.reform {
   .menu-open .site-header { background: #090b0d; }
   .hero-grid { min-height: 540px; grid-template-columns: minmax(0, 1.1fr) minmax(270px, .7fr); }
   .hero-copy { max-width: 760px; }
-  .kinetic-stage { width: min(100%, 340px); }
   .section-head, .page-hero-grid { grid-template-columns: 1fr; gap: 22px; }
   .research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-card-wide { grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr); }
@@ -738,8 +708,6 @@ body.reform {
   .hero { padding-top: 52px; }
   .hero-grid { min-height: 0; grid-template-columns: 1fr; }
   .hero-copy { padding-top: 10px; }
-  .hero-kinetic { margin-top: 28px; }
-  .kinetic-stage { width: min(74vw, 290px); }
   .hero h1 { font-size: clamp(48px, 15vw, 72px); }
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-actions .button { width: 100%; }
