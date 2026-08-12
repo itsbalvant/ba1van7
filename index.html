@@ -83,50 +83,70 @@
 
       <div class="research-grid reveal">
         <a class="feature-card feature-card-wide" href="blog/android-webview-vulnerability.html">
-          <div class="card-visual">
+          <div class="card-visual" data-case="01">
             <img src="images/a2.jpeg" alt="Dark cinematic scene illustrating the WebView security case" loading="lazy">
+            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
             <div class="card-meta"><span>01 / Android</span><span>Jan 2025</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Mobile application security</span>
             <h3>When WebView bites back</h3>
             <p>How an exported activity and unsafe WebView handling opened a path to arbitrary JavaScript execution.</p>
+            <dl class="card-facts">
+              <div><dt>Vector</dt><dd>Exported activity</dd></div>
+              <div><dt>Outcome</dt><dd>JavaScript execution</dd></div>
+            </dl>
             <span class="card-link">Read case file</span>
           </div>
         </a>
         <a class="feature-card" href="blog/unrestricted-minting-exploit.html">
-          <div class="card-visual">
+          <div class="card-visual" data-case="02">
             <img src="images/web3-post-1.jpeg" alt="Armored figure illustrating the unrestricted minting exploit" loading="lazy">
+            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
             <div class="card-meta"><span>02 / Web3</span><span>Mar 2025</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Smart contract security</span>
             <h3>The function that could mint forever</h3>
             <p>A critical authorization failure in a federated token contract with protocol-wide consequences.</p>
+            <dl class="card-facts">
+              <div><dt>Vector</dt><dd>Missing authorization</dd></div>
+              <div><dt>Outcome</dt><dd>Unlimited minting</dd></div>
+            </dl>
             <span class="card-link">Read case file</span>
           </div>
         </a>
         <a class="feature-card" href="blog/android-news-app-vulnerability.html">
-          <div class="card-visual">
+          <div class="card-visual" data-case="03">
             <img src="images/android-auth.jpeg" alt="Dramatic security artwork illustrating an OAuth interception" loading="lazy">
+            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
             <div class="card-meta"><span>03 / Mobile</span><span>Dec 2024</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Identity and deep links</span>
             <h3>How a news app leaked OAuth codes</h3>
             <p>A real-world interception story about deep links, hostile apps, and trust crossing process boundaries.</p>
+            <dl class="card-facts">
+              <div><dt>Vector</dt><dd>Deep-link collision</dd></div>
+              <div><dt>Outcome</dt><dd>Code interception</dd></div>
+            </dl>
             <span class="card-link">Read case file</span>
           </div>
         </a>
         <a class="feature-card" href="blog/sql-injection-writeup.html">
-          <div class="card-visual">
+          <div class="card-visual" data-case="04">
             <img src="images/1.jpeg" alt="Dark editorial artwork illustrating the SQL injection case" loading="lazy">
+            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
             <div class="card-meta"><span>04 / Web</span><span>Nov 2023</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Web application security</span>
             <h3>SQLi: finding to exploitation</h3>
             <p>A practical walkthrough from anomalous input handling to confirmed impact and responsible reporting.</p>
+            <dl class="card-facts">
+              <div><dt>Vector</dt><dd>Unsafe input</dd></div>
+              <div><dt>Outcome</dt><dd>Database access</dd></div>
+            </dl>
             <span class="card-link">Read case file</span>
           </div>
         </a>
