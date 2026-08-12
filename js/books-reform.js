@@ -53,17 +53,17 @@ function renderBooks() {
   grid.innerHTML = visibleBooks.map((book) => {
     const index = books.indexOf(book);
     const sequence = String(index + 1).padStart(2, '0');
-    return `<button class="book-tile" type="button" data-book-index="${index}" aria-label="Open reading card for ${book.title}">
+    return `<button class="book-tile" type="button" data-book-index="${index}" aria-label="Read notes for ${book.title}">
       <span class="book-tile-cover">
         <span class="book-sequence">${sequence}</span>
         <img src="${book.cover}" alt="${book.title} book cover" loading="lazy">
-        <span class="book-tile-overlay">Open reading card <i aria-hidden="true">↗</i></span>
+        <span class="book-tile-overlay">Read my note <i aria-hidden="true">↗</i></span>
       </span>
       <span class="book-tile-body">
         <span class="book-tile-meta"><small>${book.category}</small><em>${book.year}</em></span>
         <strong>${book.title}</strong>
         <span class="book-author">${book.author}</span>
-        <span class="book-tile-foot"><i aria-hidden="true"></i>Annotated volume</span>
+        <span class="book-tile-foot"><i aria-hidden="true"></i>Personal note</span>
       </span>
     </button>`;
   }).join('');
@@ -71,7 +71,7 @@ function renderBooks() {
   grid.hidden = visibleBooks.length === 0;
   emptyState.hidden = visibleBooks.length !== 0;
 
-  const volumeLabel = visibleBooks.length === 1 ? 'volume' : 'volumes';
+  const volumeLabel = visibleBooks.length === 1 ? 'book' : 'books';
   if (searchQuery.trim()) {
     resultsLabel.textContent = `${visibleBooks.length} ${volumeLabel} found for “${searchQuery.trim()}”`;
   } else if (activeCategory === 'all') {

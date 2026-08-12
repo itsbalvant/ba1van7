@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f2efe7">
   <title>Balvant Chavda — Independent Security Researcher</title>
-  <meta name="description" content="Independent security research across mobile, web, cloud, and Web3. Public CVEs, technical writeups, responsible disclosure, and field notes by Balvant Chavda.">
+  <meta name="description" content="Security research by Balvant Chavda across mobile, web, cloud, and Web3, including eleven assigned CVEs and technical write-ups.">
   <link rel="canonical" href="https://balvant.in/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Balvant Chavda — Security Field Notes">
-  <meta property="og:description" content="Nine public CVEs, responsible disclosure, and practical research across mobile, web, cloud, and Web3.">
+  <meta property="og:title" content="Balvant Chavda — Security Research">
+  <meta property="og:description" content="Eleven assigned CVEs and security research across mobile, web, cloud, and Web3.">
   <meta property="og:url" content="https://balvant.in/">
   <meta property="og:image" content="https://balvant.in/images/og.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
         <a href="projects.html">Work</a>
         <a href="books.html">Books</a>
       </nav>
-      <a class="nav-cta" href="contact.html">Open a channel ↗</a>
+      <a class="nav-cta" href="contact.html">Contact me ↗</a>
       <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button><span></span></button>
     </div>
   </header>
@@ -41,12 +41,12 @@
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="kicker">Independent security researcher / India</p>
-          <h1 id="hero-title">Assume nothing.<span>Trust no input.</span></h1>
-          <p class="hero-lede">I break assumptions across mobile, web, cloud, and Web3—then document the evidence so systems can be rebuilt stronger.</p>
+          <p class="kicker">Security researcher / India</p>
+          <h1 id="hero-title">I find security bugs.<span>Then I explain them.</span></h1>
+          <p class="hero-lede">I research vulnerabilities in mobile apps, web applications, cloud services, and smart contracts. This site is where I publish the work.</p>
           <div class="hero-actions">
-            <a class="button button-dark" href="research.html">Read the field notes</a>
-            <a class="button" href="index.html#cves">Review disclosures</a>
+            <a class="button button-dark" href="research.html">Read my research</a>
+            <a class="button" href="index.html#cves">See my CVEs</a>
           </div>
         </div>
 
@@ -75,79 +75,79 @@
     <section class="section shell" aria-labelledby="research-title">
       <div class="section-head rule-top reveal">
         <div>
-          <p class="kicker">Latest casework</p>
-          <h2 class="section-title" id="research-title">Field notes, not hot takes.</h2>
+          <p class="kicker">Recent write-ups</p>
+          <h2 class="section-title" id="research-title">Bugs I found and how they worked.</h2>
         </div>
-        <p class="section-intro">Technical accounts of what failed, how it was proven, and what defenders can carry forward.</p>
+        <p class="section-intro">Technical write-ups covering the vulnerable code, the impact, and how the issue was reported.</p>
       </div>
 
       <div class="research-grid reveal">
         <a class="feature-card feature-card-wide" href="blog/android-webview-vulnerability.html">
           <div class="card-visual" data-case="01">
             <img src="images/poster-webview.webp" alt="Dithered cobalt poster of an investigator approaching a fractured glass portal" loading="lazy">
-            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
+            <span class="card-status"><i aria-hidden="true"></i>Published</span>
             <div class="card-meta"><span>01 / Android</span><span>Jan 2025</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Mobile application security</span>
             <h3>When WebView bites back</h3>
-            <p>How an exported activity and unsafe WebView handling opened a path to arbitrary JavaScript execution.</p>
+            <p>An exported Android activity loaded attacker-controlled content in a WebView and allowed JavaScript execution.</p>
             <dl class="card-facts">
               <div><dt>Vector</dt><dd>Exported activity</dd></div>
               <div><dt>Outcome</dt><dd>JavaScript execution</dd></div>
             </dl>
-            <span class="card-link">Read case file</span>
+            <span class="card-link">Read the write-up</span>
           </div>
         </a>
         <a class="feature-card" href="blog/unrestricted-minting-exploit.html">
           <div class="card-visual" data-case="02">
             <img src="images/poster-unlimited-mint.webp" alt="Dithered cobalt poster of an ancient mint producing an endless stream of blank coins" loading="lazy">
-            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
+            <span class="card-status"><i aria-hidden="true"></i>Published</span>
             <div class="card-meta"><span>02 / Web3</span><span>Mar 2025</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Smart contract security</span>
             <h3>The function that could mint forever</h3>
-            <p>A critical authorization failure in a federated token contract with protocol-wide consequences.</p>
+            <p>A missing authorization check allowed the contract to mint tokens without a supply limit.</p>
             <dl class="card-facts">
               <div><dt>Vector</dt><dd>Missing authorization</dd></div>
               <div><dt>Outcome</dt><dd>Unlimited minting</dd></div>
             </dl>
-            <span class="card-link">Read case file</span>
+            <span class="card-link">Read the write-up</span>
           </div>
         </a>
         <a class="feature-card" href="blog/android-news-app-vulnerability.html">
           <div class="card-visual" data-case="03">
             <img src="images/poster-oauth-interception.webp" alt="Dithered cobalt poster of a courier facing three diverging routes" loading="lazy">
-            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
+            <span class="card-status"><i aria-hidden="true"></i>Published</span>
             <div class="card-meta"><span>03 / Mobile</span><span>Dec 2024</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Identity and deep links</span>
             <h3>How a news app leaked OAuth codes</h3>
-            <p>A real-world interception story about deep links, hostile apps, and trust crossing process boundaries.</p>
+            <p>A conflicting Android deep link let another app receive an OAuth authorization code.</p>
             <dl class="card-facts">
               <div><dt>Vector</dt><dd>Deep-link collision</dd></div>
               <div><dt>Outcome</dt><dd>Code interception</dd></div>
             </dl>
-            <span class="card-link">Read case file</span>
+            <span class="card-link">Read the write-up</span>
           </div>
         </a>
         <a class="feature-card" href="blog/sql-injection-writeup.html">
           <div class="card-visual" data-case="04">
             <img src="images/poster-sql-injection.webp" alt="Dithered cobalt poster of a hidden breach beneath a monumental archive" loading="lazy">
-            <span class="card-status"><i aria-hidden="true"></i>Case documented</span>
+            <span class="card-status"><i aria-hidden="true"></i>Published</span>
             <div class="card-meta"><span>04 / Web</span><span>Nov 2023</span></div>
           </div>
           <div class="card-body">
             <span class="card-topic">Web application security</span>
             <h3>SQLi: finding to exploitation</h3>
-            <p>A practical walkthrough from anomalous input handling to confirmed impact and responsible reporting.</p>
+            <p>How I confirmed a SQL injection, demonstrated database impact, and reported it responsibly.</p>
             <dl class="card-facts">
               <div><dt>Vector</dt><dd>Unsafe input</dd></div>
               <div><dt>Outcome</dt><dd>Database access</dd></div>
             </dl>
-            <span class="card-link">Read case file</span>
+            <span class="card-link">Read the write-up</span>
           </div>
         </a>
       </div>
@@ -157,10 +157,10 @@
       <div class="shell">
         <div class="section-head rule-top reveal">
           <div>
-            <p class="kicker">Public record</p>
+            <p class="kicker">Assigned vulnerabilities</p>
             <h2 class="section-title" id="cve-title">Assigned CVEs.</h2>
           </div>
-          <p class="section-intro">Coordinated disclosures that moved from private research into the permanent public security record.</p>
+          <p class="section-intro">CVEs assigned to vulnerabilities I reported in Nextcloud and Adobe products.</p>
         </div>
 
         <div class="cve-overview reveal">
@@ -170,9 +170,9 @@
             <small>Assigned CVEs</small>
           </div>
           <div class="cve-overview-copy">
-            <span class="cve-period">Research ledger / 2025—2026</span>
-            <h3>Public proof.<br>Permanent record.</h3>
-            <p>Every identifier below resolves to a vendor or project-maintained advisory.</p>
+            <span class="cve-period">Published / 2025—2026</span>
+            <h3>11 CVEs.<br>Five Nextcloud, six Adobe.</h3>
+            <p>Each row opens the corresponding public advisory.</p>
           </div>
         </div>
 
@@ -186,8 +186,8 @@
           <a class="cve-row" role="listitem" href="https://github.com/nextcloud/security-advisories/security/advisories/GHSA-4chh-6mhf-p4jj#advisory-comment-205708" target="_blank" rel="noopener noreferrer"><span class="cve-no">07</span><div class="cve-identity"><strong class="cve-id">CVE-2026-45283</strong><small>Research record</small></div><span class="cve-vendor"><strong>Nextcloud</strong><small>Security advisory</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
           <a class="cve-row" role="listitem" href="https://helpx.adobe.com/security/products/magento/apsb26-73.html" target="_blank" rel="noopener noreferrer"><span class="cve-no">08</span><div class="cve-identity"><strong class="cve-id">CVE-2026-47996</strong><small>Research record</small></div><span class="cve-vendor"><strong>Adobe Commerce</strong><small>APSB26-73</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
           <a class="cve-row" role="listitem" href="https://helpx.adobe.com/security/products/magento/apsb26-73.html" target="_blank" rel="noopener noreferrer"><span class="cve-no">09</span><div class="cve-identity"><strong class="cve-id">CVE-2026-47984</strong><small>Research record</small></div><span class="cve-vendor"><strong>Adobe Commerce</strong><small>APSB26-73</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
-          <a class="cve-row is-new" role="listitem" href="https://helpx.adobe.com/security/products/magento/apsb26-92.html" target="_blank" rel="noopener noreferrer"><span class="cve-no">10</span><div class="cve-identity"><span><strong class="cve-id">CVE-2026-71362</strong><em>New</em></span><small>Latest ledger addition</small></div><span class="cve-vendor"><strong>Adobe Commerce</strong><small>APSB26-92</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
-          <a class="cve-row is-new" role="listitem" href="https://helpx.adobe.com/security/products/content-authenticity-sdk/apsb26-111.html" target="_blank" rel="noopener noreferrer"><span class="cve-no">11</span><div class="cve-identity"><span><strong class="cve-id">CVE-2026-47922</strong><em>New</em></span><small>Latest ledger addition</small></div><span class="cve-vendor"><strong>Adobe Content Credentials</strong><small>APSB26-111</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
+          <a class="cve-row is-new" role="listitem" href="https://helpx.adobe.com/security/products/magento/apsb26-92.html" target="_blank" rel="noopener noreferrer"><span class="cve-no">10</span><div class="cve-identity"><span><strong class="cve-id">CVE-2026-71362</strong><em>New</em></span><small>Added in 2026</small></div><span class="cve-vendor"><strong>Adobe Commerce</strong><small>APSB26-92</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
+          <a class="cve-row is-new" role="listitem" href="https://helpx.adobe.com/security/products/content-authenticity-sdk/apsb26-111.html" target="_blank" rel="noopener noreferrer"><span class="cve-no">11</span><div class="cve-identity"><span><strong class="cve-id">CVE-2026-47922</strong><em>New</em></span><small>Added in 2026</small></div><span class="cve-vendor"><strong>Adobe Content Credentials</strong><small>APSB26-111</small></span><span class="cve-status"><i aria-hidden="true"></i>Published</span><span class="cve-open" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -196,12 +196,12 @@
       <div class="shell">
         <div class="recognition-head rule-top reveal">
           <div>
-            <p class="kicker">Recognition archive</p>
-            <h2 class="section-title" id="recognition-title">A hall of earned trust.</h2>
+            <p class="kicker">Security acknowledgements</p>
+            <h2 class="section-title" id="recognition-title">Organizations that acknowledged my reports.</h2>
           </div>
           <div class="recognition-summary">
             <strong>25</strong>
-            <div><span>Organizations</span><p>Security reports acknowledged across technology, government, finance, and infrastructure.</p></div>
+            <div><span>Organizations</span><p>Organizations that acknowledged or credited my vulnerability reports.</p></div>
           </div>
         </div>
 
@@ -228,7 +228,7 @@
           </article>
         </div>
 
-        <div class="recognition-ledger-head reveal"><span>Complete acknowledgement ledger</span><span>21 additional organizations</span></div>
+        <div class="recognition-ledger-head reveal"><span>Other acknowledgements</span><span>21 organizations</span></div>
         <div class="recognition-list reveal">
           <article class="recognition-item"><div class="recognition-logo recognition-logo-dark"><span>A</span><img src="images/apple.svg" alt="" loading="lazy"></div><div><strong>Apple</strong><small>Technology</small></div><em>03</em></article>
           <article class="recognition-item"><div class="recognition-logo"><span>M</span><img src="images/meta.svg" alt="" loading="lazy"></div><div><strong>Meta</strong><small>Technology</small></div><em>04</em></article>
@@ -259,12 +259,12 @@
       <div class="shell">
         <div class="reading-head rule-top reveal">
           <div>
-            <p class="kicker">Reading shelf</p>
-            <h2 class="section-title" id="books-title">Ideas outside the terminal.</h2>
+            <p class="kicker">Books and notes</p>
+            <h2 class="section-title" id="books-title">What I’m reading.</h2>
           </div>
           <div class="reading-head-copy">
-            <span class="reading-index">Shelf selection / 05 volumes</span>
-            <p class="section-intro">Security rewards technical depth. Judgment comes from reading much wider.</p>
+            <span class="reading-index">Selected books / 05</span>
+            <p class="section-intro">A few books I have read, with short notes on what I took from them.</p>
           </div>
         </div>
 
@@ -278,9 +278,9 @@
             <div class="reading-feature-copy">
               <span class="reading-category">Literature / Human nature</span>
               <h3>The Brothers Karamazov</h3>
-              <p>Faith, doubt, responsibility, and the uncomfortable complexity behind every human motive.</p>
-              <div class="reading-takeaway"><small>Carried forward</small><strong>Better judgment begins where simple answers end.</strong></div>
-              <span class="reading-open">Explore the shelf</span>
+              <p>My notes on faith, doubt, responsibility, and how people justify their choices.</p>
+              <div class="reading-takeaway"><small>My note</small><strong>Simple moral answers rarely survive a closer look.</strong></div>
+              <span class="reading-open">View my notes</span>
             </div>
           </a>
 
@@ -313,16 +313,16 @@
         </div>
 
         <div class="reading-footer reveal">
-          <span><i aria-hidden="true"></i>Notes from a wider field of view</span>
-          <a class="button" href="books.html">Open the full shelf</a>
+          <span><i aria-hidden="true"></i>28 books with personal notes</span>
+          <a class="button" href="books.html">See all books</a>
         </div>
       </div>
     </section>
 
     <section class="contact-band">
       <div class="shell contact-band-inner reveal">
-        <h2>Found something worth investigating?</h2>
-        <a class="button" href="contact.html">Open a secure channel</a>
+        <h2>Want to report a security issue?</h2>
+        <a class="button" href="contact.html">Contact me</a>
       </div>
     </section>
   </main>
