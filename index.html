@@ -257,22 +257,64 @@
 
     <section class="section books-strip" aria-labelledby="books-title">
       <div class="shell">
-        <div class="section-head rule-top reveal">
+        <div class="reading-head rule-top reveal">
           <div>
             <p class="kicker">Reading shelf</p>
             <h2 class="section-title" id="books-title">Ideas outside the terminal.</h2>
           </div>
-          <div>
+          <div class="reading-head-copy">
+            <span class="reading-index">Shelf selection / 05 volumes</span>
             <p class="section-intro">Security rewards technical depth. Judgment comes from reading much wider.</p>
-            <a class="button" href="books.html" style="margin-top:22px">Open the full shelf</a>
           </div>
         </div>
-        <div class="shelf-preview reveal">
-          <a class="shelf-book" href="books.html"><img src="images/brothers-karamazov.jpg" alt="The Brothers Karamazov book cover"><span>The Brothers Karamazov</span></a>
-          <a class="shelf-book" href="books.html"><img src="images/beginning-of-infinity.jpg" alt="The Beginning of Infinity book cover"><span>The Beginning of Infinity</span></a>
-          <a class="shelf-book" href="books.html"><img src="images/psychology-of-money.jpg" alt="The Psychology of Money book cover"><span>The Psychology of Money</span></a>
-          <a class="shelf-book" href="books.html"><img src="images/meditations.jpg" alt="Meditations book cover"><span>Meditations</span></a>
-          <a class="shelf-book" href="books.html"><img src="images/godan.jpg" alt="Godan book cover"><span>Godan</span></a>
+
+        <div class="reading-layout reveal">
+          <a class="reading-feature" href="books.html" aria-label="Explore The Brothers Karamazov in the reading shelf">
+            <div class="reading-feature-art">
+              <span class="reading-pick">Featured volume</span>
+              <span class="reading-art-index" aria-hidden="true">01</span>
+              <img src="images/brothers-karamazov.jpg" alt="The Brothers Karamazov book cover" loading="lazy">
+            </div>
+            <div class="reading-feature-copy">
+              <span class="reading-category">Literature / Human nature</span>
+              <h3>The Brothers Karamazov</h3>
+              <p>Faith, doubt, responsibility, and the uncomfortable complexity behind every human motive.</p>
+              <div class="reading-takeaway"><small>Carried forward</small><strong>Better judgment begins where simple answers end.</strong></div>
+              <span class="reading-open">Explore the shelf</span>
+            </div>
+          </a>
+
+          <div class="reading-stack">
+            <a class="reading-card" href="books.html" aria-label="Explore The Beginning of Infinity in the reading shelf">
+              <span class="reading-card-index">02</span>
+              <img src="images/beginning-of-infinity.jpg" alt="The Beginning of Infinity book cover" loading="lazy">
+              <div><small>Knowledge / Progress</small><h3>The Beginning of Infinity</h3><p>Explanations that change what is possible.</p></div>
+              <span class="reading-card-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="reading-card" href="books.html" aria-label="Explore The Psychology of Money in the reading shelf">
+              <span class="reading-card-index">03</span>
+              <img src="images/psychology-of-money.jpg" alt="The Psychology of Money book cover" loading="lazy">
+              <div><small>Behavior / Risk</small><h3>The Psychology of Money</h3><p>Decisions, incentives, and long horizons.</p></div>
+              <span class="reading-card-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="reading-card" href="books.html" aria-label="Explore Meditations in the reading shelf">
+              <span class="reading-card-index">04</span>
+              <img src="images/meditations.jpg" alt="Meditations book cover" loading="lazy">
+              <div><small>Philosophy / Practice</small><h3>Meditations</h3><p>Attention, restraint, and self-command.</p></div>
+              <span class="reading-card-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="reading-card" href="books.html" aria-label="Explore Godan in the reading shelf">
+              <span class="reading-card-index">05</span>
+              <img src="images/godan.jpg" alt="Godan book cover" loading="lazy">
+              <div><small>Fiction / Society</small><h3>Godan</h3><p>Power, dignity, and the cost of survival.</p></div>
+              <span class="reading-card-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="reading-footer reveal">
+          <span><i aria-hidden="true"></i>Notes from a wider field of view</span>
+          <a class="button" href="books.html">Open the full shelf</a>
         </div>
       </div>
     </section>
