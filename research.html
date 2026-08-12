@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe7">
+  <title>Research Archive — Balvant Chavda</title>
+  <meta name="description" content="Security research and technical field notes by Balvant Chavda across mobile, web applications, smart contracts, and security engineering.">
+  <link rel="canonical" href="https://balvant.in/research.html">
+  <meta property="og:title" content="Research Archive — Balvant Chavda">
+  <meta property="og:description" content="Technical field notes across mobile, web, and smart contract security.">
+  <meta property="og:image" content="https://balvant.in/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/reform.css">
+  <script src="js/reform.js" defer></script>
+</head>
+<body class="reform">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Balvant home"><span class="brand-mark">B7</span><span>Balvant.in</span></a>
+      <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+        <a href="research.html" aria-current="page">Research</a><a href="index.html#cves">CVEs</a><a href="projects.html">Work</a><a href="books.html">Books</a>
+      </nav>
+      <a class="nav-cta" href="contact.html">Open a channel ↗</a>
+      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button><span></span></button>
+    </div>
+  </header>
+
+  <main id="content">
+    <header class="page-hero shell">
+      <div class="page-hero-grid">
+        <div><p class="kicker">Public archive / 06 entries</p><h1>Research.</h1></div>
+        <p class="page-hero-copy">Evidence, reproduction paths, and lessons from real security findings. Written for practitioners who want the mechanics—not just the headline.</p>
+      </div>
+    </header>
+    <div class="page-index"><div class="shell">Index / Mobile security · Web security · Web3 security · Philosophy</div></div>
+
+    <section class="shell" aria-label="Research archive">
+      <div class="archive-toolbar" role="group" aria-label="Filter research by topic">
+        <button class="filter-button is-active" type="button" data-filter="all">All notes</button>
+        <button class="filter-button" type="button" data-filter="mobile">Mobile</button>
+        <button class="filter-button" type="button" data-filter="web">Web</button>
+        <button class="filter-button" type="button" data-filter="web3">Web3</button>
+        <button class="filter-button" type="button" data-filter="thinking">Thinking</button>
+      </div>
+
+      <div class="archive-grid">
+        <a class="archive-card" data-category="mobile" href="blog/android-webview-vulnerability.html">
+          <div class="card-meta"><span>Android security</span><span>Jan 31, 2025</span></div>
+          <h2>When WebView bites back</h2>
+          <p>How improper WebView handling exposed arbitrary JavaScript execution through an exported activity.</p>
+          <span class="card-link">Read report</span>
+        </a>
+        <a class="archive-card" data-category="mobile" href="blog/android-news-app-vulnerability.html">
+          <div class="card-meta"><span>Android security</span><span>Dec 30, 2024</span></div>
+          <h2>How a news app leaked OAuth codes</h2>
+          <p>A real-world interception story about deep links, exported components, and broken trust boundaries.</p>
+          <span class="card-link">Read report</span>
+        </a>
+        <a class="archive-card" data-category="web" href="blog/sql-injection-writeup.html">
+          <div class="card-meta"><span>Web security</span><span>Nov 26, 2023</span></div>
+          <h2>SQLi: finding and exploitation</h2>
+          <p>From the first anomalous response to impact validation, reporting, and remediation.</p>
+          <span class="card-link">Read report</span>
+        </a>
+        <a class="archive-card" data-category="web3" href="blog/unrestricted-minting-exploit.html">
+          <div class="card-meta"><span>Web3 security</span><span>Mar 13, 2025</span></div>
+          <h2>Unlimited mint</h2>
+          <p>A critical authorization flaw in a federated token contract capable of breaking supply guarantees.</p>
+          <span class="card-link">Read report</span>
+        </a>
+        <a class="archive-card" data-category="web3" href="blog/smart-contract-vulnerabilities.html">
+          <div class="card-meta"><span>Web3 security</span><span>Mar 15, 2023</span></div>
+          <h2>Common smart contract vulnerabilities</h2>
+          <p>A working map of recurring contract failures, their consequences, and defensive patterns.</p>
+          <span class="card-link">Read report</span>
+        </a>
+        <a class="archive-card" data-category="thinking" href="blog/philosophy-good-bad-bias.html">
+          <div class="card-meta"><span>Philosophy</span><span>Mar 22, 2025</span></div>
+          <h2>Good vs. bad: truth or bias?</h2>
+          <p>Looking at morality through objective, subjective, and intersubjective frames.</p>
+          <span class="card-link">Read essay</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-band"><div class="shell contact-band-inner"><h2>Have a system worth examining?</h2><a class="button" href="contact.html">Start a conversation</a></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand">BALVANT<br>CHAVDA.</div>
+      <div class="footer-col"><h3>Explore</h3><a href="research.html">Research archive</a><a href="index.html#cves">CVE record</a><a href="projects.html">Selected work</a><a href="books.html">Reading shelf</a></div>
+      <div class="footer-col"><h3>Elsewhere</h3><a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://linkedin.com/in/balvant-chavda" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:contact@balvant.in">Email ↗</a></div>
+    </div>
+    <div class="shell footer-base"><span>Independent research / Responsible disclosure</span><span>© <span data-year></span> Balvant.in</span></div>
+  </footer>
+</body>
+</html>

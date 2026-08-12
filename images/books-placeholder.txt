@@ -1,0 +1,27 @@
+Book Cover Images Needed:
+
+1. psychology-of-money.jpg - The Psychology of Money by Morgan Housel
+   - Size: 200x300px
+   - Style: Professional, clean design with money/psychology theme
+
+2. kafka-on-the-shore.jpg - Kafka on the Shore by Haruki Murakami
+   - Size: 200x300px
+   - Style: Artistic, surreal, dreamlike aesthetic
+
+3. brothers-karamazov.jpg - The Brothers Karamazov by Fyodor Dostoevsky
+   - Size: 200x300px
+   - Style: Classic literature, Russian novel aesthetic
+
+4. books-og.jpg - Open Graph image for books page
+   - Size: 1200x630px
+   - Style: Books, reading, knowledge theme
+
+Note: These images should be high-quality and properly optimized for web use.
+You can find book cover images from:
+- Amazon book pages
+- Goodreads
+- Publisher websites
+- Or create custom designs
+
+Make sure to respect copyright and use appropriate licensing.
+

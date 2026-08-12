@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe7">
+  <title>Reading Shelf — Balvant Chavda</title>
+  <meta name="description" content="A personal reading shelf spanning philosophy, literature, science, finance, and investing, curated by Balvant Chavda.">
+  <link rel="canonical" href="https://balvant.in/books.html">
+  <meta property="og:title" content="Reading Shelf — Balvant Chavda">
+  <meta property="og:description" content="Ideas outside the terminal: philosophy, literature, science, finance, and investing.">
+  <meta property="og:image" content="https://balvant.in/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/reform.css">
+  <script src="js/reform.js" defer></script>
+  <script src="js/books-reform.js" defer></script>
+</head>
+<body class="reform">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Balvant home"><span class="brand-mark">B7</span><span>Balvant.in</span></a>
+      <nav class="site-nav" data-site-nav aria-label="Primary navigation"><a href="research.html">Research</a><a href="index.html#cves">CVEs</a><a href="projects.html">Work</a><a href="books.html" aria-current="page">Books</a></nav>
+      <a class="nav-cta" href="contact.html">Open a channel ↗</a>
+      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button><span></span></button>
+    </div>
+  </header>
+
+  <main id="content">
+    <header class="book-page-intro shell">
+      <p class="kicker">Personal library / 28 volumes</p>
+      <h1>Ideas outside the terminal.</h1>
+      <p class="section-intro">A working shelf of books that sharpen judgment, widen the frame, or simply refuse to leave.</p>
+    </header>
+    <div class="page-index"><div class="shell">Shelf index / Philosophy · Literature · Science · Finance · Investing</div></div>
+
+    <section class="shell" aria-label="Reading shelf">
+      <div class="book-filters" id="book-filters" role="group" aria-label="Filter books by category">
+        <button class="filter-button is-active" type="button" data-book-filter="all">All 28</button>
+        <button class="filter-button" type="button" data-book-filter="Philosophy">Philosophy</button>
+        <button class="filter-button" type="button" data-book-filter="Literature">Literature</button>
+        <button class="filter-button" type="button" data-book-filter="Science">Science</button>
+        <button class="filter-button" type="button" data-book-filter="Finance">Finance</button>
+        <button class="filter-button" type="button" data-book-filter="Investing">Investing</button>
+      </div>
+      <div class="book-grid" id="book-grid"></div>
+    </section>
+  </main>
+
+  <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" aria-label="Close book details" data-close-dialog>×</button>
+      <div class="dialog-grid">
+        <img id="dialog-cover" src="" alt="">
+        <div>
+          <p class="kicker" id="dialog-meta"></p>
+          <h2 id="dialog-title"></h2>
+          <p id="dialog-author"></p>
+        </div>
+        <div class="dialog-copy">
+          <h3>Why it is on the shelf</h3>
+          <p id="dialog-description"></p>
+          <h3>Reading note</h3>
+          <p id="dialog-note"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid"><div class="footer-brand">BALVANT<br>CHAVDA.</div><div class="footer-col"><h3>Explore</h3><a href="research.html">Research archive</a><a href="index.html#cves">CVE record</a><a href="projects.html">Selected work</a><a href="books.html">Reading shelf</a></div><div class="footer-col"><h3>Elsewhere</h3><a href="https://twitter.com/ba1van7" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://linkedin.com/in/balvant-chavda" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:contact@balvant.in">Email ↗</a></div></div>
+    <div class="shell footer-base"><span>Independent research / Responsible disclosure</span><span>© <span data-year></span> Balvant.in</span></div>
+  </footer>
+</body>
+</html>

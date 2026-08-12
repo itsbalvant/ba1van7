@@ -1,0 +1,143 @@
+/* Shield Animation Styles */
+.shield-container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 90px;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.shield-outline {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border: 2px solid #00ffa3;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
+    animation: shieldPulse 3s infinite alternate;
+}
+
+.shield-inner {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: rgba(0, 255, 170, 0.1);
+    animation: shieldGlow 2s infinite alternate;
+}
+
+.shield-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ffa3;
+    font-size: 1.5rem;
+    animation: iconPulse 4s infinite alternate;
+    text-shadow: 0 0 10px #00ffa3;
+}
+
+.shield-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.shield-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #00ffa3;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 3s infinite;
+}
+
+.shield-particle.p1 { top: 20%; left: 0; animation-delay: 0s; }
+.shield-particle.p2 { top: 10%; right: 10%; animation-delay: 0.7s; }
+.shield-particle.p3 { top: 50%; right: 0; animation-delay: 1.4s; }
+.shield-particle.p4 { bottom: 20%; right: 10%; animation-delay: 2.1s; }
+.shield-particle.p5 { bottom: 10%; left: 20%; animation-delay: 2.8s; }
+
+/* Active state when hovering */
+.shield-active {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.shield-active .shield-outline {
+    border-width: 3px;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.8);
+    animation: activePulse 1.5s infinite alternate;
+}
+
+.shield-active .shield-inner {
+    background: rgba(0, 255, 170, 0.3);
+    animation: activeGlow 1s infinite alternate;
+}
+
+.shield-active .shield-icon {
+    color: #fff;
+    text-shadow: 0 0 15px #00ffa3, 0 0 30px #00ffa3;
+    animation: activeIconPulse 2s infinite alternate;
+}
+
+/* Extra particles for active state */
+.shield-particle.p-extra-0,
+.shield-particle.p-extra-1,
+.shield-particle.p-extra-2 {
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #00ffa3;
+    animation: extraParticleFloat 3s forwards;
+}
+
+@keyframes shieldPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes shieldGlow {
+    0% { background: rgba(0, 255, 170, 0.1); }
+    100% { background: rgba(0, 255, 170, 0.3); }
+}
+
+@keyframes iconPulse {
+    0% { transform: translate(-50%, -50%) scale(1); filter: brightness(0.8); }
+    100% { transform: translate(-50%, -50%) scale(1.2); filter: brightness(1.5); }
+}
+
+@keyframes particleFloat {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translate(10px, -20px); opacity: 0; }
+}
+
+/* Active state animations */
+@keyframes activePulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes activeGlow {
+    0% { background: rgba(0, 255, 170, 0.3); }
+    100% { background: rgba(0, 255, 170, 0.5); }
+}
+
+@keyframes activeIconPulse {
+    0% { transform: translate(-50%, -50%) scale(1.1); filter: brightness(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1.3); filter: brightness(1.8); }
+}
+
+@keyframes extraParticleFloat {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate(20px, -40px) rotate(360deg); opacity: 0; }
+} 

@@ -1,0 +1,23 @@
+[Unit]
+Description=Goal Tracker Secure HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/path/to/Track
+ExecStart=/usr/bin/python3 /path/to/Track/server.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/path/to/Track
+
+[Install]
+WantedBy=multi-user.target

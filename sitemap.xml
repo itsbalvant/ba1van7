@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://balvant.in/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://balvant.in/contact.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projects Page -->
+  <url>
+    <loc>https://balvant.in/projects.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Books Page -->
+  <url>
+    <loc>https://balvant.in/books.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://balvant.in/blog/android-webview-vulnerability.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/a2.jpeg</image:loc>
+      <image:title>Android WebView Vulnerability</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://balvant.in/blog/android-news-app-vulnerability.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/android-auth.jpeg</image:loc>
+      <image:title>Android OAuth Vulnerability</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://balvant.in/blog/sql-injection-writeup.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/1.jpeg</image:loc>
+      <image:title>SQL Injection Writeup</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://balvant.in/blog/unrestricted-minting-exploit.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/a-cinematic-shot-of-an-ancient-roman-sol_t3A0SO6aReCvbe86gvJsbQ_v7YBD9yISKaYmsfNGwsoOw.jpeg</image:loc>
+      <image:title>DeFi Unrestricted Minting Exploit</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://balvant.in/blog/philosophy-good-bad-bias.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/a-photo-of-an-ancient-philosopher-sittin_KSoCpSEuThSZp1cxTDGZig_QrGpSDY0RFeH_8blpf_vBw.jpeg</image:loc>
+      <image:title>Philosophy of Good and Bad</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://balvant.in/blog/smart-contract-vulnerabilities.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/blockchain.jpg</image:loc>
+      <image:title>Smart Contract Vulnerabilities</image:title>
+    </image:image>
+  </url>
+  
+</urlset>
