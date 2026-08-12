@@ -118,6 +118,7 @@ body.reform {
   transition: color .2s ease;
 }
 .brand:hover { color: var(--accent); }
+.brand-tld { color: var(--accent); }
 .site-nav { width: fit-content; padding: 0; display: flex; justify-self: end; justify-content: flex-end; align-items: center; gap: 24px; background: transparent; border: 0; border-radius: 0; }
 .site-nav a {
   position: relative;
