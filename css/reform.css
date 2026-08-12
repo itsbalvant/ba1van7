@@ -377,14 +377,11 @@ body.reform {
 }
 .cve-row::before { content: ''; position: absolute; inset: 10px auto 10px 0; width: 2px; background: var(--accent); border-radius: 99px; opacity: 0; transform: scaleY(.35); transition: opacity .22s ease, transform .22s ease; }
 .cve-row:hover { transform: translateX(4px); background: rgba(185,243,74,.045); border-color: rgba(185,243,74,.24); }
-.cve-row:hover::before, .cve-row.is-new::before { opacity: 1; transform: scaleY(1); }
-.cve-row.is-new { background: linear-gradient(90deg, rgba(185,243,74,.065), rgba(8,10,12,.42) 45%); border-color: rgba(185,243,74,.16); }
+.cve-row:hover::before { opacity: 1; transform: scaleY(1); }
 .cve-no { color: #596265; font: 600 9px/1 var(--mono); }
 .cve-identity { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
-.cve-identity > span { display: flex; align-items: center; gap: 10px; }
 .cve-id { font: 700 clamp(19px, 2vw, 27px)/1 var(--display); letter-spacing: -.035em; }
 .cve-identity small, .cve-vendor small { color: #646d70; font: 500 8px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-.cve-identity em { padding: 5px 7px; color: var(--bg); background: var(--accent); border-radius: 5px; font: 700 7px/1 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; }
 .cve-vendor { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
 .cve-vendor strong { overflow: hidden; color: var(--muted); font: 600 10px/1.2 var(--mono); letter-spacing: .06em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 .cve-status { display: inline-flex; align-items: center; gap: 8px; color: #7f888a; font: 600 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
