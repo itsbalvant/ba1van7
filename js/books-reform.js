@@ -31,46 +31,118 @@ const books = [
 
 const grid = document.getElementById('book-grid');
 const dialog = document.getElementById('book-dialog');
+const searchInput = document.getElementById('book-search');
+const resultsLabel = document.getElementById('book-results');
+const emptyState = document.getElementById('book-empty');
+let activeCategory = 'all';
+let searchQuery = '';
+let activeBookIndex = 0;
+let lastBookTrigger = null;
 
-function renderBooks(category = 'all') {
-  const visibleBooks = category === 'all' ? books : books.filter((book) => book.category === category);
-  grid.innerHTML = visibleBooks.map((book) => {
-    const index = books.indexOf(book);
-    return `<button class="book-tile" type="button" data-book-index="${index}" aria-label="Read notes for ${book.title}">
-      <img src="${book.cover}" alt="${book.title} book cover" loading="lazy">
-      <small>${book.category} / ${book.year}</small>
-      <h2>${book.title}</h2>
-      <p>${book.author}</p>
-    </button>`;
-  }).join('');
+function getVisibleBooks() {
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  return books.filter((book) => {
+    const matchesCategory = activeCategory === 'all' || book.category === activeCategory;
+    const searchableText = `${book.title} ${book.author} ${book.category} ${book.description} ${book.note}`.toLowerCase();
+    return matchesCategory && (!normalizedQuery || searchableText.includes(normalizedQuery));
+  });
 }
 
-function openBook(book) {
+function renderBooks() {
+  const visibleBooks = getVisibleBooks();
+  grid.innerHTML = visibleBooks.map((book) => {
+    const index = books.indexOf(book);
+    const sequence = String(index + 1).padStart(2, '0');
+    return `<button class="book-tile" type="button" data-book-index="${index}" aria-label="Open reading card for ${book.title}">
+      <span class="book-tile-cover">
+        <span class="book-sequence">${sequence}</span>
+        <img src="${book.cover}" alt="${book.title} book cover" loading="lazy">
+        <span class="book-tile-overlay">Open reading card <i aria-hidden="true">↗</i></span>
+      </span>
+      <span class="book-tile-body">
+        <span class="book-tile-meta"><small>${book.category}</small><em>${book.year}</em></span>
+        <strong>${book.title}</strong>
+        <span class="book-author">${book.author}</span>
+        <span class="book-tile-foot"><i aria-hidden="true"></i>Annotated volume</span>
+      </span>
+    </button>`;
+  }).join('');
+
+  grid.hidden = visibleBooks.length === 0;
+  emptyState.hidden = visibleBooks.length !== 0;
+
+  const volumeLabel = visibleBooks.length === 1 ? 'volume' : 'volumes';
+  if (searchQuery.trim()) {
+    resultsLabel.textContent = `${visibleBooks.length} ${volumeLabel} found for “${searchQuery.trim()}”`;
+  } else if (activeCategory === 'all') {
+    resultsLabel.textContent = `Showing all ${visibleBooks.length} ${volumeLabel}`;
+  } else {
+    resultsLabel.textContent = `Showing ${visibleBooks.length} ${activeCategory.toLowerCase()} ${volumeLabel}`;
+  }
+}
+
+function updateReader(index) {
+  activeBookIndex = (index + books.length) % books.length;
+  const book = books[activeBookIndex];
+  const previousIndex = (activeBookIndex - 1 + books.length) % books.length;
+  const nextIndex = (activeBookIndex + 1) % books.length;
+
   document.getElementById('dialog-cover').src = book.cover;
   document.getElementById('dialog-cover').alt = `${book.title} book cover`;
-  document.getElementById('dialog-meta').textContent = `${book.category} / ${book.year}`;
+  document.getElementById('dialog-index').textContent = `${String(activeBookIndex + 1).padStart(2, '0')} / ${String(books.length).padStart(2, '0')}`;
+  document.getElementById('dialog-category').textContent = book.category;
+  document.getElementById('dialog-year').textContent = book.year;
   document.getElementById('dialog-title').textContent = book.title;
   document.getElementById('dialog-author').textContent = `by ${book.author}`;
   document.getElementById('dialog-description').textContent = book.description;
   document.getElementById('dialog-note').textContent = book.note;
-  dialog.showModal();
+  document.getElementById('previous-book-title').textContent = books[previousIndex].title;
+  document.getElementById('next-book-title').textContent = books[nextIndex].title;
+}
+
+function openBook(index, trigger) {
+  lastBookTrigger = trigger || lastBookTrigger;
+  updateReader(index);
+  if (!dialog.open) {
+    dialog.showModal();
+    document.body.classList.add('book-dialog-open');
+  }
 }
 
 grid.addEventListener('click', (event) => {
   const tile = event.target.closest('[data-book-index]');
-  if (tile) openBook(books[Number(tile.dataset.bookIndex)]);
+  if (tile) openBook(Number(tile.dataset.bookIndex), tile);
 });
 
 document.getElementById('book-filters').addEventListener('click', (event) => {
   const button = event.target.closest('[data-book-filter]');
   if (!button) return;
+  activeCategory = button.dataset.bookFilter;
   document.querySelectorAll('[data-book-filter]').forEach((item) => item.classList.toggle('is-active', item === button));
-  renderBooks(button.dataset.bookFilter);
+  renderBooks();
+});
+
+searchInput.addEventListener('input', () => {
+  searchQuery = searchInput.value;
+  renderBooks();
 });
 
 document.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
+document.querySelector('[data-reader-previous]').addEventListener('click', () => updateReader(activeBookIndex - 1));
+document.querySelector('[data-reader-next]').addEventListener('click', () => updateReader(activeBookIndex + 1));
+
 dialog.addEventListener('click', (event) => {
   if (event.target === dialog) dialog.close();
+});
+
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('book-dialog-open');
+  if (lastBookTrigger && document.contains(lastBookTrigger)) lastBookTrigger.focus();
+});
+
+dialog.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') updateReader(activeBookIndex - 1);
+  if (event.key === 'ArrowRight') updateReader(activeBookIndex + 1);
 });
 
 renderBooks();

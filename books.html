@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f2efe7">
+  <meta name="theme-color" content="#090b0d">
   <title>Reading Shelf — Balvant Chavda</title>
   <meta name="description" content="A personal reading shelf spanning philosophy, literature, science, finance, and investing, curated by Balvant Chavda.">
   <link rel="canonical" href="https://balvant.in/books.html">
@@ -15,7 +15,7 @@
   <script src="js/reform.js" defer></script>
   <script src="js/books-reform.js" defer></script>
 </head>
-<body class="reform">
+<body class="reform books-page">
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="nav-wrap">
@@ -27,43 +27,93 @@
   </header>
 
   <main id="content">
-    <header class="book-page-intro shell">
-      <p class="kicker">Personal library / 28 volumes</p>
-      <h1>Ideas outside the terminal.</h1>
-      <p class="section-intro">A working shelf of books that sharpen judgment, widen the frame, or simply refuse to leave.</p>
-    </header>
-    <div class="page-index"><div class="shell">Shelf index / Philosophy · Literature · Science · Finance · Investing</div></div>
-
-    <section class="shell" aria-label="Reading shelf">
-      <div class="book-filters" id="book-filters" role="group" aria-label="Filter books by category">
-        <button class="filter-button is-active" type="button" data-book-filter="all">All 28</button>
-        <button class="filter-button" type="button" data-book-filter="Philosophy">Philosophy</button>
-        <button class="filter-button" type="button" data-book-filter="Literature">Literature</button>
-        <button class="filter-button" type="button" data-book-filter="Science">Science</button>
-        <button class="filter-button" type="button" data-book-filter="Finance">Finance</button>
-        <button class="filter-button" type="button" data-book-filter="Investing">Investing</button>
+    <header class="library-hero">
+      <div class="shell">
+        <div class="library-hero-grid">
+          <div class="library-hero-copy">
+            <p class="kicker">Personal library / Annotated</p>
+            <h1>Ideas outside<br>the terminal.</h1>
+            <p>A working shelf of books that sharpen judgment, widen the frame, or simply refuse to leave.</p>
+          </div>
+          <aside class="library-stats" aria-label="Library statistics">
+            <div class="library-stat library-stat-main"><span>Volumes on shelf</span><strong>28</strong><small>Each with a personal reading note</small></div>
+            <div class="library-stat"><span>Disciplines</span><strong>05</strong></div>
+            <div class="library-stat"><span>Status</span><strong class="library-status"><i aria-hidden="true"></i>Growing</strong></div>
+          </aside>
+        </div>
+        <div class="library-manifesto" aria-label="Reading principles">
+          <span>01 / Read beyond the role</span>
+          <span>02 / Keep what changes judgment</span>
+          <span>03 / Return to difficult ideas</span>
+        </div>
       </div>
-      <div class="book-grid" id="book-grid"></div>
+    </header>
+
+    <section class="library-catalog" aria-labelledby="catalog-title">
+      <div class="shell">
+        <div class="catalog-head rule-top">
+          <div>
+            <p class="kicker">Shelf index</p>
+            <h2 id="catalog-title">Browse the notes.</h2>
+          </div>
+          <label class="book-search">
+            <span>Search the library</span>
+            <input id="book-search" type="search" placeholder="Title, author, or idea..." autocomplete="off">
+            <i aria-hidden="true">⌕</i>
+          </label>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="book-filters" id="book-filters" role="group" aria-label="Filter books by category">
+            <button class="filter-button is-active" type="button" data-book-filter="all">All <span>28</span></button>
+            <button class="filter-button" type="button" data-book-filter="Philosophy">Philosophy</button>
+            <button class="filter-button" type="button" data-book-filter="Literature">Literature</button>
+            <button class="filter-button" type="button" data-book-filter="Science">Science</button>
+            <button class="filter-button" type="button" data-book-filter="Finance">Finance</button>
+            <button class="filter-button" type="button" data-book-filter="Investing">Investing</button>
+          </div>
+          <p class="book-results" id="book-results" aria-live="polite">Showing all 28 volumes</p>
+        </div>
+
+        <div class="book-grid" id="book-grid"></div>
+        <div class="book-empty" id="book-empty" hidden>
+          <span>00</span>
+          <h3>No notes found.</h3>
+          <p>Try another title, author, or category.</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-inner">
-      <button class="dialog-close" type="button" aria-label="Close book details" data-close-dialog>×</button>
-      <div class="dialog-grid">
-        <img id="dialog-cover" src="" alt="">
-        <div>
-          <p class="kicker" id="dialog-meta"></p>
+  <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <div class="book-reader">
+      <button class="dialog-close" type="button" aria-label="Close reading card" data-close-dialog><span>Close</span>×</button>
+      <aside class="reader-visual">
+        <div class="reader-visual-head"><span>Reading card</span><strong id="dialog-index">01 / 28</strong></div>
+        <div class="reader-cover-frame"><img id="dialog-cover" src="" alt=""></div>
+        <div class="reader-meta"><span id="dialog-category"></span><span id="dialog-year"></span></div>
+      </aside>
+      <article class="reader-copy">
+        <header class="reader-title">
+          <p class="kicker">Notes from the shelf</p>
           <h2 id="dialog-title"></h2>
           <p id="dialog-author"></p>
-        </div>
-        <div class="dialog-copy">
-          <h3>Why it is on the shelf</h3>
+        </header>
+        <section class="reader-section">
+          <span>01 / What it explores</span>
+          <h3>The book in one frame.</h3>
           <p id="dialog-description"></p>
-          <h3>Reading note</h3>
+        </section>
+        <section class="reader-section reader-note">
+          <span>02 / Why it stayed</span>
+          <h3>Personal reading note.</h3>
           <p id="dialog-note"></p>
-        </div>
-      </div>
+        </section>
+        <footer class="reader-navigation">
+          <button type="button" data-reader-previous><span>← Previous</span><strong id="previous-book-title">Previous book</strong></button>
+          <button type="button" data-reader-next><span>Next →</span><strong id="next-book-title">Next book</strong></button>
+        </footer>
+      </article>
     </div>
   </dialog>
 
