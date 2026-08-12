@@ -584,9 +584,6 @@ body.reform {
 .book-sequence { position: absolute; z-index: 2; top: 16px; left: 17px; color: #687174; font: 600 8px/1 var(--mono); letter-spacing: .07em; }
 .book-tile-cover img { position: relative; z-index: 1; width: min(58%, 152px); aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; box-shadow: 0 22px 45px rgba(0,0,0,.48); transition: transform .45s cubic-bezier(.2,.7,.2,1), filter .3s ease; }
 .book-tile:hover .book-tile-cover img { transform: translateY(-7px) rotate(-1deg) scale(1.02); }
-.book-tile-overlay { position: absolute; z-index: 3; inset: auto 14px 14px; padding: 11px 12px; display: flex; justify-content: space-between; color: var(--bg); background: var(--accent); border-radius: 8px; font: 700 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; opacity: 0; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease; }
-.book-tile-overlay i { font-style: normal; }
-.book-tile:hover .book-tile-overlay, .book-tile:focus-visible .book-tile-overlay { opacity: 1; transform: none; }
 .book-tile-body { min-width: 0; padding: 19px; display: flex; flex: 1; flex-direction: column; }
 .book-tile-meta { display: flex; justify-content: space-between; gap: 12px; }
 .book-tile-meta small, .book-tile-meta em { color: var(--accent-2); font: 600 7px/1.2 var(--mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; }
@@ -762,7 +759,6 @@ body.reform {
   .book-tile-cover img { width: min(62%, 120px); }
   .book-tile-body { padding: 17px; }
   .book-tile-body > strong { font-size: clamp(19px, 6.5vw, 27px); }
-  .book-tile-overlay { display: none; }
   .book-dialog { width: calc(100% - 12px); max-height: calc(100dvh - 12px); overflow-y: auto; border-radius: 15px; }
   .book-reader { display: block; min-height: 0; }
   .reader-visual { min-height: 420px; }

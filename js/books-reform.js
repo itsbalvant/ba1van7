@@ -57,7 +57,6 @@ function renderBooks() {
       <span class="book-tile-cover">
         <span class="book-sequence">${sequence}</span>
         <img src="${book.cover}" alt="${book.title} book cover" loading="lazy">
-        <span class="book-tile-overlay">Read my note <i aria-hidden="true">↗</i></span>
       </span>
       <span class="book-tile-body">
         <span class="book-tile-meta"><small>${book.category}</small><em>${book.year}</em></span>
