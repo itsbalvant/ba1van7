@@ -213,34 +213,30 @@ body.reform {
 .button:hover { transform: translateY(-2px); border-color: var(--accent); background: rgba(185,243,74,.07); }
 .button-dark, .button-red { color: var(--bg) !important; border-color: var(--accent); background: var(--accent); }
 
-.hero-aside {
-  display: grid;
-  grid-template-rows: 1fr auto;
+.hero-avatar {
+  min-width: 0;
+  margin: 0;
   overflow: hidden;
+  position: relative;
   background: linear-gradient(145deg, #141a1c, #0e1215);
   border: 1px solid var(--line);
   border-radius: 22px;
   box-shadow: 0 24px 80px rgba(0,0,0,.26);
 }
-.hero-disclosure { min-height: 420px; padding: 28px; display: flex; flex-direction: column; }
-.disclosure-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font: 600 9px/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-.status-pill { padding: 7px 9px; color: var(--accent-2); background: rgba(103,232,181,.07); border: 1px solid rgba(103,232,181,.2); border-radius: 999px; white-space: nowrap; }
-.disclosure-vendor { margin: 62px 0 10px; color: var(--accent-2); font: 600 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-.hero-disclosure h2 { margin: 0; font: 800 clamp(35px, 4vw, 51px)/1 var(--display); letter-spacing: -.055em; }
-.disclosure-copy { max-width: 44ch; margin: 19px 0 24px; color: var(--muted); line-height: 1.6; }
-.disclosure-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: auto 0 20px; }
-.disclosure-facts div { padding: 13px 14px; background: rgba(255,255,255,.025); border: 1px solid var(--line); border-radius: 9px; }
-.disclosure-facts dt { color: #647073; font: 500 8px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-.disclosure-facts dd { margin: 7px 0 0; color: var(--text); font: 600 11px/1.3 var(--mono); }
-.disclosure-link { min-height: 46px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; color: var(--bg) !important; background: var(--accent); border-radius: 9px; font: 700 10px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; transition: transform .2s, background .2s; }
-.disclosure-link:hover { transform: translateY(-2px); background: #d0ff74; }
-.coverage-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-.coverage-list span { padding: 6px 8px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; font: 500 8px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-.hero-stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
-.hero-stat { padding: 20px 22px; }
-.hero-stat:nth-child(even) { border-left: 1px solid var(--line); }
-.hero-stat strong { display: block; font: 800 31px/1 var(--display); letter-spacing: -.045em; }
-.hero-stat span { display: block; margin-top: 6px; color: var(--muted); font: 500 9px/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.avatar-stage { min-height: 520px; position: relative; overflow: hidden; background: #0c1012; }
+.avatar-stage::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, transparent 54%, rgba(9,11,13,.1) 70%, rgba(9,11,13,.94) 100%); }
+.avatar-stage img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 50% 42%; filter: saturate(.9) contrast(1.02); animation: avatar-breathe 7s ease-in-out infinite; }
+.avatar-scan { height: 1px; position: absolute; z-index: 3; left: 8%; right: 8%; top: 20%; background: linear-gradient(90deg, transparent, rgba(185,243,74,.72), transparent); box-shadow: 0 0 14px rgba(185,243,74,.22); opacity: .55; animation: avatar-scan 5.5s ease-in-out infinite; }
+.avatar-corner { width: 26px; height: 26px; position: absolute; z-index: 4; pointer-events: none; }
+.avatar-corner-a { top: 18px; left: 18px; border-top: 1px solid rgba(185,243,74,.55); border-left: 1px solid rgba(185,243,74,.55); }
+.avatar-corner-b { right: 18px; bottom: 18px; border-right: 1px solid rgba(185,243,74,.55); border-bottom: 1px solid rgba(185,243,74,.55); }
+.hero-avatar figcaption { min-height: 82px; padding: 17px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); }
+.hero-avatar figcaption strong { display: block; font: 700 17px/1.2 var(--display); letter-spacing: -.025em; }
+.hero-avatar figcaption span { display: block; margin-top: 5px; color: var(--muted); font: 500 9px/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.hero-avatar figcaption a { width: 42px; height: 42px; display: grid; place-items: center; color: var(--bg); background: var(--accent); border-radius: 50%; font-size: 18px; transition: transform .2s; }
+.hero-avatar figcaption a:hover { transform: rotate(8deg) scale(1.05); }
+@keyframes avatar-breathe { 0%,100% { transform: scale(1.01) translateY(0); } 50% { transform: scale(1.045) translateY(-4px); } }
+@keyframes avatar-scan { 0%,100% { top: 18%; opacity: .15; } 50% { top: 76%; opacity: .65; } }
 
 .ticker { margin-top: 30px; overflow: hidden; border-block: 1px solid var(--line); }
 .ticker-track { width: max-content; display: flex; animation: ticker 36s linear infinite; }
@@ -386,8 +382,7 @@ body.reform {
   .nav-wrap { grid-template-columns: auto 1fr auto; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { max-width: 760px; }
-  .hero-aside { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .hero-disclosure { min-height: 390px; }
+  .hero-avatar { max-width: 620px; width: 100%; }
   .section-head, .page-hero-grid { grid-template-columns: 1fr; gap: 22px; }
   .recognition-wrap { grid-template-columns: 1fr; gap: 40px; }
   .recognition-sticky { position: static; }
@@ -400,10 +395,7 @@ body.reform {
   .hero { padding-top: 52px; }
   .hero-copy { padding-top: 10px; }
   .hero h1 { font-size: clamp(48px, 15vw, 72px); }
-  .hero-aside { grid-template-columns: 1fr; }
-  .hero-disclosure { min-height: 0; padding: 22px; }
-  .disclosure-vendor { margin-top: 44px; }
-  .disclosure-facts { margin-top: 18px; }
+  .avatar-stage { min-height: 430px; }
   .section { padding: 76px 0; }
   .section-head { padding-bottom: 30px; }
   .research-grid { grid-template-columns: 1fr; }
