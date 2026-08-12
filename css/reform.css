@@ -375,6 +375,8 @@ body.reform {
 .recognition-logo-monogram > span { opacity: 1; }
 .recognition-logo img { position: relative; z-index: 1; width: 64%; height: 64%; object-fit: contain; }
 .recognition-logo-wide img { width: 82%; height: 70%; }
+.recognition-logo-dark { background: #111417; }
+.recognition-logo-visma img { width: 86%; height: auto; }
 .recognition-logo-large { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 12px 35px rgba(0,0,0,.25); }
 .recognition-feature-card .recognition-logo { margin-top: 12px; }
 .recognition-feature-copy { position: relative; z-index: 1; margin-top: auto; }
