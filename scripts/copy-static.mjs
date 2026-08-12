@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 
 const root = process.cwd();
 const output = resolve(root, 'dist');
-const directories = ['blog', 'images', 'css', 'js', 'Track', 'poc', 'server'];
+const directories = ['images', 'css', 'js', 'Track', 'poc', 'server'];
 const files = ['robots.txt', 'sitemap.xml', 'manifest.json', 'browserconfig.xml', 'CNAME', 'sw.js'];
 
 mkdirSync(output, { recursive: true });
