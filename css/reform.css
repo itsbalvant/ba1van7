@@ -252,26 +252,33 @@ body.reform {
 .button:hover { transform: translateY(-2px); border-color: var(--accent); background: rgba(185,243,74,.07); }
 .button-dark, .button-red { color: var(--bg) !important; border-color: var(--accent); background: var(--accent); }
 
-.hero-brand-art { min-width: 0; display: grid; place-items: center; }
-.hero-brand-frame {
+.hero-kinetic { min-width: 0; display: grid; place-items: center; }
+.kinetic-stage {
   position: relative;
-  width: min(100%, 390px);
+  width: min(100%, 420px);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
   overflow: hidden;
-  color: var(--text);
   background: #090b0d;
-  border: 1px solid #454d4f;
-  border-radius: 8px;
+  border: 1px solid #353c3e;
+  border-radius: 50%;
 }
-.hero-brand-frame > span { transform: translateX(-5px); font: 800 clamp(170px, 19vw, 250px)/1 var(--display); letter-spacing: -.11em; }
-.hero-brand-frame i { position: absolute; top: 18px; left: 18px; width: 18px; height: 18px; background: var(--accent); animation: hero-brand-locator 5.6s steps(1, end) infinite; }
-@keyframes hero-brand-locator {
-  0%, 20%, 100% { top: 18px; left: 18px; }
-  25%, 45% { top: 18px; left: calc(100% - 36px); }
-  50%, 70% { top: calc(100% - 36px); left: calc(100% - 36px); }
-  75%, 95% { top: calc(100% - 36px); left: 18px; }
+.kinetic-aperture { position: relative; width: 61%; aspect-ratio: 1; animation: kinetic-turn 8s steps(4, end) infinite; }
+.kinetic-blade { position: absolute; width: 48%; height: 48%; background: var(--text); clip-path: polygon(0 0, 100% 0, 100% 27%, 29% 27%, 29% 100%, 0 100%); }
+.kinetic-blade-a { top: 0; left: 0; }
+.kinetic-blade-b { top: 0; right: 0; transform: rotate(90deg); }
+.kinetic-blade-c { right: 0; bottom: 0; transform: rotate(180deg); }
+.kinetic-blade-d { bottom: 0; left: 0; transform: rotate(270deg); }
+.kinetic-core { position: absolute; inset: 35%; background: var(--accent); animation: kinetic-core 4s steps(2, end) infinite; }
+.kinetic-locator { position: absolute; top: 11%; left: 46%; width: 8%; aspect-ratio: 1; background: var(--accent); animation: kinetic-locator 8s steps(1, end) infinite; }
+@keyframes kinetic-turn { to { transform: rotate(360deg); } }
+@keyframes kinetic-core { 50% { transform: rotate(45deg) scale(.74); } }
+@keyframes kinetic-locator {
+  0%, 20%, 100% { top: 11%; left: 46%; }
+  25%, 45% { top: 46%; left: 81%; }
+  50%, 70% { top: 81%; left: 46%; }
+  75%, 95% { top: 46%; left: 11%; }
 }
 
 .ticker { margin-top: 30px; overflow: hidden; border-block: 1px solid var(--line); }
@@ -674,7 +681,7 @@ body.reform {
   .site-header { isolation: isolate; padding-top: env(safe-area-inset-top); background: #090b0d; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .nav-wrap { min-height: 64px; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
   .brand { position: relative; z-index: 1003; min-width: 0; }
-  .site-nav { position: fixed; z-index: 1001; inset: calc(65px + env(safe-area-inset-top)) 0 0; width: auto; min-height: calc(100dvh - 65px - env(safe-area-inset-top)); padding: clamp(28px, 7vw, 54px) max(20px, calc((100vw - var(--shell)) / 2)) calc(116px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; background: #07090a; border: 0; border-radius: 0; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-12px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+  .site-nav { position: fixed; z-index: 1001; inset: calc(65px + env(safe-area-inset-top)) 0 0; width: 100%; max-width: none; min-height: calc(100dvh - 65px - env(safe-area-inset-top)); padding: clamp(28px, 7vw, 54px) max(20px, calc((100vw - var(--shell)) / 2)) calc(116px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; align-items: stretch; justify-self: stretch; justify-content: flex-start; gap: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; background: #07090a; border: 0; border-radius: 0; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-12px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
   .site-nav::before { content: 'Explore'; margin-bottom: 13px; color: #9ba5a6; font: 700 9px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
   .site-nav.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
   .site-nav a { min-height: clamp(70px, 10vh, 88px); padding: 0 4px; display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; color: #fff; background: transparent; border-bottom: 1px solid rgba(255,255,255,.2); border-radius: 0; font: 800 clamp(24px, 5vw, 34px)/1 var(--display); letter-spacing: -.045em; text-transform: none; }
@@ -692,7 +699,7 @@ body.reform {
   .menu-open .site-header { background: #090b0d; }
   .hero-grid { min-height: 540px; grid-template-columns: minmax(0, 1.1fr) minmax(270px, .7fr); }
   .hero-copy { max-width: 760px; }
-  .hero-brand-frame { width: min(100%, 320px); }
+  .kinetic-stage { width: min(100%, 340px); }
   .section-head, .page-hero-grid { grid-template-columns: 1fr; gap: 22px; }
   .research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-card-wide { grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr); }
@@ -734,16 +741,8 @@ body.reform {
   .hero { padding-top: 52px; }
   .hero-grid { min-height: 0; grid-template-columns: 1fr; }
   .hero-copy { padding-top: 10px; }
-  .hero-brand-art { margin-top: 28px; }
-  .hero-brand-frame { width: min(78vw, 300px); }
-  .hero-brand-frame > span { font-size: clamp(150px, 48vw, 205px); }
-  .hero-brand-frame i { top: 14px; left: 14px; width: 14px; height: 14px; }
-  @keyframes hero-brand-locator {
-    0%, 20%, 100% { top: 14px; left: 14px; }
-    25%, 45% { top: 14px; left: calc(100% - 28px); }
-    50%, 70% { top: calc(100% - 28px); left: calc(100% - 28px); }
-    75%, 95% { top: calc(100% - 28px); left: 14px; }
-  }
+  .hero-kinetic { margin-top: 28px; }
+  .kinetic-stage { width: min(74vw, 290px); }
   .hero h1 { font-size: clamp(48px, 15vw, 72px); }
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-actions .button { width: 100%; }

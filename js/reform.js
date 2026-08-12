@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('[data-menu-button]');
   const siteNav = document.querySelector('[data-site-nav]');
+  const navCta = document.querySelector('.nav-cta');
+  const navAnchor = siteNav ? document.createComment('site-nav') : null;
+  const ctaAnchor = navCta ? document.createComment('nav-cta') : null;
+  siteNav?.before(navAnchor);
+  navCta?.before(ctaAnchor);
+
+  const syncMobileNavigation = () => {
+    const useMobileNavigation = window.innerWidth <= 1100;
+    if (useMobileNavigation) {
+      if (siteNav?.parentNode !== document.body) document.body.appendChild(siteNav);
+      if (navCta?.parentNode !== document.body) document.body.appendChild(navCta);
+    } else {
+      if (navAnchor?.parentNode && siteNav?.parentNode !== navAnchor.parentNode) navAnchor.parentNode.insertBefore(siteNav, navAnchor.nextSibling);
+      if (ctaAnchor?.parentNode && navCta?.parentNode !== ctaAnchor.parentNode) ctaAnchor.parentNode.insertBefore(navCta, ctaAnchor.nextSibling);
+    }
+  };
+
+  syncMobileNavigation();
   menuButton?.setAttribute('aria-label', 'Open navigation');
 
   const closeMenu = () => {
@@ -23,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   siteNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
   window.addEventListener('resize', () => {
+    syncMobileNavigation();
     if (window.innerWidth > 1100) closeMenu();
   });
   document.addEventListener('keydown', (event) => {
