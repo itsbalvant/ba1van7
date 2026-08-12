@@ -371,7 +371,8 @@ body.reform {
 .recognition-feature-card:hover::after { transform: scale(1.12); }
 .recognition-number { position: absolute; top: 20px; right: 21px; color: #626b6d; font: 600 9px/1 var(--mono); letter-spacing: .07em; }
 .recognition-logo { position: relative; width: 48px; height: 48px; flex: 0 0 auto; display: grid; place-items: center; overflow: hidden; color: #374043; background: #f4f6f2; border: 1px solid rgba(255,255,255,.14); border-radius: 12px; font: 800 11px/1 var(--display); }
-.recognition-logo > span { position: absolute; inset: 0; display: grid; place-items: center; }
+.recognition-logo > span { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; }
+.recognition-logo-monogram > span { opacity: 1; }
 .recognition-logo img { position: relative; z-index: 1; width: 64%; height: 64%; object-fit: contain; }
 .recognition-logo-wide img { width: 82%; height: 70%; }
 .recognition-logo-large { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 12px 35px rgba(0,0,0,.25); }
