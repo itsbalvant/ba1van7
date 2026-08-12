@@ -42,13 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const filterButtons = document.querySelectorAll('[data-filter]');
   const filterItems = document.querySelectorAll('[data-category]');
+  const filterResults = document.querySelector('[data-filter-results]');
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
-      filterButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-      filterItems.forEach((item) => {
-        item.hidden = filter !== 'all' && item.dataset.category !== filter;
+      filterButtons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-pressed', String(isActive));
       });
+      let visibleCount = 0;
+      filterItems.forEach((item) => {
+        const isVisible = filter === 'all' || item.dataset.category === filter;
+        item.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+      if (filterResults) {
+        const count = String(visibleCount).padStart(2, '0');
+        filterResults.textContent = filter === 'all' ? `Showing all ${count} entries` : `Showing ${count} ${filter} ${visibleCount === 1 ? 'entry' : 'entries'}`;
+      }
     });
   });
 });
