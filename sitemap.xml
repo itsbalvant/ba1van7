@@ -41,7 +41,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://balvant.in/images/a2.jpeg</image:loc>
+      <image:loc>https://balvant.in/images/poster-webview.webp</image:loc>
       <image:title>Android WebView Vulnerability</image:title>
     </image:image>
   </url>
@@ -52,7 +52,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://balvant.in/images/android-auth.jpeg</image:loc>
+      <image:loc>https://balvant.in/images/poster-oauth-interception.webp</image:loc>
       <image:title>Android OAuth Vulnerability</image:title>
     </image:image>
   </url>
@@ -63,7 +63,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://balvant.in/images/1.jpeg</image:loc>
+      <image:loc>https://balvant.in/images/poster-sql-injection.webp</image:loc>
       <image:title>SQL Injection Writeup</image:title>
     </image:image>
   </url>
@@ -74,7 +74,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://balvant.in/images/a-cinematic-shot-of-an-ancient-roman-sol_t3A0SO6aReCvbe86gvJsbQ_v7YBD9yISKaYmsfNGwsoOw.jpeg</image:loc>
+      <image:loc>https://balvant.in/images/poster-unlimited-mint.webp</image:loc>
       <image:title>DeFi Unrestricted Minting Exploit</image:title>
     </image:image>
   </url>
@@ -85,7 +85,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://balvant.in/images/a-photo-of-an-ancient-philosopher-sittin_KSoCpSEuThSZp1cxTDGZig_QrGpSDY0RFeH_8blpf_vBw.jpeg</image:loc>
+      <image:loc>https://balvant.in/images/poster-moral-bias.webp</image:loc>
       <image:title>Philosophy of Good and Bad</image:title>
     </image:image>
   </url>
@@ -96,7 +96,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://balvant.in/images/blockchain.jpg</image:loc>
+      <image:loc>https://balvant.in/images/poster-smart-contracts.webp</image:loc>
       <image:title>Smart Contract Vulnerabilities</image:title>
     </image:image>
   </url>

@@ -1,5 +1,5 @@
 // Service Worker for Balvant Chavda's website
-const CACHE_NAME = 'balvant-site-cache-v1';
+const CACHE_NAME = 'balvant-site-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -14,12 +14,12 @@ const urlsToCache = [
   '/blog/sql-injection-writeup.html',
   '/blog/unrestricted-minting-exploit.html',
   '/blog/philosophy-good-bad-bias.html',
-  '/images/a2.jpeg',
-  '/images/android-auth.jpeg',
-  '/images/1.jpeg',
-  '/images/a-cinematic-shot-of-an-ancient-roman-sol_t3A0SO6aReCvbe86gvJsbQ_v7YBD9yISKaYmsfNGwsoOw.jpeg',
-  '/images/a-photo-of-an-ancient-philosopher-sittin_KSoCpSEuThSZp1cxTDGZig_QrGpSDY0RFeH_8blpf_vBw.jpeg',
-  '/images/blockchain.jpg',
+  '/images/poster-webview.webp',
+  '/images/poster-oauth-interception.webp',
+  '/images/poster-sql-injection.webp',
+  '/images/poster-unlimited-mint.webp',
+  '/images/poster-smart-contracts.webp',
+  '/images/poster-moral-bias.webp',
   '/images/blog-header.jpg',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap'
@@ -97,4 +97,4 @@ self.addEventListener('fetch', event => {
         });
       })
   );
-}); 
+});
