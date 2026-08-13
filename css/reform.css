@@ -246,11 +246,13 @@ body.reform {
   font: 600 10px/1 var(--mono);
   letter-spacing: .07em;
   text-transform: uppercase;
-  transition: transform .2s, border-color .2s, background .2s;
+  transition: transform .2s, color .2s, border-color .2s, background .2s;
 }
-.button::after { content: '↗'; font-size: 15px; }
+.button::after { content: '↗'; font-size: 15px; transition: transform .2s ease; }
 .button:hover { transform: translateY(-2px); border-color: var(--accent); background: rgba(185,243,74,.07); }
+.button:hover::after { transform: translate(2px, -2px); }
 .button-dark, .button-red { color: var(--bg) !important; border-color: var(--accent); background: var(--accent); }
+.button-dark:hover, .button-red:hover { color: var(--bg) !important; border-color: #d6ff7b; background: #d6ff7b; }
 
 .ticker { margin-top: 30px; overflow: hidden; border-block: 1px solid var(--line); }
 .ticker-track { width: max-content; display: flex; animation: ticker 36s linear infinite; }
