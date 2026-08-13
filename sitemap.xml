@@ -52,6 +52,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <url><loc>https://balvant.in/weekend/opportunity-cost.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-opportunity-cost.webp</image:loc><image:title>Opportunity Cost</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/dunning-kruger.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-dunning-kruger.webp</image:loc><image:title>The Dunning-Kruger Effect</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/dopamine-motivation.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-dopamine-motivation.webp</image:loc><image:title>Dopamine and Motivation</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/confirmation-bias.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-confirmation-bias.webp</image:loc><image:title>Confirmation Bias</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/how-research-works.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-how-research-works.webp</image:loc><image:title>How Research Works</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/correlation-causation.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-correlation-causation.webp</image:loc><image:title>Correlation vs. Causation</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/game-theory.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-game-theory.webp</image:loc><image:title>Game Theory</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/scientific-method.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-scientific-method.webp</image:loc><image:title>The Scientific Method</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/pareto-principle.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-pareto-principle.webp</image:loc><image:title>The Pareto Principle</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/mental-toolkit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-mental-toolkit.webp</image:loc><image:title>A Better Mental Toolkit</image:title></image:image></url>
   
   <!-- Blog Posts -->
   <url>

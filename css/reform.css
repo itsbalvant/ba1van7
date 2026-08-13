@@ -549,7 +549,7 @@ body.reform {
 .weekend-note-row:hover { transform: translateX(6px); color: var(--bg); background: var(--accent); border-color: var(--accent); }
 .weekend-note-no { align-self: start; color: #687174; font: 700 9px/1 var(--mono); }
 .weekend-note-main small { color: var(--accent-2); font: 600 8px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
-.weekend-note-main h3 { max-width: 15ch; margin: 18px 0 0; font: 800 clamp(34px, 4.3vw, 58px)/.94 var(--display); letter-spacing: -.065em; }
+.weekend-note-main h3 { max-width: 17ch; margin: 18px 0 0; font: 800 clamp(31px, 3.8vw, 52px)/.95 var(--display); letter-spacing: -.06em; }
 .weekend-note-detail { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 30px; }
 .weekend-note-detail > p { max-width: 40ch; margin: 0; color: var(--muted); font-size: 15px; }
 .weekend-note-action { display: flex; justify-content: space-between; align-items: center; color: #687174; font: 600 8px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
