@@ -15,6 +15,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         projects: resolve(__dirname, 'projects.html'),
         research: resolve(__dirname, 'research.html'),
+        weekend: resolve(__dirname, 'weekend.html'),
         androidWebview: resolve(__dirname, 'blog/android-webview-vulnerability.html'),
         androidOauth: resolve(__dirname, 'blog/android-news-app-vulnerability.html'),
         smartContracts: resolve(__dirname, 'blog/smart-contract-vulnerabilities.html'),
