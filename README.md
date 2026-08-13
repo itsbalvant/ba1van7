@@ -6,10 +6,10 @@ Personal portfolio showcasing security research, CVEs, bug bounty writeups, and 
 
 ## What's Inside
 
-- **Blog** — Security findings and technical writeups (Android, Web, Web3)
-- **Hall of Fame** — Recognized by Google, Microsoft, Apple, Meta, and others
-- **Books** — Curated reading list with notes and takeaways
-- **Contact** — Connect via Twitter, LinkedIn, or email
+- **Blog** - Security findings and technical writeups (Android, Web, Web3)
+- **Hall of Fame** - Recognized by Google, Microsoft, Apple, Meta, and others
+- **Books** - Curated reading list with notes and takeaways
+- **Contact** - Connect via Twitter, LinkedIn, or email
 
 ## Run Locally
 
