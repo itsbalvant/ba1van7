@@ -89,6 +89,17 @@
       <image:title>Philosophy of Good and Bad</image:title>
     </image:image>
   </url>
+
+  <url>
+    <loc>https://balvant.in/blog/instagram-algorithm-relationship.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://balvant.in/images/poster-instagram-relationship.webp</image:loc>
+      <image:title>How Instagram’s Algorithm Broke My Relationship</image:title>
+    </image:image>
+  </url>
   
   <url>
     <loc>https://balvant.in/blog/smart-contract-vulnerabilities.html</loc>

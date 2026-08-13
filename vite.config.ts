@@ -21,6 +21,7 @@ export default defineConfig({
         sqlInjection: resolve(__dirname, 'blog/sql-injection-writeup.html'),
         unrestrictedMinting: resolve(__dirname, 'blog/unrestricted-minting-exploit.html'),
         philosophy: resolve(__dirname, 'blog/philosophy-good-bad-bias.html'),
+        instagramRelationship: resolve(__dirname, 'blog/instagram-algorithm-relationship.html'),
       },
     },
   },

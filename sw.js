@@ -1,5 +1,5 @@
 // Service Worker for Balvant Chavda's website
-const CACHE_NAME = 'balvant-site-cache-v2';
+const CACHE_NAME = 'balvant-site-cache-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -14,12 +14,14 @@ const urlsToCache = [
   '/blog/sql-injection-writeup.html',
   '/blog/unrestricted-minting-exploit.html',
   '/blog/philosophy-good-bad-bias.html',
+  '/blog/instagram-algorithm-relationship.html',
   '/images/poster-webview.webp',
   '/images/poster-oauth-interception.webp',
   '/images/poster-sql-injection.webp',
   '/images/poster-unlimited-mint.webp',
   '/images/poster-smart-contracts.webp',
   '/images/poster-moral-bias.webp',
+  '/images/poster-instagram-relationship.webp',
   '/images/blog-header.jpg',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap'
