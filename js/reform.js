@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (image.complete && !image.naturalWidth) showFallback();
   });
 
-  const revealNodes = document.querySelectorAll('.reveal');
+  const revealNodes = document.querySelectorAll('.reveal, .weekend-note-list .weekend-note-row');
+  revealNodes.forEach((node) => node.classList.add('reveal', 'reveal-pending'));
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
     revealNodes.forEach((node) => observer.observe(node));
   } else {
     revealNodes.forEach((node) => node.classList.add('is-visible'));
