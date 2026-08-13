@@ -1,5 +1,5 @@
 // Service Worker for Balvant Chavda's website
-const CACHE_NAME = 'balvant-site-cache-v7';
+const CACHE_NAME = 'balvant-site-cache-v8';
 const urlsToCache = [
   '/',
   '/index.html',
