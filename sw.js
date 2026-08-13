@@ -1,5 +1,5 @@
 // Service Worker for Balvant Chavda's website
-const CACHE_NAME = 'balvant-site-cache-v8';
+const CACHE_NAME = 'balvant-site-cache-v9';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,6 +8,8 @@ const urlsToCache = [
   '/weekend.html',
   '/weekend/neuroplasticity.html',
   '/weekend/falsifiability.html',
+  '/images/weekend-neuroplasticity.webp',
+  '/images/weekend-falsifiability.webp',
   '/css/style.css',
   '/js/main.js',
   '/images/icon-192.png',

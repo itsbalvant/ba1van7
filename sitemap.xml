@@ -37,21 +37,18 @@
   <!-- Weekend Learnings -->
   <url>
     <loc>https://balvant.in/weekend.html</loc>
-    <lastmod>2026-08-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://balvant.in/weekend/neuroplasticity.html</loc>
-    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://balvant.in/weekend/falsifiability.html</loc>
-    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
