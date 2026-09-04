@@ -18,6 +18,22 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Research Page -->
+  <url>
+    <loc>https://balvant.in/research.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 404 Page -->
+  <url>
+    <loc>https://balvant.in/404.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
   <!-- LLMs.txt -->
   <url>
     <loc>https://balvant.in/llms.txt</loc>
@@ -53,32 +69,23 @@
   <!-- Weekend Learnings -->
   <url>
     <loc>https://balvant.in/weekend.html</loc>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://balvant.in/weekend/neuroplasticity.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://balvant.in/weekend/falsifiability.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url><loc>https://balvant.in/weekend/opportunity-cost.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-opportunity-cost.webp</image:loc><image:title>Opportunity Cost</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/dunning-kruger.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-dunning-kruger.webp</image:loc><image:title>The Dunning-Kruger Effect</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/dopamine-motivation.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-dopamine-motivation.webp</image:loc><image:title>Dopamine and Motivation</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/confirmation-bias.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-confirmation-bias.webp</image:loc><image:title>Confirmation Bias</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/how-research-works.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-how-research-works.webp</image:loc><image:title>How Research Works</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/correlation-causation.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-correlation-causation.webp</image:loc><image:title>Correlation vs. Causation</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/game-theory.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-game-theory.webp</image:loc><image:title>Game Theory</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/scientific-method.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-scientific-method.webp</image:loc><image:title>The Scientific Method</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/pareto-principle.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-pareto-principle.webp</image:loc><image:title>The Pareto Principle</image:title></image:image></url>
-  <url><loc>https://balvant.in/weekend/mental-toolkit.html</loc><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-mental-toolkit.webp</image:loc><image:title>A Better Mental Toolkit</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/neuroplasticity.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-neuroplasticity.webp</image:loc><image:title>Neuroplasticity</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/falsifiability.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://balvant.in/weekend/opportunity-cost.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-opportunity-cost.webp</image:loc><image:title>Opportunity Cost</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/dunning-kruger.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-dunning-kruger.webp</image:loc><image:title>The Dunning-Kruger Effect</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/dopamine-motivation.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-dopamine-motivation.webp</image:loc><image:title>Dopamine and Motivation</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/confirmation-bias.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-confirmation-bias.webp</image:loc><image:title>Confirmation Bias</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/how-research-works.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-how-research-works.webp</image:loc><image:title>How Research Works</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/correlation-causation.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-correlation-causation.webp</image:loc><image:title>Correlation vs. Causation</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/game-theory.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-game-theory.webp</image:loc><image:title>Game Theory</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/scientific-method.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-scientific-method.webp</image:loc><image:title>The Scientific Method</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/pareto-principle.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-pareto-principle.webp</image:loc><image:title>The Pareto Principle</image:title></image:image></url>
+  <url><loc>https://balvant.in/weekend/mental-toolkit.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://balvant.in/images/weekend-mental-toolkit.webp</image:loc><image:title>A Better Mental Toolkit</image:title></image:image></url>
   
   <!-- Blog Posts -->
   <url>
