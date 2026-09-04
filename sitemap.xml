@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://balvant.in/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://balvant.in/contact.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -21,7 +21,7 @@
   <!-- Projects Page -->
   <url>
     <loc>https://balvant.in/projects.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -29,7 +29,7 @@
   <!-- Books Page -->
   <url>
     <loc>https://balvant.in/books.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -67,7 +67,7 @@
   <!-- Blog Posts -->
   <url>
     <loc>https://balvant.in/blog/android-webview-vulnerability.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -78,7 +78,7 @@
   
   <url>
     <loc>https://balvant.in/blog/android-news-app-vulnerability.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -89,7 +89,7 @@
   
   <url>
     <loc>https://balvant.in/blog/sql-injection-writeup.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -100,7 +100,7 @@
   
   <url>
     <loc>https://balvant.in/blog/unrestricted-minting-exploit.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -111,7 +111,7 @@
   
   <url>
     <loc>https://balvant.in/blog/philosophy-good-bad-bias.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -133,7 +133,7 @@
   
   <url>
     <loc>https://balvant.in/blog/smart-contract-vulnerabilities.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>

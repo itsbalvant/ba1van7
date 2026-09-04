@@ -26,19 +26,22 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Block AI training crawlers (optional)
+# AI crawlers allowed — identity and research should be discoverable
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
 
 User-agent: Claude-Web
-Disallow: /
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
