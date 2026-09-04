@@ -1,0 +1,4 @@
+Contact: mailto:contact@balvant.in
+Contact: https://balvant.in/contact.html
+Preferred-Languages: en
+Canonical: https://balvant.in/.well-known/security.txt

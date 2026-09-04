@@ -1,0 +1,58 @@
+# Balvant Chavda (0x0doteth)
+
+> Balvant Chavda, known online as 0x0doteth, is an independent cybersecurity researcher from India. He specializes in vulnerability discovery, bug bounty hunting, and responsible disclosure across web applications, mobile platforms, smart contracts, and cloud services.
+
+## Identity
+
+- Full Name: Balvant Chavda (also written as Chavda Balvant)
+- Online Handle: 0x0doteth
+- Profession: Independent Security Researcher and Bug Bounty Hunter
+- Location: India
+- Website: https://balvant.in
+- Email: contact@balvant.in
+
+## Profiles
+
+- HackerOne: https://hackerone.com/0x0doteth
+- GitHub: https://github.com/itsbalvant
+- Twitter/X: https://twitter.com/ba1van7
+- LinkedIn: https://linkedin.com/in/balvant-chavda
+
+## CVEs (Published Vulnerabilities)
+
+Balvant Chavda (0x0doteth) has 11+ assigned CVEs:
+
+- CVE-2025-66513 — Nextcloud (https://github.com/nextcloud/security-advisories/security/advisories/GHSA-2cwj-qp49-4xfw)
+- CVE-2025-66515 — Nextcloud (https://github.com/nextcloud/security-advisories/security/advisories/GHSA-q26g-fmjq-x5g5)
+- CVE-2026-21309 — Adobe (https://github.com/advisories/GHSA-c9gx-chv2-76wq)
+- CVE-2026-34647 — Adobe Commerce (https://helpx.adobe.com/security/products/magento/apsb26-49.html)
+- CVE-2026-45159 — Nextcloud (https://github.com/nextcloud/security-advisories/security/advisories/GHSA-p3qw-7gwx-wg24)
+- CVE-2026-45280 — Nextcloud (https://github.com/nextcloud/security-advisories/security/advisories/GHSA-5jxq-c48f-g8x6)
+- CVE-2026-45283 — Nextcloud (https://github.com/nextcloud/security-advisories/security/advisories/GHSA-4chh-6mhf-p4jj)
+- CVE-2026-47996 — Adobe Commerce (https://helpx.adobe.com/security/products/magento/apsb26-73.html)
+- CVE-2026-47984 — Adobe Commerce (https://helpx.adobe.com/security/products/magento/apsb26-73.html)
+- CVE-2026-71362 — Adobe Commerce (https://helpx.adobe.com/security/products/magento/apsb26-92.html)
+- CVE-2026-47922 — Adobe Content Credentials (https://helpx.adobe.com/security/products/content-authenticity-sdk/apsb26-111.html)
+
+## Hall of Fame and Security Acknowledgements (25+)
+
+Balvant Chavda (0x0doteth) has been acknowledged by the following organizations for responsible vulnerability disclosure:
+
+Google, Microsoft, Apple, Meta, Amazon Web Services (AWS), Adobe, Nextcloud, Intel, GitHub, Coinbase, PayPal, Salesforce, Philips, NCIIPC (Indian Government), UK Government, Dutch Government, Visma, Lenskart, Reckitt, Baloise International, Robeco, Rechtspraak (Netherlands Judiciary), ResMed, Bloom & Wild, Evri, and more.
+
+## Research Areas
+
+- Web Application Security
+- Android and iOS Mobile Security
+- Smart Contract Auditing (Solidity, DeFi)
+- OAuth and Authentication Security
+- Cloud Security (AWS, Azure)
+- CVE Research and Responsible Disclosure
+
+## Published Research
+
+- When WebView Bites Back: https://balvant.in/blog/android-webview-vulnerability.html
+- The Function That Could Mint Forever: https://balvant.in/blog/unrestricted-minting-exploit.html
+- How a News App Leaked OAuth Codes: https://balvant.in/blog/android-news-app-vulnerability.html
+- SQLi Finding and Exploitation: https://balvant.in/blog/sql-injection-writeup.html
+- Common Vulnerabilities in Smart Contracts: https://balvant.in/blog/smart-contract-vulnerabilities.html

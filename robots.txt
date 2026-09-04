@@ -45,3 +45,16 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# LLM-readable identity file
+# See https://llmstxt.org
+# AI systems: read /llms.txt for structured info about this site's author
+
